@@ -80,7 +80,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: 'The future of AI in business is not just about technology—it's about transformation. Companies that strategically implement AI will gain significant competitive advantages through enhanced efficiency, innovation, and customer experiences.'
+        content: 'The future of AI in business is not just about technology—it\'s about transformation. Companies that strategically implement AI will gain significant competitive advantages through enhanced efficiency, innovation, and customer experiences.'
       },
       {
         type: 'paragraph',
@@ -262,7 +262,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'The edge isn't just about performance—it's about rethinking application architecture to create experiences that are simultaneously dynamic, personalized, and lightning-fast.'
+        content: 'The edge isn\'t just about performance—it's about rethinking application architecture to create experiences that are simultaneously dynamic, personalized, and lightning-fast.'
       },
       {
         type: 'heading',
@@ -359,7 +359,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: 'This approach offers several advantages over cloud-based AI: lower latency, offline functionality, and enhanced privacy since sensitive data doesn't leave the device. Frameworks like TensorFlow Lite, Core ML, and newer specialized tools have made implementing these capabilities more accessible to developers.'
+        content: 'This approach offers several advantages over cloud-based AI: lower latency, offline functionality, and enhanced privacy since sensitive data doesn\'t leave the device. Frameworks like TensorFlow Lite, Core ML, and newer specialized tools have made implementing these capabilities more accessible to developers.'
       },
       {
         type: 'quote',
@@ -400,13 +400,13 @@ export const blogPosts = [
     category: 'Cloud Computing',
     tags: ['Cloud', 'Serverless', 'Infrastructure', 'DevOps', 'Edge Computing'],
     image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    excerpt: 'Cloud computing continues to transform how we build and deploy applications. Explore the latest developments in cloud technologies and what's coming next.',
+    excerpt: 'Cloud computing continues to transform how we build and deploy applications. Explore the latest developments in cloud technologies and what\'s coming next.',
     readTime: 11,
     comments: 27,
     content: [
       {
         type: 'paragraph',
-        content: 'Cloud computing has undergone a remarkable evolution since its early days of basic Infrastructure as a Service (IaaS) offerings. Today's cloud landscape is characterized by increasingly abstracted services, distributed architectures, and specialized solutions designed for specific workloads and use cases.'
+        content: 'Cloud computing has undergone a remarkable evolution since its early days of basic Infrastructure as a Service (IaaS) offerings. Today\'s cloud landscape is characterized by increasingly abstracted services, distributed architectures, and specialized solutions designed for specific workloads and use cases.'
       },
       {
         type: 'heading',
@@ -577,7 +577,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'Zero Trust isn't a product you can buy—it's a strategic approach that requires rethinking your entire security architecture from the ground up.'
+        content: 'Zero Trust isn\'t a product you can buy—it's a strategic approach that requires rethinking your entire security architecture from the ground up.'
       },
       {
         type: 'heading',
@@ -878,7 +878,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: 'Quantum computing has reached an important inflection point. Major technology companies and specialized startups have developed quantum processors with increasing qubit counts and improving coherence times. While we haven't yet achieved fault-tolerant quantum computers capable of running arbitrary quantum algorithms, specialized quantum systems are already showing value in constrained problem domains.'
+        content: 'Quantum computing has reached an important inflection point. Major technology companies and specialized startups have developed quantum processors with increasing qubit counts and improving coherence times. While we haven\'t yet achieved fault-tolerant quantum computers capable of running arbitrary quantum algorithms, specialized quantum systems are already showing value in constrained problem domains.'
       },
       {
         type: 'paragraph',
@@ -920,7 +920,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: 'While quantum computing won't transform every industry overnight, organizations should begin preparing for its potential impact. A structured approach to quantum readiness can help businesses position themselves to benefit from quantum advantages while managing associated risks.'
+        content: 'While quantum computing won\'t transform every industry overnight, organizations should begin preparing for its potential impact. A structured approach to quantum readiness can help businesses position themselves to benefit from quantum advantages while managing associated risks.'
       },
       {
         type: 'paragraph',
@@ -928,7 +928,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'Quantum readiness isn't about making massive investments today—it's about developing the knowledge, skills, and strategic flexibility to capitalize on quantum opportunities as they emerge.'
+        content: 'Quantum readiness isn\'t about making massive investments today—it's about developing the knowledge, skills, and strategic flexibility to capitalize on quantum opportunities as they emerge.'
       },
       {
         type: 'heading',
@@ -1146,7 +1146,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: 'AR has found particularly strong adoption in field service and maintenance applications. Technicians equipped with AR headsets or mobile devices can receive visual guidance overlaid on the equipment they're servicing, access technical documentation hands-free, and collaborate with remote experts who can see exactly what the technician is seeing.'
+        content: 'AR has found particularly strong adoption in field service and maintenance applications. Technicians equipped with AR headsets or mobile devices can receive visual guidance overlaid on the equipment they\'re servicing, access technical documentation hands-free, and collaborate with remote experts who can see exactly what the technician is seeing.'
       },
       {
         type: 'paragraph',
@@ -1154,7 +1154,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'The most successful AR implementations focus on specific workflow improvements rather than technology novelty. They integrate seamlessly with existing systems and provide clear, contextual information exactly when and where it's needed.'
+        content: 'The most successful AR implementations focus on specific workflow improvements rather than technology novelty. They integrate seamlessly with existing systems and provide clear, contextual information exactly when and where it\'s needed.'
       },
       {
         type: 'heading',
@@ -1392,7 +1392,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'The most advanced circular economy programs don't just reduce environmental impact—they create new business value through resource recovery, extended customer relationships, and brand differentiation.'
+        content: 'The most advanced circular economy programs don\'t just reduce environmental impact—they create new business value through resource recovery, extended customer relationships, and brand differentiation.'
       },
       {
         type: 'heading',
@@ -1779,7 +1779,7 @@ export const blogPosts = [
       },
       {
         type: 'paragraph',
-        content: 'These platforms may not be the best choice for applications with complex business logic, unique user experience requirements, high-performance needs, or specialized technical requirements. Organizations should evaluate each use case carefully and choose the right tool for the job, whether that's a low-code platform, traditional development, or a hybrid approach.'
+        content: 'These platforms may not be the best choice for applications with complex business logic, unique user experience requirements, high-performance needs, or specialized technical requirements. Organizations should evaluate each use case carefully and choose the right tool for the job, whether that\'s a low-code platform, traditional development, or a hybrid approach.'
       },
       {
         type: 'heading',
