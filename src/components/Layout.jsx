@@ -1,25 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Zap, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
-import ThemeToggle from './ThemeToggle';
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { theme, isDarkMode } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      isDarkMode ? 'bg-dark-primary text-text-primary' : 'bg-primary text-text-primary'
-    }`}>
+    <div className="min-h-screen bg-primary text-text-primary">
       {/* Navigation - Mobile optimized */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b transition-colors duration-300 mobile-header ${
-        isDarkMode ? 'bg-dark-secondary/90 border-dark' : 'bg-white/90 border-border-color'
-      }`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b mobile-header bg-white/90 border-border-color">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
@@ -29,14 +22,10 @@ const Layout = ({ children }) => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center space-x-2 py-2 transition-colors duration-300"
             >
-              <div className={`w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center shadow-button ${
-                isDarkMode ? 'bg-dark-tertiary border border-neon-green' : 'gradient-bg'
-              }`}>
-                <Zap className={`w-4 h-4 md:w-6 md:h-6 ${isDarkMode ? 'text-neon-green' : 'text-white'}`} />
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center shadow-button gradient-bg">
+                <Zap className="w-4 h-4 md:w-6 md:h-6 text-white" />
               </div>
-              <span className={`text-lg md:text-2xl font-bold tracking-tight ${
-                isDarkMode ? 'text-text-primary' : 'gradient-text'
-              }`}>SaaS Agency</span>
+              <span className="text-lg md:text-2xl font-bold tracking-tight gradient-text">SaaS Agency</span>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -47,14 +36,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/';
                 }}
-                className={`transition-colors font-medium relative group ${
-                  isDarkMode ? 'text-text-primary hover:text-neon-green' : 'text-text-primary hover:text-accent-primary'
-                }`}
+                className="transition-colors font-medium relative group text-text-primary hover:text-accent-primary"
               >
                 Home
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                  isDarkMode ? 'bg-neon-green' : 'bg-accent-primary'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary"></span>
               </a>
               <a 
                 href="/services" 
@@ -62,14 +47,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/services';
                 }}
-                className={`transition-colors font-medium relative group ${
-                  isDarkMode ? 'text-text-primary hover:text-neon-green' : 'text-text-primary hover:text-accent-primary'
-                }`}
+                className="transition-colors font-medium relative group text-text-primary hover:text-accent-primary"
               >
                 Services
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                  isDarkMode ? 'bg-neon-green' : 'bg-accent-primary'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary"></span>
               </a>
            
               <a 
@@ -78,14 +59,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/marketplace';
                 }}
-                className={`transition-colors font-medium relative group ${
-                  isDarkMode ? 'text-text-primary hover:text-neon-green' : 'text-text-primary hover:text-accent-primary'
-                }`}
+                className="transition-colors font-medium relative group text-text-primary hover:text-accent-primary"
               >
                 Marketplace
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                  isDarkMode ? 'bg-neon-green' : 'bg-accent-primary'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary"></span>
               </a>
               <a 
                 href="/automation" 
@@ -93,14 +70,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/automation';
                 }}
-                className={`transition-colors font-medium relative group ${
-                  isDarkMode ? 'text-text-primary hover:text-neon-green' : 'text-text-primary hover:text-accent-primary'
-                }`}
+                className="transition-colors font-medium relative group text-text-primary hover:text-accent-primary"
               >
                 Automation
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                  isDarkMode ? 'bg-neon-green' : 'bg-accent-primary'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary"></span>
               </a>
               <a 
                 href="/free-tools" 
@@ -108,14 +81,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/free-tools';
                 }}
-                className={`transition-colors font-medium relative group ${
-                  isDarkMode ? 'text-text-primary hover:text-neon-green' : 'text-text-primary hover:text-accent-primary'
-                }`}
+                className="transition-colors font-medium relative group text-text-primary hover:text-accent-primary"
               >
                 Free Tools
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                  isDarkMode ? 'bg-neon-green' : 'bg-accent-primary'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary"></span>
               </a>
               <a 
                 href="/about" 
@@ -123,25 +92,18 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/about';
                 }}
-                className={`transition-colors font-medium relative group ${
-                  isDarkMode ? 'text-text-primary hover:text-neon-green' : 'text-text-primary hover:text-accent-primary'
-                }`}
+                className="transition-colors font-medium relative group text-text-primary hover:text-accent-primary"
               >
                 About
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                  isDarkMode ? 'bg-neon-green' : 'bg-accent-primary'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary"></span>
               </a>
-              
-              {/* Theme Toggle */}
-              <ThemeToggle />
             </div>
             <div className="flex items-center space-x-3">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/get-quote'}
-                className={isDarkMode ? "btn-neon" : "stripe-button"}
+                className="stripe-button"
               >
                 Get Quote
               </motion.button>
@@ -187,27 +149,17 @@ const Layout = ({ children }) => {
                     setIsMenuOpen(false);
                     window.location.href = item.href;
                   }}
-                  className={`block py-3 px-4 transition-colors font-medium rounded-lg ${
-                    isDarkMode 
-                      ? 'text-text-primary hover:text-neon-green hover:bg-dark-tertiary' 
-                      : 'text-text-primary hover:text-accent-primary hover:bg-secondary'
-                  }`}
+                className="block py-3 px-4 transition-colors font-medium rounded-lg text-text-primary hover:text-accent-primary hover:bg-secondary"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="flex items-center justify-between py-3 px-4">
-                <span className={isDarkMode ? 'text-text-secondary' : 'text-text-secondary'}>
-                  {isDarkMode ? 'Dark Mode' : 'Light Mode'}
-                </span>
-                <ThemeToggle />
-              </div>
               <div className="pt-2 px-2">
                 <button 
                   onClick={() => {
                     window.location.href = '/get-quote';
                   }}
-                  className={`w-full ${isDarkMode ? 'btn-neon' : 'stripe-button'}`}
+                  className="w-full stripe-button"
                 >
                   Get Quote
                 </button>
@@ -218,47 +170,31 @@ const Layout = ({ children }) => {
       </nav>
 
       {/* Main Content */}
-      <main className={`pt-[60px] transition-colors duration-300 ${
-        isDarkMode ? 'bg-dark-primary' : 'bg-primary'
-      }`}>
+      <main className="pt-[60px] bg-primary">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className={`py-16 border-t transition-colors duration-300 ${
-        isDarkMode ? 'bg-dark-secondary text-text-primary border-dark' : 'bg-secondary text-text-primary border-border-color'
-      }`}>
+      <footer className="py-16 border-t bg-secondary text-text-primary border-border-color">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center shadow-button ${
-                  isDarkMode ? 'bg-dark-tertiary border border-neon-green' : 'gradient-bg'
-                }`}>
-                  <Zap className={`font-bold text-xl w-6 h-6 ${
-                    isDarkMode ? 'text-neon-green' : 'text-white'
-                  }`} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center shadow-button gradient-bg">
+                  <Zap className="font-bold text-xl w-6 h-6 text-white" />
                 </div>
-                <span className={`text-xl font-bold tracking-tight ${
-                  isDarkMode ? 'text-text-primary' : 'gradient-text'
-                }`}>SaaS Agency</span>
+                <span className="text-xl font-bold tracking-tight gradient-text">SaaS Agency</span>
               </div>
-              <p className={`leading-relaxed ${
-                isDarkMode ? 'text-text-secondary' : 'text-text-secondary'
-              }`}>
+              <p className="leading-relaxed text-text-secondary">
                 Transforming businesses through innovative technology solutions.
               </p>
             </div>
 
             {/* Services */}
             <div className="space-y-4">
-              <h3 className={`text-lg font-semibold tracking-wide ${
-                isDarkMode ? 'text-neon-green' : 'text-accent-primary'
-              }`}>Services</h3>
-              <ul className={`space-y-2 ${
-                isDarkMode ? 'text-text-secondary' : 'text-text-secondary'
-              }`}>
+              <h3 className="text-lg font-semibold tracking-wide text-accent-primary">Services</h3>
+              <ul className="space-y-2 text-text-secondary">
                 <li>
                   <a 
                     href="/services/web-development" 
@@ -266,14 +202,10 @@ const Layout = ({ children }) => {
                       e.preventDefault();
                       window.location.href = '/services/web-development';
                     }}
-                    className={`transition-colors relative group ${
-                      isDarkMode ? 'hover:text-neon-green' : 'hover:text-accent-primary'
-                    }`}
+                    className="transition-colors relative group hover:text-accent-primary"
                   >
                     Web Development
-                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                      isDarkMode ? 'bg-neon-green/50' : 'bg-accent-primary/50'
-                    }`}></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary/50"></span>
                   </a>
                 </li>
                 <li>
@@ -283,9 +215,7 @@ const Layout = ({ children }) => {
                       e.preventDefault();
                       window.location.href = '/services/mobile-app';
                     }}
-                    className={`transition-colors ${
-                      isDarkMode ? 'hover:text-neon-green' : 'hover:text-accent-primary'
-                    }`}
+                    className="transition-colors hover:text-accent-primary"
                   >
                     Mobile Apps
                   </a>
@@ -367,12 +297,8 @@ const Layout = ({ children }) => {
 
             {/* Company */}
             <div className="space-y-4">
-              <h3 className={`text-lg font-semibold tracking-wide ${
-                isDarkMode ? 'text-neon-green' : 'text-accent-primary'
-              }`}>Company</h3>
-              <ul className={`space-y-2 ${
-                isDarkMode ? 'text-text-secondary' : 'text-text-secondary'
-              }`}>
+              <h3 className="text-lg font-semibold tracking-wide text-accent-primary">Company</h3>
+              <ul className="space-y-2 text-text-secondary">
                 <li>
                   <a 
                     href="/about" 
@@ -380,14 +306,10 @@ const Layout = ({ children }) => {
                       e.preventDefault();
                       window.location.href = '/about';
                     }}
-                    className={`transition-colors relative group ${
-                      isDarkMode ? 'hover:text-neon-green' : 'hover:text-accent-primary'
-                    }`}
+                    className="transition-colors relative group hover:text-accent-primary"
                   >
                     About
-                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                      isDarkMode ? 'bg-neon-green/50' : 'bg-accent-primary/50'
-                    }`}></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary/50"></span>
                   </a>
                 </li>
                 <li>
@@ -418,12 +340,8 @@ const Layout = ({ children }) => {
               </ul>
             </div>
              <div className="space-y-4">
-              <h3 className={`text-lg font-semibold tracking-wide ${
-                isDarkMode ? 'text-neon-green' : 'text-accent-primary'
-              }`}>Resources</h3>
-              <ul className={`space-y-2 ${
-                isDarkMode ? 'text-text-secondary' : 'text-text-secondary'
-              }`}>
+              <h3 className="text-lg font-semibold tracking-wide text-accent-primary">Resources</h3>
+              <ul className="space-y-2 text-text-secondary">
                 <li>
                   <a 
                     href="/marketplace" 
@@ -431,14 +349,10 @@ const Layout = ({ children }) => {
                       e.preventDefault();
                       window.location.href = '/marketplace';
                     }}
-                    className={`transition-colors relative group ${
-                      isDarkMode ? 'hover:text-neon-green' : 'hover:text-accent-primary'
-                    }`}
+                    className="transition-colors relative group hover:text-accent-primary"
                   >
                     Marketplace
-                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                      isDarkMode ? 'bg-neon-green/50' : 'bg-accent-primary/50'
-                    }`}></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-accent-primary/50"></span>
                   </a>
                 </li>
                 <li>
@@ -469,14 +383,9 @@ const Layout = ({ children }) => {
             </div>
           </div>
 
-          <div className={`border-t mt-12 pt-8 text-center transition-colors duration-300 ${
-            isDarkMode ? 'border-dark text-text-secondary' : 'border-border-color text-text-secondary'
-          }`}>
+          <div className="border-t mt-12 pt-8 text-center border-border-color text-text-secondary">
             <p className="opacity-80 text-sm">
               &copy; 2025 SaaS Agency. All rights reserved.
-              <span className="ml-4">
-                <ThemeToggle />
-              </span>
             </p>
           </div>
         </div>
