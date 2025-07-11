@@ -387,13 +387,7 @@ const Automation = () => {
                 onClick={() => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate('/get-quote');
-                    }}
-                    className="btn-neon py-2 px-4 rounded-lg text-sm font-orbitron font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2"
-                  >
+                }}
                 className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
               >
                 <Code className="w-5 h-5 text-dark-primary" />
