@@ -51,7 +51,7 @@ const AutomationDetail = () => {
   return (
     <div className="min-h-screen bg-dark-primary">
       {/* Hero Section */}
-      <section className="relative py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-dark-primary overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
@@ -60,7 +60,7 @@ const AutomationDetail = () => {
           <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
           {/* Back Button */}
           <motion.button
             initial={{ opacity: 0, x: -20 }}
@@ -69,13 +69,13 @@ const AutomationDetail = () => {
               window.scrollTo(0, 0);
               navigate('/automation');
             }}
-            className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors mb-8 group"
+            className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors mb-6 sm:mb-8 group min-h-[44px]"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             Back to Automation Templates
           </motion.button>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Template Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -83,7 +83,7 @@ const AutomationDetail = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-dark">
+              <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-dark">
                 <img
                   src={template.image}
                   alt={template.name}
@@ -92,10 +92,10 @@ const AutomationDetail = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/90 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center gap-4">
-                    <span className="px-3 py-1 bg-dark-tertiary border border-neon-green text-neon-green rounded-full text-sm font-medium">
+                    <span className="px-2 py-1 sm:px-3 sm:py-1 bg-dark-tertiary border border-neon-green text-neon-green rounded-full text-xs sm:text-sm font-medium">
                       {template.category}
                     </span>
-                    <span className="px-3 py-1 bg-dark-tertiary border border-neon-cyan text-neon-cyan rounded-full text-sm font-medium">
+                    <span className="px-2 py-1 sm:px-3 sm:py-1 bg-dark-tertiary border border-neon-cyan text-neon-cyan rounded-full text-xs sm:text-sm font-medium">
                       {template.useCase}
                     </span>
                   </div>
@@ -108,14 +108,14 @@ const AutomationDetail = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
             >
               <div className="flex items-center gap-4">
-                <div className={`w-16 h-16 border border-${template.neonColor} rounded-2xl flex items-center justify-center pulse-neon`}>
-                  <template.icon className={`w-8 h-8 text-${template.neonColor}`} />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 border border-${template.neonColor} rounded-xl sm:rounded-2xl flex items-center justify-center pulse-neon`}>
+                  <template.icon className={`w-6 h-6 sm:w-8 sm:h-8 text-${template.neonColor}`} />
                 </div>
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary mb-2">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl font-orbitron font-bold text-text-primary mb-1 sm:mb-2">
                     {template.name}
                   </h1>
                   <div className="flex items-center gap-2">
@@ -131,22 +131,22 @@ const AutomationDetail = () => {
                 </div>
               </div>
 
-              <p className="text-xl text-text-secondary leading-relaxed">
+              <p className="text-lg sm:text-xl text-text-secondary leading-relaxed">
                 {template.description}
               </p>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {template.features.slice(0, 4).map((feature, index) => (
-                  <span
+                  <span 
                     key={index}
-                    className="px-4 py-2 bg-dark-tertiary text-text-secondary rounded-full text-sm font-medium border border-dark"
+                    className="px-3 py-1 sm:px-4 sm:py-2 bg-dark-tertiary text-text-secondary rounded-full text-xs sm:text-sm font-medium border border-dark"
                   >
                     {feature}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -155,17 +155,17 @@ const AutomationDetail = () => {
                     window.scrollTo(0, 0);
                     navigate('/get-quote');
                   }}
-                  className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                  className="btn-neon px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <Play className="w-5 h-5 text-dark-primary" />
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-dark-primary" />
                   Submit Buy Request
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300"
+                  className="glass-effect text-neon-cyan px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <Download className="w-5 h-5 mr-2" />
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
                   Download Template
                 </motion.button>
               </div>
@@ -175,12 +175,12 @@ const AutomationDetail = () => {
       </section>
 
       {/* Tabs Navigation */}
-      <section className="py-8 bg-dark-secondary border-b border-t border-dark sticky top-16 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-4">
+      <section className="py-4 sm:py-8 bg-dark-secondary border-b border-t border-dark sticky top-[60px] z-30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%] overflow-x-auto">
+          <div className="flex flex-nowrap sm:flex-wrap gap-2 sm:gap-4 min-w-max sm:min-w-0">
             <button
               onClick={() => setActiveTab('overview')}
-              className={`px-6 py-3 rounded-full font-orbitron font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'overview'
                   ? 'btn-neon shadow-lg'
                   : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
@@ -190,7 +190,7 @@ const AutomationDetail = () => {
             </button>
             <button
               onClick={() => setActiveTab('setup')}
-              className={`px-6 py-3 rounded-full font-orbitron font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'setup'
                   ? 'btn-neon shadow-lg'
                   : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
@@ -200,7 +200,7 @@ const AutomationDetail = () => {
             </button>
             <button
               onClick={() => setActiveTab('usecases')}
-              className={`px-6 py-3 rounded-full font-orbitron font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'usecases'
                   ? 'btn-neon shadow-lg'
                   : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
@@ -210,7 +210,7 @@ const AutomationDetail = () => {
             </button>
             <button
               onClick={() => setActiveTab('requirements')}
-              className={`px-6 py-3 rounded-full font-orbitron font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'requirements'
                   ? 'btn-neon shadow-lg'
                   : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
@@ -223,8 +223,8 @@ const AutomationDetail = () => {
       </section>
 
       {/* Tab Content */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
           {/* Overview Tab */}
           {activeTab === 'overview' && (
             <motion.div
@@ -608,22 +608,22 @@ const AutomationDetail = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-12 sm:py-20 bg-dark-secondary border-t border-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron font-bold text-text-primary">
               Ready to Automate?
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto px-2">
               Start using this template today and transform your workflow
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -632,9 +632,9 @@ const AutomationDetail = () => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
                 }}
-                className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                className="btn-neon px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
-                <Play className="w-5 h-5 text-dark-primary" />
+                <Play className="w-4 h-4 sm:w-5 sm:h-5 text-dark-primary" />
                 Submit Buy Request
               </motion.button>
               <motion.button
@@ -644,7 +644,7 @@ const AutomationDetail = () => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
                 }}
-                className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300"
+                className="glass-effect text-neon-cyan px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300 w-full sm:w-auto"
               >
                 Request Customization
               </motion.button>

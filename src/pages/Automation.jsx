@@ -53,7 +53,7 @@ const Automation = () => {
   return (
     <div className="min-h-screen bg-dark-primary">
       {/* Hero Section */}
-      <section className="relative py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-dark-primary overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
@@ -62,18 +62,18 @@ const Automation = () => {
           <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-[95%]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight">
               Workflow <span className="gradient-neon-text neon-text">Automation</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed px-2">
               Discover ready-to-use automation templates that streamline your business processes, 
               save time, and eliminate repetitive tasks across your organization.
             </p>
@@ -83,16 +83,16 @@ const Automation = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex justify-center space-x-8 mb-8"
+              className="flex justify-center space-x-4 sm:space-x-8 mb-6 sm:mb-8"
             >
-              <div className="w-12 h-12 border border-neon-green rounded-lg flex items-center justify-center neon-border pulse-neon">
-                <Workflow className="w-6 h-6 text-neon-green" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-neon-green rounded-lg flex items-center justify-center neon-border pulse-neon">
+                <Workflow className="w-5 h-5 sm:w-6 sm:h-6 text-neon-green" />
               </div>
-              <div className="w-12 h-12 border border-neon-cyan rounded-lg flex items-center justify-center neon-border-cyan pulse-neon">
-                <Layers className="w-6 h-6 text-neon-cyan" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-neon-cyan rounded-lg flex items-center justify-center neon-border-cyan pulse-neon">
+                <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-neon-cyan" />
               </div>
-              <div className="w-12 h-12 border border-neon-pink rounded-lg flex items-center justify-center border-neon-pink pulse-neon">
-                <Bot className="w-6 h-6 text-neon-pink" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-neon-pink rounded-lg flex items-center justify-center border-neon-pink pulse-neon">
+                <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-neon-pink" />
               </div>
             </motion.div>
           </motion.div>
@@ -100,9 +100,9 @@ const Automation = () => {
       </section>
 
       {/* Search and Filters */}
-      <section className="py-12 bg-dark-secondary border-b border-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6">
+      <section className="py-8 sm:py-12 bg-dark-secondary border-b border-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
+          <div className="flex flex-col gap-4 sm:gap-6">
             {/* Search Bar */}
             <div className="relative">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5" />
@@ -125,9 +125,9 @@ const Automation = () => {
 
             {/* Filter Toggle */}
             <div className="flex justify-between items-center">
-              <button
+              <button 
                 onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors"
+                className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors min-h-[44px]"
               >
                 <Filter className="w-5 h-5" />
                 <span className="font-orbitron">{showFilters ? 'Hide Filters' : 'Show Filters'}</span>
@@ -222,15 +222,15 @@ const Automation = () => {
       </section>
 
       {/* Templates Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
           {/* Results Header */}
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-2xl font-bold font-orbitron text-text-primary">
+              <h2 className="text-xl sm:text-2xl font-bold font-orbitron text-text-primary">
                 {filteredTemplates.length} Templates Found
               </h2>
-              <p className="text-text-secondary">
+              <p className="text-text-secondary text-sm sm:text-base">
                 {selectedIndustry !== 'All Industries' && `Industry: ${selectedIndustry}`}
                 {selectedCategory !== 'All Categories' && ` • Category: ${selectedCategory}`}
                 {selectedIntegration !== 'All Integrations' && ` • Integration: ${selectedIntegration}`}
@@ -241,7 +241,7 @@ const Automation = () => {
           </div>
 
           {/* Templates Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mobile-grid-1">
             {filteredTemplates.map((template, index) => (
               <motion.div
                 key={template.id}
@@ -340,18 +340,18 @@ const Automation = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-20 bg-dark-secondary rounded-xl border border-dark p-8"
+              className="text-center py-12 sm:py-20 bg-dark-secondary rounded-xl border border-dark p-6 sm:p-8"
             >
-              <div className="w-24 h-24 bg-dark-tertiary rounded-full flex items-center justify-center mx-auto mb-6 border border-text-secondary">
-                <Search className="w-12 h-12 text-text-secondary" />
+              <div className="w-16 h-16 sm:w-24 sm:h-24 bg-dark-tertiary rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 border border-text-secondary">
+                <Search className="w-8 h-8 sm:w-12 sm:h-12 text-text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold font-orbitron text-text-primary mb-4">No templates found</h3>
-              <p className="text-text-secondary mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold font-orbitron text-text-primary mb-3 sm:mb-4">No templates found</h3>
+              <p className="text-text-secondary mb-6 sm:mb-8 text-sm sm:text-base">
                 Try adjusting your search terms or filters to find what you're looking for.
               </p>
               <button
                 onClick={clearFilters}
-                className="btn-neon px-6 py-3 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300"
+                className="btn-neon px-5 sm:px-6 py-2 sm:py-3 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
               >
                 Clear Filters
               </button>
@@ -361,7 +361,7 @@ const Automation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-12 sm:py-20 bg-dark-secondary border-t border-dark">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
@@ -370,21 +370,21 @@ const Automation = () => {
           <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-[95%]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron font-bold text-text-primary">
               Need a Custom Automation?
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto px-2">
               Can't find what you're looking for? Our expert team can build custom automation solutions tailored to your specific requirements.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -392,7 +392,7 @@ const Automation = () => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
                 }}
-                className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                className="btn-neon px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
                 <Code className="w-5 h-5 text-dark-primary" />
                 Request Custom Automation
