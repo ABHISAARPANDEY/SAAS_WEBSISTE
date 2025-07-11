@@ -51,13 +51,13 @@ const AutomationDetail = () => {
   return (
     <div className="min-h-screen bg-dark-primary">
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-secondary overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-accent-primary rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-accent-secondary rounded-full opacity-15 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-accent-primary opacity-5 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-accent-tertiary rounded-full opacity-10 animate-pulse"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
@@ -69,7 +69,7 @@ const AutomationDetail = () => {
               window.scrollTo(0, 0);
               navigate('/automation');
             }}
-            className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors mb-6 sm:mb-8 group min-h-[44px]"
+            className="flex items-center gap-2 text-text-secondary hover:text-accent-primary transition-colors mb-6 sm:mb-8 group min-h-[44px]"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             Back to Automation Templates
@@ -83,19 +83,19 @@ const AutomationDetail = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-dark">
+              <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-card-hover border border-border-color">
                 <img
                   src={template.image}
                   alt={template.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/90 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center gap-4">
-                    <span className="px-2 py-1 sm:px-3 sm:py-1 bg-dark-tertiary border border-neon-green text-neon-green rounded-full text-xs sm:text-sm font-medium">
+                    <span className="px-2 py-1 sm:px-3 sm:py-1 stripe-badge-primary rounded-full text-xs sm:text-sm font-medium">
                       {template.category}
                     </span>
-                    <span className="px-2 py-1 sm:px-3 sm:py-1 bg-dark-tertiary border border-neon-cyan text-neon-cyan rounded-full text-xs sm:text-sm font-medium">
+                    <span className="px-2 py-1 sm:px-3 sm:py-1 stripe-badge-success rounded-full text-xs sm:text-sm font-medium">
                       {template.useCase}
                     </span>
                   </div>
@@ -111,20 +111,20 @@ const AutomationDetail = () => {
               className="space-y-4 sm:space-y-6"
             >
               <div className="flex items-center gap-4">
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 border border-${template.neonColor} rounded-xl sm:rounded-2xl flex items-center justify-center pulse-neon`}>
-                  <template.icon className={`w-6 h-6 sm:w-8 sm:h-8 text-${template.neonColor}`} />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 border border-accent-primary rounded-xl sm:rounded-2xl flex items-center justify-center bg-white shadow-button pulse`}>
+                  <template.icon className={`w-6 h-6 sm:w-8 sm:h-8 text-accent-primary`} />
                 </div>
                 <div>
-                  <h1 className="text-2xl sm:text-4xl md:text-5xl font-orbitron font-bold text-text-primary mb-1 sm:mb-2">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-1 sm:mb-2">
                     {template.name}
                   </h1>
                   <div className="flex items-center gap-2">
                     <div className="flex items-center gap-1">
-                      <Star className="w-5 h-5 text-neon-green fill-current" />
-                      <Star className="w-5 h-5 text-neon-green fill-current" />
-                      <Star className="w-5 h-5 text-neon-green fill-current" />
-                      <Star className="w-5 h-5 text-neon-green fill-current" />
-                      <Star className="w-5 h-5 text-neon-green fill-current" />
+                      <Star className="w-5 h-5 text-accent-primary fill-current" />
+                      <Star className="w-5 h-5 text-accent-primary fill-current" />
+                      <Star className="w-5 h-5 text-accent-primary fill-current" />
+                      <Star className="w-5 h-5 text-accent-primary fill-current" />
+                      <Star className="w-5 h-5 text-accent-primary fill-current" />
                     </div>
                     <span className="text-text-secondary">(4.9/5 from 127 reviews)</span>
                   </div>
@@ -155,17 +155,17 @@ const AutomationDetail = () => {
                     window.scrollTo(0, 0);
                     navigate('/get-quote');
                   }}
-                  className="btn-neon px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                  className="stripe-button px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg shadow-button hover:shadow-button-hover transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-dark-primary" />
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   Submit Buy Request
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="glass-effect text-neon-cyan px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300 flex items-center justify-center gap-2"
+                  className="btn-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2 text-accent-primary" />
                   Download Template
                 </motion.button>
               </div>
@@ -175,15 +175,15 @@ const AutomationDetail = () => {
       </section>
 
       {/* Tabs Navigation */}
-      <section className="py-4 sm:py-8 bg-dark-secondary border-b border-t border-dark sticky top-[60px] z-30">
+      <section className="py-4 sm:py-8 bg-white border-b border-t border-border-color sticky top-[60px] z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%] overflow-x-auto">
           <div className="flex flex-nowrap sm:flex-wrap gap-2 sm:gap-4 min-w-max sm:min-w-0">
             <button
               onClick={() => setActiveTab('overview')}
               className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'overview'
-                  ? 'btn-neon shadow-lg'
-                  : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
+                  ? 'stripe-button shadow-lg'
+                  : 'btn-secondary'
               }`}
             >
               Overview
@@ -192,8 +192,8 @@ const AutomationDetail = () => {
               onClick={() => setActiveTab('setup')}
               className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'setup'
-                  ? 'btn-neon shadow-lg'
-                  : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
+                  ? 'stripe-button shadow-lg'
+                  : 'btn-secondary'
               }`}
             >
               Setup Guide
@@ -202,8 +202,8 @@ const AutomationDetail = () => {
               onClick={() => setActiveTab('usecases')}
               className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'usecases'
-                  ? 'btn-neon shadow-lg'
-                  : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
+                  ? 'stripe-button shadow-lg'
+                  : 'btn-secondary'
               }`}
             >
               Use Cases
@@ -212,8 +212,8 @@ const AutomationDetail = () => {
               onClick={() => setActiveTab('requirements')}
               className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-orbitron font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'requirements'
-                  ? 'btn-neon shadow-lg'
-                  : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
+                  ? 'stripe-button shadow-lg'
+                  : 'btn-secondary'
               }`}
             >
               Requirements
@@ -608,7 +608,7 @@ const AutomationDetail = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-12 sm:py-20 bg-secondary border-t border-border-color">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -617,7 +617,7 @@ const AutomationDetail = () => {
             viewport={{ once: true }}
             className="space-y-6 sm:space-y-8"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron font-bold text-text-primary">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
               Ready to Automate?
             </h2>
             <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto px-2">
@@ -632,9 +632,9 @@ const AutomationDetail = () => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
                 }}
-                className="btn-neon px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
+                className="stripe-button px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg shadow-button hover:shadow-button-hover transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
-                <Play className="w-4 h-4 sm:w-5 sm:h-5 text-dark-primary" />
+                <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 Submit Buy Request
               </motion.button>
               <motion.button
@@ -644,7 +644,7 @@ const AutomationDetail = () => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
                 }}
-                className="glass-effect text-neon-cyan px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300 w-full sm:w-auto"
+                className="btn-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg transition-all duration-300 w-full sm:w-auto"
               >
                 Request Customization
               </motion.button>

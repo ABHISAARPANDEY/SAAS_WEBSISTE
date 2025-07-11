@@ -53,13 +53,13 @@ const Automation = () => {
   return (
     <div className="min-h-screen bg-dark-primary">
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-12 sm:py-20 bg-secondary overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-accent-primary rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-accent-secondary rounded-full opacity-15 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-accent-primary opacity-5 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-accent-tertiary rounded-full opacity-10 animate-pulse"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-[95%]">
@@ -67,13 +67,13 @@ const Automation = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight">
-              Workflow <span className="gradient-neon-text neon-text">Automation</span>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary leading-tight">
+              Workflow <span className="gradient-text">Automation</span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed px-2">
+            <p className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed px-2 mt-4">
               Discover ready-to-use automation templates that streamline your business processes, 
               save time, and eliminate repetitive tasks across your organization.
             </p>
@@ -85,14 +85,14 @@ const Automation = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex justify-center space-x-4 sm:space-x-8 mb-6 sm:mb-8"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-neon-green rounded-lg flex items-center justify-center neon-border pulse-neon">
-                <Workflow className="w-5 h-5 sm:w-6 sm:h-6 text-neon-green" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-accent-primary rounded-lg flex items-center justify-center bg-white shadow-button pulse">
+                <Workflow className="w-5 h-5 sm:w-6 sm:h-6 text-accent-primary" />
               </div>
-              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-neon-cyan rounded-lg flex items-center justify-center neon-border-cyan pulse-neon">
-                <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-neon-cyan" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-accent-secondary rounded-lg flex items-center justify-center bg-white shadow-button pulse">
+                <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-accent-secondary" />
               </div>
-              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-neon-pink rounded-lg flex items-center justify-center border-neon-pink pulse-neon">
-                <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-neon-pink" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-accent-tertiary rounded-lg flex items-center justify-center bg-white shadow-button pulse">
+                <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-accent-tertiary" />
               </div>
             </motion.div>
           </motion.div>
@@ -249,12 +249,12 @@ const Automation = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group cursor-pointer"
-                onClick={() => {
+                onClick={(e) => {
                   window.scrollTo(0, 0);
                   navigate(`/automation/${template.id}`);
                 }}
               >
-                <div className="card-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col relative">
+                <div className="stripe-card h-full flex flex-col relative">
                   {/* Template Image */}
                   <div className="relative h-48 overflow-hidden">
                     <img
@@ -262,19 +262,19 @@ const Automation = () => {
                       alt={template.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/90 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="px-3 py-1 bg-dark-tertiary border border-neon-green text-neon-green rounded-full text-sm font-medium">
+                      <span className="stripe-badge-primary rounded-full text-sm font-medium">
                         {template.category}
                       </span>
                     </div>
                     <div className="absolute top-4 right-4 z-10">
-                      <div className="w-10 h-10 glass-effect rounded-full flex items-center justify-center border border-neon-cyan">
-                        <template.icon className="w-5 h-5 text-neon-cyan" />
+                      <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center border border-accent-secondary shadow-lg">
+                        <template.icon className="w-5 h-5 text-accent-secondary" />
                       </div>
                     </div>
                     <div className="absolute bottom-4 left-4 right-4 z-10">
-                      <h3 className="text-xl font-orbitron font-bold text-text-primary group-hover:text-neon-green transition-colors">
+                      <h3 className="text-xl font-bold text-white group-hover:text-accent-primary transition-colors">
                         {template.name}
                       </h3>
                     </div>
@@ -283,15 +283,15 @@ const Automation = () => {
                   {/* Template Info */}
                   <div className="p-6 flex-1 flex flex-col relative z-10">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs font-medium border border-dark">
+                      <span className="stripe-badge rounded-md text-xs font-medium">
                         {template.useCase}
                       </span>
-                      <span className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs font-medium border border-dark">
+                      <span className="stripe-badge rounded-md text-xs font-medium">
                         {template.complexity}
                       </span>
                     </div>
                     
-                    <p className="text-text-secondary mb-4 leading-relaxed flex-1">
+                    <p className="text-text-secondary mb-4 leading-relaxed flex-1 line-clamp-3">
                       {template.description}
                     </p>
                     
@@ -300,12 +300,12 @@ const Automation = () => {
                       <div className="text-sm text-text-secondary mb-2">Integrations:</div>
                       <div className="flex flex-wrap gap-2">
                         {template.integrations.slice(0, 3).map((integration, idx) => (
-                          <span key={idx} className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs border border-dark">
+                          <span key={idx} className="stripe-badge rounded-md text-xs">
                             {integration}
                           </span>
                         ))}
                         {template.integrations.length > 3 && (
-                          <span className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs border border-dark">
+                          <span className="stripe-badge rounded-md text-xs">
                             +{template.integrations.length - 3} more
                           </span>
                         )}
@@ -314,19 +314,22 @@ const Automation = () => {
                     
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 text-neon-green fill-current" />
+                        <Star className="w-4 h-4 text-accent-primary fill-current" />
                         <span className="text-sm text-text-secondary">
                           {template.pricing.free ? 'Free' : 'Premium'}
                         </span>
                       </div>
                       
-                      <button className="btn-neon py-2 px-4 rounded-lg text-sm font-orbitron font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2">
-                        <span onClick={(e) => {
+                      <button 
+                        onClick={(e) => {
                           e.stopPropagation();
                           window.scrollTo(0, 0);
                           navigate('/get-quote');
-                        }}>Submit Buy Request</span>
-                        <ArrowRight className="w-4 h-4 text-dark-primary" />
+                        }}
+                        className="stripe-button py-2 px-4 rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+                      >
+                        Submit Buy Request
+                        <ArrowRight className="w-4 h-4 text-white" />
                       </button>
                     </div>
                   </div>
@@ -361,13 +364,13 @@ const Automation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-12 sm:py-20 bg-secondary border-t border-border-color">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-accent-primary rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-accent-secondary rounded-full opacity-15 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-accent-primary opacity-5 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-accent-tertiary rounded-full opacity-10 animate-pulse"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-[95%]">
@@ -378,7 +381,7 @@ const Automation = () => {
             viewport={{ once: true }}
             className="space-y-6 sm:space-y-8"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron font-bold text-text-primary">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
               Need a Custom Automation?
             </h2>
             <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto px-2">
@@ -392,9 +395,9 @@ const Automation = () => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
                 }}
-                className="btn-neon px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
+                className="stripe-button px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg shadow-button hover:shadow-button-hover transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
-                <Code className="w-5 h-5 text-dark-primary" />
+                <Code className="w-5 h-5 text-white" />
                 Request Custom Automation
               </motion.button>
             </div>
