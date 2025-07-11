@@ -23,7 +23,8 @@ import {
   User, 
   Bell, 
   HelpCircle, 
-  Globe
+  Globe,
+  Home
 } from 'lucide-react';
 
 const TravelBooking = () => {
