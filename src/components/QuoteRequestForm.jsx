@@ -157,7 +157,7 @@ const QuoteRequestForm = ({ onSuccess, onError }) => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Full Name */}
-            <div>
+            <div className="w-full">
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Full Name *
               </label>
@@ -178,7 +178,7 @@ const QuoteRequestForm = ({ onSuccess, onError }) => {
             </div>
 
             {/* Email */}
-            <div>
+            <div className="w-full">
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Email Address *
               </label>
@@ -199,7 +199,7 @@ const QuoteRequestForm = ({ onSuccess, onError }) => {
             </div>
 
             {/* Phone */}
-            <div>
+            <div className="w-full">
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Phone Number *
               </label>
@@ -220,7 +220,7 @@ const QuoteRequestForm = ({ onSuccess, onError }) => {
             </div>
 
             {/* Company */}
-            <div>
+            <div className="w-full">
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Company Name *
               </label>
