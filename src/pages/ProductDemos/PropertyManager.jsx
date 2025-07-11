@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Home, User, Bell, Search, Menu, X, Building, MapPin, DollarSign, Calendar, Users, Settings, LogOut, ChevronRight, Plus, Clock, CheckCircle, AlertCircle, FileText, PenTool as Tool, MessageSquare, ArrowLeft } from 'lucide-react';
+import { Home, User, Bell, Search, Menu, X, Building, MapPin, DollarSign, Calendar, Users, Settings, LogOut, ChevronRight, Plus, Clock, CheckCircle, AlertCircle, FileText, PenTool as Tool, MessageSquare, ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 const PropertyManager = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
