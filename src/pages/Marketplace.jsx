@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { pageEntryVariants, scrollAnimationVariants, childVariants, staggerContainerVariants, buttonHoverVariants } from '../utils/animationUtils';
 import { 
   Search, 
   Filter, 
@@ -64,9 +65,9 @@ const Marketplace = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            variants={pageEntryVariants}
+            initial="initial"
+            animate="animate"
             className="space-y-8"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight">
@@ -395,8 +396,9 @@ const Marketplace = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                variants={buttonHoverVariants}
+                whileHover="hover"
+                whileTap="tap"
                 onClick={() => {
                   window.scrollTo(0, 0);
                   navigate('/get-quote');
@@ -407,8 +409,9 @@ const Marketplace = () => {
                 Request Custom Development
               </motion.button>
             </div>
-          </motion.div>
-        </div>
+                variants={buttonHoverVariants}
+                whileHover="hover"
+                whileTap="tap"
       </section>
     </div>
   );

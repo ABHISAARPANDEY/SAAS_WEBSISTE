@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { pageEntryVariants, scrollAnimationVariants, childVariants, staggerContainerVariants, buttonHoverVariants } from '../utils/animationUtils';
 import ToolInterface from '../components/tools/ToolInterface';
 import WaitlistSignup from '../components/tools/WaitlistSignup';
 import {
@@ -519,9 +520,9 @@ const FreeTools = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            variants={pageEntryVariants}
+            initial="initial"
+            animate="animate"
             className="space-y-8"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight">
@@ -658,10 +659,11 @@ const FreeTools = () => {
           {/* Tools Display */}
           <AnimatePresence mode="wait">
             {viewMode === 'grid' ? (
-              <motion.div
-                key="grid"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+              <motion.div 
+                key="grid" 
+                variants={staggerContainerVariants}
+                initial="initial"
+                animate="animate"
                 exit={{ opacity: 0 }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               >
@@ -682,8 +684,9 @@ const FreeTools = () => {
             ) : (
               <motion.div
                 key="list"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                variants={staggerContainerVariants}
+                initial="initial"
+                animate="animate"
                 exit={{ opacity: 0 }}
                 className="space-y-4"
               >

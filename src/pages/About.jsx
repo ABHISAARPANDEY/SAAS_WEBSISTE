@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { pageEntryVariants, scrollAnimationVariants, childVariants, staggerContainerVariants, buttonHoverVariants } from '../utils/animationUtils';
 import { 
   Users, 
   Award, 
@@ -169,18 +170,19 @@ const About = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              variants={pageEntryVariants}
+              initial="initial"
+              animate="animate"
               className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight mb-6"
             >
               About <span className="gradient-neon-text neon-text">SaaS Agency</span>
             </motion.h1>
             
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              variants={pageEntryVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed mb-8"
             >
               We transform digital ideas into powerful solutions. With over 8 years of industry experience, 
@@ -188,14 +190,16 @@ const About = () => {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              variants={pageEntryVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                variants={buttonHoverVariants}
+                whileHover="hover"
+                whileTap="tap"
                 onClick={() => navigate('/get-quote')}
                 className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
               >
@@ -204,8 +208,9 @@ const About = () => {
               </motion.button>
               
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                variants={buttonHoverVariants}
+                whileHover="hover"
+                whileTap="tap"
                 onClick={() => navigate('/marketplace')}
                 className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300"
               >
@@ -223,9 +228,10 @@ const About = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                variants={childVariants}
+                initial="initial"
+                whileInView="animate"
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-center"
               >

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { pageEntryVariants, scrollAnimationVariants, childVariants, staggerContainerVariants, buttonHoverVariants } from '../utils/animationUtils';
 import { 
   ArrowLeft, 
   Star, 
@@ -63,8 +64,12 @@ const AutomationDetail = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
           {/* Back Button */}
           <motion.button
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            variants={{
+              initial: { opacity: 0, x: -20 },
+              animate: { opacity: 1, x: 0 }
+            }}
+            initial="initial"
+            animate="animate"
             onClick={() => {
               window.scrollTo(0, 0);
               navigate('/automation');
@@ -78,9 +83,12 @@ const AutomationDetail = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Template Image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              variants={{
+                initial: { opacity: 0, scale: 0.9 },
+                animate: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
+              }}
+              initial="initial"
+              animate="animate"
               className="relative"
             >
               <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-card-hover border border-border-color">
@@ -105,9 +113,10 @@ const AutomationDetail = () => {
 
             {/* Template Info */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              variants={pageEntryVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.2 }}
               className="space-y-4 sm:space-y-6"
             >
               <div className="flex items-center gap-4">
@@ -148,8 +157,9 @@ const AutomationDetail = () => {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  variants={buttonHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
                   onClick={() => setShowDemoModal(true)}
                   onClick={() => {
                     window.scrollTo(0, 0);
