@@ -84,7 +84,7 @@ const GetQuote = () => {
 
     try {
       // Prepare data for Supabase
-      const quoteData = {
+      let quoteData = {
         full_name: formData.fullName,
         email: formData.email,
         phone_number: formData.phone,
@@ -94,15 +94,21 @@ const GetQuote = () => {
 
       console.log('Submitting quote request:', quoteData);
       
-      // Submit to Supabase
-      const result = await submitQuoteRequest(quoteData);
+      let result;
+      try {
+        // Submit to Supabase
+        result = await submitQuoteRequest(quoteData);
+      } catch (submitError) {
+        console.error('Submission error:', submitError);
+        throw new Error(submitError.message || 'Failed to submit request');
+      }
       
       if (!result.success) {
         throw new Error(result.error || 'Failed to submit request');
       }
       
       const submissionResult = result.data;
-      const trackingNumber = submissionResult.id;
+      const trackingNumber = submissionResult.trackingNumber || submissionResult.id;
       
       setSubmissionResult(submissionResult);
       setShowSuccess(true);
