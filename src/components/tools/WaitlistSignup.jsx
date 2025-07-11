@@ -262,9 +262,13 @@ const WaitlistSignup = ({ tool, isOpen, onClose }) => {
                       });
                     }
                   }}
+                  onClick={() => {
+                    onClose();
+                    window.location.href = '/get-quote';
+                  }}
                   className="flex-1 btn-neon py-3 px-6 rounded-lg font-orbitron font-semibold transition-all"
                 >
-                  Share
+                  Submit Buy Request
                 </button>
               </div>
             </div>

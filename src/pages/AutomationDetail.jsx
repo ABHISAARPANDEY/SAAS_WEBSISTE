@@ -36,9 +36,13 @@ const AutomationDetail = () => {
           <button
             onClick={() => {
               window.scrollTo(0, 0);
-              navigate('/automation');
+                onClick={() => {
+                  setShowDemoModal(false);
+                  navigate('/get-quote');
+                }}
+                className="flex-1 btn-neon py-3 px-6 rounded-lg font-orbitron font-semibold transition-all"
             }}
-            className="btn-neon px-6 py-3 rounded-full font-orbitron font-semibold hover:shadow-lg transition-all duration-300"
+                Submit Buy Request
           >
             Back to Automation Templates
           </button>
@@ -153,7 +157,7 @@ const AutomationDetail = () => {
                   className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
                 >
                   <Play className="w-5 h-5 text-dark-primary" />
-                  Run Now
+                  Submit Buy Request
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -626,7 +630,7 @@ const AutomationDetail = () => {
                 className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
               >
                 <Play className="w-5 h-5 text-dark-primary" />
-                Run Now
+                Submit Buy Request
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
