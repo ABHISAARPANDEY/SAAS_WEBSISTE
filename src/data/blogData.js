@@ -577,7 +577,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'Zero Trust isn\'t a product you can buy—it's a strategic approach that requires rethinking your entire security architecture from the ground up.'
+        content: 'Zero Trust isn\'t a product you can buy—it\'s a strategic approach that requires rethinking your entire security architecture from the ground up.'
       },
       {
         type: 'heading',
@@ -928,7 +928,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'Quantum readiness isn\'t about making massive investments today—it's about developing the knowledge, skills, and strategic flexibility to capitalize on quantum opportunities as they emerge.'
+        content: 'Quantum readiness isn\'t about making massive investments today—it\'s about developing the knowledge, skills, and strategic flexibility to capitalize on quantum opportunities as they emerge.'
       },
       {
         type: 'heading',
