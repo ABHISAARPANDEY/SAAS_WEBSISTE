@@ -191,22 +191,24 @@ const GetQuote = () => {
       <section className="relative py-20 bg-dark-primary">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border-2 border-neon-green rounded-full opacity-20 animate-pulse blur-[1px]"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border-2 border-neon-cyan rounded-full opacity-30 animate-bounce blur-[1px]"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping blur-[1px]"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border-2 border-neon-pink rounded-full opacity-20 animate-pulse blur-[1px]"></div>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-4xl md:text-6xl font-orbitron font-bold text-text-primary mb-6">
-              Get Your <span className="gradient-neon-text neon-text">Custom Quote</span>
+            <h1 className="text-4xl md:text-6xl font-orbitron font-bold text-text-primary mb-6 tracking-tight">
+              Get Your <span className="gradient-neon-text neon-text relative">Custom Quote
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-neon-green/0 via-neon-green to-neon-green/0"></span>
+              </span>
             </h1>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Tell us about your project and we'll provide a detailed proposal tailored to your needs
             </p>
           </motion.div>
@@ -219,15 +221,18 @@ const GetQuote = () => {
           <motion.form
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             onSubmit={handleSubmit}
-            className="bg-dark-secondary rounded-3xl shadow-2xl p-8 md:p-12 border border-dark"
+            className="bg-dark-secondary rounded-3xl shadow-card-hover p-8 md:p-12 border border-dark/60 backdrop-blur-md"
           >
             {/* Personal Information */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-green" />
-                Personal Information
+                <span className="relative">
+                  Personal Information
+                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-green/50"></span>
+                </span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -297,7 +302,10 @@ const GetQuote = () => {
             <div className="mb-12">
               <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-cyan" />
-                Industry *
+                <span className="relative">
+                  Industry *
+                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-cyan/50"></span>
+                </span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {industries.map((industry) => (
@@ -332,7 +340,10 @@ const GetQuote = () => {
             <div className="mb-12">
               <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-pink" />
-                Services Needed *
+                <span className="relative">
+                  Services Needed *
+                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-pink/50"></span>
+                </span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {services.map((service) => (
@@ -370,7 +381,10 @@ const GetQuote = () => {
             <div className="mb-12">
               <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-green" />
-                Project Details
+                <span className="relative">
+                  Project Details
+                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-green/50"></span>
+                </span>
               </h2>
               <div className="space-y-6">
                 <div>
@@ -430,12 +444,12 @@ const GetQuote = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="text-center">
+                  whileHover={{ scale: 1.05, y: -2 }}
               {/* Error Message */}
-              {errors.submit && (
+                  className={`inline-flex items-center px-10 py-4 rounded-full font-orbitron font-semibold text-lg transition-all duration-300 ${
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                      : 'btn-neon shadow-button hover:shadow-button-hover'
                   className="mb-6 bg-dark-tertiary border border-neon-pink/50 rounded-xl p-4 flex items-center gap-3"
                 >
                   <div className="w-5 h-5 bg-neon-pink rounded-full flex items-center justify-center flex-shrink-0">

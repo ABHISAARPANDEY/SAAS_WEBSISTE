@@ -96,10 +96,10 @@ const Hero = () => {
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-        <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-        <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-neon-green rounded-full opacity-20 animate-pulse blur-[1px]"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 border-2 border-neon-cyan rounded-full opacity-30 animate-bounce blur-[1px]"></div>
+        <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping blur-[1px]"></div>
+        <div className="absolute bottom-40 right-10 w-24 h-24 border-2 border-neon-pink rounded-full opacity-20 animate-pulse blur-[1px]"></div>
       </div>
       
       {/* Hero Content */}
@@ -114,16 +114,16 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-center space-x-8 mb-8"
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="flex justify-center space-x-10 mb-10"
           >
-            <div className="w-12 h-12 border border-neon-green rounded-lg flex items-center justify-center neon-border pulse-neon">
+            <div className="w-14 h-14 border-2 border-neon-green rounded-lg flex items-center justify-center neon-border pulse-neon shadow-lg">
               <Code className="w-6 h-6 text-neon-green" />
             </div>
-            <div className="w-12 h-12 border border-neon-cyan rounded-lg flex items-center justify-center neon-border-cyan pulse-neon">
+            <div className="w-14 h-14 border-2 border-neon-cyan rounded-lg flex items-center justify-center neon-border-cyan pulse-neon shadow-lg">
               <Cpu className="w-6 h-6 text-neon-cyan" />
             </div>
-            <div className="w-12 h-12 border border-neon-pink rounded-lg flex items-center justify-center border-neon-pink pulse-neon">
+            <div className="w-14 h-14 border-2 border-neon-pink rounded-lg flex items-center justify-center border-neon-pink pulse-neon shadow-lg">
               <Zap className="w-6 h-6 text-neon-pink" />
             </div>
           </motion.div>
@@ -133,10 +133,10 @@ const Hero = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-dark-primary leading-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             Transform Your Business with
-            <span className="block gradient-neon-text mt-2 font-bold"> 
+            <span className="block gradient-neon-text mt-4 font-bold tracking-tight"> 
               Next-Gen Solutions
             </span>
           </motion.h1>
@@ -146,7 +146,7 @@ const Hero = () => {
             className="text-xl md:text-2xl text-custom-white max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             We build cutting-edge software solutions that accelerate growth, streamline operations, 
             and unlock new possibilities for forward-thinking businesses in the digital age.
@@ -157,10 +157,10 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={{ duration: 0.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
                 const servicesSection = document.getElementById('services-section');
@@ -168,37 +168,37 @@ const Hero = () => {
                   servicesSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg flex items-center gap-3 group"
+              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
             >
               Our Services
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
             </motion.button>
 
             <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.location.href = '/marketplace'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg flex items-center gap-3 group"
+              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
             >
               <Code className="w-5 h-5" />
               Marketplace
             </motion.button>
             
             <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.location.href = '/automation'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg flex items-center gap-3 group"
+              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
             >
               <Zap className="w-5 h-5" />
               Automation
             </motion.button>
             
               <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.location.href = '/free-tools'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg flex items-center gap-3 group"
+              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
             >
               <Zap className="w-5 h-5" />
               Free Tools
@@ -206,10 +206,10 @@ const Hero = () => {
             
             
             <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.location.href = '/get-quote'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg flex items-center gap-3 group"
+              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
             >
               <Play className="w-5 h-5" />
               Get Quote
@@ -220,23 +220,23 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto"
+            transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-20 max-w-4xl mx-auto"
           >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-green neon-text">200+</div>
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-5xl font-orbitron font-bold text-neon-green neon-text">200+</div>
               <div className="text-dark-secondary mt-2">Projects</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-cyan neon-text-cyan">50+</div>
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-5xl font-orbitron font-bold text-neon-cyan neon-text-cyan">50+</div>
               <div className="text-dark-secondary mt-2">Clients</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-pink neon-text-pink">8+</div>
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-5xl font-orbitron font-bold text-neon-pink neon-text-pink">8+</div>
               <div className="text-dark-secondary mt-2">Years</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-orbitron font-bold gradient-neon-text">24/7</div>
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-5xl font-orbitron font-bold gradient-neon-text">24/7</div>
               <div className="text-dark-secondary mt-2">Support</div>
             </div>
           </motion.div>

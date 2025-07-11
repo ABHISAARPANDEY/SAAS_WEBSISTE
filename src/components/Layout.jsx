@@ -12,34 +12,35 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen bg-dark-primary">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-dark">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-dark/40 backdrop-blur-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center space-x-2"
             >
-              <div className="w-10 h-10 gradient-neon rounded-lg flex items-center justify-center neon-glow">
+              <div className="w-10 h-10 gradient-neon rounded-lg flex items-center justify-center neon-glow shadow-lg">
                 <Zap className="text-dark-primary font-bold text-xl w-6 h-6" />
               </div>
-              <span className="text-2xl font-orbitron font-bold gradient-neon-text">SaaS Agency</span>
+              <span className="text-2xl font-orbitron font-bold gradient-neon-text tracking-tight">SaaS Agency</span>
             </motion.div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-8">
               <a 
                 href="/" 
                 onClick={(e) => {
                   e.preventDefault();
                   window.location.href = '/';
                 }}
-               className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron"
+               className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron relative group"
 
               >
                 Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300"></span>
               </a>
               <a 
                 href="/services" 
@@ -47,9 +48,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/services';
                 }}
-                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron"
+                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron relative group"
               >
                 Services
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300"></span>
               </a>
            
               <a 
@@ -58,9 +60,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/marketplace';
                 }}
-                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron"
+                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron relative group"
               >
                 Marketplace
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300"></span>
               </a>
               <a 
                 href="/automation" 
@@ -68,9 +71,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/automation';
                 }}
-                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron"
+                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron relative group"
               >
                 Automation
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300"></span>
               </a>
                  <a 
                 href="/free-tools" 
@@ -78,9 +82,10 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/free-tools';
                 }}
-                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron"
+                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron relative group"
               >
                 Free Tools
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300"></span>
               </a>
               <a 
                 href="/about" 
@@ -88,17 +93,18 @@ const Layout = ({ children }) => {
                   e.preventDefault();
                   window.location.href = '/about';
                 }}
-                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron"
+                 className="text-custom-white hover:text-neon-green transition-colors font-medium font-orbitron relative group"
               >
                 About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300"></span>
               </a>
             </div>
             <div className="flex items-center space-x-3">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/get-quote'}
-                className="btn-neon px-6 py-2 rounded-full font-orbitron font-semibold"
+                className="btn-neon px-6 py-2 rounded-full font-orbitron font-semibold shadow-button hover:shadow-button-hover"
               >
                 Get Quote
               </motion.button>
@@ -205,25 +211,25 @@ const Layout = ({ children }) => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-dark-secondary text-dark-primary py-12 border-t border-dark">
+      <footer className="bg-dark-secondary text-dark-primary py-16 border-t border-dark/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 gradient-neon rounded-lg flex items-center justify-center neon-glow">
+                <div className="w-10 h-10 gradient-neon rounded-lg flex items-center justify-center neon-glow shadow-lg">
                   <Zap className="text-dark-primary font-bold text-xl w-6 h-6" />
                 </div>
-                <span className="text-xl font-orbitron font-bold gradient-neon-text">SaaS Agency</span>
+                <span className="text-xl font-orbitron font-bold gradient-neon-text tracking-tight">SaaS Agency</span>
               </div>
-              <p className="text-dark-secondary">
+              <p className="text-dark-secondary leading-relaxed">
                 Transforming businesses through innovative technology solutions.
               </p>
             </div>
 
             {/* Services */}
             <div className="space-y-4">
-              <h3 className="text-lg font-orbitron font-semibold text-neon-green neon-text">Services</h3>
+              <h3 className="text-lg font-orbitron font-semibold text-neon-green neon-text tracking-wide">Services</h3>
               <ul className="space-y-2 text-dark-secondary">
                 <li>
                   <a 
@@ -232,9 +238,10 @@ const Layout = ({ children }) => {
                       e.preventDefault();
                       window.location.href = '/services/web-development';
                     }}
-                    className="hover:text-neon-green transition-colors"
+                    className="hover:text-neon-green transition-colors relative group"
                   >
                     Web Development
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green/50 group-hover:w-full transition-all duration-300"></span>
                   </a>
                 </li>
                 <li>
@@ -326,7 +333,7 @@ const Layout = ({ children }) => {
 
             {/* Company */}
             <div className="space-y-4">
-              <h3 className="text-lg font-orbitron font-semibold text-neon-cyan neon-text-cyan">Company</h3>
+              <h3 className="text-lg font-orbitron font-semibold text-neon-cyan neon-text-cyan tracking-wide">Company</h3>
               <ul className="space-y-2 text-dark-secondary">
                 <li>
                   <a 
@@ -335,9 +342,10 @@ const Layout = ({ children }) => {
                       e.preventDefault();
                       window.location.href = '/about';
                     }}
-                    className="hover:text-neon-cyan transition-colors"
+                    className="hover:text-neon-cyan transition-colors relative group"
                   >
                     About
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-cyan/50 group-hover:w-full transition-all duration-300"></span>
                   </a>
                 </li>
                 <li>
@@ -368,7 +376,7 @@ const Layout = ({ children }) => {
               </ul>
             </div>
              <div className="space-y-4">
-              <h3 className="text-lg font-orbitron font-semibold text-neon-cyan neon-text-cyan">Resources</h3>
+              <h3 className="text-lg font-orbitron font-semibold text-neon-cyan neon-text-cyan tracking-wide">Resources</h3>
               <ul className="space-y-2 text-dark-secondary">
                 <li>
                   <a 
@@ -377,9 +385,10 @@ const Layout = ({ children }) => {
                       e.preventDefault();
                       window.location.href = '/marketplace';
                     }}
-                    className="hover:text-neon-cyan transition-colors"
+                    className="hover:text-neon-cyan transition-colors relative group"
                   >
                     Marketplace
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-cyan/50 group-hover:w-full transition-all duration-300"></span>
                   </a>
                 </li>
                 <li>
@@ -414,8 +423,8 @@ const Layout = ({ children }) => {
            
           </div>
 
-          <div className="border-t border-dark mt-8 pt-8 text-center text-dark-secondary">
-            <p>&copy; 2025 SaaS Agency. All rights reserved.</p>
+          <div className="border-t border-dark/40 mt-12 pt-8 text-center text-dark-secondary">
+            <p className="opacity-80">&copy; 2025 SaaS Agency. All rights reserved.</p>
           </div>
         </div>
       </footer>
