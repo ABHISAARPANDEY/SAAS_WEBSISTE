@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
+import { pageEntryVariants, scrollAnimationVariants, childVariants, staggerContainerVariants, buttonHoverVariants } from '../utils/animationUtils';
 import { 
   ArrowLeft, 
   Calendar, 
@@ -103,10 +104,21 @@ const BlogPost = () => {
                 {post.readTime} min read
               </span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-orbitron font-bold text-text-primary mb-4">
+            <motion.h1 
+              variants={pageEntryVariants}
+              initial="initial"
+              animate="animate"
+              className="text-3xl md:text-5xl font-orbitron font-bold text-text-primary mb-4"
+            >
               {post.title}
-            </h1>
-            <div className="flex items-center gap-3">
+            </motion.h1>
+            <motion.div 
+              variants={pageEntryVariants}
+              initial="initial"
+              animate="animate"
+              transition={{ delay: 0.2 }}
+              className="flex items-center gap-3"
+            >
               <div className="w-10 h-10 rounded-full bg-dark-tertiary border border-neon-cyan flex items-center justify-center">
                 <User className="w-5 h-5 text-neon-cyan" />
               </div>
@@ -114,7 +126,7 @@ const BlogPost = () => {
                 <p className="text-text-primary font-medium">{post.author}</p>
                 <p className="text-text-secondary text-sm">{post.authorTitle}</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

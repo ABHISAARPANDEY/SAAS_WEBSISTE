@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { buttonHoverVariants, childVariants } from '../../utils/animationUtils';
 import FileUploader from './FileUploader';
 import FileProcessor from './FileProcessor';
 import {
@@ -997,16 +998,16 @@ ${password}
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 1, transition: { duration: 0.4 } }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
         onClick={onClose}
       >
         <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-dark-secondary rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-dark"
+          initial={{ scale: 0.9, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
+          exit={{ scale: 0.9, opacity: 0, transition: { duration: 0.3 } }}
+          className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-border-color"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { buttonHoverVariants, childVariants } from '../../utils/animationUtils';
 import {
   Mail, 
   Bell, 
@@ -75,33 +76,33 @@ const WaitlistSignup = ({ tool, isOpen, onClose }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        exit={{ opacity: 0, transition: { duration: 0.3 } }}
         className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
         onClick={onClose}
       >
         <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-dark-secondary rounded-2xl max-w-md w-full shadow-2xl border border-dark"
+          initial={{ scale: 0.9, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
+          exit={{ scale: 0.9, opacity: 0, transition: { duration: 0.3 } }}
+          className="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-border-color"
           onClick={(e) => e.stopPropagation()}
         >
           {!isSubmitted ? (
-            <div className="p-8 bg-dark-primary">
+            <div className="p-8 bg-primary">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className={`w-12 h-12 rounded-xl border border-${tool.neonColor || 'neon-green'} flex items-center justify-center pulse-neon`}>
-                    <tool.icon className={`w-6 h-6 text-${tool.neonColor || 'neon-green'}`} />
+                  <div className="w-12 h-12 rounded-xl border border-accent-primary flex items-center justify-center">
+                    <tool.icon className="w-6 h-6 text-accent-primary" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold font-orbitron text-text-primary">{tool.name}</h2>
+                    <h2 className="text-xl font-bold text-text-primary">{tool.name}</h2>
                     <p className="text-text-secondary">Join the waitlist</p>
                   </div>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-dark-tertiary rounded-full transition-colors text-text-secondary hover:text-neon-pink"
+                  className="p-2 hover:bg-secondary rounded-full transition-colors text-text-secondary hover:text-error"
                 >
                   <X className="w-5 h-5" />
                 </button>

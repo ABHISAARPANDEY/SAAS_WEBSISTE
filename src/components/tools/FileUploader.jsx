@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { childVariants, buttonHoverVariants } from '../../utils/animationUtils';
 import {
   Upload, 
   File, 
@@ -187,9 +188,7 @@ const FileUploader = ({
       {/* Upload Area */}
       <div
         className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 bg-dark-primary ${
-          dragActive 
-            ? 'border-neon-green bg-dark-tertiary/50' 
-            : 'border-dark hover:border-neon-green/50'
+          dragActive ? 'border-accent-primary bg-secondary/80' : 'border-border-color hover:border-accent-primary/50'
         }`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
@@ -207,25 +206,28 @@ const FileUploader = ({
 
         <div className="space-y-4">
           <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center ${
-            dragActive ? 'bg-dark-tertiary border border-neon-green' : 'bg-dark-tertiary border border-dark'
+            dragActive ? 'bg-white border-2 border-accent-primary' : 'bg-white border border-border-color'
           }`}>
-            <Upload className={`w-8 h-8 ${dragActive ? 'text-neon-green' : 'text-text-secondary'}`} />
+            <Upload className={`w-8 h-8 ${dragActive ? 'text-accent-primary' : 'text-text-secondary'}`} />
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold font-orbitron text-text-primary mb-2">
-              {dragActive ? 'Drop files here' : 'Upload Files'}
+            <h3 className="text-lg font-semibold text-text-primary mb-2">
+              {dragActive ? 'Drop files here' : 'Secure File Upload'}
             </h3>
             <p className="text-text-secondary mb-4">
               Drag and drop files here, or click to browse
             </p>
             
-            <button
+            <motion.button
+              variants={buttonHoverVariants}
+              whileHover="hover"
+              whileTap="tap"
               onClick={() => fileInputRef.current?.click()}
-              className="btn-neon px-6 py-3 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300"
+              className="stripe-button px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300"
             >
               Choose Files
-            </button>
+            </motion.button>
           </div>
 
           {/* File Requirements */}
