@@ -36,13 +36,9 @@ const AutomationDetail = () => {
           <button
             onClick={() => {
               window.scrollTo(0, 0);
-                onClick={() => {
-                  setShowDemoModal(false);
-                  navigate('/get-quote');
-                }}
-                className="flex-1 btn-neon py-3 px-6 rounded-lg font-orbitron font-semibold transition-all"
+              navigate('/automation');
             }}
-                Submit Buy Request
+            className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors mb-8 group"
           >
             Back to Automation Templates
           </button>
