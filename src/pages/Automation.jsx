@@ -29,18 +29,20 @@ const Automation = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [selectedIntegration, setSelectedIntegration] = useState('All Integrations');
   const [selectedComplexity, setSelectedComplexity] = useState('All Levels');
-  const [showFilters, setShowFilters] = useState(false);
+  const [showFilters, setShowFilters] = useState(true);
 
   // Filter templates based on selected filters
   const filteredTemplates = useMemo(() => {
     return automationTemplates.filter(template => {
       const matchesSearch = template.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            template.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesIndustry = selectedIndustry === 'All Industries' || template.category === selectedIndustry;
-      const matchesCategory = selectedCategory === 'All Categories' || template.useCase === selectedCategory;
+      const matchesIndustry = selectedIndustry === 'All Industries' || template.category.toLowerCase() === selectedIndustry.toLowerCase();
+      const matchesCategory = selectedCategory === 'All Categories' || template.useCase.toLowerCase() === selectedCategory.toLowerCase();
       const matchesIntegration = selectedIntegration === 'All Integrations' || 
-                                template.integrations.includes(selectedIntegration);
-      const matchesComplexity = selectedComplexity === 'All Levels' || template.complexity === selectedComplexity;
+                                template.integrations.some(integration => 
+                                  integration.toLowerCase() === selectedIntegration.toLowerCase()
+                                );
+      const matchesComplexity = selectedComplexity === 'All Levels' || template.complexity.toLowerCase() === selectedComplexity.toLowerCase();
       
       return matchesSearch && matchesIndustry && matchesCategory && matchesIntegration && matchesComplexity;
     });
