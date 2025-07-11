@@ -262,7 +262,7 @@ export const blogPosts = [
       },
       {
         type: 'quote',
-        content: 'The edge isn\'t just about performance—it's about rethinking application architecture to create experiences that are simultaneously dynamic, personalized, and lightning-fast.'
+        content: 'The edge isn\'t just about performance—it\'s about rethinking application architecture to create experiences that are simultaneously dynamic, personalized, and lightning-fast.'
       },
       {
         type: 'heading',
