@@ -29,7 +29,7 @@ const Automation = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [selectedIntegration, setSelectedIntegration] = useState('All Integrations');
   const [selectedComplexity, setSelectedComplexity] = useState('All Levels');
-  const [showFilters, setShowFilters] = useState(true);
+  const [showFilters, setShowFilters] = useState(false);
 
   // Filter templates based on selected filters
   const filteredTemplates = useMemo(() => {
@@ -115,8 +115,8 @@ const Automation = () => {
               <input
                 type="text"
                 placeholder="Search automation templates..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                defaultValue={searchTerm}
+                onInput={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent text-lg placeholder-text-secondary"
               />
               {searchTerm && (
@@ -132,7 +132,10 @@ const Automation = () => {
             {/* Filter Toggle */}
             <div className="flex justify-between items-center">
               <button
-                onClick={() => setShowFilters(!showFilters)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowFilters(!showFilters);
+                }}
                 className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors"
               >
                 <Filter className="w-5 h-5" />
@@ -168,7 +171,10 @@ const Automation = () => {
                   </label>
                   <select
                     value={selectedIndustry}
-                    onChange={(e) => setSelectedIndustry(e.target.value)}
+                    onChange={(e) => {
+                      e.preventDefault();
+                      setSelectedIndustry(e.target.value);
+                    }}
                     className="w-full px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
                   >
                     {industries.map(industry => (
@@ -183,7 +189,10 @@ const Automation = () => {
                   </label>
                   <select
                     value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    onChange={(e) => {
+                      e.preventDefault();
+                      setSelectedCategory(e.target.value);
+                    }}
                     className="w-full px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
                   >
                     {categories.map(category => (
@@ -198,7 +207,10 @@ const Automation = () => {
                   </label>
                   <select
                     value={selectedIntegration}
-                    onChange={(e) => setSelectedIntegration(e.target.value)}
+                    onChange={(e) => {
+                      e.preventDefault();
+                      setSelectedIntegration(e.target.value);
+                    }}
                     className="w-full px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
                   >
                     {integrations.map(integration => (
@@ -213,7 +225,10 @@ const Automation = () => {
                   </label>
                   <select
                     value={selectedComplexity}
-                    onChange={(e) => setSelectedComplexity(e.target.value)}
+                    onChange={(e) => {
+                      e.preventDefault();
+                      setSelectedComplexity(e.target.value);
+                    }}
                     className="w-full px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
                   >
                     {complexityLevels.map(level => (
