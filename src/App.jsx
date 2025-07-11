@@ -14,6 +14,8 @@ import GetQuote from './pages/GetQuote';
 import RequestQuote from './pages/RequestQuote';
 import HealthTrackPro from './pages/ProductDemos/HealthTrackPro';
 import FinTechSuite from './pages/ProductDemos/FinTechSuite';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import EcommercePro from './pages/ProductDemos/EcommercePro';
 import EducationPlatform from './pages/ProductDemos/EducationPlatform';
 import BankingCore from './pages/ProductDemos/BankingCore';
@@ -78,6 +80,8 @@ function App() {
             <Route path="/marketplace/api/:apiId" element={<ApiDetail />} />
             <Route path="/get-quote" element={<GetQuote />} />
             <Route path="/request-quote" element={<RequestQuote />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:postId" element={<BlogPost />} />
             <Route path="/quote-confirmation" element={<QuoteConfirmation />} />
             <Route path="/about" element={<About />} />
             <Route path="/svc-admin" element={<AdminLogin />} />

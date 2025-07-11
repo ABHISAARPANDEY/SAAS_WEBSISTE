@@ -506,7 +506,7 @@ const FreeTools = () => {
   }, [favorites]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-dark-primary">
       {/* Hero Section */}
       <section className="relative py-20 bg-dark-primary overflow-hidden">
         {/* Animated Background Elements */}

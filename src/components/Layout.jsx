@@ -352,6 +352,18 @@ const Layout = ({ children }) => {
                     Contact
                   </a>
                 </li>
+                <li>
+                  <a 
+                    href="/blog" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = '/blog';
+                    }}
+                    className="hover:text-neon-cyan transition-colors font-medium font-orbitron"
+                  >
+                  Blog
+                  </a>
+                </li>
                    
               </ul>
             </div>
