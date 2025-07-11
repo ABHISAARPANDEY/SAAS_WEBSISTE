@@ -102,12 +102,12 @@ const QuoteConfirmation = () => {
           <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-5 rounded-full animate-ping"></div>
         </div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-dark-secondary rounded-2xl shadow-xl border border-dark overflow-hidden"
+            className="bg-dark-secondary rounded-2xl shadow-xl border border-dark overflow-hidden w-full"
           >
             {/* Header */}
             <div className="bg-dark-tertiary px-8 py-6 border-b border-dark">
@@ -123,8 +123,8 @@ const QuoteConfirmation = () => {
                   <Phone className="w-5 h-5 text-neon-cyan" />
                   Your Contact Information
                 </h3>
-                <div className="bg-dark-tertiary rounded-xl p-6 border border-dark hover:border-neon-cyan/30 transition-colors">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-dark-tertiary rounded-xl p-4 sm:p-6 border border-dark hover:border-neon-cyan/30 transition-colors">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div>
                       <span className="text-sm font-medium text-text-secondary block mb-1">Full Name</span>
                       <p className="font-semibold text-text-primary">{contact.fullName || contact.full_name}</p>
@@ -150,7 +150,7 @@ const QuoteConfirmation = () => {
               {/* Industry */}
               <div>
                 <h3 className="text-lg font-semibold text-text-primary mb-4">Selected Industry</h3>
-                <div className="bg-dark-tertiary rounded-xl p-6 border border-dark hover:border-neon-green/30 transition-colors">
+                <div className="bg-dark-tertiary rounded-xl p-4 sm:p-6 border border-dark hover:border-neon-green/30 transition-colors">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 bg-dark-primary border border-neon-green rounded-2xl flex items-center justify-center">
                       {industry?.icon ? <industry.icon className="w-8 h-8 text-neon-green" /> : <Home className="w-8 h-8 text-neon-green" />}
@@ -166,11 +166,11 @@ const QuoteConfirmation = () => {
               {/* Services */}
               <div>
                 <h3 className="text-lg font-semibold text-text-primary mb-4">Requested Services</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {services.map((service) => (
                     <div
                       key={service.id || service.name}
-                      className="bg-dark-tertiary rounded-xl p-6 border border-dark hover:border-neon-pink/30 transition-colors"
+                      className="bg-dark-tertiary rounded-xl p-4 sm:p-6 border border-dark hover:border-neon-pink/30 transition-colors"
                     >
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 rounded-xl bg-dark-primary border border-neon-pink flex items-center justify-center flex-shrink-0">

@@ -299,7 +299,7 @@ const GetQuote = () => {
                 <Zap className="w-6 h-6 text-neon-cyan" />
                 Industry *
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {industries.map((industry) => (
                   <motion.div
                     key={industry.id}
@@ -334,7 +334,7 @@ const GetQuote = () => {
                 <Zap className="w-6 h-6 text-neon-pink" />
                 Services Needed *
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {services.map((service) => (
                   <motion.div
                     key={service.id}
@@ -381,7 +381,7 @@ const GetQuote = () => {
                     value={formData.projectDescription}
                     onChange={(e) => handleInputChange('projectDescription', e.target.value)}
                     rows={4}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent transition-all duration-300 ${
                       errors.projectDescription ? 'border-neon-pink bg-dark-tertiary text-text-primary' : 'border-dark bg-dark-tertiary text-text-primary'
                     }`}
                     placeholder="Describe your project requirements, goals, and any specific features you need..."

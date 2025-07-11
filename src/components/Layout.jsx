@@ -190,7 +190,7 @@ const Layout = ({ children }) => {
                   setIsMenuOpen(false);
                   window.location.href = '/get-quote';
                 }}
-                className="w-full btn-neon px-6 py-2 rounded-full font-orbitron font-semibold"
+                className="w-full btn-neon px-6 py-2 rounded-full font-orbitron font-semibold mt-2"
               >
                 Get Quote
               </button>

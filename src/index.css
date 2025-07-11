@@ -256,6 +256,26 @@ body {
   color: var(--primary-bg);
 }
 
+/* Mobile responsiveness fixes */
+@media (max-width: 640px) {
+  .btn-neon {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  h1.text-4xl {
+    font-size: 2rem;
+  }
+  
+  h2.text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .p-8 {
+    padding: 1.5rem;
+  }
+}
+
 /* Focus styles for accessibility */
 *:focus-visible {
   outline: 2px solid var(--accent-primary);
