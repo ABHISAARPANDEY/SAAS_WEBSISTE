@@ -205,9 +205,6 @@ const Layout = ({ children }) => {
               <div className="pt-2 px-2">
                 <button 
                   onClick={() => {
-                  className={`transition-colors p-2 min-h-[44px] min-w-[44px] ${
-                    isDarkMode ? 'text-text-primary hover:text-neon-green' : 'text-text-primary hover:text-accent-primary'
-                  }`}
                     window.location.href = '/get-quote';
                   }}
                   className={`w-full ${isDarkMode ? 'btn-neon' : 'stripe-button'}`}
