@@ -409,9 +409,8 @@ const Marketplace = () => {
                 Request Custom Development
               </motion.button>
             </div>
-                variants={buttonHoverVariants}
-                whileHover="hover"
-                whileTap="tap"
+          </motion.div>
+        </div>
       </section>
     </div>
   );
