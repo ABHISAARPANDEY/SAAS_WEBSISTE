@@ -151,6 +151,10 @@ const AutomationDetail = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setShowDemoModal(true)}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate('/get-quote');
+                  }}
                   className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
                 >
                   <Play className="w-5 h-5 text-dark-primary" />
@@ -624,6 +628,10 @@ const AutomationDetail = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowDemoModal(true)}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate('/get-quote');
+                }}
                 className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
               >
                 <Play className="w-5 h-5 text-dark-primary" />
@@ -712,8 +720,13 @@ const AutomationDetail = () => {
                 </button>
                 <button
                   className="flex-1 btn-neon py-3 px-6 rounded-lg font-orbitron font-semibold transition-all"
+                  onClick={() => {
+                    setShowDemoModal(false);
+                    window.scrollTo(0, 0);
+                    navigate('/get-quote');
+                  }}
                 >
-                  Start Setup
+                  Submit Buy Request
                 </button>
               </div>
             </div>

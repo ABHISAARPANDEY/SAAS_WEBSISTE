@@ -321,7 +321,11 @@ const Automation = () => {
                       </div>
                       
                       <button className="btn-neon py-2 px-4 rounded-lg text-sm font-orbitron font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2">
-                        Learn More
+                        <span onClick={(e) => {
+                          e.stopPropagation();
+                          window.scrollTo(0, 0);
+                          navigate('/get-quote');
+                        }}>Submit Buy Request</span>
                         <ArrowRight className="w-4 h-4 text-dark-primary" />
                       </button>
                     </div>
