@@ -17,7 +17,8 @@ import {
   Clock,
   Layers,
   Settings,
-  Workflow
+  Workflow,
+  X
 } from 'lucide-react';
 import { getTemplateById } from '../data/automationData';
 
