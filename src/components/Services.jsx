@@ -19,7 +19,7 @@ const services = [
     description: 'Native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android platforms.',
     icon: Smartphone,
     gradient: 'from-pink-500 to-rose-500',
-    neonColor: 'neon-pink'
+    color: 'accent-secondary'
   },
   {
     id: 'web-development',
@@ -27,7 +27,7 @@ const services = [
     description: 'Modern, responsive web applications built with the latest technologies for optimal performance and scalability.',
     icon: Globe,
     gradient: 'from-blue-500 to-cyan-500',
-    neonColor: 'neon-cyan'
+    color: 'accent-primary'
   },
   {
     id: 'process-automation',
@@ -35,7 +35,7 @@ const services = [
     description: 'Streamline your operations with intelligent automation solutions that reduce costs and increase efficiency.',
     icon: Zap,
     gradient: 'from-yellow-500 to-orange-500',
-    neonColor: 'neon-green'
+    color: 'accent-primary'
   },
   {
     id: 'custom-software',
@@ -43,7 +43,7 @@ const services = [
     description: 'Tailored software development that perfectly aligns with your unique business requirements and objectives.',
     icon: Code,
     gradient: 'from-purple-500 to-indigo-500',
-    neonColor: 'neon-cyan'
+    color: 'accent-secondary'
   },
   {
     id: 'product-development',
@@ -51,7 +51,7 @@ const services = [
     description: 'End-to-end product development from concept to launch, ensuring market-ready solutions that drive results.',
     icon: Lightbulb,
     gradient: 'from-green-500 to-emerald-500',
-    neonColor: 'neon-green'
+    color: 'accent-primary'
   },
   {
     id: 'blockchain-integration',
@@ -59,7 +59,7 @@ const services = [
     description: 'Secure and transparent blockchain solutions for enhanced trust, security, and decentralized operations.',
     icon: Shield,
     gradient: 'from-teal-500 to-blue-500',
-    neonColor: 'neon-cyan'
+    color: 'accent-secondary'
   },
   {
     id: 'digital-transformation',
@@ -67,7 +67,7 @@ const services = [
     description: 'Comprehensive digital transformation strategies that modernize your business and accelerate growth.',
     icon: TrendingUp,
     gradient: 'from-violet-500 to-purple-500',
-    neonColor: 'neon-pink'
+    color: 'accent-primary'
   },
   {
     id: 'agentic-ai',
@@ -75,7 +75,7 @@ const services = [
     description: 'Intelligent AI agents that automate complex tasks and make autonomous decisions to enhance productivity.',
     icon: Bot,
     gradient: 'from-cyan-500 to-blue-500',
-    neonColor: 'neon-green'
+    color: 'accent-secondary'
   }
 ];
 
@@ -88,7 +88,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services-section" className="py-12 sm:py-20 bg-dark-primary">
+    <section id="services-section" className="py-12 sm:py-20 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
         {/* Section Header */}
         <motion.div
@@ -98,12 +98,12 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron font-bold text-dark-primary mb-6 sm:mb-8 tracking-tight">
-            Our <span className="gradient-neon-text neon-text relative">Services
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-neon-green/0 via-neon-green to-neon-green/0"></span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-6 sm:mb-8 tracking-tight">
+            Our <span className="gradient-text relative">Services
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent-primary/0 via-accent-primary to-accent-primary/0"></span>
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-dark-secondary max-w-3xl mx-auto leading-relaxed px-2">
+          <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-2">
             We deliver comprehensive technology solutions that drive innovation and accelerate business growth
           </p>
         </motion.div>
@@ -121,23 +121,18 @@ const Services = () => {
               className="group cursor-pointer perspective-card"
               onClick={() => handleServiceClick(service.id)}
             >
-              <div className="enhanced-card rounded-2xl p-6 sm:p-8 h-full flex flex-col relative overflow-hidden">
-                {/* Animated background effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
-                  <div className={`w-full h-full bg-gradient-to-br ${service.gradient}`}></div>
-                </div>
-                
+              <div className="stripe-card h-full flex flex-col relative overflow-hidden p-6 sm:p-8">
                 {/* Icon */}
-                <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl border-2 border-${service.neonColor} flex items-center justify-center mb-4 sm:mb-6 group-hover:neon-glow transition-all duration-300 relative z-10 shadow-lg`}>
-                  <service.icon className={`w-6 h-6 sm:w-8 sm:h-8 text-${service.neonColor}`} />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl border-2 border-${service.color} flex items-center justify-center mb-4 sm:mb-6 group-hover:shadow-lg transition-all duration-300 relative z-10 bg-white`}>
+                  <service.icon className={`w-6 h-6 sm:w-8 sm:h-8 text-${service.color}`} />
                 </div>
                 
                 {/* Content */}
                 <div className="flex-1 relative z-10">
-                  <h3 className={`text-lg sm:text-xl font-orbitron font-bold text-dark-primary mb-2 sm:mb-4 group-hover:text-${service.neonColor} transition-colors`}>
+                  <h3 className={`text-lg sm:text-xl font-bold text-text-primary mb-2 sm:mb-4 group-hover:text-${service.color} transition-colors`}>
                     {service.title}
                   </h3>
-                  <p className="text-dark-secondary leading-relaxed tracking-wide text-sm sm:text-base">
+                  <p className="text-text-secondary leading-relaxed tracking-wide text-sm sm:text-base">
                     {service.description}
                   </p>
                 </div>
@@ -166,7 +161,7 @@ const Services = () => {
               window.scrollTo(0, 0);
               navigate('/services');
             }}
-            className="btn-neon px-6 sm:px-10 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-button hover:shadow-button-hover"
+            className="stripe-button px-6 sm:px-10 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg"
           >
             View All Services
           </motion.button>
