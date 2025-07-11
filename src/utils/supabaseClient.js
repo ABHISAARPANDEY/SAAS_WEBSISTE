@@ -1,13 +1,23 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Get Supabase URL and key from environment variables
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
 // Create Supabase client
-export const supabase = supabaseUrl && supabaseKey 
-  ? createClient(supabaseUrl, supabaseKey)
-  : null;
+let supabase = null;
+
+// Only initialize if both URL and key are valid
+if (supabaseUrl && supabaseKey && supabaseUrl.includes('.supabase.co') && supabaseKey.length > 20) {
+  try {
+    supabase = createClient(supabaseUrl, supabaseKey);
+    console.log('Supabase client initialized successfully');
+  } catch (error) {
+    console.error('Failed to initialize Supabase client:', error);
+  }
+}
+
+export { supabase };
 
 // Debug function to check database connection
 export const checkDatabaseConnection = async () => {
@@ -149,14 +159,15 @@ export const getQuoteRequests = async () => {
 export const submitQuoteRequest = async (formData) => {
   try {
     if (!supabase) {
-      console.error('Supabase client not initialized - using fallback');
+      console.log('Supabase client not initialized - using localStorage fallback');
       // Fallback to localStorage if Supabase is not available
       const requests = JSON.parse(localStorage.getItem('quote_requests') || '[]');
       const newRequest = {
         ...formData,
-        id: crypto.randomUUID(),
+        id: Math.random().toString(36).substring(2, 15),
         created_at: new Date().toISOString(),
-        status: 'pending'
+        status: 'pending',
+        trackingNumber: Math.random().toString(36).substring(2, 10).toUpperCase()
       };
       requests.unshift(newRequest);
       localStorage.setItem('quote_requests', JSON.stringify(requests));
