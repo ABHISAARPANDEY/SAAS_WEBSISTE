@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,6 +16,12 @@
   --accent-tertiary: #E6007A;
   --border-color: #2D3748;
   --hover-bg: #2D3748;
+  
+  /* Mobile spacing variables */
+  --mobile-padding-x: 16px;
+  --mobile-padding-y: 12px;
+  --mobile-spacing: 16px;
+  --mobile-header-height: 60px;
 }
 
 * {
@@ -263,21 +270,65 @@ body {
 
 /* Mobile responsiveness fixes */
 @media (max-width: 640px) {
+  html {
+    font-size: 16px; /* Ensure base font size is readable */
+  }
+  
   .btn-neon {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem !important;
+    min-height: 44px; /* Ensure touch target size */
   }
   
   h1.text-4xl {
-    font-size: 2rem;
+    font-size: 1.875rem !important;
+    line-height: 1.2 !important;
   }
   
   h2.text-2xl {
-    font-size: 1.5rem;
+    font-size: 1.375rem !important;
+    line-height: 1.3 !important;
   }
   
   .p-8 {
-    padding: 1.5rem;
+    padding: var(--mobile-padding-y) var(--mobile-padding-x) !important;
+  }
+  
+  .px-8 {
+    padding-left: var(--mobile-padding-x) !important;
+    padding-right: var(--mobile-padding-x) !important;
+  }
+  
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .gap-8 {
+    gap: var(--mobile-spacing) !important;
+  }
+  
+  .rounded-3xl {
+    border-radius: 1rem !important;
+  }
+  
+  /* Ensure proper stacking on mobile */
+  .flex-col-mobile {
+    flex-direction: column !important;
+  }
+  
+  .w-full-mobile {
+    width: 100% !important;
+  }
+  
+  /* Ensure touch targets are large enough */
+  button, 
+  a, 
+  [role="button"],
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -308,9 +359,43 @@ button, a, input, textarea, select {
 .border-neon-pink { border-color: var(--accent-tertiary); }
 
 /* Responsive text sizes with neon effects */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .neon-text {
     text-shadow: 0 0 5px var(--accent-primary), 0 0 10px var(--accent-primary);
+  }
+  
+  .gradient-neon-text {
+    text-shadow: 0 0 5px rgba(0, 204, 125, 0.5), 0 0 10px rgba(12, 198, 160, 0.3);
+  }
+  
+  /* Mobile container width */
+  .container {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* Mobile navigation adjustments */
+  .mobile-nav {
+    position: fixed;
+    top: var(--mobile-header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 40;
+    padding: var(--mobile-padding-y) var(--mobile-padding-x);
+  }
+  
+  /* Mobile header height */
+  .mobile-header {
+    height: var(--mobile-header-height) !important;
+  }
+  
+  /* Single column grid on mobile */
+  .mobile-grid-1 {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -376,5 +461,38 @@ button, a, input, textarea, select {
 .btn-secondary:hover {
   background: rgba(34, 39, 54, 0.8);
   border-color: var(--accent-secondary);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+}
+
+/* Mobile-specific utility classes */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .show-on-mobile {
+    display: block !important;
+  }
+  
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  .mt-4-mobile {
+    margin-top: 1rem !important;
+  }
+  
+  .mb-4-mobile {
+    margin-bottom: 1rem !important;
+  }
+  
+  .px-4-mobile {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .py-4-mobile {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
 }

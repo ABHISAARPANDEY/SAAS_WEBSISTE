@@ -187,7 +187,7 @@ const GetQuote = () => {
   return (
     <div className="min-h-screen bg-dark-primary">
       {/* Header */}
-      <section className="relative py-20 bg-dark-primary">
+      <section className="relative py-12 sm:py-20 bg-dark-primary">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-20 h-20 border-2 border-neon-green rounded-full opacity-20 animate-pulse blur-[1px]"></div>
@@ -196,18 +196,18 @@ const GetQuote = () => {
           <div className="absolute bottom-40 right-10 w-24 h-24 border-2 border-neon-pink rounded-full opacity-20 animate-pulse blur-[1px]"></div>
         </div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-[95%]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-4xl md:text-6xl font-orbitron font-bold text-text-primary mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-orbitron font-bold text-text-primary mb-4 sm:mb-6 tracking-tight">
               Get Your <span className="gradient-neon-text neon-text relative">Custom Quote
                 <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-neon-green/0 via-neon-green to-neon-green/0"></span>
               </span>
             </h1>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-2">
               Tell us about your project and we'll provide a detailed proposal tailored to your needs
             </p>
           </motion.div>
@@ -215,25 +215,25 @@ const GetQuote = () => {
       </section>
 
       {/* Quote Form */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
           <motion.form
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             onSubmit={handleSubmit}
-            className="bg-dark-secondary rounded-3xl shadow-card-hover p-8 md:p-12 border border-dark/60 backdrop-blur-md"
+            className="bg-dark-secondary rounded-xl sm:rounded-3xl shadow-card-hover p-6 sm:p-8 md:p-12 border border-dark/60 backdrop-blur-md"
           >
             {/* Personal Information */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
+            <div className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl font-bold font-orbitron text-text-primary mb-6 sm:mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-green" />
                 <span className="relative">
                   Personal Information
                   <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-green/50"></span>
                 </span>
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-sm font-medium text-text-primary mb-2">
                     Full Name *
@@ -298,21 +298,21 @@ const GetQuote = () => {
             </div>
 
             {/* Industry Selection */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
+            <div className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl font-bold font-orbitron text-text-primary mb-6 sm:mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-cyan" />
                 <span className="relative">
                   Industry *
                   <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-cyan/50"></span>
                 </span>
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {industries.map((industry) => (
                   <motion.div
                     key={industry.id}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-300 ${
+                    className={`cursor-pointer p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 ${
                       formData.industry === industry.id
                         ? 'border-neon-cyan bg-dark-tertiary'
                         : 'border-dark hover:border-neon-cyan/50 bg-dark-tertiary'
@@ -320,10 +320,10 @@ const GetQuote = () => {
                     onClick={() => handleInputChange('industry', industry.id)}
                   >
                     <div className="text-center">
-                      <industry.icon className={`w-8 h-8 mx-auto mb-2 ${
+                      <industry.icon className={`w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-1 sm:mb-2 ${
                         formData.industry === industry.id ? 'text-neon-cyan' : 'text-text-secondary'
                       }`} />
-                      <p className={`text-sm font-medium ${
+                      <p className={`text-xs sm:text-sm font-medium ${
                         formData.industry === industry.id ? 'text-neon-cyan' : 'text-text-secondary'
                       }`}>
                         {industry.name}
@@ -336,21 +336,21 @@ const GetQuote = () => {
             </div>
 
             {/* Services Selection */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
+            <div className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl font-bold font-orbitron text-text-primary mb-6 sm:mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-pink" />
                 <span className="relative">
                   Services Needed *
                   <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-pink/50"></span>
                 </span>
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {services.map((service) => (
                   <motion.div
                     key={service.id}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-300 ${
+                    className={`cursor-pointer p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 ${
                       formData.services.includes(service.id)
                         ? 'border-neon-pink bg-dark-tertiary'
                         : 'border-dark hover:border-neon-pink/50 bg-dark-tertiary'
@@ -377,15 +377,15 @@ const GetQuote = () => {
             </div>
 
             {/* Project Details */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold font-orbitron text-text-primary mb-8 flex items-center gap-2">
+            <div className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl font-bold font-orbitron text-text-primary mb-6 sm:mb-8 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-neon-green" />
                 <span className="relative">
                   Project Details
                   <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-neon-green/50"></span>
                 </span>
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-text-primary mb-2">
                     Project Description *
@@ -402,7 +402,7 @@ const GetQuote = () => {
                   {errors.projectDescription && <p className="text-neon-pink text-sm mt-1">{errors.projectDescription}</p>}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-text-primary mb-2">
                       Budget Range
@@ -470,12 +470,12 @@ const GetQuote = () => {
               >
                 {isSubmitting ? (
                   <>
-                    <Loader className="w-5 h-5 mr-2 animate-spin text-dark-primary" />
+                    <Loader className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-dark-primary" />
                     Submitting...
                   </>
                 ) : (
                   <>
-                    <Send className="w-5 h-5 mr-2 text-dark-primary" />
+                    <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-dark-primary" />
                     Get My Quote
                   </>
                 )}

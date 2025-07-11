@@ -130,31 +130,33 @@ const Hero = () => {
 
           {/* Main Headline */}
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-dark-primary leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-dark-primary leading-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Transform Your Business with
-            <span className="block gradient-neon-text mt-4 font-bold tracking-tight"> 
+            Transform Your 
+            <span className="sm:hidden">Business</span>
+            <span className="hidden sm:inline">Business with</span>
+            <span className="block gradient-neon-text mt-2 sm:mt-4 font-bold tracking-tight"> 
               Next-Gen Solutions
             </span>
           </motion.h1>
           
           {/* Subheading */}
           <motion.p 
-            className="text-xl md:text-2xl text-custom-white max-w-4xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-custom-white max-w-4xl mx-auto leading-relaxed px-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            We build cutting-edge software solutions that accelerate growth, streamline operations, 
+            We build cutting-edge software solutions that accelerate growth, streamline operations,
             and unlock new possibilities for forward-thinking businesses in the digital age.
           </motion.p>
           
           {/* CTA Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
@@ -168,52 +170,53 @@ const Hero = () => {
                   servicesSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
+              className="btn-neon !text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-button hover:shadow-button-hover flex items-center gap-2 sm:gap-3 group w-full sm:w-auto"
             >
               Our Services
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
             </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.location.href = '/marketplace'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
-            >
-              <Code className="w-5 h-5" />
-              Marketplace
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.location.href = '/automation'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
-            >
-              <Zap className="w-5 h-5" />
-              Automation
-            </motion.button>
-            
+            <div className="grid grid-cols-2 gap-3 w-full sm:flex sm:flex-row sm:gap-4">
               <motion.button
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.location.href = '/free-tools'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
-            >
-              <Zap className="w-5 h-5" />
-              Free Tools
-            </motion.button>
-            
-            
-            <motion.button
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.location.href = '/get-quote'}
-              className="btn-neon !text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover flex items-center gap-3 group"
-            >
-              <Play className="w-5 h-5" />
-              Get Quote
-            </motion.button>
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = '/marketplace'}
+                className="btn-neon !text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-sm sm:text-lg shadow-button hover:shadow-button-hover flex items-center justify-center gap-2 sm:gap-3 group"
+              >
+                <Code className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="sm:inline">Marketplace</span>
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = '/automation'}
+                className="btn-neon !text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-sm sm:text-lg shadow-button hover:shadow-button-hover flex items-center justify-center gap-2 sm:gap-3 group"
+              >
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="sm:inline">Automation</span>
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = '/free-tools'}
+                className="btn-neon !text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-sm sm:text-lg shadow-button hover:shadow-button-hover flex items-center justify-center gap-2 sm:gap-3 group"
+              >
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="sm:inline">Free Tools</span>
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = '/get-quote'}
+                className="btn-neon !text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-sm sm:text-lg shadow-button hover:shadow-button-hover flex items-center justify-center gap-2 sm:gap-3 group"
+              >
+                <Play className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="sm:inline">Get Quote</span>
+              </motion.button>
+            </div>
           </motion.div>
 
           {/* Stats */}
@@ -221,23 +224,23 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-20 max-w-4xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 mt-12 sm:mt-20 max-w-4xl mx-auto"
           >
             <div className="text-center transform hover:scale-105 transition-transform duration-300">
-              <div className="text-3xl md:text-5xl font-orbitron font-bold text-neon-green neon-text">200+</div>
-              <div className="text-dark-secondary mt-2">Projects</div>
+              <div className="text-2xl sm:text-3xl md:text-5xl font-orbitron font-bold text-neon-green neon-text">200+</div>
+              <div className="text-dark-secondary mt-1 sm:mt-2 text-sm sm:text-base">Projects</div>
             </div>
             <div className="text-center transform hover:scale-105 transition-transform duration-300">
-              <div className="text-3xl md:text-5xl font-orbitron font-bold text-neon-cyan neon-text-cyan">50+</div>
-              <div className="text-dark-secondary mt-2">Clients</div>
+              <div className="text-2xl sm:text-3xl md:text-5xl font-orbitron font-bold text-neon-cyan neon-text-cyan">50+</div>
+              <div className="text-dark-secondary mt-1 sm:mt-2 text-sm sm:text-base">Clients</div>
             </div>
             <div className="text-center transform hover:scale-105 transition-transform duration-300">
-              <div className="text-3xl md:text-5xl font-orbitron font-bold text-neon-pink neon-text-pink">8+</div>
-              <div className="text-dark-secondary mt-2">Years</div>
+              <div className="text-2xl sm:text-3xl md:text-5xl font-orbitron font-bold text-neon-pink neon-text-pink">8+</div>
+              <div className="text-dark-secondary mt-1 sm:mt-2 text-sm sm:text-base">Years</div>
             </div>
             <div className="text-center transform hover:scale-105 transition-transform duration-300">
-              <div className="text-3xl md:text-5xl font-orbitron font-bold gradient-neon-text">24/7</div>
-              <div className="text-dark-secondary mt-2">Support</div>
+              <div className="text-2xl sm:text-3xl md:text-5xl font-orbitron font-bold gradient-neon-text">24/7</div>
+              <div className="text-dark-secondary mt-1 sm:mt-2 text-sm sm:text-base">Support</div>
             </div>
           </motion.div>
         </motion.div>

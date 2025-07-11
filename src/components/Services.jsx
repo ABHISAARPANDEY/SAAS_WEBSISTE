@@ -88,28 +88,28 @@ const Services = () => {
   };
 
   return (
-    <section id="services-section" className="py-20 bg-dark-primary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services-section" className="py-12 sm:py-20 bg-dark-primary">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-dark-primary mb-8 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-orbitron font-bold text-dark-primary mb-6 sm:mb-8 tracking-tight">
             Our <span className="gradient-neon-text neon-text relative">Services
               <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-neon-green/0 via-neon-green to-neon-green/0"></span>
             </span>
           </h2>
-          <p className="text-xl text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-dark-secondary max-w-3xl mx-auto leading-relaxed px-2">
             We deliver comprehensive technology solutions that drive innovation and accelerate business growth
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 perspective-1000">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 perspective-1000 mobile-grid-1">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -121,23 +121,23 @@ const Services = () => {
               className="group cursor-pointer perspective-card"
               onClick={() => handleServiceClick(service.id)}
             >
-              <div className="enhanced-card rounded-2xl p-8 h-full flex flex-col relative overflow-hidden">
+              <div className="enhanced-card rounded-2xl p-6 sm:p-8 h-full flex flex-col relative overflow-hidden">
                 {/* Animated background effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
                   <div className={`w-full h-full bg-gradient-to-br ${service.gradient}`}></div>
                 </div>
                 
                 {/* Icon */}
-                <div className={`w-16 h-16 rounded-xl border-2 border-${service.neonColor} flex items-center justify-center mb-6 group-hover:neon-glow transition-all duration-300 relative z-10 shadow-lg`}>
-                  <service.icon className={`w-8 h-8 text-${service.neonColor}`} />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl border-2 border-${service.neonColor} flex items-center justify-center mb-4 sm:mb-6 group-hover:neon-glow transition-all duration-300 relative z-10 shadow-lg`}>
+                  <service.icon className={`w-6 h-6 sm:w-8 sm:h-8 text-${service.neonColor}`} />
                 </div>
                 
                 {/* Content */}
                 <div className="flex-1 relative z-10">
-                  <h3 className={`text-xl font-orbitron font-bold text-dark-primary mb-4 group-hover:text-${service.neonColor} transition-colors`}>
+                  <h3 className={`text-lg sm:text-xl font-orbitron font-bold text-dark-primary mb-2 sm:mb-4 group-hover:text-${service.neonColor} transition-colors`}>
                     {service.title}
                   </h3>
-                  <p className="text-dark-secondary leading-relaxed tracking-wide">
+                  <p className="text-dark-secondary leading-relaxed tracking-wide text-sm sm:text-base">
                     {service.description}
                   </p>
                 </div>
@@ -157,7 +157,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-10 sm:mt-16"
         >
           <motion.button
             whileHover={{ scale: 1.05, y: -4 }}
@@ -166,7 +166,7 @@ const Services = () => {
               window.scrollTo(0, 0);
               navigate('/services');
             }}
-            className="btn-neon px-10 py-4 rounded-full font-orbitron font-semibold text-lg shadow-button hover:shadow-button-hover"
+            className="btn-neon px-6 sm:px-10 py-3 sm:py-4 rounded-full font-orbitron font-semibold text-base sm:text-lg shadow-button hover:shadow-button-hover"
           >
             View All Services
           </motion.button>
