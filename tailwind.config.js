@@ -20,6 +20,15 @@ export default {
         'success': '#32d583',
         'warning': '#ffc107',
         'error': '#ff4757',
+        // Dark theme colors
+        'dark-primary': '#121212',
+        'dark-secondary': '#1e1e1e',
+        'dark-tertiary': '#2a2a2a',
+        'dark': '#333333',
+        'neon-green': '#39ff14',
+        'neon-cyan': '#00ffff',
+        'neon-pink': '#ff00ff',
+        'neon-yellow': '#ffff00',
       },
       animation: {
         'pulse': 'pulse 2s ease-in-out infinite',
@@ -86,5 +95,13 @@ export default {
     'stripe-badge-success',
     'stripe-badge-warning',
     'stripe-badge-error',
+    'dark-mode',
+    'light-mode',
+    'neon-text',
+    'gradient-neon-text',
+    'pulse-neon',
+    'btn-neon',
+    'glass-effect',
+    'card-dark',
   ]
 };
