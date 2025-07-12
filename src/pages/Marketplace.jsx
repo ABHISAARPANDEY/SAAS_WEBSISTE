@@ -10,7 +10,9 @@ import {
   Code, 
   Zap,
   ShoppingCart,
-  Key
+  Key,
+  ChevronDown,
+  X
 } from 'lucide-react';
 import { 
   readyMadeSolutions, 
@@ -52,9 +54,15 @@ const Marketplace = () => {
   // Filter APIs
   const filteredApis = useMemo(() => {
     return apiKeys.filter(api => {
-      const matchesSearch = api.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           api.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === 'All Categories' || api.category === selectedCategory;
+      const name = api.name?.toLowerCase() || '';
+      const desc = api.description?.toLowerCase() || '';
+      const category = api.category;
+      
+      const search = searchTerm.toLowerCase().trim();
+      const selCategory = selectedCategory;
+      
+      const matchesSearch = name.includes(search) || desc.includes(search);
+      const matchesCategory = selCategory === 'All Categories' || category === selCategory;
       
       return matchesSearch && matchesCategory;
     });
@@ -126,9 +134,9 @@ const Marketplace = () => {
       {/* Search and Filters */}
    <section className="py-12 bg-dark-secondary border-b border-dark">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center">
+    <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center w-full">
       {/* Search Bar */}
-      <div className="flex-1 w-full relative">
+      <div className="flex-1 relative w-full">
         <div className="relative w-full">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary w-5 h-5 pointer-events-none z-10" />
           <input
@@ -142,45 +150,57 @@ const Marketplace = () => {
       </div>
 
       {/* Filters */}
-      <div className="w-full lg:w-auto flex flex-wrap gap-4">
+      <div className="w-full lg:w-auto flex flex-wrap gap-4 z-20">
         {activeTab === 'solutions' ? (
           <>
-            <select
-              value={selectedIndustry}
-              onChange={(e) => setSelectedIndustry(e.target.value)}
-              className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
-            >
-              {industries.map((industry) => (
-                <option key={industry} value={industry}>
-                  {industry}
-                </option>
-              ))}
-            </select>
+            <div className="relative">
+              <select
+                value={selectedIndustry}
+                onChange={(e) => setSelectedIndustry(e.target.value)}
+                className="appearance-none w-full px-4 py-3 pr-10 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent cursor-pointer"
+                style={{ minWidth: "180px" }}
+              >
+                {industries.map((industry) => (
+                  <option key={industry} value={industry}>
+                    {industry}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5 pointer-events-none" />
+            </div>
 
-            <select
-              value={selectedFramework}
-              onChange={(e) => setSelectedFramework(e.target.value)}
-              className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
-            >
-              {frameworks.map((framework) => (
-                <option key={framework} value={framework}>
-                  {framework}
-                </option>
-              ))}
-            </select>
+            <div className="relative">
+              <select
+                value={selectedFramework}
+                onChange={(e) => setSelectedFramework(e.target.value)}
+                className="appearance-none w-full px-4 py-3 pr-10 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent cursor-pointer"
+                style={{ minWidth: "180px" }}
+              >
+                {frameworks.map((framework) => (
+                  <option key={framework} value={framework}>
+                    {framework}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5 pointer-events-none" />
+            </div>
           </>
         ) : (
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
-          >
-            {apiCategories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="appearance-none w-full px-4 py-3 pr-10 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent cursor-pointer"
+              style={{ minWidth: "180px" }}
+            >
+              {apiCategories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5 pointer-events-none" />
+          </div>
         )}
       </div>
     </div>
@@ -417,19 +437,32 @@ const Marketplace = () => {
               Can't find what you're looking for? Our expert team can build custom solutions tailored to your specific requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                variants={buttonHoverVariants}
-                whileHover="hover"
-                whileTap="tap"
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                  navigate('/get-quote');
-                }}
-                className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-              >
-                <Code className="w-5 h-5 text-dark-primary" />
-                Request Custom Development
-              </motion.button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.button
+                  variants={buttonHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate('/get-quote');
+                  }}
+                  className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                >
+                  <Code className="w-5 h-5 text-dark-primary" />
+                  Request Custom Development
+                </motion.button>
+                
+                <motion.button
+                  variants={buttonHoverVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  onClick={() => navigate('/automation')}
+                  className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300 flex items-center gap-2"
+                >
+                  <Zap className="w-5 h-5" />
+                  Automation
+                </motion.button>
+              </div>
             </div>
           </motion.div>
         </div>
