@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Send, CheckCircle, Loader, AlertCircle, Zap } from 'lucide-react';
+import { Send, CheckCircle, Loader, AlertCircle, Zap, Shield, Check } from 'lucide-react';
 import { industries, services } from '../data/quoteFormData';
 import { submitQuoteRequest } from '../utils/supabaseClient';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const GetQuote = () => {
   const navigate = useNavigate();
@@ -22,6 +24,13 @@ const GetQuote = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [submissionResult, setSubmissionResult] = useState(null);
+  const [phoneVerification, setPhoneVerification] = useState({
+    isVerifying: false,
+    isVerified: false,
+    verificationCode: '',
+    verificationId: null,
+    error: null
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,6 +43,7 @@ const GetQuote = () => {
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
     if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
+    if (!phoneVerification.isVerified) newErrors.phone = 'Phone number must be verified';
     if (!formData.industry) newErrors.industry = 'Please select an industry';
     if (formData.services.length === 0) newErrors.services = 'Please select at least one service';
     if (!formData.projectDescription.trim()) newErrors.projectDescription = 'Project description is required';
@@ -54,6 +64,120 @@ const GetQuote = () => {
         [field]: ''
       }));
     }
+  };
+
+  const handlePhoneChange = (value) => {
+    handleInputChange('phone', value);
+    // Reset verification status when phone changes
+    setPhoneVerification({
+      isVerifying: false,
+      isVerified: false,
+      verificationCode: '',
+      verificationId: null,
+      error: null
+    });
+  };
+
+  const startPhoneVerification = async () => {
+    if (!formData.phone) {
+      setErrors(prev => ({
+        ...prev,
+        phone: 'Phone number is required'
+      }));
+      return;
+    }
+
+    try {
+      setPhoneVerification(prev => ({ ...prev, isVerifying: true, error: null }));
+      
+      // Get Supabase client
+      const supabaseClient = window.supabaseClient;
+      if (!supabaseClient) {
+        throw new Error('Supabase client not initialized');
+      }
+
+      // Start phone verification
+const { data, error } = await supabaseClient.auth.signInWithOtp({
+  phone: formData.phone,
+  options: {
+    shouldCreateUser: true   // ✅ this is required for new users
+  }
+});
+
+if (error) {
+  console.error('OTP error:', error);
+} else {
+  console.log('OTP sent successfully:', data);
+}
+
+
+      if (error) throw error;
+
+      setPhoneVerification(prev => ({ 
+        ...prev, 
+        isVerifying: true,
+        verificationId: data?.verificationId || 'verification-id'
+      }));
+
+    } catch (error) {
+      console.error('Phone verification error:', error);
+      setPhoneVerification(prev => ({ 
+        ...prev, 
+        isVerifying: false,
+        error: error.message || 'Failed to send verification code'
+      }));
+    }
+  };
+
+  const verifyPhoneCode = async () => {
+    if (!phoneVerification.verificationCode) {
+      setPhoneVerification(prev => ({ 
+        ...prev, 
+        error: 'Please enter the verification code'
+      }));
+      return;
+    }
+
+    try {
+      // Get Supabase client
+      const supabaseClient = window.supabaseClient;
+      if (!supabaseClient) {
+        throw new Error('Supabase client not initialized');
+      }
+
+      // Verify the OTP code
+      const { data, error } = await supabaseClient.auth.verifyOtp({
+        phone: formData.phone,
+        token: phoneVerification.verificationCode,
+        type: 'sms'
+      });
+
+      if (error) throw error;
+
+      setPhoneVerification(prev => ({ 
+        ...prev, 
+        isVerifying: false,
+        isVerified: true,
+        error: null
+      }));
+
+    } catch (error) {
+      console.error('Code verification error:', error);
+      setPhoneVerification(prev => ({ 
+        ...prev, 
+        error: error.message || 'Invalid verification code'
+      }));
+    }
+  };
+
+  const cancelVerification = () => {
+    setPhoneVerification({
+      isVerifying: false,
+      isVerified: false,
+      verificationCode: '',
+      verificationId: null,
+      error: null
+    });
   };
 
   const handleServiceToggle = (serviceId) => {
@@ -88,6 +212,7 @@ const GetQuote = () => {
         full_name: formData.fullName,
         email: formData.email,
         phone_number: formData.phone,
+        phone_verified: phoneVerification.isVerified,
         company_name: formData.company || 'Not provided',
         requirements: `Industry: ${formData.industry}\nServices: ${formData.services.join(', ')}\nProject Description: ${formData.projectDescription}\nBudget: ${formData.budget || 'Not specified'}\nTimeline: ${formData.timeline || 'Not specified'}`
       };
@@ -203,12 +328,12 @@ const GetQuote = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-text-primary mb-4 sm:mb-6 tracking-tight">
-  Get Your{' '}
-  <span className="relative inline-block rainbow-text">
-    Custom Quote
-    <span className="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-accent-primary/0 via-accent-primary to-accent-primary/0"></span>
-  </span>
-</h1>
+              Get Your{' '}
+              <span className="relative inline-block rainbow-text">
+                Custom Quote
+                <span className="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-accent-primary/0 via-accent-primary to-accent-primary/0"></span>
+              </span>
+            </h1>
 
             <p className="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-2">
               Tell us about your project and we'll provide a detailed proposal tailored to your needs
@@ -272,17 +397,73 @@ const GetQuote = () => {
                 <div>
                   <label className="block text-sm font-medium text-text-primary mb-2">
                     Phone Number *
+                    {phoneVerification.isVerified && (
+                      <span className="ml-2 text-neon-green text-xs flex items-center">
+                        <Check className="w-3 h-3 mr-1" /> Verified
+                      </span>
+                    )}
                   </label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300 ${
-                      errors.phone ? 'border-error bg-white text-text-primary' : 'border-border-color bg-white text-text-primary'
-                    }`}
-                    placeholder="Enter your phone number"
-                  />
+                  <div className="relative">
+                    <PhoneInput
+                      country={'us'}
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
+                      inputClass={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300 ${
+                        errors.phone ? 'border-error bg-white text-text-primary' : 'border-border-color bg-white text-text-primary'
+                      }`}
+                      containerClass="w-full"
+                      disabled={phoneVerification.isVerified || phoneVerification.isVerifying}
+                    />
+                    {!phoneVerification.isVerifying && !phoneVerification.isVerified && (
+                      <button
+                        type="button"
+                        onClick={startPhoneVerification}
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-accent-primary text-white rounded-lg text-sm hover:bg-accent-secondary transition-colors"
+                      >
+                        Verify
+                      </button>
+                    )}
+                  </div>
                   {errors.phone && <p className="text-error text-sm mt-1">{errors.phone}</p>}
+                  
+                  {/* Phone Verification UI */}
+                  {phoneVerification.isVerifying && (
+                    <div className="mt-3 p-3 bg-secondary rounded-lg border border-accent-primary/30">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Shield className="w-4 h-4 text-accent-primary" />
+                        <p className="text-sm font-medium">Verification Code</p>
+                      </div>
+                      <p className="text-text-secondary text-xs mb-3">
+                        We've sent a verification code to {formData.phone}
+                      </p>
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={phoneVerification.verificationCode}
+                          onChange={(e) => setPhoneVerification(prev => ({ ...prev, verificationCode: e.target.value }))}
+                          placeholder="Enter code"
+                          className="flex-1 px-3 py-2 border border-border-color rounded-lg text-sm"
+                        />
+                        <button
+                          type="button"
+                          onClick={verifyPhoneCode}
+                          className="px-3 py-2 bg-accent-primary text-white rounded-lg text-sm hover:bg-accent-secondary transition-colors"
+                        >
+                          Verify
+                        </button>
+                        <button
+                          type="button"
+                          onClick={cancelVerification}
+                          className="px-3 py-2 bg-tertiary text-text-secondary rounded-lg text-sm hover:bg-tertiary/80 transition-colors"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                      {phoneVerification.error && (
+                        <p className="text-error text-xs mt-2">{phoneVerification.error}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div>

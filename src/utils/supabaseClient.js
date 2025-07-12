@@ -11,6 +11,14 @@ let supabase = null;
 if (supabaseUrl && supabaseKey && supabaseUrl.includes('.supabase.co') && supabaseKey.length > 20) {
   try {
     supabase = createClient(supabaseUrl, supabaseKey);
+    
+    // Configure phone auth with Twilio credentials
+    if (supabase) {
+      console.log('Configuring phone auth for Supabase client');
+      // Note: These settings are applied server-side in Supabase dashboard
+      // We don't need to configure them here in the client
+    }
+    
     console.log('Supabase client initialized successfully');
   } catch (error) {
     console.error('Failed to initialize Supabase client:', error);
@@ -167,6 +175,7 @@ export const submitQuoteRequest = async (formData) => {
         id: Math.random().toString(36).substring(2, 15),
         created_at: new Date().toISOString(),
         status: 'pending',
+        phone_verified: formData.phone_verified || false,
         trackingNumber: Math.random().toString(36).substring(2, 10).toUpperCase()
       };
       requests.unshift(newRequest);
