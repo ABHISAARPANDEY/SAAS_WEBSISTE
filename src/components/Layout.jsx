@@ -4,6 +4,7 @@ import { Menu, X, Zap, ArrowUp } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import ScrollToTopButton from './ScrollToTopButton';
 
+
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
@@ -290,108 +291,108 @@ const Layout = ({ children }) => {
             </div>
 
             {/* Services */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-accent-primary tracking-wide">Services</h3>
-              <ul className="space-y-2 text-text-secondary">
-                <li>
-                  <a 
-                    href="/services/web-development" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/web-development';
-                    }}
-                    className="hover:text-accent-primary transition-colors relative group"
-                  >
-                    Web Development
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-primary/50 group-hover:w-full transition-all duration-300"></span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/services/mobile-app" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/mobile-app';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                    Mobile Apps
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/services/agentic-ai" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/agentic-ai';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                    AI Solutions
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/services/process-automation" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/process-automation';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                    Process Automation
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/services/custom-software" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/custom-software';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                    Custom Software
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/services/product-development" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/product-development';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                    Product Development
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/services/blockchain-integration" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/blockchain-integration';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                    Blockchain Solutions
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/services/digital-transformation" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/services/digital-transformation';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                    Digital Transformation
-                  </a>
-                </li>
-              </ul>
-            </div>
+           {/* Services Dropdown */}
+{/* Services + Marketplace block */}
+{/* Footer Column: Services + Marketplace */}
+<div className="space-y-6 relative">
+  {/* SERVICES */}
+  <div className="group relative">
+    <h3 className="text-lg font-semibold text-accent-primary tracking-wide cursor-pointer">
+      Services
+    </h3>
+    <ul className="py-2 text-sm text-text-secondary bg-white border border-border-color rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 absolute z-50 mt-1 w-56">
+      {[
+        { slug: 'web-development', label: 'Web Development' },
+        { slug: 'mobile-app', label: 'Mobile Apps' },
+        { slug: 'agentic-ai', label: 'AI Solutions' },
+        { slug: 'process-automation', label: 'Process Automation' },
+        { slug: 'custom-software', label: 'Custom Software' },
+        { slug: 'product-development', label: 'Product Development' },
+        { slug: 'blockchain-integration', label: 'Blockchain Solutions' },
+        { slug: 'digital-transformation', label: 'Digital Transformation' },
+      ].map((item) => (
+        <li key={item.slug}>
+          <a
+            href={`/services/${item.slug}`}
+            className="block px-4 py-2 hover:bg-accent-primary/10 hover:text-accent-primary"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* MARKETPLACE */}
+  <div className="group relative">
+    <h3 className="text-lg font-semibold text-accent-primary tracking-wide cursor-pointer">
+      Marketplace
+    </h3>
+    <ul className="py-2 text-sm text-text-secondary bg-white border border-border-color rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 absolute z-50 mt-1 w-64">
+      {[
+        'All Industries',
+        'Healthcare',
+        'Finance',
+        'E-commerce',
+        'Education',
+        'Food Delivery',
+        'Retail',
+        'Banking',
+        'Real Estate',
+        'Travel',
+        'OTT',
+      ].map((industry) => {
+        const slug = industry.toLowerCase().replace(/\s+/g, '-');
+        return (
+          <li key={industry}>
+            <a
+              href={`/marketplace/`}
+              className="block px-4 py-2 hover:bg-accent-primary/10 hover:text-accent-primary"
+            >
+              {industry}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+
+  {/* AUTOMATION */}
+  <div className="group relative">
+    <h3 className="text-lg font-semibold text-accent-primary tracking-wide cursor-pointer">
+      Automation
+    </h3>
+    <ul className="py-2 text-sm text-text-secondary bg-white border border-border-color rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 absolute z-50 mt-1 w-64">
+      {[
+        'All Industries',
+        'Marketing',
+        'Sales',
+        'HR',
+        'Finance',
+        'Customer Support',
+        'IT',
+        'Operations',
+        'Product',
+        'Legal',
+      ].map((area) => {
+        const slug = area.toLowerCase().replace(/\s+/g, '-');
+        return (
+          <li key={area}>
+            <a
+              href={`/automation/`}
+              className="block px-4 py-2 hover:bg-accent-primary/10 hover:text-accent-primary"
+            >
+              {area}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</div>
+
+
+
 
             {/* Company */}
             <div className="space-y-4">
@@ -440,31 +441,7 @@ const Layout = ({ children }) => {
              <div className="space-y-4">
               <h3 className="text-lg font-semibold text-accent-primary tracking-wide">Resources</h3>
               <ul className="space-y-2 text-text-secondary">
-                <li>
-                  <a 
-                    href="/marketplace" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/marketplace';
-                    }}
-                    className="hover:text-accent-primary transition-colors relative group"
-                  >
-                    Marketplace
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-primary/50 group-hover:w-full transition-all duration-300"></span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="/automation" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/automation';
-                    }}
-                    className="hover:text-accent-primary transition-colors"
-                  >
-                  Automation
-                  </a>
-                </li>
+                
                 <li>
                   <a 
                     href="/free-tools" 

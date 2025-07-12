@@ -29,16 +29,25 @@ const Marketplace = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
 
   // Filter ready-made solutions
-  const filteredSolutions = useMemo(() => {
-    return readyMadeSolutions.filter(solution => {
-      const matchesSearch = solution.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           solution.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesIndustry = selectedIndustry === 'All Industries' || solution.industry === selectedIndustry;
-      const matchesFramework = selectedFramework === 'All Frameworks' || solution.framework === selectedFramework;
-      
-      return matchesSearch && matchesIndustry && matchesFramework;
-    });
-  }, [searchTerm, selectedIndustry, selectedFramework]);
+ const filteredSolutions = useMemo(() => {
+  return readyMadeSolutions.filter(solution => {
+    const name = solution.name?.toLowerCase().trim();
+    const desc = solution.description?.toLowerCase().trim();
+    const industry = solution.industry?.toLowerCase().trim();
+    const framework = solution.framework?.toLowerCase().trim();
+
+    const search = searchTerm.toLowerCase().trim();
+    const selIndustry = selectedIndustry.toLowerCase().trim();
+    const selFramework = selectedFramework.toLowerCase().trim();
+
+    const matchesSearch = name.includes(search) || desc.includes(search);
+    const matchesIndustry = selIndustry === 'all industries' || industry === selIndustry;
+    const matchesFramework = selFramework === 'all frameworks' || framework === selFramework;
+
+    return matchesSearch && matchesIndustry && matchesFramework;
+  });
+}, [searchTerm, selectedIndustry, selectedFramework]);
+
 
   // Filter APIs
   const filteredApis = useMemo(() => {
@@ -115,60 +124,69 @@ const Marketplace = () => {
       </section>
 
       {/* Search and Filters */}
-      <section className="py-12 bg-dark-secondary border-b border-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-6 items-center">
-            {/* Search Bar */}
-            <div className="flex-1 relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5" />
-              <input
-                type="text"
-                placeholder={`Search ${activeTab === 'solutions' ? 'solutions' : 'APIs'}...`}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent text-lg placeholder-text-secondary"
-              />
-            </div>
-
-            {/* Filters */}
-            <div className="flex flex-wrap gap-4">
-              {activeTab === 'solutions' ? (
-                <>
-                  <select
-                    value={selectedIndustry}
-                    onChange={(e) => setSelectedIndustry(e.target.value)}
-                    className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
-                  >
-                    {industries.map(industry => (
-                      <option key={industry} value={industry}>{industry}</option>
-                    ))}
-                  </select>
-                  
-                  <select
-                    value={selectedFramework}
-                    onChange={(e) => setSelectedFramework(e.target.value)}
-                    className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
-                  >
-                    {frameworks.map(framework => (
-                      <option key={framework} value={framework}>{framework}</option>
-                    ))}
-                  </select>
-                </>
-              ) : (
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
-                >
-                  {apiCategories.map(category => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
-                </select>
-              )}
-            </div>
-          </div>
+   <section className="py-12 bg-dark-secondary border-b border-dark">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center">
+      {/* Search Bar */}
+      <div className="flex-1 w-full relative">
+        <div className="relative w-full">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary w-5 h-5 pointer-events-none z-10" />
+          <input
+            type="text"
+            placeholder={`Search ${activeTab === 'solutions' ? 'solutions' : 'APIs'}...`}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-12 pr-4 py-4 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent text-lg placeholder-text-secondary relative z-20"
+          />
         </div>
-      </section>
+      </div>
+
+      {/* Filters */}
+      <div className="w-full lg:w-auto flex flex-wrap gap-4">
+        {activeTab === 'solutions' ? (
+          <>
+            <select
+              value={selectedIndustry}
+              onChange={(e) => setSelectedIndustry(e.target.value)}
+              className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
+            >
+              {industries.map((industry) => (
+                <option key={industry} value={industry}>
+                  {industry}
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={selectedFramework}
+              onChange={(e) => setSelectedFramework(e.target.value)}
+              className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
+            >
+              {frameworks.map((framework) => (
+                <option key={framework} value={framework}>
+                  {framework}
+                </option>
+              ))}
+            </select>
+          </>
+        ) : (
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="px-4 py-3 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent"
+          >
+            {apiCategories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Content Section */}
       <section className="py-20">
