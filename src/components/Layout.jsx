@@ -124,7 +124,7 @@ const Layout = ({ children }) => {
               <div className="w-8 h-8 md:w-10 md:h-10 gradient-bg rounded-lg flex items-center justify-center shadow-button">
                 <Zap className="text-white font-bold w-4 h-4 md:w-6 md:h-6" />
               </div>
-              <span className="text-lg md:text-2xl font-bold gradient-text tracking-tight">SaaS Agency</span>
+              <span className="text-lg md:text-2xl font-bold gradient-text tracking-tight">IYT</span>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -283,7 +283,7 @@ const Layout = ({ children }) => {
                 <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center shadow-button">
                   <Zap className="text-white font-bold text-xl w-6 h-6" />
                 </div>
-                <span className="text-xl font-bold gradient-text tracking-tight">SaaS Agency</span>
+                <span className="text-xl font-bold gradient-text tracking-tight">IVT</span>
               </div>
               <p className="text-text-secondary leading-relaxed">
                 Transforming businesses through innovative technology solutions.
@@ -459,7 +459,7 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="border-t border-border-color mt-12 pt-8 text-center text-text-secondary">
-            <p className="opacity-80 text-sm">&copy; 2025 SaaS Agency. All rights reserved.</p>
+            <p className="opacity-80 text-sm">&copy; 2025 Invincible Young Technologies Pvt. All rights reserved.</p>
           </div>
         </div>
         

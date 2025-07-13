@@ -176,7 +176,7 @@ const About = () => {
               className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight mb-6"
             >
               About <span className="gradient-neon-text neon-text bg-gradient-to-r
-                   rainbow-text">SaaS Agency</span>
+                   rainbow-text">Invincible Young Technologies Private Limited</span>
             </motion.h1>
             
             <motion.p
