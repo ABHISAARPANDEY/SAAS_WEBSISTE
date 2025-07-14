@@ -24,7 +24,7 @@ const services = [
     icon: Smartphone,
     gradient: 'from-pink-500 to-rose-500',
     features: ['iOS & Android Development', 'Cross-platform Solutions', 'App Store Optimization', 'Push Notifications'],
-    pricing: 'Starting from $15,000',
+    pricing: 'Starting from $1200',
     timeline: '3-6 months'
   },
   {
@@ -34,7 +34,7 @@ const services = [
     icon: Globe,
     gradient: 'from-blue-500 to-cyan-500',
     features: ['Responsive Design', 'Modern Frameworks', 'SEO Optimization', 'Performance Tuning'],
-    pricing: 'Starting from $8,000',
+    pricing: 'Starting from $500',
     timeline: '2-4 months'
   },
   {
@@ -44,7 +44,7 @@ const services = [
     icon: Zap,
     gradient: 'from-yellow-500 to-orange-500',
     features: ['Workflow Automation', 'API Integration', 'Data Processing', 'Custom Dashboards'],
-    pricing: 'Starting from $5,000',
+    pricing: 'Starting from $1500',
     timeline: '1-3 months'
   },
   {
@@ -54,7 +54,7 @@ const services = [
     icon: Code,
     gradient: 'from-purple-500 to-indigo-500',
     features: ['Custom Development', 'Legacy System Integration', 'Database Design', 'API Development'],
-    pricing: 'Starting from $12,000',
+    pricing: 'Starting from $2000',
     timeline: '3-8 months'
   },
   {
@@ -64,7 +64,7 @@ const services = [
     icon: Lightbulb,
     gradient: 'from-green-500 to-emerald-500',
     features: ['MVP Development', 'Market Research', 'User Testing', 'Product Strategy'],
-    pricing: 'Starting from $20,000',
+    pricing: 'Starting from $3000',
     timeline: '4-12 months'
   },
   {
@@ -74,7 +74,7 @@ const services = [
     icon: Shield,
     gradient: 'from-teal-500 to-blue-500',
     features: ['Smart Contracts', 'DeFi Solutions', 'NFT Platforms', 'Cryptocurrency Integration'],
-    pricing: 'Starting from $25,000',
+    pricing: 'Starting from $3000',
     timeline: '4-10 months'
   },
   {
@@ -84,7 +84,7 @@ const services = [
     icon: TrendingUp,
     gradient: 'from-violet-500 to-purple-500',
     features: ['Strategy Consulting', 'Technology Migration', 'Process Optimization', 'Change Management'],
-    pricing: 'Starting from $30,000',
+    pricing: 'Starting from $3000',
     timeline: '6-18 months'
   },
   {
@@ -94,7 +94,7 @@ const services = [
     icon: Bot,
     gradient: 'from-cyan-500 to-blue-500',
     features: ['AI Chatbots', 'Machine Learning', 'Natural Language Processing', 'Predictive Analytics'],
-    pricing: 'Starting from $18,000',
+    pricing: 'Starting from $5000',
     timeline: '3-8 months'
   }
 ];

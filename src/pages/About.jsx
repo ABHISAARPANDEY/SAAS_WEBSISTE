@@ -34,14 +34,14 @@ const About = () => {
   const [activeProcess, setActiveProcess] = useState(0);
 
   const expertise = [
-    { name: 'Custom Software Development', icon: Code, years: '8+' },
-    { name: 'Mobile App Development', icon: Smartphone, years: '6+' },
-    { name: 'Web Application Development', icon: Globe, years: '8+' },
+    { name: 'Custom Software Development', icon: Code, years: '4+' },
+    { name: 'Mobile App Development', icon: Smartphone, years: '5+' },
+    { name: 'Web Application Development', icon: Globe, years: '5+' },
     { name: 'E-commerce Solutions', icon: TrendingUp, years: '5+' },
     { name: 'Cloud Computing Services', icon: Cloud, years: '4+' },
-    { name: 'UI/UX Design', icon: Layers, years: '7+' },
+    { name: 'UI/UX Design', icon: Layers, years: '4+' },
     { name: 'Digital Transformation', icon: Zap, years: '5+' },
-    { name: 'Enterprise Solutions', icon: Database, years: '6+' }
+    { name: 'Enterprise Solutions', icon: Database, years: '5+' }
   ];
 
   const workingProcess = [
@@ -151,7 +151,7 @@ const About = () => {
   const stats = [
     { number: '200+', label: 'Projects Completed', icon: Award },
     { number: '50+', label: 'Happy Clients', icon: Heart },
-    { number: '8+', label: 'Years Experience', icon: Clock },
+    { number: '4+', label: 'Years Experience', icon: Clock },
     { number: '15+', label: 'Team Members', icon: Users }
   ];
 
@@ -443,11 +443,11 @@ const About = () => {
               </div>
               
               <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-text-primary mb-4">
-                Special Offering: <span className="text-neon-green neon-text">3 Months Free Support</span>
+                Special Offering: <span className="text-neon-green neon-text">1 Months Free Support</span>
               </h2>
               
               <p className="text-xl text-text-secondary mb-8 leading-relaxed">
-                Every project comes with three months of complimentary maintenance and support, 
+                Every project comes with one months of complimentary maintenance and support, 
                 ensuring your solution operates at peak performance from day one.
               </p>
 
