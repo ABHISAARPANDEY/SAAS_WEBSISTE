@@ -375,6 +375,10 @@ const ProductDetail = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+                onClick={() => {
+        window.scrollTo(0, 0);
+       navigate('/get-quote');
+      }}
               className="btn-neon px-12 py-4 rounded-full font-orbitron font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto"
             >
               <Download className="w-6 h-6 text-dark-primary" />
