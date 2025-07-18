@@ -370,6 +370,7 @@ const Hero = () => {
                 <span className="sm:inline">Marketplace</span>
               </motion.button>
               
+              
               <motion.button
                 whileHover={{ scale: 1.05, y: -3, boxShadow: "0 10px 25px rgba(99, 91, 255, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
@@ -402,8 +403,27 @@ const Hero = () => {
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 text-accent-primary" />
                 <span className="sm:inline">Get Quote</span>
               </motion.button>
+              
             </div>
           </motion.div>
+
+            <div className="w-full flex justify-center col-span-2">
+  <motion.button
+    whileHover={{ scale: 1.05, y: -3, boxShadow: "0 10px 25px rgba(99, 91, 255, 0.3)" }}
+    whileTap={{ scale: 0.95 }}
+   onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = 'https://workflowwizard.onrender.com';
+                    }}
+    className="btn-secondary px-4 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-lg flex items-center justify-center gap-2 sm:gap-3 group btn-ripple magnetic-btn mt-2"
+    onMouseDown={addRipple}
+  >
+    <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-accent-primary" />
+    <span className="sm:inline">Workflow Wizard</span>
+  </motion.button>
+</div>
+
+
 
           {/* Stats */}
           <motion.div

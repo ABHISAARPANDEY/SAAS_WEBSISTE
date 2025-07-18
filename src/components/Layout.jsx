@@ -170,6 +170,16 @@ const Layout = ({ children }) => {
               >
                 Automation
               </a>
+               <a 
+                href="/https://workflowwizard.onrender.com/" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = 'https://workflowwizard.onrender.com/';
+                }}
+                className="text-text-primary hover:text-accent-primary transition-colors font-medium animated-underline"
+              >
+                WorkFlow Wizard
+              </a>
               <a 
                 href="/free-tools" 
                 onClick={(e) => {

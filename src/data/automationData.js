@@ -65,268 +65,266 @@ export const complexityLevels = [
 ];
 
 export const automationTemplates = [
-  {
-    id: 'email-campaign-automation',
-    name: 'Email Campaign Automation',
-    description: 'Automate your email marketing campaigns with personalized content, scheduling, and analytics tracking.',
-    category: 'Marketing',
-    useCase: 'Communication',
-    integrations: ['Gmail', 'HubSpot', 'Google Sheets'],
-    complexity: 'Intermediate',
-    icon: Mail,
-    gradient: 'from-blue-500 to-indigo-600',
-    neonColor: 'neon-cyan',
-    image: 'https://images.pexels.com/photos/1591062/pexels-photo-1591062.jpeg?auto=compress&cs=tinysrgb&w=800',
-    features: [
-      'Personalized email templates',
-      'Scheduled sending',
-      'A/B testing',
-      'Open and click tracking',
-      'Automated follow-ups'
-    ],
-    steps: [
-      'Connect your email service provider',
-      'Import contact list or connect CRM',
-      'Set up email templates with personalization tokens',
-      'Configure sending schedule and follow-up rules',
-      'Set up analytics tracking'
-    ],
-    useCases: [
-      {
-        title: 'Customer Onboarding',
-        description: 'Send a series of welcome emails to new customers with product information and tips.'
-      },
-      {
-        title: 'Re-engagement Campaign',
-        description: 'Automatically send targeted emails to inactive customers based on their past behavior.'
-      },
-      {
-        title: 'Event Promotion',
-        description: 'Schedule and send event announcements, reminders, and follow-ups to registered attendees.'
-      }
-    ],
-    requirements: {
-      email: 'Gmail, Outlook, or other SMTP service',
-      data: 'Contact list with name and email fields',
-      optional: 'CRM integration for advanced personalization'
+ {
+  id: 'lead-enrichment-clearbit',
+  name: 'Lead Enrichment with Clearbit & HubSpot',
+  description: 'Automatically enrich new leads with company and contact data using Clearbit, then sync with HubSpot CRM.',
+  category: 'Sales',
+  useCase: 'Data Processing',
+  integrations: ['Clearbit', 'HubSpot', 'Google Sheets'],
+  complexity: 'Intermediate',
+  icon: Users,
+  gradient: 'from-yellow-500 to-orange-600',
+  neonColor: 'neon-yellow',
+  image: 'https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&cs=tinysrgb&w=800',
+  features: [
+    'Email-to-company lookup',
+    'Social media enrichment',
+    'CRM record creation',
+    'Company size & industry data',
+    'Automated tagging & segmentation'
+  ],
+  steps: [
+    'Connect your form or lead source (e.g., Typeform, Webflow)',
+    'Trigger Clearbit enrichment on form submission',
+    'Extract and format enriched data',
+    'Create or update record in HubSpot',
+    'Add segmentation tags automatically'
+  ],
+  useCases: [
+    {
+      title: 'Cold Lead Enrichment',
+      description: 'Turn email-only leads into actionable contact profiles with firmographics and social links.'
     },
-    pricing: {
-      free: false,
-      premium: {
-        available: true,
-        features: ['Advanced analytics', 'Unlimited contacts', 'Priority support']
-      }
-    }
-  },
-  {
-    id: 'customer-support-chatbot',
-    name: 'Customer Support Chatbot',
-    description: 'Deploy an AI-powered chatbot that handles common customer inquiries and escalates complex issues to human agents.',
-    category: 'Customer Support',
-    useCase: 'Communication',
-    integrations: ['Slack', 'Zendesk', 'Intercom'],
-    complexity: 'Advanced',
-    icon: MessageSquare,
-    gradient: 'from-green-500 to-emerald-600',
-    neonColor: 'neon-green',
-    image: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=800',
-    features: [
-      'Natural language understanding',
-      'Pre-built response templates',
-      'Seamless human handoff',
-      'Conversation history',
-      'Performance analytics'
-    ],
-    steps: [
-      'Define common customer questions and appropriate responses',
-      'Configure chatbot personality and tone',
-      'Set up escalation rules for human support',
-      'Integrate with your support ticketing system',
-      'Train the AI with your product documentation'
-    ],
-    useCases: [
-      {
-        title: 'Product FAQs',
-        description: 'Answer common product questions instantly without human intervention.'
-      },
-      {
-        title: 'Order Status Tracking',
-        description: 'Allow customers to check their order status through the chatbot interface.'
-      },
-      {
-        title: 'Technical Troubleshooting',
-        description: 'Guide customers through basic troubleshooting steps before escalating to support.'
-      }
-    ],
-    requirements: {
-      platform: 'Website or mobile app with chat interface',
-      data: 'FAQ documentation, product information',
-      optional: 'Customer support ticketing system'
+    {
+      title: 'Sales Prospecting',
+      description: 'Prioritize and route leads based on company size, funding, or tech stack.'
     },
-    pricing: {
-      free: false,
-      premium: {
-        available: true,
-        features: ['Advanced NLP capabilities', 'Multi-language support', 'Custom integrations']
-      }
+    {
+      title: 'Automated CRM Hygiene',
+      description: 'Keep CRM entries clean and detailed with enriched metadata from Clearbit.'
     }
+  ],
+  requirements: {
+    apiKey: 'Clearbit API Key',
+    crm: 'HubSpot or any CRM that supports API integration'
   },
+  pricing: {
+    free: false,
+    premium: {
+      available: true,
+      features: ['Priority data matching', 'Full company profiles', 'Batch enrichment support']
+    }
+  }
+}
+,
   {
-    id: 'meeting-scheduler',
-    name: 'Intelligent Meeting Scheduler',
-    description: 'Eliminate the back-and-forth of scheduling meetings with an automated system that finds the perfect time for everyone.',
-    category: 'Operations',
-    useCase: 'Workflow',
-    integrations: ['Google Calendar', 'Outlook', 'Zoom', 'Teams'],
-    complexity: 'Basic',
-    icon: Calendar,
-    gradient: 'from-purple-500 to-violet-600',
-    neonColor: 'neon-pink',
-    image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
-    features: [
-      'Calendar availability detection',
-      'Time zone handling',
-      'Meeting link generation',
-      'Automated reminders',
-      'Rescheduling options'
-    ],
-    steps: [
-      'Connect your calendar service',
-      'Configure your availability preferences',
-      'Set up meeting types and durations',
-      'Customize booking page and notifications',
-      'Share your booking link with others'
-    ],
-    useCases: [
-      {
-        title: 'Client Consultations',
-        description: 'Allow clients to book time slots based on your real-time availability.'
-      },
-      {
-        title: 'Team Coordination',
-        description: 'Find meeting times that work for everyone on your team automatically.'
-      },
-      {
-        title: 'Interview Scheduling',
-        description: 'Streamline the interview process by letting candidates pick available time slots.'
-      }
-    ],
-    requirements: {
-      calendar: 'Google Calendar, Outlook, or iCloud',
-      optional: 'Video conferencing software (Zoom, Teams, etc.)'
+  id: 'whatsapp-order-bot',
+  name: 'WhatsApp Order Bot for Shopify/WooCommerce',
+  description: 'Enable users to place and track orders directly through WhatsApp using automation connected to your eCommerce store.',
+  category: 'Customer Support',
+  useCase: 'Workflow',
+  integrations: ['WhatsApp Business API', 'Shopify', 'WooCommerce', 'Google Sheets'],
+  complexity: 'Advanced',
+  icon: MessageSquare,
+  gradient: 'from-green-500 to-emerald-600',
+  neonColor: 'neon-green',
+  image: 'https://images.pexels.com/photos/4050291/pexels-photo-4050291.jpeg?auto=compress&cs=tinysrgb&w=800',
+  features: [
+    'Automated order placement via WhatsApp',
+    'Live inventory lookup',
+    'Order status tracking',
+    'Customer data capture',
+    'Multilingual support'
+  ],
+  steps: [
+    'Connect your WhatsApp Business API using Twilio or 360dialog',
+    'Design chat flow for order creation and lookup',
+    'Sync product catalog from Shopify/WooCommerce',
+    'Handle payment link generation and confirmation',
+    'Send real-time order confirmation and shipping updates'
+  ],
+  useCases: [
+    {
+      title: 'Mobile Shopping',
+      description: 'Allow users to place orders from WhatsApp without visiting the website.'
     },
-    pricing: {
-      free: false,
-      premium: {
-        available: true,
-        features: ['Group scheduling', 'Custom branding', 'Advanced availability rules']
-      }
+    {
+      title: 'Customer Support',
+      description: 'Provide quick responses to order and product queries through WhatsApp.'
+    },
+    {
+      title: 'Abandoned Cart Recovery',
+      description: 'Send recovery messages via WhatsApp when users leave items in the cart.'
     }
+  ],
+  requirements: {
+    whatsapp: 'Verified WhatsApp Business number with API access',
+    ecommerce: 'Shopify or WooCommerce store with products listed'
   },
+  pricing: {
+    free: false,
+    premium: {
+      available: true,
+      features: ['Multi-language flows', 'Cart recovery automation', 'CRM integration']
+    }
+  }
+}
+,
   {
-    id: 'document-approval-workflow',
-    name: 'Document Approval Workflow',
-    description: 'Streamline your document approval process with automated routing, notifications, and tracking.',
-    category: 'Operations',
-    useCase: 'Workflow',
-    integrations: ['Google Drive', 'Dropbox', 'Slack', 'Microsoft 365'],
-    complexity: 'Intermediate',
-    icon: FileText,
-    gradient: 'from-yellow-500 to-amber-600',
-    neonColor: 'neon-green',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-    features: [
-      'Multi-stage approval flows',
-      'Conditional routing',
-      'Digital signatures',
-      'Deadline tracking',
-      'Audit trail'
-    ],
-    steps: [
-      'Define your approval workflow stages and participants',
-      'Configure document routing rules',
-      'Set up notification templates',
-      'Establish escalation procedures for delays',
-      'Connect your document storage system'
-    ],
-    useCases: [
-      {
-        title: 'Contract Approvals',
-        description: 'Route contracts through legal, finance, and executive review with tracking and reminders.'
-      },
-      {
-        title: 'Marketing Content Review',
-        description: 'Ensure all marketing materials receive proper review and approval before publication.'
-      },
-      {
-        title: 'Expense Approvals',
-        description: 'Streamline the expense approval process with proper routing based on amount and category.'
-      }
-    ],
-    requirements: {
-      storage: 'Cloud document storage (Google Drive, Dropbox, etc.)',
-      communication: 'Email or messaging platform for notifications'
+  id: 'abandoned-cart-recovery',
+  name: 'Abandoned Cart Recovery (Email + WhatsApp)',
+  description: 'Recover lost sales by sending personalized emails and WhatsApp messages to users who abandon their carts.',
+  category: 'Marketing',
+  useCase: 'Notifications',
+  integrations: ['Shopify', 'WooCommerce', 'Mailchimp', 'WhatsApp Business API'],
+  complexity: 'Intermediate',
+  icon: ShoppingCart,
+  gradient: 'from-orange-500 to-red-600',
+  neonColor: 'neon-orange',
+  image: 'https://images.pexels.com/photos/5632385/pexels-photo-5632385.jpeg?auto=compress&cs=tinysrgb&w=800',
+  features: [
+    'Cart abandonment detection',
+    'Email & WhatsApp reminders',
+    'Dynamic product listing in messages',
+    'Discount code generation',
+    'Analytics tracking'
+  ],
+  steps: [
+    'Track when users add items to cart but do not complete checkout',
+    'Trigger email sequence after 1–24 hours',
+    'Send WhatsApp message with item summary and link',
+    'Include personalized discount code if no response',
+    'Track recovery conversion in dashboard'
+  ],
+  useCases: [
+    {
+      title: 'Lost Revenue Recovery',
+      description: 'Win back customers with timely reminders and incentives.'
     },
-    pricing: {
-      free: false,
-      premium: {
-        available: true,
-        features: ['Advanced workflow rules', 'Custom approval forms', 'API access']
-      }
+    {
+      title: 'Multi-channel Marketing',
+      description: 'Increase conversion with outreach through both email and WhatsApp.'
+    },
+    {
+      title: 'Flash Sale Follow-up',
+      description: 'Remind users to complete checkout before sales expire.'
     }
+  ],
+  requirements: {
+    platform: 'Shopify or WooCommerce store',
+    outreach: 'Mailchimp or WhatsApp API integration'
   },
+  pricing: {
+    free: false,
+    premium: {
+      available: true,
+      features: ['A/B testing', 'Advanced segmentation', 'Engagement analytics']
+    }
+  }
+}
+,
   {
-    id: 'sales-dashboard-automation',
-    name: 'Sales Dashboard Automation',
-    description: 'Automatically collect, process, and visualize sales data from multiple sources in real-time customizable dashboards.',
-    category: 'Sales',
-    useCase: 'Analytics',
-    integrations: ['Salesforce', 'HubSpot', 'Google Sheets', 'Stripe'],
-    complexity: 'Intermediate',
-    icon: BarChart3,
-    gradient: 'from-red-500 to-pink-600',
-    neonColor: 'neon-pink',
-    image: 'https://images.pexels.com/photos/7947541/pexels-photo-7947541.jpeg?auto=compress&cs=tinysrgb&w=800',
-    features: [
-      'Multi-source data integration',
-      'Automated data processing',
-      'Real-time visualization',
-      'Custom KPI tracking',
-      'Scheduled reports'
-    ],
-    steps: [
-      'Connect your sales data sources',
-      'Define key metrics and KPIs to track',
-      'Configure data transformation rules',
-      'Design dashboard layouts and visualizations',
-      'Set up automated reporting schedule'
-    ],
-    useCases: [
-      {
-        title: 'Sales Performance Monitoring',
-        description: 'Track team and individual performance against targets in real-time.'
-      },
-      {
-        title: 'Pipeline Analysis',
-        description: 'Visualize your sales pipeline and identify bottlenecks or opportunities.'
-      },
-      {
-        title: 'Revenue Forecasting',
-        description: 'Generate accurate revenue forecasts based on historical data and current pipeline.'
-      }
-    ],
-    requirements: {
-      data: 'CRM system or sales data source',
-      optional: 'Payment processor integration for revenue data'
+  id: 'instagram-to-notion-archive',
+  name: 'Instagram to Notion Content Archiver',
+  description: 'Automatically archive Instagram posts including image, caption, and hashtags into a Notion database.',
+  category: 'Content',
+  useCase: 'Workflow',
+  integrations: ['Instagram Graph API', 'Notion'],
+  complexity: 'Basic',
+  icon: Layers,
+  gradient: 'from-purple-600 to-pink-600',
+  neonColor: 'neon-purple',
+  image: 'https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=800',
+  features: [
+    'Auto-detect new IG posts',
+    'Pull caption, hashtags, image',
+    'Log into Notion table',
+    'Track engagement metrics',
+    'Keep marketing content archive'
+  ],
+  steps: [
+    'Connect your Instagram Business account',
+    'Trigger flow on new post detection',
+    'Extract content (media, text, hashtags)',
+    'Create new row in Notion DB with post info',
+    'Optionally, add analytics from IG insights'
+  ],
+  useCases: [
+    {
+      title: 'Content Audit',
+      description: 'Maintain a clean archive of all posts for reuse and analysis.'
     },
-    pricing: {
-      free: false,
-      premium: {
-        available: true,
-        features: ['Advanced analytics', 'Custom metrics', 'White-label options']
-      }
+    {
+      title: 'Influencer Tracking',
+      description: 'Store and organize influencer campaign posts in a central Notion DB.'
+    },
+    {
+      title: 'Client Reporting',
+      description: 'Share automated reports of client’s Instagram content in Notion.'
     }
+  ],
+  requirements: {
+    instagram: 'Business IG account + Graph API access',
+    notion: 'Database page + integration token'
   },
+  pricing: {
+    free: true,
+    premium: {
+      available: false,
+      features: []
+    }
+  }
+}
+,
+  {
+  id: 'form-to-crm-sync',
+  name: 'Auto-Sync Google Forms to CRM',
+  description: 'When a user submits a form, automatically create or update their contact record in your CRM system.',
+  category: 'Sales',
+  useCase: 'Workflow',
+  integrations: ['Google Forms', 'Google Sheets', 'HubSpot', 'Salesforce'],
+  complexity: 'Basic',
+  icon: Database,
+  gradient: 'from-green-500 to-teal-600',
+  neonColor: 'neon-green',
+  image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+  features: [
+    'Real-time CRM sync',
+    'Duplicate detection',
+    'Tagging & segmentation',
+    'Custom field mapping',
+    'Form-to-CRM delay handling'
+  ],
+  steps: [
+    'Connect your Google Form to a linked Sheet',
+    'Trigger automation on new row (form submission)',
+    'Map form fields to CRM contact properties',
+    'Create new contact or update existing one',
+    'Add tags and assign to sales pipeline'
+  ],
+  useCases: [
+    {
+      title: 'Lead Capture',
+      description: 'Turn every form response into a CRM lead instantly.'
+    },
+    {
+      title: 'Event Registrations',
+      description: 'Sync webinar or event attendees with sales workflows.'
+    }
+  ],
+  requirements: {
+    forms: 'Google Forms linked to a response sheet',
+    crm: 'HubSpot, Salesforce, or similar with API access'
+  },
+  pricing: {
+    free: true,
+    premium: {
+      available: true,
+      features: ['Advanced deduplication', 'Lead scoring', 'CRM activity logging']
+    }
+  }
+},
   {
     id: 'inventory-management',
     name: 'Inventory Management Automation',
