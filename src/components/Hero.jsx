@@ -413,7 +413,7 @@ const Hero = () => {
     whileTap={{ scale: 0.95 }}
    onClick={(e) => {
                       e.preventDefault();
-                      window.location.href = 'https://workflowwizard.onrender.com';
+                      window.location.href = 'https://workflowwizard.replit.app/';
                     }}
     className="btn-secondary px-4 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-lg flex items-center justify-center gap-2 sm:gap-3 group btn-ripple magnetic-btn mt-2"
     onMouseDown={addRipple}
