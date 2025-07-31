@@ -161,25 +161,17 @@ const Layout = ({ children }) => {
                 Marketplace
               </a>
               <a 
-                href="/automation" 
+                href="/portfolio" 
                 onClick={(e) => {
                   e.preventDefault();
-                  window.location.href = '/automation';
+                  window.location.href = '/portfolio';
                 }}
                 className="text-text-primary hover:text-accent-primary transition-colors font-medium animated-underline"
               >
-                Automation
+                Portfolio
               </a>
-               <a 
-                href="/https://workflowwizard.onrender.com/" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = 'https://workflowwizard.onrender.com/';
-                }}
-                className="text-text-primary hover:text-accent-primary transition-colors font-medium animated-underline"
-              >
-                WorkFlow Wizard
-              </a>
+              
+             
               <a 
                 href="/free-tools" 
                 onClick={(e) => {
@@ -209,7 +201,7 @@ const Layout = ({ children }) => {
                 className="stripe-button btn-ripple magnetic-btn"
                 onMouseDown={addRipple}
               >
-                Get Quote
+                Contact Us
               </motion.button>
             </div>
 
@@ -431,6 +423,19 @@ const Layout = ({ children }) => {
                     className="hover:text-accent-primary transition-colors"
                   >
                     Contact
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // Non-functional WhatsApp button as requested
+                      console.log('WhatsApp contact clicked');
+                    }}
+                    className="hover:text-accent-primary transition-colors"
+                  >
+                    Contact on WhatsApp
                   </a>
                 </li>
                 <li>

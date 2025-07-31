@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Send, CheckCircle, Loader, AlertCircle, Zap, Shield, Check } from 'lucide-react';
+import { Send, CheckCircle, Loader, AlertCircle, Zap, Shield, Check, MessageCircle } from 'lucide-react';
 import { industries, services } from '../data/quoteFormData';
 import { submitQuoteRequest } from '../utils/supabaseClient';
 import PhoneInput from 'react-phone-input-2';
@@ -641,29 +641,50 @@ if (error) {
                 </motion.div>
               )}
               
-              <motion.button
-                type="submit"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`inline-flex items-center px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ${
-                  isSubmitting
-                    ? 'bg-secondary text-text-secondary cursor-not-allowed border border-border-color'
-                    : 'stripe-button'
-                }`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-text-secondary" />
-                    Submitting...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
-                    Get My Quote
-                  </>
-                )}
-              </motion.button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`inline-flex items-center px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ${
+                    isSubmitting
+                      ? 'bg-secondary text-text-secondary cursor-not-allowed border border-border-color'
+                      : 'stripe-button'
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-text-secondary" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
+                      Get My Quote
+                    </>
+                  )}
+                </motion.button>
+
+                {/* WhatsApp Contact Button */}
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl"
+                  onClick={() => {
+                    // Non-functional button as requested
+                    console.log('WhatsApp contact button clicked');
+                  }}
+                >
+                  <img 
+                    src="/src/logos/whatapp_logo.png" 
+                    alt="WhatsApp" 
+                    className="w-5 h-5 mr-2"
+                  />
+                  Contact Us on WhatsApp
+                </motion.button>
+              </div>
             </div>
           </motion.form>
         </div>

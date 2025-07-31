@@ -8,6 +8,7 @@ import FreeTools from './pages/FreeTools';
 import Automation from './pages/Automation';
 import AutomationDetail from './pages/AutomationDetail';
 import Marketplace from './pages/Marketplace';
+import Portfolio from './pages/Portfolio';
 import ProductDetail from './pages/ProductDetail';
 import ApiDetail from './pages/ApiDetail';
 import GetQuote from './pages/GetQuote';
@@ -81,6 +82,7 @@ function App() {
             <Route path="/free-tools" element={<FreeTools />} />
             <Route path="/automation" element={<Automation />} />
             <Route path="/automation/:templateId" element={<AutomationDetail />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/marketplace/product/:productId" element={<ProductDetail />} />

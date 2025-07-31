@@ -23,12 +23,19 @@ import {
   Link2, 
   Smartphone, 
   Globe, 
-  Monitor 
+  Monitor,
+  Sparkles,
+  Camera,
+  Video,
+  MessageSquare,
+  Share2,
+  Target
 } from 'lucide-react';
 
 const Hero = () => {
   const navigate = useNavigate();
   const [currentIconSet, setCurrentIconSet] = React.useState(0);
+  const [showSparkwaveBanner, setShowSparkwaveBanner] = React.useState(true);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
@@ -93,14 +100,22 @@ const Hero = () => {
     ]
   ];
   
-  // Cycle through icon sets every 5 seconds
+  // Cycle through icon sets and banner every 5 seconds
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIconSet((prev) => (prev + 1) % iconSets.length);
+      if (showSparkwaveBanner) {
+        // Banner is showing, switch to icons
+        setShowSparkwaveBanner(false);
+        setCurrentIconSet(0); // Start with first icon set
+      } else {
+        // Icons are showing, switch to banner
+        setShowSparkwaveBanner(true);
+        setCurrentIconSet((prev) => (prev + 1) % iconSets.length);
+      }
     }, 5000);
     
     return () => clearInterval(interval);
-  }, [iconSets.length]);
+  }, [iconSets.length, showSparkwaveBanner]);
   
   // Add ripple effect to buttons
   const addRipple = (e) => {
@@ -262,50 +277,121 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="space-y-8"
         >
-          {/* Tech Icons */}
+          {/* Tech Icons and Sparkwave Banner */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1, y: [10, 0] }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex justify-center space-x-10 mb-10 relative h-[72px]"
+            className="flex justify-center mb-16 relative h-[250px]"
           >
-            {iconSets.map((set, setIndex) => (
-              <motion.div 
-                key={setIndex}
-                className="absolute left-0 right-0 flex justify-center space-x-10"
-                initial={{ opacity: 0 }}
-                animate={{ 
-                  opacity: currentIconSet === setIndex ? 1 : 0,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                {set.map((item, i) => {
-                  const IconComponent = item.icon;
-                  const colors = [
-                    { border: "border-accent-primary", text: "text-accent-primary" },
-                    { border: "border-accent-secondary", text: "text-accent-secondary" },
-                    { border: "border-accent-tertiary", text: "text-accent-tertiary" }
-                  ];
-                  return (
-                    <motion.div 
-                      key={i} 
-                      className="text-center"
-                      whileHover={{ y: -5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            {/* Sparkwave Banner */}
+            <motion.div 
+              className="absolute left-0 right-0 flex justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: showSparkwaveBanner ? 1 : 0,
+                y: showSparkwaveBanner ? 0 : 20,
+                transition: { duration: 0.5 }
+              }}
+            >
+              <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 rounded-2xl p-6 shadow-2xl border border-white/20 backdrop-blur-sm max-w-4xl mx-auto">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  {/* Left Content */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+                      <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                        <Sparkles className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white">
+                        SPARKWAVE
+                      </h3>
+                    </div>
+                    <p className="text-white/90 text-sm md:text-base mb-4 max-w-2xl">
+                      Create AI-powered text, image, and video content for all social media platforms. 
+                      Automatically post to Facebook, Instagram, Twitter, YouTube, LinkedIn & TikTok with 
+                      advanced AI models for stunning visuals and engaging content.
+                    </p>
+                    <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
+                      {[
+                        { icon: Camera, label: "AI Images" },
+                        { icon: Video, label: "AI Videos" },
+                        { icon: MessageSquare, label: "AI Text" },
+                        { icon: Share2, label: "Auto Post" }
+                      ].map((feature, i) => (
+                        <div key={i} className="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full">
+                          <feature.icon className="w-4 h-4 text-white" />
+                          <span className="text-white text-xs font-medium">{feature.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Right Content - CTA */}
+                  <div className="flex flex-col items-center md:items-end gap-4">
+                    <div className="text-center md:text-right">
+                      <div className="text-white/80 text-sm mb-2">🎉 Limited Time Offer</div>
+                      <div className="text-white text-lg font-bold">Start Creating Today!</div>
+                    </div>
+                    <motion.button
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-white text-purple-600 px-6 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
                     >
+                      <Target className="w-5 h-5" />
+                      Claim Your Free Trial Now
+                    </motion.button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Tech Icons - Positioned directly above the main heading */}
+            <motion.div 
+              className="absolute left-0 right-0 flex justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: !showSparkwaveBanner ? 1 : 0,
+                transition: { duration: 0.3 }
+              }}
+            >
+              {iconSets.map((set, setIndex) => (
+                <motion.div 
+                  key={setIndex}
+                  className="flex justify-center space-x-10"
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: currentIconSet === setIndex ? 1 : 0,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  {set.map((item, i) => {
+                    const IconComponent = item.icon;
+                    const colors = [
+                      { border: "border-accent-primary", text: "text-accent-primary" },
+                      { border: "border-accent-secondary", text: "text-accent-secondary" },
+                      { border: "border-accent-tertiary", text: "text-accent-tertiary" }
+                    ];
+                    return (
                       <motion.div 
-                        className={`w-12 h-12 md:w-14 md:h-14 border-2 ${colors[i].border} rounded-lg flex items-center justify-center shadow-lg bg-white hover:shadow-xl transition-all duration-300 mx-auto glow-effect`}
-                        whileHover={{ scale: 1.1 }}
+                        key={i} 
+                        className="text-center"
+                        whileHover={{ y: -5 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <IconComponent className={`w-5 h-5 md:w-6 md:h-6 ${colors[i].text}`} />
+                        <motion.div 
+                          className={`w-12 h-12 md:w-14 md:h-14 border-2 ${colors[i].border} rounded-lg flex items-center justify-center shadow-lg bg-white hover:shadow-xl transition-all duration-300 mx-auto glow-effect`}
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                          <IconComponent className={`w-5 h-5 md:w-6 md:h-6 ${colors[i].text}`} />
+                        </motion.div>
+                        <span className={`text-xs mt-1 block ${colors[i].text}`}>{item.label}</span>
                       </motion.div>
-                      <span className={`text-xs mt-1 block ${colors[i].text}`}>{item.label}</span>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            ))}
+                    );
+                  })}
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
 
           {/* Main Headline */}
@@ -401,27 +487,13 @@ const Hero = () => {
                 onMouseDown={addRipple}
               >
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 text-accent-primary" />
-                <span className="sm:inline">Get Quote</span>
+                <span className="sm:inline">Contact Us</span>
               </motion.button>
               
             </div>
           </motion.div>
 
-            <div className="w-full flex justify-center col-span-2">
-  <motion.button
-    whileHover={{ scale: 1.05, y: -3, boxShadow: "0 10px 25px rgba(99, 91, 255, 0.3)" }}
-    whileTap={{ scale: 0.95 }}
-   onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = 'https://workflowwizard.replit.app/';
-                    }}
-    className="btn-secondary px-4 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-lg flex items-center justify-center gap-2 sm:gap-3 group btn-ripple magnetic-btn mt-2"
-    onMouseDown={addRipple}
-  >
-    <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-accent-primary" />
-    <span className="sm:inline">Workflow Wizard</span>
-  </motion.button>
-</div>
+      
 
 
 
