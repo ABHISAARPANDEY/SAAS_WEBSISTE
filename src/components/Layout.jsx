@@ -446,19 +446,6 @@ const Layout = ({ children }) => {
                     Partner Program
                   </a>
                 </li>
-                <li>
-                  <a 
-                    href="/blog" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/blog';
-                    }}
-                    className="hover:text-accent-primary transition-colors font-medium"
-                  >
-                  Blog
-                  </a>
-                </li>
-                   
               </ul>
             </div>
              <div className="space-y-4">
