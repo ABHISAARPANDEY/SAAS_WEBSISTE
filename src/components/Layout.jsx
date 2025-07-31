@@ -162,18 +162,6 @@ const Layout = ({ children }) => {
                 Marketplace
               </a>
               <a 
-                href="/portfolio" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = '/portfolio';
-                }}
-                className="text-text-primary hover:text-accent-primary transition-colors font-medium animated-underline"
-              >
-                Portfolio
-              </a>
-              
-             
-              <a 
                 href="/free-tools" 
                 onClick={(e) => {
                   e.preventDefault();
@@ -182,6 +170,18 @@ const Layout = ({ children }) => {
                 className="text-text-primary hover:text-accent-primary transition-colors font-medium animated-underline"
               >
                 Free Tools
+              </a>
+              
+             
+              <a 
+                href="/portfolio" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = '/portfolio';
+                }}
+                className="text-text-primary hover:text-accent-primary transition-colors font-medium animated-underline"
+              >
+                Portfolio
               </a>
               <a 
                 href="/about" 
@@ -279,17 +279,51 @@ const Layout = ({ children }) => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-[95%]">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {/* Company Info */}
+            {/* Follow Us */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center shadow-button">
-                  <Zap className="text-white font-bold text-xl w-6 h-6" />
-                </div>
-                <span className="text-xl font-bold gradient-text tracking-tight">TECHSTAC</span>
+              <h3 className="text-lg font-semibold text-accent-primary tracking-wide">Follow Us</h3>
+              <div className="flex space-x-4">
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log('Facebook clicked');
+                  }}
+                  className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/20 backdrop-blur-sm"
+                >
+                  <img src="/logos/facebook.png" alt="Facebook" className="w-8 h-8" />
+                </a>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log('Instagram clicked');
+                  }}
+                  className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/20 backdrop-blur-sm"
+                >
+                  <img src="/logos/instagram.png" alt="Instagram" className="w-8 h-8" />
+                </a>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log('Twitter clicked');
+                  }}
+                  className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/20 backdrop-blur-sm"
+                >
+                  <img src="/logos/twitter.png" alt="Twitter" className="w-8 h-8" />
+                </a>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    console.log('LinkedIn clicked');
+                  }}
+                  className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/20 backdrop-blur-sm"
+                >
+                  <img src="/logos/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
+                </a>
               </div>
-              <p className="text-text-secondary leading-relaxed">
-                Transforming businesses through innovative technology solutions.
-              </p>
             </div>
 
             {/* Services */}
@@ -332,27 +366,20 @@ const Layout = ({ children }) => {
     </h3>
     <ul className="py-2 text-sm text-text-secondary bg-white border border-border-color rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 absolute z-50 mt-1 w-64">
       {[
-        'All Industries',
-        'Healthcare',
-        'Finance',
-        'E-commerce',
-        'Education',
-        'Food Delivery',
-        'Retail',
-        'Banking',
-        'Real Estate',
-        'Travel',
-        'OTT',
-        'Automation',
-      ].map((industry) => {
-        const slug = industry.toLowerCase().replace(/\s+/g, '-');
+        'SPARKWAVE',
+        'Ecommerce Auto Pilot',
+        'Workflow Automation',
+        'Industry Solutions',
+        'API Keys',
+      ].map((item) => {
+        const slug = item.toLowerCase().replace(/\s+/g, '-');
         return (
-          <li key={industry}>
+          <li key={item}>
             <a
               href={`/marketplace/`}
               className="block px-4 py-2 hover:bg-accent-primary/10 hover:text-accent-primary"
             >
-              {industry}
+              {item}
             </a>
           </li>
         );
