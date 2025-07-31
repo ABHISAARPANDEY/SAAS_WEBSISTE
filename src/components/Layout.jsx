@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform, useScroll } from 'framer-motion';
 import { Menu, X, Zap, ArrowUp } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import ScrollToTopButton from './ScrollToTopButton';
+import StickyWhatsAppButton from './StickyWhatsAppButton';
 
 
 const Layout = ({ children }) => {
@@ -233,7 +234,6 @@ const Layout = ({ children }) => {
                 { href: '/services', label: 'Services' },
                 { href: '/free-tools', label: 'Free Tools' },
                 { href: '/marketplace', label: 'Marketplace' },
-                { href: '/automation', label: 'Automation' },
                 { href: '/about', label: 'About' }
               ].map((item) => (
                 <a 
@@ -343,6 +343,7 @@ const Layout = ({ children }) => {
         'Real Estate',
         'Travel',
         'OTT',
+        'Automation',
       ].map((industry) => {
         const slug = industry.toLowerCase().replace(/\s+/g, '-');
         return (
@@ -359,32 +360,28 @@ const Layout = ({ children }) => {
     </ul>
   </div>
 
-  {/* AUTOMATION */}
+  {/* FREE TOOLS */}
   <div className="group relative">
     <h3 className="text-lg font-semibold text-accent-primary tracking-wide cursor-pointer">
-      Automation
+      Free Tools
     </h3>
     <ul className="py-2 text-sm text-text-secondary bg-white border border-border-color rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 absolute z-50 mt-1 w-64">
       {[
-        'All Industries',
-        'Marketing',
-        'Sales',
-        'HR',
-        'Finance',
-        'Customer Support',
-        'IT',
-        'Operations',
-        'Product',
-        'Legal',
-      ].map((area) => {
-        const slug = area.toLowerCase().replace(/\s+/g, '-');
+        'Calculators',
+        'Generators',
+        'Development Tools',
+        'Design Tools',
+        'Utilities',
+        'Security Tools',
+      ].map((tool) => {
+        const slug = tool.toLowerCase().replace(/\s+/g, '-');
         return (
-          <li key={area}>
+          <li key={tool}>
             <a
-              href={`/automation/`}
+              href={`/free-tools`}
               className="block px-4 py-2 hover:bg-accent-primary/10 hover:text-accent-primary"
             >
-              {area}
+              {tool}
             </a>
           </li>
         );
@@ -422,20 +419,31 @@ const Layout = ({ children }) => {
                     }}
                     className="hover:text-accent-primary transition-colors"
                   >
-                    Contact
+                    Contact Us
                   </a>
                 </li>
                 <li>
                   <a 
-                    href="#" 
+                    href="/career" 
                     onClick={(e) => {
                       e.preventDefault();
-                      // Non-functional WhatsApp button as requested
-                      console.log('WhatsApp contact clicked');
+                      window.location.href = '/career';
                     }}
                     className="hover:text-accent-primary transition-colors"
                   >
-                    Contact on WhatsApp
+                    Career
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/partner-program" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = '/partner-program';
+                    }}
+                    className="hover:text-accent-primary transition-colors"
+                  >
+                    Partner Program
                   </a>
                 </li>
                 <li>
@@ -459,14 +467,26 @@ const Layout = ({ children }) => {
                 
                 <li>
                   <a 
-                    href="/free-tools" 
+                    href="/blog" 
                     onClick={(e) => {
                       e.preventDefault();
-                      window.location.href = '/free-tools';
+                      window.location.href = '/blog';
                     }}
                     className="hover:text-accent-primary transition-colors"
                   >
-                  Free Tools
+                  Blog
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/case-studies" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = '/case-studies';
+                    }}
+                    className="hover:text-accent-primary transition-colors"
+                  >
+                  Case Studies
                   </a>
                 </li>
               </ul>
@@ -481,6 +501,9 @@ const Layout = ({ children }) => {
         {/* Scroll to top button */}
         <ScrollToTopButton />
       </footer>
+      
+      {/* Sticky WhatsApp Button */}
+      <StickyWhatsAppButton />
     </div>
   );
 };

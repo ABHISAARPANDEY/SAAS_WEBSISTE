@@ -27,6 +27,9 @@ import FoodieDelivery from './pages/ProductDemos/FoodieDelivery';
 import RetailPOS from './pages/ProductDemos/RetailPOS';
 import QuoteConfirmation from './pages/QuoteConfirmation';
 import About from './pages/About';
+import Career from './pages/Career';
+import PartnerProgram from './pages/PartnerProgram';
+import CaseStudies from './pages/CaseStudies';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ProtectedRoute from './components/admin/ProtectedRoute';
@@ -93,6 +96,9 @@ function App() {
             <Route path="/blog/:postId" element={<BlogPost />} />
             <Route path="/quote-confirmation" element={<QuoteConfirmation />} />
             <Route path="/about" element={<About />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/partner-program" element={<PartnerProgram />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/svc-admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={
               <ProtectedRoute>

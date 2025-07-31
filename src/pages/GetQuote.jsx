@@ -678,7 +678,7 @@ if (error) {
                   }}
                 >
                   <img 
-                    src="/src/logos/whatapp_logo.png" 
+                    src="/logos/whatapp_logo.png" 
                     alt="WhatsApp" 
                     className="w-5 h-5 mr-2"
                   />

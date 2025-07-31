@@ -298,20 +298,46 @@ const Marketplace = () => {
                 className="mb-16 text-center"
               >
                 <div className="relative max-w-4xl mx-auto">
-                  <video
-                    className="w-full rounded-2xl shadow-2xl"
-                    autoPlay
-                    onLoadedData={(e) => {
-                      // Set video to restart after 10 seconds
-                      setTimeout(() => {
-                        e.target.currentTime = 0;
-                        e.target.play();
-                      }, 10000);
-                    }}
-                  >
-                    <source src="/video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                              <div className="relative">
+              <video
+                className="w-full rounded-2xl shadow-2xl cursor-pointer hover:shadow-3xl transition-shadow duration-300"
+                autoPlay
+                playsInline
+                onLoadedData={(e) => {
+                  // Set video to restart after 20 seconds
+                  setTimeout(() => {
+                    e.target.currentTime = 0;
+                    e.target.play();
+                  }, 20000);
+                }}
+                onTimeUpdate={(e) => {
+                  // Check if video has played for 20 seconds and restart
+                  if (e.target.currentTime >= 20) {
+                    e.target.currentTime = 0;
+                    e.target.play();
+                  }
+                }}
+                onPlay={(e) => {
+                  // Ensure video has sound when it starts playing
+                  e.target.muted = false;
+                }}
+                onClick={(e) => {
+                  // Handle user interaction to enable sound on mobile
+                  if (e.target.paused) {
+                    e.target.play();
+                  } else {
+                    e.target.pause();
+                  }
+                  e.target.muted = false;
+                }}
+              >
+                <source src="/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
+                🔊 Click for sound
+              </div>
+            </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                 </div>
               </motion.div>
@@ -451,12 +477,12 @@ const Marketplace = () => {
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                   {[
-                    { name: 'Facebook', logo: '/src/logos/facebook.png' },
-                    { name: 'Twitter', logo: '/src/logos/twitter.png' },
-                    { name: 'Instagram', logo: '/src/logos/instagram.png' },
-                    { name: 'YouTube', logo: '/src/logos/youtube.png' },
-                    { name: 'LinkedIn', logo: '/src/logos/linkedin.png' },
-                    { name: 'TikTok', logo: '/src/logos/ticktok.png' }
+                    { name: 'Facebook', logo: '/logos/facebook.png' },
+                    { name: 'Twitter', logo: '/logos/twitter.png' },
+                    { name: 'Instagram', logo: '/logos/instagram.png' },
+                    { name: 'YouTube', logo: '/logos/youtube.png' },
+                    { name: 'LinkedIn', logo: '/logos/linkedin.png' },
+                    { name: 'TikTok', logo: '/logos/ticktok.png' }
                   ].map((platform, index) => (
                     <motion.div
                       key={platform.name}

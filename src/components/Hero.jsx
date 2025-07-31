@@ -29,13 +29,22 @@ import {
   Video,
   MessageSquare,
   Share2,
-  Target
+  Target,
+  Store,
+  ShoppingCart,
+  Bell,
+  Building2,
+  CreditCard,
+  GraduationCap,
+  Workflow,
+  Calculator,
+  FileText,
+  Settings
 } from 'lucide-react';
 
 const Hero = () => {
   const navigate = useNavigate();
-  const [currentIconSet, setCurrentIconSet] = React.useState(0);
-  const [showSparkwaveBanner, setShowSparkwaveBanner] = React.useState(true);
+  const [currentBanner, setCurrentBanner] = React.useState(0);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
@@ -66,56 +75,124 @@ const Hero = () => {
     // Particles loaded callback
   }, []);
 
-  // Icon sets that will cycle
-  const iconSets = [
-    // Set 1: Business Growth, Innovation, Digital Transformation
-    [
-      { icon: TrendingUp, label: "Growth" },
-      { icon: Lightbulb, label: "Innovation" },
-      { icon: RefreshCw, label: "Transformation" }
-    ],
-    // Set 2: Analytics, Cloud Computing, Security
-    [
-      { icon: BarChart3, label: "Analytics" },
-      { icon: Cloud, label: "Cloud" },
-      { icon: Shield, label: "Security" }
-    ],
-    // Set 3: Collaboration, Efficiency, ROI
-    [
-      { icon: Users, label: "Collaboration" },
-      { icon: Clock, label: "Efficiency" },
-      { icon: DollarSign, label: "ROI" }
-    ],
-    // Set 4: AI/ML, IoT, Blockchain
-    [
-      { icon: Bot, label: "AI/ML" },
-      { icon: Wifi, label: "IoT" },
-      { icon: Link2, label: "Blockchain" }
-    ],
-    // Set 5: Mobile, Web, Desktop
-    [
-      { icon: Smartphone, label: "Mobile" },
-      { icon: Globe, label: "Web" },
-      { icon: Monitor, label: "Desktop" }
-    ]
+  // Banner sets that will cycle
+  const banners = [
+    {
+      id: 'sparkwave',
+      title: 'SPARKWAVE',
+      description: 'Create AI-powered text, image, and video content for all social media platforms. Automatically post to Facebook, Instagram, Twitter, YouTube, LinkedIn & TikTok with advanced AI models for stunning visuals and engaging content.',
+      features: [
+        { icon: Camera, label: "AI Images" },
+        { icon: Video, label: "AI Videos" },
+        { icon: MessageSquare, label: "AI Text" },
+        { icon: Share2, label: "Auto Post" }
+      ],
+      gradient: 'from-purple-600 via-pink-600 to-orange-500',
+      buttonText: 'Claim Your Free Trial Now',
+      buttonAction: () => console.log('SPARKWAVE trial clicked'),
+      offerText: '🎉 Limited Time Offer',
+      subtitle: 'Start Creating Today!'
+    },
+    {
+      id: 'ecommerce',
+      title: 'ECOMMERCE AUTO PILOT',
+      description: 'Link your Shopify, Amazon, Flipkart or any stores and manage all from one platform. Product management, instant invoice generation, real-time notifications, and multi-store dashboard.',
+      features: [
+        { icon: Store, label: "Multi-Store" },
+        { icon: ShoppingCart, label: "Inventory" },
+        { icon: Zap, label: "Auto Sync" },
+        { icon: Bell, label: "Notifications" }
+      ],
+      gradient: 'from-blue-600 via-cyan-500 to-teal-500',
+      buttonText: 'Coming Soon',
+      buttonAction: () => console.log('Ecommerce coming soon clicked'),
+      offerText: '🚀 Launching Soon',
+      subtitle: 'Multi-Platform Management'
+    },
+    {
+      id: 'industry',
+      title: 'INDUSTRY SOLUTIONS',
+      description: 'Complete ready-made solutions for Healthcare, Finance, E-commerce, Education, Food Delivery, Retail, Banking, Real Estate, Travel & OTT industries.',
+      features: [
+        { icon: Building2, label: "Healthcare" },
+        { icon: CreditCard, label: "Finance" },
+        { icon: ShoppingCart, label: "E-commerce" },
+        { icon: GraduationCap, label: "Education" }
+      ],
+      gradient: 'from-green-600 via-emerald-500 to-teal-500',
+      buttonText: 'View Industry Solutions',
+      buttonAction: () => {
+        console.log('Industry Solutions button clicked - navigating to marketplace');
+        console.log('Current URL before navigation:', window.location.href);
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          console.log('About to navigate to /marketplace');
+          window.location.href = '/marketplace';
+          console.log('Navigation triggered to /marketplace');
+        }, 100);
+      },
+      offerText: '🏢 10+ Industries',
+      subtitle: 'Ready-Made Solutions'
+    },
+    {
+      id: 'automation',
+      title: 'WORKFLOW AUTOMATION',
+      description: 'Discover ready-to-use automation templates that streamline your business processes, save time, and eliminate repetitive tasks across your organization.',
+      features: [
+        { icon: Workflow, label: "Templates" },
+        { icon: Bot, label: "AI Powered" },
+        { icon: Zap, label: "Automation" },
+        { icon: Clock, label: "Time Saving" }
+      ],
+      gradient: 'from-orange-600 via-red-500 to-pink-500',
+      buttonText: 'View Prebuilt Automations',
+      buttonAction: () => {
+        console.log('Workflow Automation button clicked - navigating to automation');
+        console.log('Current URL before navigation:', window.location.href);
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          console.log('About to navigate to /automation');
+          window.location.href = '/automation';
+          console.log('Navigation triggered to /automation');
+        }, 100);
+      },
+      offerText: '⚡ 150+ Templates',
+      subtitle: 'Streamline Your Business'
+    },
+    {
+      id: 'tools',
+      title: 'FREE TOOLS',
+      description: 'Access powerful development tools, calculators, generators, and utilities completely free. Boost your productivity with our collection of professional tools.',
+      features: [
+        { icon: Code, label: "Development" },
+        { icon: Calculator, label: "Calculators" },
+        { icon: FileText, label: "Generators" },
+        { icon: Settings, label: "Utilities" }
+      ],
+      gradient: 'from-indigo-600 via-purple-500 to-pink-500',
+      buttonText: 'Explore Free Tools',
+      buttonAction: () => {
+        console.log('Free Tools button clicked - navigating to free-tools');
+        console.log('Current URL before navigation:', window.location.href);
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          window.location.href = '/free-tools';
+          console.log('Navigation triggered to /free-tools');
+        }, 100);
+      },
+      offerText: '🛠️ 100% Free',
+      subtitle: 'Professional Tools'
+    }
   ];
   
-  // Cycle through icon sets and banner every 5 seconds
+  // Cycle through banners every 5 seconds
   React.useEffect(() => {
     const interval = setInterval(() => {
-      if (showSparkwaveBanner) {
-        // Banner is showing, switch to icons
-        setShowSparkwaveBanner(false);
-        setCurrentIconSet(0); // Start with first icon set
-      } else {
-        // Icons are showing, switch to banner
-        setShowSparkwaveBanner(true);
-        setCurrentIconSet((prev) => (prev + 1) % iconSets.length);
-      }
+      setCurrentBanner((prev) => (prev + 1) % banners.length);
     }, 5000);
     
     return () => clearInterval(interval);
-  }, [iconSets.length, showSparkwaveBanner]);
+  }, [banners.length]);
   
   // Add ripple effect to buttons
   const addRipple = (e) => {
@@ -277,121 +354,69 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="space-y-8"
         >
-          {/* Tech Icons and Sparkwave Banner */}
+          {/* Animated Banners */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1, y: [10, 0] }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex justify-center mb-16 relative h-[250px]"
+            className="flex justify-center mb-16 sm:mb-20 relative h-[320px] sm:h-[280px]"
           >
-            {/* Sparkwave Banner */}
-            <motion.div 
-              className="absolute left-0 right-0 flex justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: showSparkwaveBanner ? 1 : 0,
-                y: showSparkwaveBanner ? 0 : 20,
-                transition: { duration: 0.5 }
-              }}
-            >
-              <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 rounded-2xl p-6 shadow-2xl border border-white/20 backdrop-blur-sm max-w-4xl mx-auto">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  {/* Left Content */}
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
-                      <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                        <Sparkles className="w-6 h-6 text-white" />
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white">
-                        SPARKWAVE
-                      </h3>
-                    </div>
-                    <p className="text-white/90 text-sm md:text-base mb-4 max-w-2xl">
-                      Create AI-powered text, image, and video content for all social media platforms. 
-                      Automatically post to Facebook, Instagram, Twitter, YouTube, LinkedIn & TikTok with 
-                      advanced AI models for stunning visuals and engaging content.
-                    </p>
-                    <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
-                      {[
-                        { icon: Camera, label: "AI Images" },
-                        { icon: Video, label: "AI Videos" },
-                        { icon: MessageSquare, label: "AI Text" },
-                        { icon: Share2, label: "Auto Post" }
-                      ].map((feature, i) => (
-                        <div key={i} className="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full">
-                          <feature.icon className="w-4 h-4 text-white" />
-                          <span className="text-white text-xs font-medium">{feature.label}</span>
+            {banners.map((banner, index) => (
+              <motion.div 
+                key={banner.id}
+                className="absolute left-0 right-0 flex justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ 
+                  opacity: currentBanner === index ? 1 : 0,
+                  y: currentBanner === index ? 0 : 20,
+                  transition: { duration: 0.5 }
+                }}
+              >
+                <div className={`bg-gradient-to-r ${banner.gradient} rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 backdrop-blur-sm max-w-4xl mx-auto ${banner.id === 'sparkwave' ? 'min-h-[320px] sm:min-h-auto' : ''}`}>
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+                    {/* Left Content */}
+                    <div className="flex-1 text-center md:text-left">
+                      <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                          <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
-                      ))}
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                          {banner.title}
+                        </h3>
+                      </div>
+                      <p className={`text-white/90 text-xs sm:text-sm md:text-base mb-3 sm:mb-4 max-w-2xl ${banner.id === 'sparkwave' ? 'line-clamp-3 sm:line-clamp-none' : ''}`}>
+                        {banner.description}
+                      </p>
+                      <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4 mb-3 sm:mb-4">
+                        {banner.features.map((feature, i) => (
+                          <div key={i} className="flex items-center gap-1 sm:gap-2 bg-white/10 px-2 sm:px-3 py-1 rounded-full">
+                            <feature.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                            <span className="text-white text-xs font-medium">{feature.label}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Right Content - CTA */}
-                  <div className="flex flex-col items-center md:items-end gap-4">
-                    <div className="text-center md:text-right">
-                      <div className="text-white/80 text-sm mb-2">🎉 Limited Time Offer</div>
-                      <div className="text-white text-lg font-bold">Start Creating Today!</div>
+                    
+                    {/* Right Content - CTA */}
+                    <div className="flex flex-col items-center md:items-end gap-3 sm:gap-4">
+                      <div className="text-center md:text-right">
+                        <div className="text-white/80 text-xs sm:text-sm mb-1 sm:mb-2">{banner.offerText}</div>
+                        <div className="text-white text-base sm:text-lg font-bold">{banner.subtitle}</div>
+                      </div>
+                      <motion.button
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={banner.buttonAction}
+                        className="bg-white text-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                      >
+                        <Target className="w-4 h-4 sm:w-5 sm:h-5" />
+                        {banner.buttonText}
+                      </motion.button>
                     </div>
-                    <motion.button
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-white text-purple-600 px-6 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-                    >
-                      <Target className="w-5 h-5" />
-                      Claim Your Free Trial Now
-                    </motion.button>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Tech Icons - Positioned directly above the main heading */}
-            <motion.div 
-              className="absolute left-0 right-0 flex justify-center"
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: !showSparkwaveBanner ? 1 : 0,
-                transition: { duration: 0.3 }
-              }}
-            >
-              {iconSets.map((set, setIndex) => (
-                <motion.div 
-                  key={setIndex}
-                  className="flex justify-center space-x-10"
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    opacity: currentIconSet === setIndex ? 1 : 0,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  {set.map((item, i) => {
-                    const IconComponent = item.icon;
-                    const colors = [
-                      { border: "border-accent-primary", text: "text-accent-primary" },
-                      { border: "border-accent-secondary", text: "text-accent-secondary" },
-                      { border: "border-accent-tertiary", text: "text-accent-tertiary" }
-                    ];
-                    return (
-                      <motion.div 
-                        key={i} 
-                        className="text-center"
-                        whileHover={{ y: -5 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <motion.div 
-                          className={`w-12 h-12 md:w-14 md:h-14 border-2 ${colors[i].border} rounded-lg flex items-center justify-center shadow-lg bg-white hover:shadow-xl transition-all duration-300 mx-auto glow-effect`}
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                          <IconComponent className={`w-5 h-5 md:w-6 md:h-6 ${colors[i].text}`} />
-                        </motion.div>
-                        <span className={`text-xs mt-1 block ${colors[i].text}`}>{item.label}</span>
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-              ))}
-            </motion.div>
+              </motion.div>
+            ))}
           </motion.div>
 
           {/* Main Headline */}
@@ -448,7 +473,13 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -3, boxShadow: "0 10px 25px rgba(99, 91, 255, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/marketplace'}
+                onClick={() => {
+                  console.log('Marketplace button clicked - scrolling to marketplace section');
+                  const marketplaceSection = document.getElementById('marketplace-section');
+                  if (marketplaceSection) {
+                    marketplaceSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="btn-secondary px-4 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-lg flex items-center justify-center gap-2 sm:gap-3 group btn-ripple magnetic-btn"
                 onMouseDown={addRipple}
               >
@@ -456,22 +487,16 @@ const Hero = () => {
                 <span className="sm:inline">Marketplace</span>
               </motion.button>
               
-              
               <motion.button
                 whileHover={{ scale: 1.05, y: -3, boxShadow: "0 10px 25px rgba(99, 91, 255, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/automation'}
-                className="btn-secondary px-4 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-lg flex items-center justify-center gap-2 sm:gap-3 group btn-ripple magnetic-btn"
-                onMouseDown={addRipple}
-              >
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-accent-primary" />
-                <span className="sm:inline">Automation</span>
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05, y: -3, boxShadow: "0 10px 25px rgba(99, 91, 255, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/free-tools'}
+                onClick={() => {
+                  console.log('Free Tools button clicked - scrolling to free tools section');
+                  const freeToolsSection = document.getElementById('free-tools-section');
+                  if (freeToolsSection) {
+                    freeToolsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="btn-secondary px-4 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-lg flex items-center justify-center gap-2 sm:gap-3 group btn-ripple magnetic-btn"
                 onMouseDown={addRipple}
               >
