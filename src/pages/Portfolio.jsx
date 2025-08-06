@@ -58,7 +58,7 @@ const Portfolio = () => {
       features: ['Payment Integration', 'Inventory Management', 'Customer Analytics', 'Mobile Responsive'],
       rating: 4.9,
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      demoLink: 'https://reactjs-ecommerce-app.vercel.app/'
+      demoLink: 'https://lighthearted-pie-7e154c.netlify.app/'
     },
     {
       id: 4,
