@@ -673,8 +673,10 @@ if (error) {
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl"
                   onClick={() => {
-                    // Non-functional button as requested
-                    console.log('WhatsApp contact button clicked');
+                    const phoneNumber = '919119671030';
+                    const message = 'Hi! I\'m interested in your services.';
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
                   }}
                 >
                   <img 

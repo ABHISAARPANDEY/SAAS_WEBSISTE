@@ -120,12 +120,51 @@ const Layout = ({ children }) => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center space-x-2 py-2"
+              className="flex items-center space-x-2 py-2 cursor-pointer"
+              onClick={() => window.location.href = '/'}
             >
-              <div className="w-8 h-8 md:w-10 md:h-10 gradient-bg rounded-lg flex items-center justify-center shadow-button">
-                <Zap className="text-white font-bold w-4 h-4 md:w-6 md:h-6" />
-              </div>
-              <span className="text-lg md:text-2xl font-bold gradient-text tracking-tight">TECHSTAC</span>
+              <motion.div 
+                className="relative w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center shadow-button overflow-hidden"
+                whileHover={{ 
+                  scale: 1.1,
+                  rotate: 5,
+                  boxShadow: "0 20px 40px rgba(147, 51, 234, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ 
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 200
+                }}
+              >
+                {/* Logo image with animation */}
+                <motion.img 
+                  src="/logos/logo_teckstack.png" 
+                  alt="TECKSTAQ Logo" 
+                  className="relative z-10 w-full h-full object-contain"
+                  animate={{ 
+                    rotate: [0, 5, -5, 0],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                
+                {/* Sparking effect */}
+                <div className="absolute inset-0 sparkle-container">
+                  <div className="sparkle sparkle-1"></div>
+                  <div className="sparkle sparkle-2"></div>
+                  <div className="sparkle sparkle-3"></div>
+                  <div className="sparkle sparkle-4"></div>
+                  <div className="sparkle sparkle-5"></div>
+                </div>
+              </motion.div>
+              <span className="text-lg md:text-2xl font-bold text-purple-600 tracking-tight">TECKSTAQ</span>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -234,6 +273,7 @@ const Layout = ({ children }) => {
                 { href: '/services', label: 'Services' },
                 { href: '/free-tools', label: 'Free Tools' },
                 { href: '/marketplace', label: 'Marketplace' },
+                { href: '/portfolio', label: 'Portfolio' },
                 { href: '/about', label: 'About' }
               ].map((item) => (
                 <a 

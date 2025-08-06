@@ -16,7 +16,10 @@ import {
   Music,
   Gamepad2,
   Palette,
-  Store
+  Store,
+  Coffee,
+  MessageSquare,
+  Users
 } from 'lucide-react';
 import { pageEntryVariants, buttonHoverVariants } from '../utils/animationUtils';
 
@@ -33,7 +36,7 @@ const Portfolio = () => {
       features: ['Patient Portal', 'Telemedicine', 'Health Analytics', 'HIPAA Compliant'],
       rating: 4.8,
       image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
-      demoLink: '/product-demos/healthtrack-pro'
+      demoLink: 'https://carepulse-lovat.vercel.app/'
     },
     {
       id: 2,
@@ -44,7 +47,7 @@ const Portfolio = () => {
       features: ['Digital Banking', 'Payment Processing', 'Loan Management', 'Financial Analytics'],
       rating: 4.9,
       image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800',
-      demoLink: '/product-demos/fintech-suite'
+      demoLink: 'https://horizonvault.vercel.app/'
     },
     {
       id: 3,
@@ -55,7 +58,7 @@ const Portfolio = () => {
       features: ['Payment Integration', 'Inventory Management', 'Customer Analytics', 'Mobile Responsive'],
       rating: 4.9,
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      demoLink: '/product-demos/ecommerce-pro'
+      demoLink: 'https://reactjs-ecommerce-app.vercel.app/'
     },
     {
       id: 4,
@@ -99,7 +102,7 @@ const Portfolio = () => {
       features: ['Account Management', 'Transaction Processing', 'Regulatory Compliance', 'Risk Management'],
       rating: 4.8,
       image: 'https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=800',
-      demoLink: '/product-demos/banking-core'
+      demoLink: 'https://horizonvault.vercel.app/'
     },
     {
       id: 8,
@@ -133,6 +136,39 @@ const Portfolio = () => {
       rating: 4.8,
       image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/streaming-platform'
+    },
+    {
+      id: 11,
+      name: 'Coffee Brand 3D Website',
+      description: 'Immersive 3D website experience for premium coffee brand with interactive elements and stunning visuals.',
+      icon: Coffee,
+      color: 'from-amber-500 to-orange-500',
+      features: ['3D Animations', 'Interactive Elements', 'Premium Design', 'Mobile Optimized'],
+      rating: 4.9,
+      image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800',
+      demoLink: 'https://phenomenal-melomakarona-44137f.netlify.app'
+    },
+    {
+      id: 12,
+      name: 'Gaming Company Website',
+      description: 'Dynamic gaming company website with interactive elements, game showcases, and community features.',
+      icon: Gamepad2,
+      color: 'from-green-500 to-emerald-500',
+      features: ['Game Showcases', 'Interactive Elements', 'Community Features', 'Responsive Design'],
+      rating: 4.8,
+      image: 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
+      demoLink: 'https://sweet-stroopwafel-b2b30f.netlify.app'
+    },
+    {
+      id: 13,
+      name: 'Social Media Assistant',
+      description: 'AI-powered social media management platform with content creation, scheduling, and analytics.',
+      icon: MessageSquare,
+      color: 'from-blue-500 to-cyan-500',
+      features: ['AI Content Creation', 'Social Scheduling', 'Analytics Dashboard', 'Multi-Platform'],
+      rating: 4.9,
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      demoLink: 'https://jovial-sawine-126db5.netlify.app'
     }
   ];
 
@@ -179,7 +215,7 @@ const Portfolio = () => {
                 <div className="text-text-secondary">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-cyan">10+</div>
+                <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-cyan">13+</div>
                 <div className="text-text-secondary">Industries Served</div>
               </div>
               <div className="text-center">
@@ -218,8 +254,14 @@ const Portfolio = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group cursor-pointer"
                 onClick={() => {
-                  window.scrollTo(0, 0);
-                  navigate(industry.demoLink);
+                  if (industry.demoLink.startsWith('http')) {
+                    // External URL - open in new tab
+                    window.open(industry.demoLink, '_blank');
+                  } else {
+                    // Internal route - navigate
+                    window.scrollTo(0, 0);
+                    navigate(industry.demoLink);
+                  }
                 }}
               >
                 <div className="card-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col relative">

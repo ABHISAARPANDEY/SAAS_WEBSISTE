@@ -39,13 +39,20 @@ import {
   Workflow,
   Calculator,
   FileText,
-  Settings
+  Settings,
+  CheckCircle
 } from 'lucide-react';
 
 const Hero = () => {
   const navigate = useNavigate();
   const [currentBanner, setCurrentBanner] = React.useState(0);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+  const [timeLeft, setTimeLeft] = React.useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timerKey, setTimerKey] = React.useState(0);
+  const [showBetaForm, setShowBetaForm] = React.useState(false);
+  const [showThankYou, setShowThankYou] = React.useState(false);
+  const [betaFormData, setBetaFormData] = React.useState({ name: '', email: '', phone: '' });
+  const [isSparkwaveActive, setIsSparkwaveActive] = React.useState(false);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const controls = useAnimation();
@@ -78,6 +85,27 @@ const Hero = () => {
   // Banner sets that will cycle
   const banners = [
     {
+      id: 'services',
+      title: 'OUR SERVICES',
+      description: 'Comprehensive software development services including custom web applications, mobile apps, automation solutions, and digital transformation.',
+      features: [
+        { icon: Code, label: "Web Development" },
+        { icon: Smartphone, label: "Mobile Apps" },
+        { icon: Bot, label: "Automation" },
+        { icon: Cloud, label: "Cloud Solutions" }
+      ],
+      gradient: 'from-emerald-600 via-teal-500 to-cyan-500',
+      buttonText: 'View Our Services',
+      buttonAction: () => {
+        const servicesSection = document.getElementById('services-section');
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      },
+      offerText: '🎁 Special Offers',
+      subtitle: 'FREE 1 Month Support + 10% Discount!'
+    },
+    {
       id: 'sparkwave',
       title: 'SPARKWAVE',
       description: 'Create AI-powered text, image, and video content for all social media platforms. Automatically post to Facebook, Instagram, Twitter, YouTube, LinkedIn & TikTok with advanced AI models for stunning visuals and engaging content.',
@@ -88,10 +116,14 @@ const Hero = () => {
         { icon: Share2, label: "Auto Post" }
       ],
       gradient: 'from-purple-600 via-pink-600 to-orange-500',
-      buttonText: 'Claim Your Free Trial Now',
-      buttonAction: () => console.log('SPARKWAVE trial clicked'),
-      offerText: '🎉 Limited Time Offer',
-      subtitle: 'Start Creating Today!'
+      buttonText: 'Beta Applications Start Soon',
+      buttonAction: () => {
+        // Non-functional button - just for display
+        console.log('Beta applications coming soon');
+      },
+      offerText: '🚀 Close Beta Testing',
+      subtitle: 'Starts from 15 Mar',
+      showTimer: false
     },
     {
       id: 'ecommerce',
@@ -185,14 +217,67 @@ const Hero = () => {
     }
   ];
   
-  // Cycle through banners every 5 seconds
+  // Countdown timer for beta testing
+  React.useEffect(() => {
+    // Set target date to March 15, 2025 (future date)
+    const targetDate = new Date('2025-03-15T00:00:00').getTime();
+    
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      
+      const calculatedDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const calculatedHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const calculatedMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const calculatedSeconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      console.log('Timer update:', {
+        now: new Date(now).toLocaleString(),
+        target: new Date(targetDate).toLocaleString(),
+        distance: distance,
+        days: calculatedDays,
+        hours: calculatedHours,
+        minutes: calculatedMinutes,
+        seconds: calculatedSeconds,
+        isPositive: distance > 0
+      });
+      
+      if (distance > 0) {
+        setTimeLeft({ 
+          days: calculatedDays, 
+          hours: calculatedHours, 
+          minutes: calculatedMinutes, 
+          seconds: calculatedSeconds 
+        });
+        setTimerKey(Date.now()); // Use timestamp for unique key
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setTimerKey(Date.now()); // Use timestamp for unique key
+      }
+    };
+    
+    // Update immediately
+    updateTimer();
+    
+    // Then update every second
+    const timer = setInterval(updateTimer, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+
+  // Cycle through banners every 8 seconds (longer for SPARKWAVE)
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % banners.length);
-    }, 5000);
+    }, 8000);
     
     return () => clearInterval(interval);
   }, [banners.length]);
+
+  // Track when SPARKWAVE banner is active
+  React.useEffect(() => {
+    setIsSparkwaveActive(currentBanner === 0);
+  }, [currentBanner]);
   
   // Add ripple effect to buttons
   const addRipple = (e) => {
@@ -372,8 +457,8 @@ const Hero = () => {
                   transition: { duration: 0.5 }
                 }}
               >
-                <div className={`bg-gradient-to-r ${banner.gradient} rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 backdrop-blur-sm max-w-4xl mx-auto ${banner.id === 'sparkwave' ? 'min-h-[320px] sm:min-h-auto' : ''}`}>
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+                <div className={`bg-gradient-to-r ${banner.gradient} rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/20 backdrop-blur-sm max-w-4xl mx-auto min-h-[320px] sm:min-h-[280px]`}>
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 h-full">
                     {/* Left Content */}
                     <div className="flex-1 text-center md:text-left">
                       <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -384,7 +469,7 @@ const Hero = () => {
                           {banner.title}
                         </h3>
                       </div>
-                      <p className={`text-white/90 text-xs sm:text-sm md:text-base mb-3 sm:mb-4 max-w-2xl ${banner.id === 'sparkwave' ? 'line-clamp-3 sm:line-clamp-none' : ''}`}>
+                      <p className={`text-white/90 text-xs sm:text-sm md:text-base mb-3 sm:mb-4 max-w-2xl line-clamp-3 sm:line-clamp-2`}>
                         {banner.description}
                       </p>
                       <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4 mb-3 sm:mb-4">
@@ -395,6 +480,39 @@ const Hero = () => {
                           </div>
                         ))}
                       </div>
+                      
+                      {/* Timer for SPARKWAVE banner */}
+                      {banner.showTimer && (
+                        <motion.div 
+                          key={`timer-${timerKey}`} 
+                          className="flex justify-center md:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3 }}
+                          style={{ 
+                            border: isSparkwaveActive ? '1px solid rgba(255,255,255,0.3)' : 'none',
+                            borderRadius: '8px',
+                            padding: isSparkwaveActive ? '8px' : '0'
+                          }}
+                        >
+                          <div className="bg-white/30 rounded-lg px-3 py-2 text-center border border-white/20">
+                            <div className="text-white text-sm font-bold">{timeLeft.days}</div>
+                            <div className="text-white/90 text-xs">Days</div>
+                          </div>
+                          <div className="bg-white/30 rounded-lg px-3 py-2 text-center border border-white/20">
+                            <div className="text-white text-sm font-bold">{timeLeft.hours.toString().padStart(2, '0')}</div>
+                            <div className="text-white/90 text-xs">Hours</div>
+                          </div>
+                          <div className="bg-white/30 rounded-lg px-3 py-2 text-center border border-white/20">
+                            <div className="text-white text-sm font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</div>
+                            <div className="text-white/90 text-xs">Minutes</div>
+                          </div>
+                          <div className="bg-white/30 rounded-lg px-3 py-2 text-center border border-white/20">
+                            <div className="text-white text-sm font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</div>
+                            <div className="text-white/90 text-xs">Seconds</div>
+                          </div>
+                        </motion.div>
+                      )}
                     </div>
                     
                     {/* Right Content - CTA */}
@@ -403,15 +521,20 @@ const Hero = () => {
                         <div className="text-white/80 text-xs sm:text-sm mb-1 sm:mb-2">{banner.offerText}</div>
                         <div className="text-white text-base sm:text-lg font-bold">{banner.subtitle}</div>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={banner.buttonAction}
-                        className="bg-white text-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                      <motion.div
+                        className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-lg transition-all duration-300 flex items-center gap-2 ${
+                          banner.id === 'sparkwave' 
+                            ? 'bg-white/20 text-white border border-white/30 backdrop-blur-sm' 
+                            : 'bg-white text-gray-800 shadow-lg hover:shadow-xl'
+                        }`}
                       >
-                        <Target className="w-4 h-4 sm:w-5 sm:h-5" />
+                        {banner.id === 'sparkwave' ? (
+                          <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+                        ) : (
+                          <Target className="w-4 h-4 sm:w-5 sm:h-5" />
+                        )}
                         {banner.buttonText}
-                      </motion.button>
+                      </motion.div>
                     </div>
                   </div>
                 </div>
@@ -591,6 +714,147 @@ const Hero = () => {
           )
         }}
       />
+
+      {/* Beta Testing Form Modal */}
+      {showBetaForm && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md"
+          onClick={() => setShowBetaForm(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-border-color"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Sparkles className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-text-primary mb-2">
+                Apply for SPARKWAVE Beta
+              </h3>
+              <p className="text-text-secondary">
+                Join our exclusive beta testing program starting September 15th
+              </p>
+            </div>
+
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              console.log('Beta form submitted:', betaFormData);
+              setShowBetaForm(false);
+              setShowThankYou(true);
+              // Reset form data
+              setBetaFormData({ name: '', email: '', phone: '' });
+              // Hide thank you message after 5 seconds
+              setTimeout(() => {
+                setShowThankYou(false);
+              }, 5000);
+            }} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-text-primary mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={betaFormData.name}
+                  onChange={(e) => setBetaFormData(prev => ({ ...prev, name: e.target.value }))}
+                  className="w-full px-4 py-3 border border-border-color rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300"
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-text-primary mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={betaFormData.email}
+                  onChange={(e) => setBetaFormData(prev => ({ ...prev, email: e.target.value }))}
+                  className="w-full px-4 py-3 border border-border-color rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300"
+                  placeholder="Enter your email address"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-text-primary mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={betaFormData.phone}
+                  onChange={(e) => setBetaFormData(prev => ({ ...prev, phone: e.target.value }))}
+                  className="w-full px-4 py-3 border border-border-color rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div className="flex gap-3 pt-4">
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setShowBetaForm(false)}
+                  className="flex-1 px-4 py-3 bg-tertiary text-text-secondary rounded-xl font-medium transition-colors hover:bg-tertiary/80"
+                >
+                  Cancel
+                </motion.button>
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-medium transition-all hover:shadow-lg"
+                >
+                  Apply Now
+                </motion.button>
+              </div>
+            </form>
+          </motion.div>
+        </motion.div>
+      )}
+
+      {/* Thank You Message Modal */}
+      {showThankYou && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md"
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-border-color text-center"
+          >
+            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-text-primary mb-2">
+              Thank You!
+            </h3>
+            <p className="text-text-secondary mb-4">
+              Your beta testing application has been submitted successfully. We'll contact you soon with further details.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setShowThankYou(false)}
+              className="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl font-medium transition-all hover:shadow-lg"
+            >
+              Close
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 };

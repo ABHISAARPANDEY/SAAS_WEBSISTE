@@ -24,6 +24,12 @@ const Automation = () => {
   const [selectedIntegration, setSelectedIntegration] = useState('All Integrations');
   const [selectedComplexity, setSelectedComplexity] = useState('All Levels');
   const [showFilters, setShowFilters] = useState(false);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [showLiveAnimation, setShowLiveAnimation] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [liveData, setLiveData] = useState({});
+  const [processingStatus, setProcessingStatus] = useState('');
 
   // Filter templates based on selected filters
   const filteredTemplates = useMemo(() => {
@@ -48,6 +54,86 @@ const Automation = () => {
     setSelectedCategory('All Categories');
     setSelectedIntegration('All Integrations');
     setSelectedComplexity('All Levels');
+  };
+
+  // Auto-progress steps when playing
+  React.useEffect(() => {
+    if (isPlaying && selectedTemplate) {
+      const interval = setInterval(() => {
+        setCurrentStep(prev => {
+          if (prev >= selectedTemplate.steps.length) {
+            setIsPlaying(false);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 2000); // 2 seconds per step
+
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying, selectedTemplate]);
+
+  // Generate realistic mock data based on template
+  const generateMockData = (template) => {
+    const mockData = {
+      'lead-enrichment-clearbit': {
+        leads: [
+          { email: 'john.doe@techcorp.com', company: 'TechCorp Inc.', size: '50-200', industry: 'Technology', enriched: false },
+          { email: 'sarah.smith@innovate.com', company: 'Innovate Solutions', size: '10-50', industry: 'SaaS', enriched: false },
+          { email: 'mike@startup.io', company: 'Startup.io', size: '1-10', industry: 'FinTech', enriched: false }
+        ],
+        enrichedData: [
+          { email: 'john.doe@techcorp.com', company: 'TechCorp Inc.', size: '150 employees', industry: 'Technology', revenue: '$5M-10M', linkedin: 'linkedin.com/in/johndoe', twitter: '@johndoe', enriched: true },
+          { email: 'sarah.smith@innovate.com', company: 'Innovate Solutions', size: '25 employees', industry: 'SaaS', revenue: '$1M-5M', linkedin: 'linkedin.com/in/sarahsmith', twitter: '@sarahsmith', enriched: true }
+        ],
+        processingSteps: [
+          '🔍 Analyzing lead: john.doe@techcorp.com',
+          '📊 Enriching company data from Clearbit',
+          '👤 Finding social profiles and contact info',
+          '🏢 Updating HubSpot with enriched data',
+          '🏷️ Adding segmentation tags automatically'
+        ]
+      },
+      'whatsapp-order-bot': {
+        orders: [
+          { id: 'ORD-001', customer: 'Alice Johnson', items: ['iPhone 13', 'AirPods Pro'], total: '$1,299', status: 'pending' },
+          { id: 'ORD-002', customer: 'Bob Wilson', items: ['MacBook Pro', 'Magic Mouse'], total: '$2,199', status: 'confirmed' },
+          { id: 'ORD-003', customer: 'Carol Davis', items: ['iPad Air', 'Apple Pencil'], total: '$799', status: 'shipped' }
+        ],
+        chatMessages: [
+          { from: 'customer', message: 'Hi, I want to order an iPhone 13', time: '2:34 PM' },
+          { from: 'bot', message: 'Great! I can help you with that. What color would you prefer?', time: '2:34 PM' },
+          { from: 'customer', message: 'Blue please', time: '2:35 PM' },
+          { from: 'bot', message: 'Perfect! Your order is being processed. Total: $1,299', time: '2:35 PM' }
+        ],
+        processingSteps: [
+          '💬 Customer initiates order via WhatsApp',
+          '🤖 Bot identifies product and preferences',
+          '📦 Checking inventory availability',
+          '💳 Generating payment link',
+          '✅ Order confirmed and tracking sent'
+        ]
+      },
+      'abandoned-cart-recovery': {
+        abandonedCarts: [
+          { email: 'user1@example.com', items: ['Nike Shoes', 'Sports Bag'], value: '$189', abandoned: '2 hours ago' },
+          { email: 'user2@example.com', items: ['Laptop Stand', 'Wireless Mouse'], value: '$145', abandoned: '1 hour ago' },
+          { email: 'user3@example.com', items: ['Coffee Maker', 'Coffee Beans'], value: '$89', abandoned: '30 min ago' }
+        ],
+        recoveryMessages: [
+          { type: 'email', subject: 'Your cart is waiting for you!', sent: '2 min ago', opened: true },
+          { type: 'whatsapp', message: 'Hey! Your Nike shoes are still in your cart. Complete your order now!', sent: '1 min ago', delivered: true }
+        ],
+        processingSteps: [
+          '🛒 Detecting abandoned cart: Nike Shoes + Sports Bag',
+          '📧 Sending personalized email reminder',
+          '📱 Sending WhatsApp recovery message',
+          '💰 Applying 10% discount code',
+          '📊 Tracking recovery campaign performance'
+        ]
+      }
+    };
+    return mockData[template.id] || {};
   };
 
   return (
@@ -320,9 +406,9 @@ const Automation = () => {
                       </div>
                     </div>
                     
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-2 sm:gap-3">
                       <button
-                        className="learn-more-btn w-full py-3 px-4 rounded-lg text-sm font-medium shadow-sm flex items-center justify-center gap-2"
+                        className="learn-more-btn w-full py-3 px-4 rounded-lg text-sm font-medium shadow-sm flex items-center justify-center gap-2 min-h-[44px]"
                         onClick={(e) => {
                           e.stopPropagation();
                           window.scrollTo(0, 0);
@@ -331,6 +417,19 @@ const Automation = () => {
                       >
                         Learn More
                         <ArrowRight className="w-4 h-4 text-white" />
+                      </button>
+                      <button
+                        className="live-demo-btn w-full py-3 px-4 rounded-lg text-sm font-medium shadow-sm flex items-center justify-center gap-2 border border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-primary transition-all duration-300 min-h-[44px]"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          // Open live working animation modal
+                          setSelectedTemplate(template);
+                          setShowLiveAnimation(true);
+                        }}
+                      >
+                        <Zap className="w-4 h-4" />
+                        <span className="hidden sm:inline">Live Demo</span>
+                        <span className="sm:hidden">Demo</span>
                       </button>
                     </div>
                   </div>
@@ -405,6 +504,224 @@ const Automation = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Live Animation Modal */}
+      {showLiveAnimation && selectedTemplate && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => {
+            setShowLiveAnimation(false);
+            setCurrentStep(0);
+            setIsPlaying(false);
+          }}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 50 }}
+            className="bg-white rounded-2xl p-6 sm:p-8 max-w-5xl w-full shadow-2xl border border-gray-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-4">
+                <div className={`w-16 h-16 rounded-xl flex items-center justify-center bg-gradient-to-r ${selectedTemplate.gradient} shadow-lg`}>
+                  <selectedTemplate.icon className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">{selectedTemplate.name}</h3>
+                  <p className="text-gray-600 text-sm">Live Working Demo</p>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  setShowLiveAnimation(false);
+                  setCurrentStep(0);
+                  setIsPlaying(false);
+                }}
+                className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-lg hover:bg-gray-100"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Animation Container */}
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 mb-8 border border-gray-200 shadow-lg">
+              <div className="flex items-center justify-between mb-6">
+                <h4 className="text-xl font-bold text-gray-900">How it Works</h4>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => {
+                      if (isPlaying) {
+                        setIsPlaying(false);
+                      } else {
+                        setIsPlaying(true);
+                        setCurrentStep(0);
+                      }
+                    }}
+                    className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md ${
+                      isPlaying 
+                        ? 'bg-red-500 text-white hover:bg-red-600' 
+                        : 'bg-green-500 text-white hover:bg-green-600'
+                    }`}
+                  >
+                    {isPlaying ? '⏸️ Pause' : '▶️ Play'}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentStep(0);
+                      setIsPlaying(false);
+                    }}
+                    className="px-6 py-3 rounded-lg text-sm font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors shadow-md"
+                  >
+                    🔄 Reset
+                  </button>
+                </div>
+              </div>
+
+              {/* Step Progress */}
+              <div className="flex items-center gap-3 mb-8">
+                {selectedTemplate.steps.map((step, index) => (
+                  <div key={index} className="flex-1 relative">
+                    <div className={`h-3 rounded-full transition-all duration-700 ${
+                      index <= currentStep ? 'bg-gradient-to-r from-green-400 to-green-600' : 'bg-gray-200'
+                    }`} />
+                    {index < selectedTemplate.steps.length - 1 && (
+                      <div className={`absolute top-1/2 -right-1.5 w-3 h-3 rounded-full transition-all duration-500 ${
+                        index < currentStep ? 'bg-green-500' : 'bg-gray-300'
+                      }`} />
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Current Step Display */}
+              <motion.div 
+                key={currentStep}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="bg-white rounded-xl p-6 mb-6 border border-gray-200 shadow-md"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold shadow-lg ${
+                    currentStep < selectedTemplate.steps.length 
+                      ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' 
+                      : 'bg-gradient-to-r from-green-500 to-green-600 text-white'
+                  }`}>
+                    {currentStep < selectedTemplate.steps.length ? currentStep + 1 : '✓'}
+                  </div>
+                  <div>
+                    <span className="text-gray-900 font-bold text-lg">
+                      {currentStep < selectedTemplate.steps.length 
+                        ? `Step ${currentStep + 1}` 
+                        : 'Complete!'
+                      }
+                    </span>
+                    <p className="text-gray-600 text-sm">
+                      {currentStep < selectedTemplate.steps.length 
+                        ? selectedTemplate.steps[currentStep]
+                        : 'Automation is now live and working!'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Visual Animation - Integration Flow */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {selectedTemplate.integrations.slice(0, 3).map((integration, index) => (
+                  <motion.div
+                    key={integration}
+                    initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                    animate={{ 
+                      opacity: currentStep >= index ? 1 : 0.4,
+                      y: currentStep >= index ? 0 : 30,
+                      scale: currentStep >= index ? 1 : 0.8
+                    }}
+                    transition={{ duration: 0.6, delay: index * 0.3 }}
+                    className={`relative p-6 rounded-xl border-2 transition-all duration-500 ${
+                      currentStep >= index 
+                        ? 'bg-gradient-to-br from-green-50 to-green-100 border-green-300 shadow-lg' 
+                        : 'bg-gray-50 border-gray-200'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-4 h-4 rounded-full transition-all duration-500 ${
+                        currentStep >= index ? 'bg-green-500 animate-pulse' : 'bg-gray-300'
+                      }`} />
+                      <span className={`font-semibold text-sm ${
+                        currentStep >= index ? 'text-green-700' : 'text-gray-500'
+                      }`}>{integration}</span>
+                    </div>
+                    <div className={`text-xs font-medium ${
+                      currentStep >= index ? 'text-green-600' : 'text-gray-400'
+                    }`}>
+                      {currentStep >= index ? '✅ Connected' : '⏳ Pending'}
+                    </div>
+                    
+                    {/* Connection Lines */}
+                    {index < 2 && (
+                      <motion.div
+                        initial={{ scaleX: 0 }}
+                        animate={{ 
+                          scaleX: currentStep > index ? 1 : 0 
+                        }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-green-400 to-green-600 transform -translate-y-1/2 origin-left"
+                      />
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Features and Use Cases */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h4 className="text-lg font-bold text-gray-900 mb-4">✨ Key Features</h4>
+                <div className="space-y-3">
+                  {selectedTemplate.features.slice(0, 3).map((feature, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-2 h-2 bg-green-500 rounded-full" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h4 className="text-lg font-bold text-gray-900 mb-4">🎯 Use Cases</h4>
+                <div className="space-y-4">
+                  {selectedTemplate.useCases.slice(0, 2).map((useCase, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2" />
+                      <div>
+                        <span className="text-gray-900 text-sm font-semibold">{useCase.title}</span>
+                        <p className="text-gray-600 text-xs mt-1">{useCase.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };

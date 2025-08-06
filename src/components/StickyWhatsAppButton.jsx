@@ -4,8 +4,10 @@ import { MessageCircle } from 'lucide-react';
 
 const StickyWhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    console.log('Sticky WhatsApp button clicked');
-    // Non-functional as requested
+    const phoneNumber = '919119671030';
+    const message = 'Hi! I\'m interested in your services.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (

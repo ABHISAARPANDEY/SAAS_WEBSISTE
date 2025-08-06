@@ -18,7 +18,11 @@ import {
   Workflow,
   Bot,
   Layers,
-  ChevronRight
+  ChevronRight,
+  Play,
+  Pause,
+  RefreshCw,
+  CheckCircle
 } from 'lucide-react';
 import { 
   readyMadeSolutions, 
@@ -39,6 +43,13 @@ const Marketplace = () => {
   const [selectedIntegration, setSelectedIntegration] = useState('All Integrations');
   const [selectedComplexity, setSelectedComplexity] = useState('All Levels');
   const [showFilters, setShowFilters] = useState(false);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [showLiveAnimation, setShowLiveAnimation] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [liveData, setLiveData] = useState({});
+  const [processingStatus, setProcessingStatus] = useState('');
+  const videoRef = React.useRef(null);
 
   // Filter ready-made solutions
   const filteredSolutions = useMemo(() => {
@@ -99,6 +110,93 @@ const Marketplace = () => {
     setSelectedIndustry('All Industries');
     setSelectedFramework('All Frameworks');
     setSelectedCategory('All Categories');
+  };
+
+  // Auto-progress steps when playing
+  React.useEffect(() => {
+    if (isPlaying && selectedTemplate) {
+      const interval = setInterval(() => {
+        setCurrentStep(prev => {
+          if (prev >= selectedTemplate.steps.length) {
+            setIsPlaying(false);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, 2000); // 2 seconds per step
+
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying, selectedTemplate]);
+
+  // Pause video when switching tabs
+  React.useEffect(() => {
+    if (videoRef.current && activeTab !== 'sparkwave') {
+      videoRef.current.pause();
+    }
+  }, [activeTab]);
+
+  // Generate realistic mock data based on template
+  const generateMockData = (template) => {
+    const mockData = {
+      'lead-enrichment-clearbit': {
+        leads: [
+          { email: 'john.doe@techcorp.com', company: 'TechCorp Inc.', size: '50-200', industry: 'Technology', enriched: false },
+          { email: 'sarah.smith@innovate.com', company: 'Innovate Solutions', size: '10-50', industry: 'SaaS', enriched: false },
+          { email: 'mike@startup.io', company: 'Startup.io', size: '1-10', industry: 'FinTech', enriched: false }
+        ],
+        enrichedData: [
+          { email: 'john.doe@techcorp.com', company: 'TechCorp Inc.', size: '150 employees', industry: 'Technology', revenue: '$5M-10M', linkedin: 'linkedin.com/in/johndoe', twitter: '@johndoe', enriched: true },
+          { email: 'sarah.smith@innovate.com', company: 'Innovate Solutions', size: '25 employees', industry: 'SaaS', revenue: '$1M-5M', linkedin: 'linkedin.com/in/sarahsmith', twitter: '@sarahsmith', enriched: true }
+        ],
+        processingSteps: [
+          '🔍 Analyzing lead: john.doe@techcorp.com',
+          '📊 Enriching company data from Clearbit',
+          '👤 Finding social profiles and contact info',
+          '🏢 Updating HubSpot with enriched data',
+          '🏷️ Adding segmentation tags automatically'
+        ]
+      },
+      'whatsapp-order-bot': {
+        orders: [
+          { id: 'ORD-001', customer: 'Alice Johnson', items: ['iPhone 13', 'AirPods Pro'], total: '$1,299', status: 'pending' },
+          { id: 'ORD-002', customer: 'Bob Wilson', items: ['MacBook Pro', 'Magic Mouse'], total: '$2,199', status: 'confirmed' },
+          { id: 'ORD-003', customer: 'Carol Davis', items: ['iPad Air', 'Apple Pencil'], total: '$799', status: 'shipped' }
+        ],
+        chatMessages: [
+          { from: 'customer', message: 'Hi, I want to order an iPhone 13', time: '2:34 PM' },
+          { from: 'bot', message: 'Great! I can help you with that. What color would you prefer?', time: '2:34 PM' },
+          { from: 'customer', message: 'Blue please', time: '2:35 PM' },
+          { from: 'bot', message: 'Perfect! Your order is being processed. Total: $1,299', time: '2:35 PM' }
+        ],
+        processingSteps: [
+          '💬 Customer initiates order via WhatsApp',
+          '🤖 Bot identifies product and preferences',
+          '📦 Checking inventory availability',
+          '💳 Generating payment link',
+          '✅ Order confirmed and tracking sent'
+        ]
+      },
+      'abandoned-cart-recovery': {
+        abandonedCarts: [
+          { email: 'user1@example.com', items: ['Nike Shoes', 'Sports Bag'], value: '$189', abandoned: '2 hours ago' },
+          { email: 'user2@example.com', items: ['Laptop Stand', 'Wireless Mouse'], value: '$145', abandoned: '1 hour ago' },
+          { email: 'user3@example.com', items: ['Coffee Maker', 'Coffee Beans'], value: '$89', abandoned: '30 min ago' }
+        ],
+        recoveryMessages: [
+          { type: 'email', subject: 'Your cart is waiting for you!', sent: '2 min ago', opened: true },
+          { type: 'whatsapp', message: 'Hey! Your Nike shoes are still in your cart. Complete your order now!', sent: '1 min ago', delivered: true }
+        ],
+        processingSteps: [
+          '🛒 Detecting abandoned cart: Nike Shoes + Sports Bag',
+          '📧 Sending personalized email reminder',
+          '📱 Sending WhatsApp recovery message',
+          '💰 Applying 10% discount code',
+          '📊 Tracking recovery campaign performance'
+        ]
+      }
+    };
+    return mockData[template.id] || {};
   };
 
   return (
@@ -300,6 +398,7 @@ const Marketplace = () => {
                 <div className="relative max-w-4xl mx-auto">
                               <div className="relative">
               <video
+                ref={videoRef}
                 className="w-full rounded-2xl shadow-2xl cursor-pointer hover:shadow-3xl transition-shadow duration-300"
                 autoPlay
                 playsInline
@@ -577,7 +676,7 @@ const Marketplace = () => {
                   whileTap="tap"
                   className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  START FREE TRIAL NOW
+                  Comming Soon
                 </motion.button>
               </motion.div>
             </>
@@ -743,12 +842,34 @@ const Marketplace = () => {
                         </p>
                         
                         <div className="space-y-3">
-                          <div className="flex gap-2">
-                            <button className="flex-1 btn-neon py-2 px-4 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300">
+                          <div className="flex flex-col gap-2">
+                            <button 
+                              className="w-full btn-neon py-2 px-4 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                window.scrollTo(0, 0);
+                                navigate(`/automation/${template.id}`);
+                              }}
+                            >
                               Learn More
-                            </button>
-                            <button className="px-4 py-2 border border-dark rounded-lg text-text-secondary hover:bg-dark-tertiary hover:border-neon-green/50 hover:text-neon-green transition-all">
                               <ArrowRight className="w-4 h-4" />
+                            </button>
+                            <button 
+                              className="w-full py-2 px-4 border border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-primary transition-all duration-300 rounded-lg font-orbitron font-semibold flex items-center justify-center gap-2"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                // Open live working animation modal
+                                setSelectedTemplate(template);
+                                setShowLiveAnimation(true);
+                                setCurrentStep(0);
+                                setIsPlaying(false);
+                                setLiveData(generateMockData(template));
+                                setProcessingStatus('Initializing...');
+                              }}
+                            >
+                              <Zap className="w-4 h-4" />
+                              <span className="hidden sm:inline">Live Demo</span>
+                              <span className="sm:hidden">Demo</span>
                             </button>
                           </div>
                         </div>
@@ -1031,6 +1152,298 @@ const Marketplace = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Live Animation Modal */}
+      {showLiveAnimation && selectedTemplate && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setShowLiveAnimation(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-green-600 to-green-700 p-6 text-white">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <selectedTemplate.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">{selectedTemplate.name}</h3>
+                    <p className="text-white/80 text-sm">Live Working Demo</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowLiveAnimation(false)}
+                  className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 flex-1 overflow-y-auto">
+              {/* Controls */}
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <button
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
+                >
+                  {isPlaying ? (
+                    <>
+                      <Pause className="w-4 h-4" />
+                      Pause
+                    </>
+                  ) : (
+                    <>
+                      <Play className="w-4 h-4" />
+                      Play
+                    </>
+                  )}
+                </button>
+                <button
+                  onClick={() => {
+                    setCurrentStep(0);
+                    setIsPlaying(false);
+                  }}
+                  className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center gap-2"
+                >
+                  <RefreshCw className="w-4 h-4" />
+                  Reset
+                </button>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="mb-6">
+                <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div 
+                    className="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full transition-all duration-500"
+                    style={{ width: `${((currentStep + 1) / selectedTemplate.steps.length) * 100}%` }}
+                  ></div>
+                </div>
+                <div className="text-center mt-2 text-sm text-gray-600">
+                  Step {Math.min(currentStep + 1, selectedTemplate.steps.length)} of {selectedTemplate.steps.length}
+                </div>
+              </div>
+
+              {/* Current Step */}
+              <motion.div
+                key={currentStep}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="mb-6 p-4 bg-green-50 rounded-lg border border-green-200"
+              >
+                <h4 className="font-bold text-green-800 mb-2">
+                  Step {Math.min(currentStep + 1, selectedTemplate.steps.length)}
+                </h4>
+                <p className="text-green-700">
+                  {selectedTemplate.steps[Math.min(currentStep, selectedTemplate.steps.length - 1)] || 'Step description...'}
+                </p>
+                {liveData.processingSteps && (
+                  <div className="mt-3 p-3 bg-white rounded border border-green-200">
+                    <div className="text-sm text-green-600 font-medium mb-2">Live Processing:</div>
+                    <div className="text-xs text-green-700">
+                      {liveData.processingSteps[currentStep] || 'Processing...'}
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+
+              {/* Integrations Animation */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                {selectedTemplate.integrations.map((integration, index) => (
+                  <motion.div
+                    key={integration}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ 
+                      opacity: index <= currentStep ? 1 : 0.3,
+                      y: index <= currentStep ? 0 : 20,
+                      scale: index <= currentStep ? 1 : 0.95
+                    }}
+                    className={`p-4 rounded-lg border-2 transition-all duration-500 ${
+                      index <= currentStep 
+                        ? 'bg-gradient-to-br from-green-50 to-green-100 border-green-300 shadow-lg' 
+                        : 'bg-gray-50 border-gray-200'
+                    }`}
+                  >
+                    <div className="text-center">
+                      <div className={`w-12 h-12 mx-auto mb-2 rounded-full flex items-center justify-center ${
+                        index <= currentStep ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-600'
+                      }`}>
+                        <Bot className="w-6 h-6" />
+                      </div>
+                      <h5 className="font-semibold text-sm">{integration}</h5>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Connection Lines */}
+              <div className="relative mb-6">
+                {selectedTemplate.integrations.slice(0, -1).map((_, index) => (
+                  <div
+                    key={index}
+                    className={`absolute top-1/2 -right-3 w-6 h-0.5 transition-all duration-500 ${
+                      index < currentStep 
+                        ? 'bg-gradient-to-r from-green-400 to-green-600' 
+                        : 'bg-gray-300'
+                    }`}
+                    style={{ left: `${(index + 1) * (100 / selectedTemplate.integrations.length)}%` }}
+                  ></div>
+                ))}
+              </div>
+
+              {/* Live Data Display */}
+              {liveData && Object.keys(liveData).length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6"
+                >
+                  <h4 className="font-bold text-gray-800 mb-3">Live Data Processing</h4>
+                  
+                  {/* Lead Enrichment Data */}
+                  {liveData.leads && (
+                    <div className="bg-blue-50 rounded-lg p-4 mb-4">
+                      <h5 className="font-semibold text-blue-800 mb-2">📊 Lead Enrichment Progress</h5>
+                      <div className="space-y-2">
+                        {liveData.leads.map((lead, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.2 }}
+                            className={`flex items-center justify-between p-2 rounded ${
+                              index <= currentStep ? 'bg-green-100 border border-green-300' : 'bg-gray-100'
+                            }`}
+                          >
+                            <div className="flex-1">
+                              <div className="font-medium text-sm">{lead.email}</div>
+                              <div className="text-xs text-gray-600">{lead.company}</div>
+                            </div>
+                            <div className="text-xs">
+                              {index <= currentStep ? (
+                                <span className="text-green-600">✅ Enriched</span>
+                              ) : (
+                                <span className="text-gray-500">⏳ Pending</span>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* WhatsApp Order Data */}
+                  {liveData.orders && (
+                    <div className="bg-green-50 rounded-lg p-4 mb-4">
+                      <h5 className="font-semibold text-green-800 mb-2">💬 WhatsApp Orders</h5>
+                      <div className="space-y-2">
+                        {liveData.orders.map((order, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.2 }}
+                            className="flex items-center justify-between p-2 bg-white rounded border"
+                          >
+                            <div className="flex-1">
+                              <div className="font-medium text-sm">{order.id}</div>
+                              <div className="text-xs text-gray-600">{order.customer}</div>
+                            </div>
+                            <div className="text-right">
+                              <div className="font-medium text-sm">{order.total}</div>
+                              <div className={`text-xs px-2 py-1 rounded ${
+                                order.status === 'confirmed' ? 'bg-green-100 text-green-700' :
+                                order.status === 'shipped' ? 'bg-blue-100 text-blue-700' :
+                                'bg-yellow-100 text-yellow-700'
+                              }`}>
+                                {order.status}
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Abandoned Cart Data */}
+                  {liveData.abandonedCarts && (
+                    <div className="bg-orange-50 rounded-lg p-4 mb-4">
+                      <h5 className="font-semibold text-orange-800 mb-2">🛒 Abandoned Cart Recovery</h5>
+                      <div className="space-y-2">
+                        {liveData.abandonedCarts.map((cart, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.2 }}
+                            className="flex items-center justify-between p-2 bg-white rounded border"
+                          >
+                            <div className="flex-1">
+                              <div className="font-medium text-sm">{cart.email}</div>
+                              <div className="text-xs text-gray-600">{cart.items.join(', ')}</div>
+                            </div>
+                            <div className="text-right">
+                              <div className="font-medium text-sm">{cart.value}</div>
+                              <div className="text-xs text-gray-500">{cart.abandoned}</div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              )}
+
+              {/* Key Features */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6"
+              >
+                <h4 className="font-bold text-gray-800 mb-3">Key Features</h4>
+                <div className="grid grid-cols-1 gap-2">
+                  {selectedTemplate.features.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="flex-1">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Use Cases */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                <h4 className="font-bold text-gray-800 mb-3">Use Cases</h4>
+                <div className="grid grid-cols-1 gap-3">
+                  {selectedTemplate.useCases.map((useCase, index) => (
+                    <div key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <div className="flex-1">
+                        <div className="font-semibold text-gray-800">{useCase.title}</div>
+                        <div className="text-gray-500 text-xs mt-1">{useCase.description}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };
