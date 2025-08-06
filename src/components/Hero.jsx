@@ -122,7 +122,7 @@ const Hero = () => {
         console.log('Beta applications coming soon');
       },
       offerText: '🚀 Close Beta Testing',
-      subtitle: 'Starts from 15 Mar',
+      subtitle: 'Starts from 15 Sep',
       showTimer: false
     },
     {

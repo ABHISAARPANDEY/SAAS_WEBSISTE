@@ -676,7 +676,7 @@ const Marketplace = () => {
                   whileTap="tap"
                   className="btn-neon px-8 py-4 rounded-full font-orbitron font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Comming Soon
+                  Beta Testing Starts on 15th September
                 </motion.button>
               </motion.div>
             </>
