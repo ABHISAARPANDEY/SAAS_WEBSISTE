@@ -42,6 +42,7 @@ const Marketplace = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [selectedIntegration, setSelectedIntegration] = useState('All Integrations');
   const [selectedComplexity, setSelectedComplexity] = useState('All Levels');
+  const [selectedAgentCategory, setSelectedAgentCategory] = useState('All Categories');
   const [showFilters, setShowFilters] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [showLiveAnimation, setShowLiveAnimation] = useState(false);
@@ -50,6 +51,172 @@ const Marketplace = () => {
   const [liveData, setLiveData] = useState({});
   const [processingStatus, setProcessingStatus] = useState('');
   const videoRef = React.useRef(null);
+
+  // AI Agents Data
+  const aiAgents = [
+    {
+      id: 'sales-agent',
+      name: 'Sales Pro Agent',
+      description: 'AI-powered sales assistant that qualifies leads, schedules meetings, and follows up automatically',
+      category: 'Sales',
+      icon: Bot,
+      image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800',
+      features: ['Lead Qualification', 'Meeting Scheduling', 'Follow-up Automation', 'Sales Analytics'],
+      rating: 4.9,
+      pricing: { monthly: 99, yearly: 990 },
+      integrations: ['HubSpot', 'Salesforce', 'Calendly', 'Gmail'],
+      capabilities: ['Natural Language Processing', 'CRM Integration', 'Email Automation', 'Performance Tracking'],
+      detailedDescription: 'The Sales Pro Agent is an intelligent AI assistant designed to revolutionize your sales process. It automatically qualifies leads, schedules meetings, and maintains consistent follow-up communication, ensuring no opportunity is missed.',
+      howItWorks: [
+        'Automatically analyzes incoming leads and scores them based on engagement and fit',
+        'Schedules meetings with qualified prospects using integrated calendar systems',
+        'Sends personalized follow-up emails and tracks response rates',
+        'Provides real-time analytics and insights to optimize sales performance'
+      ],
+      productivityEnhancement: [
+        'Reduces manual lead qualification time by 80%',
+        'Increases meeting booking rates by 60%',
+        'Improves follow-up response rates by 45%',
+        'Provides 24/7 lead engagement without human intervention'
+      ],
+      useCases: [
+        'B2B lead qualification and nurturing',
+        'Sales team productivity optimization',
+        'Customer relationship management',
+        'Sales pipeline automation'
+      ]
+    },
+    {
+      id: 'marketing-agent',
+      name: 'Marketing Genius Agent',
+      description: 'Intelligent marketing assistant that creates campaigns, analyzes performance, and optimizes strategies',
+      category: 'Marketing',
+      icon: Bot,
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      features: ['Campaign Creation', 'Performance Analysis', 'A/B Testing', 'Audience Targeting'],
+      rating: 4.8,
+      pricing: { monthly: 129, yearly: 1290 },
+      integrations: ['Google Ads', 'Facebook Ads', 'Mailchimp', 'Analytics'],
+      capabilities: ['Content Generation', 'Ad Optimization', 'ROI Analysis', 'Trend Prediction'],
+      detailedDescription: 'The Marketing Genius Agent is your AI-powered marketing strategist that creates compelling campaigns, analyzes performance metrics, and continuously optimizes your marketing efforts for maximum ROI.',
+      howItWorks: [
+        'Analyzes market trends and competitor strategies to identify opportunities',
+        'Creates personalized marketing campaigns based on audience segmentation',
+        'Monitors campaign performance and automatically adjusts targeting',
+        'Generates content and optimizes ad copy for better engagement'
+      ],
+      productivityEnhancement: [
+        'Reduces campaign creation time by 70%',
+        'Improves campaign ROI by 40% through continuous optimization',
+        'Automates A/B testing and performance analysis',
+        'Provides predictive insights for better decision making'
+      ],
+      useCases: [
+        'Digital advertising campaign management',
+        'Content marketing strategy optimization',
+        'Social media marketing automation',
+        'Email marketing campaign creation'
+      ]
+    },
+    {
+      id: 'crm-agent',
+      name: 'CRM Assistant Agent',
+      description: 'Smart CRM agent that manages customer relationships, tracks interactions, and provides insights',
+      category: 'CRM',
+      icon: Bot,
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      features: ['Contact Management', 'Interaction Tracking', 'Pipeline Management', 'Reporting'],
+      rating: 4.7,
+      pricing: { monthly: 89, yearly: 890 },
+      integrations: ['Salesforce', 'HubSpot', 'Pipedrive', 'Zoho'],
+      capabilities: ['Data Enrichment', 'Automated Workflows', 'Predictive Analytics', 'Custom Dashboards'],
+      detailedDescription: 'The CRM Assistant Agent intelligently manages your customer relationships by automating data entry, tracking interactions, and providing actionable insights to improve customer satisfaction and retention.',
+      howItWorks: [
+        'Automatically captures and enriches customer data from multiple sources',
+        'Tracks all customer interactions across channels and touchpoints',
+        'Manages sales pipelines and predicts deal outcomes',
+        'Generates comprehensive reports and actionable insights'
+      ],
+      productivityEnhancement: [
+        'Reduces manual data entry by 90%',
+        'Improves customer response times by 65%',
+        'Increases customer retention rates by 35%',
+        'Provides real-time visibility into customer relationships'
+      ],
+      useCases: [
+        'Customer relationship management',
+        'Sales pipeline optimization',
+        'Customer service automation',
+        'Business intelligence and reporting'
+      ]
+    },
+    {
+      id: 'support-agent',
+      name: 'Customer Support Agent',
+      description: '24/7 customer support agent that handles inquiries, resolves issues, and escalates when needed',
+      category: 'Customer Support',
+      icon: Bot,
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      features: ['24/7 Support', 'Ticket Management', 'Knowledge Base', 'Escalation Handling'],
+      rating: 4.9,
+      pricing: { monthly: 149, yearly: 1490 },
+      integrations: ['Zendesk', 'Intercom', 'Slack', 'Email'],
+      capabilities: ['Natural Language Understanding', 'Multi-language Support', 'Sentiment Analysis', 'Self-learning'],
+      detailedDescription: 'The Customer Support Agent provides round-the-clock customer assistance, automatically resolving common issues while intelligently escalating complex problems to human agents when necessary.',
+      howItWorks: [
+        'Understands customer inquiries using advanced natural language processing',
+        'Accesses knowledge base to provide accurate and helpful responses',
+        'Automatically creates and manages support tickets',
+        'Escalates complex issues to human agents with full context'
+      ],
+      productivityEnhancement: [
+        'Handles 80% of customer inquiries automatically',
+        'Reduces response times from hours to seconds',
+        'Improves customer satisfaction scores by 50%',
+        'Provides 24/7 support without additional staffing costs'
+      ],
+      useCases: [
+        'Customer service automation',
+        'Technical support assistance',
+        'FAQ management and responses',
+        'Support ticket routing and management'
+      ]
+    },
+    {
+      id: 'analytics-agent',
+      name: 'Business Intelligence Agent',
+      description: 'Advanced analytics agent that processes data, generates insights, and creates actionable reports',
+      category: 'Analytics',
+      icon: Bot,
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      features: ['Data Processing', 'Insight Generation', 'Report Creation', 'Predictive Modeling'],
+      rating: 4.8,
+      pricing: { monthly: 179, yearly: 1790 },
+      integrations: ['Tableau', 'Power BI', 'Google Analytics', 'Database APIs'],
+      capabilities: ['Machine Learning', 'Data Visualization', 'Real-time Monitoring', 'Custom Alerts'],
+      detailedDescription: 'The Business Intelligence Agent transforms your raw data into actionable insights using advanced machine learning algorithms, helping you make data-driven decisions and predict future trends.',
+      howItWorks: [
+        'Collects and processes data from multiple sources automatically',
+        'Applies machine learning algorithms to identify patterns and trends',
+        'Generates interactive dashboards and visualizations',
+        'Provides predictive analytics and forecasting capabilities'
+      ],
+      productivityEnhancement: [
+        'Reduces data analysis time by 85%',
+        'Improves decision-making accuracy by 60%',
+        'Provides real-time insights and alerts',
+        'Automates report generation and distribution'
+      ],
+      useCases: [
+        'Business performance monitoring',
+        'Predictive analytics and forecasting',
+        'Data visualization and reporting',
+        'Real-time business intelligence'
+      ]
+    }
+  ];
+
+  const agentCategories = ['All Categories', 'Sales', 'Marketing', 'CRM', 'Customer Support', 'Analytics'];
 
   // Filter ready-made solutions
   const filteredSolutions = useMemo(() => {
@@ -105,11 +272,23 @@ const Marketplace = () => {
     });
   }, [searchTerm, selectedIndustry, selectedCategory, selectedIntegration, selectedComplexity]);
 
+  // Filter AI agents
+  const filteredAgents = useMemo(() => {
+    return aiAgents.filter(agent => {
+      const matchesSearch = agent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           agent.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedAgentCategory === 'All Categories' || agent.category === selectedAgentCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, selectedAgentCategory]);
+
   const clearFilters = () => {
     setSearchTerm('');
     setSelectedIndustry('All Industries');
     setSelectedFramework('All Frameworks');
     setSelectedCategory('All Categories');
+    setSelectedAgentCategory('All Categories');
   };
 
   // Auto-progress steps when playing
@@ -266,6 +445,17 @@ const Marketplace = () => {
                 AUTOMATION
               </button>
               <button
+                onClick={() => setActiveTab('ai-agents')}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
+                  activeTab === 'ai-agents'
+                    ? 'btn-neon shadow-lg'
+                    : 'glass-effect text-text-secondary hover:text-text-primary border border-dark'
+                }`}
+              >
+                <Bot className={`w-5 h-5 ${activeTab === 'ai-agents' ? 'text-dark-primary' : ''}`} />
+                AI AGENTS
+              </button>
+              <button
                 onClick={() => setActiveTab('apis')}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
                   activeTab === 'apis'
@@ -355,6 +545,22 @@ const Marketplace = () => {
                     style={{ minWidth: "180px" }}
                   >
                     {apiCategories.map((category) => (
+                      <option key={category} value={category}>
+                        {category}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5 pointer-events-none" />
+                </div>
+              ) : activeTab === 'ai-agents' ? (
+                <div className="relative">
+                  <select
+                    value={selectedAgentCategory}
+                    onChange={(e) => setSelectedAgentCategory(e.target.value)}
+                    className="appearance-none w-full px-4 py-3 pr-10 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent cursor-pointer"
+                    style={{ minWidth: "180px" }}
+                  >
+                    {agentCategories.map((category) => (
                       <option key={category} value={category}>
                         {category}
                       </option>
@@ -891,6 +1097,160 @@ const Marketplace = () => {
                   View All Automation Templates
                 </motion.button>
               </div>
+            </>
+          )}
+
+          {activeTab === 'ai-agents' && (
+            <>
+              {/* AI AGENTS Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="mb-12"
+              >
+                <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-text-primary mb-4">
+                  AI Agents
+                </h2>
+                <p className="text-xl text-text-secondary mb-8">
+                  Intelligent AI agents designed to automate and enhance your business processes. 
+                  From sales to customer support, our agents work 24/7 to boost your productivity.
+                </p>
+              </motion.div>
+
+              {/* AI Agents Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredAgents.map((agent, index) => (
+                  <motion.div
+                    key={agent.id}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group cursor-pointer"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigate(`/marketplace/ai-agent/${agent.id}`);
+                    }}
+                  >
+                    <div className="card-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col relative">
+                      {/* Agent Image */}
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={agent.image}
+                          alt={agent.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute top-4 left-4 z-10">
+                          <span className="px-3 py-1 bg-dark-tertiary text-neon-green rounded-full text-sm font-medium border border-dark">
+                            {agent.category}
+                          </span>
+                        </div>
+                        <div className="absolute top-4 right-4 z-10">
+                          <div className="w-12 h-12 glass-effect rounded-xl flex items-center justify-center border border-neon-cyan group-hover:scale-110 transition-transform duration-300">
+                            <agent.icon className="w-6 h-6 text-neon-cyan" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-4 right-4 z-10">
+                          <div className="flex items-center gap-1 bg-dark-tertiary px-2 py-1 rounded-full border border-dark">
+                            <Star className="w-4 h-4 text-neon-green fill-current" />
+                            <span className="text-sm text-text-secondary">{agent.rating}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Agent Info */}
+                      <div className="p-6 flex-1 flex flex-col relative z-10">
+                        <h3 className="text-xl font-orbitron font-bold text-text-primary mb-3 group-hover:text-neon-green transition-colors">
+                          {agent.name}
+                        </h3>
+                        
+                        <p className="text-text-secondary mb-4 leading-relaxed flex-1">
+                          {agent.description}
+                        </p>
+                        
+                        {/* Features */}
+                        <div className="mb-4">
+                          <div className="text-sm text-text-secondary mb-2">Key Features:</div>
+                          <div className="flex flex-wrap gap-2">
+                            {agent.features.slice(0, 2).map((feature, idx) => (
+                              <span key={idx} className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs border border-dark">
+                                {feature}
+                              </span>
+                            ))}
+                            {agent.features.length > 2 && (
+                              <span className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs border border-dark">
+                                +{agent.features.length - 2} more
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Integrations */}
+                        <div className="mb-4">
+                          <div className="text-sm text-text-secondary mb-2">Integrations:</div>
+                          <div className="flex flex-wrap gap-2">
+                            {agent.integrations.slice(0, 3).map((integration, idx) => (
+                              <span key={idx} className="px-2 py-1 bg-neon-cyan/10 text-neon-cyan rounded-md text-xs border border-neon-cyan/30">
+                                {integration}
+                              </span>
+                            ))}
+                            {agent.integrations.length > 3 && (
+                              <span className="px-2 py-1 bg-neon-cyan/10 text-neon-cyan rounded-md text-xs border border-neon-cyan/30">
+                                +{agent.integrations.length - 3} more
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        
+                        
+                        
+                        <div className="flex gap-2 mt-auto">
+                          <button 
+                            className="flex-1 btn-neon py-2 px-4 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.scrollTo(0, 0);
+                              navigate(`/marketplace/ai-agent/${agent.id}`);
+                            }}
+                          >
+                            Learn More
+                          </button>
+                          <button className="px-4 py-2 border border-dark rounded-lg text-text-secondary hover:bg-dark-tertiary hover:border-neon-green/50 hover:text-neon-green transition-all">
+                            <ArrowRight className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* No Results for AI Agents */}
+              {filteredAgents.length === 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-20"
+                >
+                  <div className="w-24 h-24 bg-dark-tertiary rounded-full flex items-center justify-center mx-auto mb-6 border border-dark">
+                    <Bot className="w-12 h-12 text-text-secondary" />
+                  </div>
+                  <h3 className="text-2xl font-orbitron font-bold text-text-primary mb-4">No AI agents found</h3>
+                  <p className="text-text-secondary mb-8">
+                    Try adjusting your search terms or category filter to find the AI agent you need.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSearchTerm('');
+                      setSelectedAgentCategory('All Categories');
+                    }}
+                    className="btn-neon px-6 py-3 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    Clear Filters
+                  </button>
+                </motion.div>
+              )}
             </>
           )}
 

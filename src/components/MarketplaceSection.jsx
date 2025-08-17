@@ -89,6 +89,19 @@ const MarketplaceSection = () => {
         console.log('Industry Solutions card clicked');
         navigate('/marketplace');
       }
+    },
+    {
+      id: 'ai-agents',
+      title: 'AI AGENTS',
+      description: 'Intelligent AI agents designed to automate and enhance your business processes. From sales to customer support.',
+      icon: Bot,
+      gradient: 'from-cyan-600 via-blue-500 to-indigo-500',
+      features: ['Sales Agent', 'Marketing Agent', 'CRM Agent', 'Support Agent'],
+      buttonText: 'View Agents',
+      action: () => {
+        console.log('AI Agents card clicked');
+        navigate('/marketplace');
+      }
     }
   ];
 

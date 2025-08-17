@@ -34,14 +34,14 @@ const About = () => {
   const [activeProcess, setActiveProcess] = useState(0);
 
   const expertise = [
-    { name: 'Custom Software Development', icon: Code, years: '4+' },
-    { name: 'Mobile App Development', icon: Smartphone, years: '5+' },
-    { name: 'Web Application Development', icon: Globe, years: '5+' },
-    { name: 'E-commerce Solutions', icon: TrendingUp, years: '5+' },
-    { name: 'Cloud Computing Services', icon: Cloud, years: '4+' },
-    { name: 'UI/UX Design', icon: Layers, years: '4+' },
-    { name: 'Digital Transformation', icon: Zap, years: '5+' },
-    { name: 'Enterprise Solutions', icon: Database, years: '5+' }
+    { name: 'Custom Software Development', icon: Code, years: '2+' },
+    { name: 'Mobile App Development', icon: Smartphone, years: '2+' },
+    { name: 'Web Application Development', icon: Globe, years: '2+' },
+    { name: 'E-commerce Solutions', icon: TrendingUp, years: '2+' },
+    { name: 'Cloud Computing Services', icon: Cloud, years: '2+' },
+    { name: 'UI/UX Design', icon: Layers, years: '2+' },
+    { name: 'Digital Transformation', icon: Zap, years: '2+' },
+    { name: 'Enterprise Solutions', icon: Database, years: '2+' }
   ];
 
   const workingProcess = [
@@ -138,7 +138,7 @@ const About = () => {
   ];
 
   const whyChooseUs = [
-    { title: 'Proven Track Record', icon: Award, description: 'Successfully delivered 200+ projects across various industries' },
+    { title: 'Proven Track Record', icon: Award, description: 'Successfully delivered 10+ projects across various industries' },
     { title: 'Dedicated Project Teams', icon: Users, description: 'Assigned dedicated teams for focused project execution' },
     { title: 'Cutting-edge Technology', icon: Zap, description: 'Latest technologies and frameworks for modern solutions' },
     { title: 'Transparent Communication', icon: MessageSquare, description: 'Regular updates and clear communication throughout' },
@@ -149,9 +149,9 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '200+', label: 'Projects Completed', icon: Award },
-    { number: '50+', label: 'Happy Clients', icon: Heart },
-    { number: '4+', label: 'Years Experience', icon: Clock },
+    { number: '10+', label: 'Projects Completed', icon: Award },
+    { number: '10+', label: 'Happy Clients', icon: Heart },
+    { number: '2+', label: 'Years Experience', icon: Clock },
     { number: '15+', label: 'Team Members', icon: Users }
   ];
 
@@ -186,7 +186,7 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed mb-8 mt-6"
             >
-              We transform digital ideas into powerful solutions. With over 8 years of industry experience, 
+              We transform digital ideas into powerful solutions. With over 2 years of industry experience, 
               we specialize in delivering cutting-edge technology solutions that drive business growth.
             </motion.p>
 

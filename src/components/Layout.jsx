@@ -324,31 +324,25 @@ const Layout = ({ children }) => {
               <h3 className="text-lg font-semibold text-accent-primary tracking-wide">Follow Us</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="#" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log('Facebook clicked');
-                  }}
+                  href="https://www.facebook.com/people/TechStaq/61579718695238/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/20 backdrop-blur-sm"
                 >
                   <img src="/logos/facebook.png" alt="Facebook" className="w-8 h-8" />
                 </a>
                 <a 
-                  href="#" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log('Instagram clicked');
-                  }}
+                  href="https://www.instagram.com/techstaq0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/20 backdrop-blur-sm"
                 >
                   <img src="/logos/instagram.png" alt="Instagram" className="w-8 h-8" />
                 </a>
                 <a 
-                  href="#" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log('Twitter clicked');
-                  }}
+                  href="https://x.com/TechStaq0"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/20 backdrop-blur-sm"
                 >
                   <img src="/logos/twitter.png" alt="Twitter" className="w-8 h-8" />

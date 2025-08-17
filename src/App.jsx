@@ -11,6 +11,7 @@ import Marketplace from './pages/Marketplace';
 import Portfolio from './pages/Portfolio';
 import ProductDetail from './pages/ProductDetail';
 import ApiDetail from './pages/ApiDetail';
+import AiAgentDetail from './pages/AiAgentDetail';
 import GetQuote from './pages/GetQuote';
 import RequestQuote from './pages/RequestQuote';
 import HealthTrackPro from './pages/ProductDemos/HealthTrackPro';
@@ -90,6 +91,7 @@ function App() {
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/marketplace/product/:productId" element={<ProductDetail />} />
             <Route path="/marketplace/api/:apiId" element={<ApiDetail />} />
+            <Route path="/marketplace/ai-agent/:agentId" element={<AiAgentDetail />} />
             <Route path="/get-quote" element={<GetQuote />} />
             <Route path="/request-quote" element={<RequestQuote />} />
             <Route path="/blog" element={<Blog />} />
