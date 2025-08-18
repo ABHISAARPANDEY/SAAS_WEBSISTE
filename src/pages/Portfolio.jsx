@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, 
-  Star, 
   ExternalLink,
   Building2,
   ShoppingCart,
@@ -34,7 +33,6 @@ const Portfolio = () => {
       icon: Heart,
       color: 'from-red-500 to-pink-500',
       features: ['Patient Portal', 'Telemedicine', 'Health Analytics', 'HIPAA Compliant'],
-      rating: 4.8,
       image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://carepulse-lovat.vercel.app/'
     },
@@ -45,7 +43,6 @@ const Portfolio = () => {
       icon: Building2,
       color: 'from-blue-500 to-purple-500',
       features: ['Digital Banking', 'Payment Processing', 'Loan Management', 'Financial Analytics'],
-      rating: 4.9,
       image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://horizonvault.vercel.app/'
     },
@@ -56,7 +53,6 @@ const Portfolio = () => {
       icon: ShoppingCart,
       color: 'from-orange-500 to-red-500',
       features: ['Payment Integration', 'Inventory Management', 'Customer Analytics', 'Mobile Responsive'],
-      rating: 4.9,
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://lighthearted-pie-7e154c.netlify.app/'
     },
@@ -67,7 +63,6 @@ const Portfolio = () => {
       icon: GraduationCap,
       color: 'from-green-500 to-emerald-500',
       features: ['Virtual Classrooms', 'Content Management', 'Progress Tracking', 'Interactive Learning'],
-      rating: 4.7,
       image: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/edulearn-platform'
     },
@@ -78,7 +73,6 @@ const Portfolio = () => {
       icon: Utensils,
       color: 'from-yellow-500 to-orange-500',
       features: ['POS System', 'Delivery Integration', 'Menu Management', 'Order Tracking'],
-      rating: 4.7,
       image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/foodie-delivery'
     },
@@ -89,7 +83,6 @@ const Portfolio = () => {
       icon: Store,
       color: 'from-gray-600 to-gray-800',
       features: ['Point of Sale', 'Inventory Management', 'Customer Loyalty', 'Sales Analytics'],
-      rating: 4.6,
       image: 'https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/retail-pos'
     },
@@ -100,7 +93,6 @@ const Portfolio = () => {
       icon: Building2,
       color: 'from-indigo-500 to-purple-500',
       features: ['Account Management', 'Transaction Processing', 'Regulatory Compliance', 'Risk Management'],
-      rating: 4.8,
       image: 'https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://horizonvault.vercel.app/'
     },
@@ -111,7 +103,6 @@ const Portfolio = () => {
       icon: Home,
       color: 'from-green-500 to-emerald-500',
       features: ['Property Listings', 'Tenant Portal', 'Maintenance Requests', 'Financial Tracking'],
-      rating: 4.9,
       image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/property-manager'
     },
@@ -122,7 +113,6 @@ const Portfolio = () => {
       icon: Plane,
       color: 'from-cyan-500 to-blue-500',
       features: ['Flight Search', 'Hotel Reservations', 'Itinerary Management', 'Payment Processing'],
-      rating: 4.8,
       image: 'https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/travel-booking'
     },
@@ -133,7 +123,6 @@ const Portfolio = () => {
       icon: Music,
       color: 'from-purple-500 to-pink-500',
       features: ['Content Management', 'User Subscriptions', 'Video Streaming', 'Analytics Dashboard'],
-      rating: 4.8,
       image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/streaming-platform'
     },
@@ -144,7 +133,6 @@ const Portfolio = () => {
       icon: Coffee,
       color: 'from-amber-500 to-orange-500',
       features: ['3D Animations', 'Interactive Elements', 'Premium Design', 'Mobile Optimized'],
-      rating: 4.9,
       image: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://phenomenal-melomakarona-44137f.netlify.app'
     },
@@ -155,7 +143,6 @@ const Portfolio = () => {
       icon: Gamepad2,
       color: 'from-green-500 to-emerald-500',
       features: ['Game Showcases', 'Interactive Elements', 'Community Features', 'Responsive Design'],
-      rating: 4.8,
       image: 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://sweet-stroopwafel-b2b30f.netlify.app'
     },
@@ -166,7 +153,6 @@ const Portfolio = () => {
       icon: MessageSquare,
       color: 'from-blue-500 to-cyan-500',
       features: ['AI Content Creation', 'Social Scheduling', 'Analytics Dashboard', 'Multi-Platform'],
-      rating: 4.9,
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://jovial-sawine-126db5.netlify.app'
     }
@@ -210,18 +196,7 @@ const Portfolio = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-wrap justify-center gap-8 mt-12"
             >
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-green">150+</div>
-                <div className="text-text-secondary">Projects Completed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-cyan">13+</div>
-                <div className="text-text-secondary">Industries Served</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-orbitron font-bold text-neon-pink">4.8</div>
-                <div className="text-text-secondary">Average Rating</div>
-              </div>
+             
             </motion.div>
           </motion.div>
         </div>
@@ -276,12 +251,6 @@ const Portfolio = () => {
                     <div className="absolute top-4 left-4 z-10">
                       <div className="w-12 h-12 glass-effect rounded-xl flex items-center justify-center border border-neon-cyan group-hover:scale-110 transition-transform duration-300">
                         <industry.icon className="w-6 h-6 text-neon-cyan" />
-                      </div>
-                    </div>
-                    <div className="absolute top-4 right-4 z-10">
-                      <div className="flex items-center gap-1 bg-dark-tertiary px-2 py-1 rounded-full border border-dark">
-                        <Star className="w-4 h-4 text-neon-green fill-current" />
-                        <span className="text-sm text-text-secondary">{industry.rating}</span>
                       </div>
                     </div>
                   </div>
