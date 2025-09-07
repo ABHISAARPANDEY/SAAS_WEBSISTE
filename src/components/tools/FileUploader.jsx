@@ -187,7 +187,7 @@ const FileUploader = ({
     <div className="space-y-4">
       {/* Upload Area */}
       <div
-        className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 bg-dark-primary ${
+        className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 bg-gray-50 ${
           dragActive ? 'border-accent-primary bg-secondary/80' : 'border-border-color hover:border-accent-primary/50'
         }`}
         onDragEnter={handleDrag}
@@ -208,14 +208,14 @@ const FileUploader = ({
           <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center ${
             dragActive ? 'bg-white border-2 border-accent-primary' : 'bg-white border border-border-color'
           }`}>
-            <Upload className={`w-8 h-8 ${dragActive ? 'text-accent-primary' : 'text-text-secondary'}`} />
+            <Upload className={`w-8 h-8 ${dragActive ? 'text-blue-600' : 'text-gray-500'}`} />
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-text-primary mb-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
               {dragActive ? 'Drop files here' : 'Secure File Upload'}
             </h3>
-            <p className="text-text-secondary mb-4">
+            <p className="text-gray-700 mb-4">
               Drag and drop files here, or click to browse
             </p>
             
@@ -231,7 +231,7 @@ const FileUploader = ({
           </div>
 
           {/* File Requirements */}
-          <div className="text-sm text-text-secondary space-y-1">
+          <div className="text-sm text-gray-700 space-y-1">
             <div>Accepted formats: {getAcceptedTypesDisplay()}</div>
             <div>Maximum file size: {formatFileSize(maxFileSize)}</div>
             <div>Maximum files: {maxFiles}</div>
@@ -246,13 +246,13 @@ const FileUploader = ({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="bg-dark-tertiary border border-neon-pink/50 rounded-lg p-4"
+            className="bg-red-50 border border-red-200 rounded-lg p-4"
           >
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-neon-pink flex-shrink-0 mt-0.5" />
+              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
               <div className="flex-1">
-                <h4 className="font-medium text-neon-pink mb-1">Upload Errors</h4>
-                <ul className="text-sm text-neon-pink/80 space-y-1">
+                <h4 className="font-medium text-red-600 mb-1">Upload Errors</h4>
+                <ul className="text-sm text-red-600 space-y-1">
                   {errors.map((error, index) => (
                     <li key={index}>• {error}</li>
                   ))}
@@ -273,14 +273,14 @@ const FileUploader = ({
       {files.length > 0 && (
         <div className="space-y-3">
           <div className="flex items-center justify-between mt-6">
-            <h4 className="font-medium text-text-primary">
+            <h4 className="font-medium text-gray-900">
               Uploaded Files ({files.length}/{maxFiles})
             </h4>
             <button
               onClick={clearAllFiles}
-              className="text-neon-pink hover:text-neon-pink/80 text-sm flex items-center gap-1"
+              className="text-red-600 hover:text-red-700 text-sm flex items-center gap-1"
             >
-              <Trash2 className="w-4 h-4 text-neon-pink" />
+              <Trash2 className="w-4 h-4 text-red-600" />
               Clear All
             </button>
           </div>
@@ -296,28 +296,28 @@ const FileUploader = ({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="bg-dark-secondary border border-dark rounded-lg p-4 hover:border-neon-green/30 transition-all"
+                  className="bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-all"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-dark-tertiary rounded-lg flex items-center justify-center">
-                      <FileIcon className="w-5 h-5 text-neon-green" />
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <FileIcon className="w-5 h-5 text-blue-600" />
                     </div>
                     
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-1">
-                        <h5 className="font-medium text-text-primary truncate">
+                        <h5 className="font-medium text-gray-900 truncate">
                           {fileObj.name}
                         </h5>
                         <div className="flex items-center gap-2">
                           {fileObj.status === 'completed' && (
-                            <Check className="w-4 h-4 text-neon-green" />
+                            <Check className="w-4 h-4 text-green-600" />
                           )}
                           {fileObj.status === 'uploading' && (
-                            <Loader className="w-4 h-4 text-neon-cyan animate-spin" />
+                            <Loader className="w-4 h-4 text-blue-600 animate-spin" />
                           )}
                           <button
                             onClick={() => removeFile(fileObj.id)}
-                            className="text-text-secondary hover:text-neon-pink"
+                            className="text-gray-500 hover:text-red-600"
                           >
                             <X className="w-4 h-4" />
                           </button>

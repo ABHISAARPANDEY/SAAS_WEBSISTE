@@ -156,15 +156,15 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-dark-primary">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-20 bg-white overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-gray-400 rounded-full opacity-15 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-gray-200 opacity-5 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,7 +184,7 @@ const About = () => {
               initial="initial"
               animate="animate"
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed mb-8 mt-6"
+              className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8 mt-6"
             >
               We transform digital ideas into powerful solutions. With over 2 years of industry experience, 
               we specialize in delivering cutting-edge technology solutions that drive business growth.
@@ -213,7 +213,7 @@ const About = () => {
                 whileHover="hover"
                 whileTap="tap"
                 onClick={() => navigate('/marketplace')}
-                className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-blue-600 hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
               >
                 Explore Solutions
               </motion.button>
@@ -223,7 +223,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -236,11 +236,11 @@ const About = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 border border-neon-green rounded-2xl flex items-center justify-center mx-auto mb-4 pulse-neon">
-                  <stat.icon className="w-8 h-8 text-neon-green" />
+                <div className="w-16 h-16 border border-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <div className="text-4xl md:text-5xl font-orbitron font-bold text-neon-green neon-text mb-2">{stat.number}</div>
-                <div className="text-text-secondary font-medium">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-orbitron font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-gray-700 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -248,7 +248,7 @@ const About = () => {
       </section>
 
       {/* Our Expertise */}
-      <section className="py-20 bg-dark-primary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -257,10 +257,10 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-gray-900 mb-6">
               Our <span className="gradient-neon-text neon-text">Expertise</span>
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Comprehensive technology solutions backed by years of experience and industry expertise
             </p>
           </motion.div>
@@ -276,14 +276,14 @@ const About = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="card-dark rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 text-center group"
               >
-                <div className="w-16 h-16 border border-neon-cyan rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 pulse-neon">
-                  <skill.icon className="w-8 h-8 text-neon-cyan" />
+                <div className="w-16 h-16 border border-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <skill.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-orbitron font-bold text-text-primary mb-2 group-hover:text-neon-cyan transition-colors">
+                <h3 className="text-lg font-orbitron font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {skill.name}
                 </h3>
-                <div className="text-2xl font-bold text-neon-cyan">{skill.years}</div>
-                <div className="text-sm text-text-secondary">Experience</div>
+                <div className="text-2xl font-bold text-blue-600">{skill.years}</div>
+                <div className="text-sm text-gray-700">Experience</div>
               </motion.div>
             ))}
           </div>
@@ -291,7 +291,7 @@ const About = () => {
       </section>
 
       {/* Working Process */}
-      <section className="py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -300,10 +300,10 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-gray-900 mb-6">
               Our Working <span className="gradient-neon-text neon-text">Process</span>
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               A proven methodology that ensures successful project delivery from concept to launch
             </p>
           </motion.div>
@@ -317,7 +317,7 @@ const About = () => {
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeProcess === index
                     ? 'btn-neon shadow-lg'
-                    : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300 hover:border-blue-500/50'
                 }`}
               >
                 {process.title}
@@ -331,21 +331,21 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-dark-tertiary rounded-2xl p-8 shadow-lg border border-dark"
+            className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
           >
             <div className="flex items-start gap-6">
-              <div className={`w-20 h-20 rounded-2xl border border-neon-green flex items-center justify-center flex-shrink-0 pulse-neon`}>
+              <div className="w-20 h-20 rounded-2xl border border-blue-600 flex items-center justify-center flex-shrink-0">
                 {(() => {
                   const CurrentIcon = workingProcess[activeProcess].icon;
-                  return <CurrentIcon className="w-10 h-10 text-neon-green" />;
+                  return <CurrentIcon className="w-10 h-10 text-blue-600" />;
                 })()}
               </div>
               
               <div className="flex-1">
-                <h3 className="text-2xl font-orbitron font-bold text-text-primary mb-4">
+                <h3 className="text-2xl font-orbitron font-bold text-gray-900 mb-4">
                   {workingProcess[activeProcess].title}
                 </h3>
-                <p className="text-lg text-text-secondary mb-6">
+                <p className="text-lg text-gray-700 mb-6">
                   {workingProcess[activeProcess].description}
                 </p>
 
@@ -353,8 +353,8 @@ const About = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {workingProcess[activeProcess].details.map((detail, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-neon-green flex-shrink-0" />
-                        <span className="text-text-secondary">{detail}</span>
+                        <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                        <span className="text-gray-700">{detail}</span>
                       </div>
                     ))}
                   </div>
@@ -363,13 +363,13 @@ const About = () => {
                 {workingProcess[activeProcess].phases && (
                   <div className="space-y-6">
                     {workingProcess[activeProcess].phases.map((phase, phaseIndex) => (
-                      <div key={phaseIndex} className="bg-dark-primary rounded-xl p-6 border border-dark">
-                        <h4 className="text-lg font-orbitron font-bold text-text-primary mb-3">{phase.name}</h4>
+                      <div key={phaseIndex} className="bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
+                        <h4 className="text-lg font-orbitron font-bold text-gray-900 mb-3">{phase.name}</h4>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                           {phase.items.map((item, itemIndex) => (
                             <div key={itemIndex} className="flex items-center gap-2">
-                              <CheckCircle className="w-4 h-4 text-neon-green flex-shrink-0" />
-                              <span className="text-sm text-text-secondary">{item}</span>
+                              <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                              <span className="text-sm text-gray-700">{item}</span>
                             </div>
                           ))}
                         </div>
@@ -384,7 +384,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-dark-primary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -412,13 +412,13 @@ const About = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="card-dark rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group"
               >
-                <div className="w-16 h-16 border border-neon-pink rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 pulse-neon">
-                  <reason.icon className="w-8 h-8 text-neon-pink" />
+                <div className="w-16 h-16 border border-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <reason.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-orbitron font-bold text-text-primary mb-3 group-hover:text-neon-pink transition-colors">
+                <h3 className="text-lg font-orbitron font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                   {reason.title}
                 </h3>
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                   {reason.description}
                 </p>
               </motion.div>
@@ -428,7 +428,7 @@ const About = () => {
       </section>
 
       {/* Special Offering */}
-      <section className="py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -437,43 +437,43 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="bg-dark-tertiary rounded-2xl p-8 md:p-12 shadow-xl border border-neon-green max-w-4xl mx-auto">
-              <div className="w-20 h-20 border border-neon-green rounded-2xl flex items-center justify-center mx-auto mb-6 pulse-neon">
-                <Gift className="w-10 h-10 text-neon-green" />
+            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-blue-600 max-w-4xl mx-auto">
+              <div className="w-20 h-20 border border-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Gift className="w-10 h-10 text-blue-600" />
               </div>
               
-              <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-text-primary mb-4">
-                Special Offering: <span className="text-neon-green neon-text">1 Months Free Support</span>
+              <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-gray-900 mb-4">
+                Special Offering: <span className="text-blue-600">1 Months Free Support</span>
               </h2>
               
-              <p className="text-xl text-text-secondary mb-8 leading-relaxed">
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                 Every project comes with one months of complimentary maintenance and support, 
                 ensuring your solution operates at peak performance from day one.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-dark-primary border border-neon-green rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <HeadphonesIcon className="w-6 h-6 text-neon-green" />
+                  <div className="w-12 h-12 bg-white border border-blue-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+                    <HeadphonesIcon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="font-semibold text-text-primary mb-2">24/7 Support</h3>
-                  <p className="text-sm text-text-secondary">Round-the-clock technical assistance</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">24/7 Support</h3>
+                  <p className="text-sm text-gray-700">Round-the-clock technical assistance</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-dark-primary border border-neon-cyan rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Zap className="w-6 h-6 text-neon-cyan" />
+                  <div className="w-12 h-12 bg-white border border-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+                    <Zap className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="font-semibold text-text-primary mb-2">Performance Monitoring</h3>
-                  <p className="text-sm text-text-secondary">Continuous system optimization</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">Performance Monitoring</h3>
+                  <p className="text-sm text-gray-700">Continuous system optimization</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-dark-primary border border-neon-pink rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Shield className="w-6 h-6 text-neon-pink" />
+                  <div className="w-12 h-12 bg-white border border-pink-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+                    <Shield className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="font-semibold text-text-primary mb-2">Security Updates</h3>
-                  <p className="text-sm text-text-secondary">Regular security patches and updates</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">Security Updates</h3>
+                  <p className="text-sm text-gray-700">Regular security patches and updates</p>
                 </div>
               </div>
 
@@ -492,13 +492,13 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-dark-primary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-blue-300 rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-blue-400 rounded-full opacity-30 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-blue-200 opacity-10 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-blue-300 rounded-full opacity-20 animate-pulse"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -529,7 +529,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => navigate('/marketplace')}
-                className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-blue-600 hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
               >
                 Explore Our Solutions
               </motion.button>

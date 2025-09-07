@@ -41,7 +41,7 @@ const ProductDetail = () => {
             }}
             className="btn-neon px-6 py-3 rounded-full font-orbitron font-semibold hover:shadow-lg transition-all duration-300"
           >
-            Back to Marketplace
+            Back to Products
           </button>
         </div>
       </div>
@@ -88,7 +88,7 @@ const ProductDetail = () => {
             className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors mb-8 group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            Back to Marketplace
+            Back to Products
           </motion.button>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

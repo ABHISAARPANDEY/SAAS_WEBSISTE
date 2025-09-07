@@ -35,7 +35,7 @@ const EcommercePro = () => {
       id: 1,
       name: 'Wireless Headphones',
       price: 129.99,
-      image: 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       category: 'Electronics',
       rating: 4.5,
       inStock: true
@@ -44,7 +44,7 @@ const EcommercePro = () => {
       id: 2,
       name: 'Smart Watch',
       price: 199.99,
-      image: 'https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       category: 'Electronics',
       rating: 4.2,
       inStock: true
@@ -53,7 +53,7 @@ const EcommercePro = () => {
       id: 3,
       name: 'Leather Backpack',
       price: 79.99,
-      image: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       category: 'Fashion',
       rating: 4.7,
       inStock: true
@@ -62,7 +62,7 @@ const EcommercePro = () => {
       id: 4,
       name: 'Ceramic Coffee Mug',
       price: 24.99,
-      image: 'https://images.pexels.com/photos/1566308/pexels-photo-1566308.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       category: 'Home',
       rating: 4.8,
       inStock: true
@@ -71,7 +71,7 @@ const EcommercePro = () => {
       id: 5,
       name: 'Fitness Tracker',
       price: 89.99,
-      image: 'https://images.pexels.com/photos/4498482/pexels-photo-4498482.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       category: 'Electronics',
       rating: 4.3,
       inStock: false
@@ -80,7 +80,7 @@ const EcommercePro = () => {
       id: 6,
       name: 'Desk Lamp',
       price: 49.99,
-      image: 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       category: 'Home',
       rating: 4.1,
       inStock: true
@@ -104,7 +104,7 @@ const EcommercePro = () => {
           className="flex items-center gap-2 bg-dark-tertiary text-white px-4 py-2 rounded-full hover:bg-dark-secondary transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       
@@ -206,9 +206,9 @@ const EcommercePro = () => {
                       <div className="flow-root">
                         <ul className="divide-y divide-dark">
                           {[
-                            { id: 1, name: 'Wireless Headphones', price: 129.99, image: 'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=800', quantity: 1 },
-                            { id: 3, name: 'Leather Backpack', price: 79.99, image: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800', quantity: 1 },
-                            { id: 4, name: 'Ceramic Coffee Mug', price: 24.99, image: 'https://images.pexels.com/photos/1566308/pexels-photo-1566308.jpeg?auto=compress&cs=tinysrgb&w=800', quantity: 1 }
+                            { id: 1, name: 'Wireless Headphones', price: 129.99, image: '/logos/logo_teckstack.png', quantity: 1 },
+                            { id: 3, name: 'Leather Backpack', price: 79.99, image: '/logos/logo_teckstack.png', quantity: 1 },
+                            { id: 4, name: 'Ceramic Coffee Mug', price: 24.99, image: '/logos/logo_teckstack.png', quantity: 1 }
                           ].map((item) => (
                             <li key={item.id} className="py-6 flex">
                               <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-dark">

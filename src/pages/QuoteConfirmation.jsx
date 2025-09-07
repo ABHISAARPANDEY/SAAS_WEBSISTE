@@ -255,7 +255,7 @@ const QuoteConfirmation = () => {
               onClick={() => navigate('/marketplace')}
               className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:border-neon-cyan/80 transition-all duration-300 flex items-center gap-2"
             >
-              Explore Marketplace
+              Explore Products
               <ArrowRight className="w-5 h-5" />
             </motion.button>
           </motion.div>

@@ -31,7 +31,7 @@ const AiAgentDetail = () => {
       description: 'AI-powered sales assistant that qualifies leads, schedules meetings, and follows up automatically',
       category: 'Sales',
       icon: Bot,
-      image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       features: ['Lead Qualification', 'Meeting Scheduling', 'Follow-up Automation', 'Sales Analytics'],
       rating: 4.9,
       pricing: { monthly: 99, yearly: 990 },
@@ -63,7 +63,7 @@ const AiAgentDetail = () => {
       description: 'Intelligent marketing assistant that creates campaigns, analyzes performance, and optimizes strategies',
       category: 'Marketing',
       icon: Bot,
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       features: ['Campaign Creation', 'Performance Analysis', 'A/B Testing', 'Audience Targeting'],
       rating: 4.8,
       pricing: { monthly: 129, yearly: 1290 },
@@ -95,7 +95,7 @@ const AiAgentDetail = () => {
       description: 'Smart CRM agent that manages customer relationships, tracks interactions, and provides insights',
       category: 'CRM',
       icon: Bot,
-      image: 'https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       features: ['Contact Management', 'Interaction Tracking', 'Pipeline Management', 'Reporting'],
       rating: 4.7,
       pricing: { monthly: 89, yearly: 890 },
@@ -127,7 +127,7 @@ const AiAgentDetail = () => {
       description: '24/7 customer support agent that handles inquiries, resolves issues, and escalates when needed',
       category: 'Customer Support',
       icon: Bot,
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       features: ['24/7 Support', 'Ticket Management', 'Knowledge Base', 'Escalation Handling'],
       rating: 4.9,
       pricing: { monthly: 149, yearly: 1490 },
@@ -159,7 +159,7 @@ const AiAgentDetail = () => {
       description: 'Advanced analytics agent that processes data, generates insights, and creates actionable reports',
       category: 'Analytics',
       icon: Bot,
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/logos/logo_teckstack.png',
       features: ['Data Processing', 'Insight Generation', 'Report Creation', 'Predictive Modeling'],
       rating: 4.8,
       pricing: { monthly: 179, yearly: 1790 },
@@ -224,7 +224,7 @@ const AiAgentDetail = () => {
             className="flex items-center gap-2 text-text-secondary hover:text-neon-green transition-colors mb-8"
           >
             <ArrowLeft className="w-5 h-5" />
-            Back to Marketplace
+            Back to Products
           </motion.button>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

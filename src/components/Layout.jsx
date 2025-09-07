@@ -198,7 +198,7 @@ const Layout = ({ children }) => {
                 }}
                 className="text-text-primary hover:text-accent-primary transition-colors font-medium animated-underline"
               >
-                Marketplace
+                Products
               </a>
               <a 
                 href="/free-tools" 
@@ -272,7 +272,7 @@ const Layout = ({ children }) => {
                 { href: '/', label: 'Home' },
                 { href: '/services', label: 'Services' },
                 { href: '/free-tools', label: 'Free Tools' },
-                { href: '/marketplace', label: 'Marketplace' },
+                { href: '/marketplace', label: 'Products' },
                 { href: '/portfolio', label: 'Portfolio' },
                 { href: '/about', label: 'About' }
               ].map((item) => (
@@ -362,8 +362,8 @@ const Layout = ({ children }) => {
 
             {/* Services */}
            {/* Services Dropdown */}
-{/* Services + Marketplace block */}
-{/* Footer Column: Services + Marketplace */}
+{/* Services + Products block */}
+{/* Footer Column: Services + Products */}
 <div className="space-y-6 relative">
   {/* SERVICES */}
   <div className="group relative">
@@ -393,10 +393,10 @@ const Layout = ({ children }) => {
     </ul>
   </div>
 
-  {/* MARKETPLACE */}
+  {/* PRODUCTS */}
   <div className="group relative">
     <h3 className="text-lg font-semibold text-accent-primary tracking-wide cursor-pointer">
-      Marketplace
+      Products
     </h3>
     <ul className="py-2 text-sm text-text-secondary bg-white border border-border-color rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 absolute z-50 mt-1 w-64">
       {[
@@ -505,6 +505,18 @@ const Layout = ({ children }) => {
                     className="hover:text-accent-primary transition-colors"
                   >
                     Partner Program
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/privacy-policy" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = '/privacy-policy';
+                    }}
+                    className="hover:text-accent-primary transition-colors"
+                  >
+                    Privacy Policy
                   </a>
                 </li>
               </ul>

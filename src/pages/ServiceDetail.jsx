@@ -180,8 +180,25 @@ const ServiceDetail = () => {
                 className="group cursor-pointer"
               >
                 <div className="card-dark rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 text-center h-full flex flex-col items-center justify-center">
-                  <div className={`w-12 h-12 rounded-xl border border-${service.neonColor || 'neon-green'} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <tech.icon className={`w-6 h-6 text-${service.neonColor || 'neon-green'}`} />
+                  <div className={`w-12 h-12 rounded-xl border border-${service.neonColor || 'neon-green'} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 bg-white/5`}>
+                    {tech.logo ? (
+                      <img 
+                        src={tech.logo} 
+                        alt={tech.name}
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          if (e.target.nextSibling) {
+                            e.target.nextSibling.style.display = 'block';
+                          }
+                        }}
+                      />
+                    ) : null}
+                    {tech.icon ? (
+                      <tech.icon className={`w-6 h-6 text-${service.neonColor || 'neon-green'}`} style={{ display: tech.logo ? 'none' : 'block' }} />
+                    ) : (
+                      <div className={`w-6 h-6 bg-${service.neonColor || 'neon-green'} rounded`} style={{ display: tech.logo ? 'none' : 'block' }}></div>
+                    )}
                   </div>
                   <h3 className="font-semibold text-text-primary mb-2">{tech.name}</h3>
                   <span className="text-sm text-text-secondary">{tech.category}</span>
@@ -494,7 +511,7 @@ const ServiceDetail = () => {
                 }}
                 className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300"
               >
-                Explore Marketplace
+                Explore Products
               </motion.button>
             </div>
           </motion.div>

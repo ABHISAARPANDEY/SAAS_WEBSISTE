@@ -22,7 +22,18 @@
   --warning-color: #ffc107;
   --error-color: #ff4757;
   
-  /* Mobile spacing variables */
+  /* Dark theme colors */
+  --dark-primary: #0a0a0a;
+  --dark-secondary: #1a1a1a;
+  --dark-tertiary: #2a2a2a;
+  --neon-green: #00ff88;
+  --neon-cyan: #00ffff;
+  --neon-pink: #ff0080;
+}
+
+
+/* Mobile spacing variables */
+:root {
   --mobile-padding-x: 16px;
   --mobile-padding-y: 12px;
   --mobile-spacing: 16px;

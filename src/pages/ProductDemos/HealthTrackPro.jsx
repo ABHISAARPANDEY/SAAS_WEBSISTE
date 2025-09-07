@@ -33,7 +33,7 @@ const HealthTrackPro = () => {
           className="flex items-center gap-2 bg-dark-tertiary text-white px-4 py-2 rounded-full hover:bg-dark-secondary transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       

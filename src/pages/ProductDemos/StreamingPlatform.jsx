@@ -39,7 +39,7 @@ const StreamingPlatform = () => {
           className="flex items-center gap-2 bg-gray-800/80 backdrop-blur-sm text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       
@@ -110,7 +110,7 @@ const StreamingPlatform = () => {
       <div className="relative">
         <div className="aspect-[21/9] max-h-[70vh] overflow-hidden">
           <img 
-            src="https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="/logos/logo_teckstack.png" 
             alt="Featured Movie"
             className="w-full h-full object-cover"
           />
@@ -167,37 +167,37 @@ const StreamingPlatform = () => {
               {[
                 { 
                   title: 'Neon Shadows', 
-                  image: 'https://images.pexels.com/photos/3131971/pexels-photo-3131971.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   type: 'Movie',
                   rating: 8.7
                 },
                 { 
                   title: 'Eternal Winter', 
-                  image: 'https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   type: 'Series',
                   rating: 9.1
                 },
                 { 
                   title: 'Desert Storm', 
-                  image: 'https://images.pexels.com/photos/1547813/pexels-photo-1547813.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   type: 'Movie',
                   rating: 8.5
                 },
                 { 
                   title: 'Midnight City', 
-                  image: 'https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   type: 'Series',
                   rating: 8.9
                 },
                 { 
                   title: 'Ocean Depths', 
-                  image: 'https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   type: 'Documentary',
                   rating: 9.3
                 },
                 { 
                   title: 'Sky Limit', 
-                  image: 'https://images.pexels.com/photos/1482476/pexels-photo-1482476.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   type: 'Movie',
                   rating: 8.8
                 }
@@ -249,25 +249,25 @@ const StreamingPlatform = () => {
               {[
                 { 
                   title: 'Cosmic Odyssey', 
-                  image: 'https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   progress: 35,
                   episode: 'S1:E4 "New Horizons"'
                 },
                 { 
                   title: 'Dark Waters', 
-                  image: 'https://images.pexels.com/photos/1693095/pexels-photo-1693095.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   progress: 75,
                   episode: 'S2:E8 "The Deep"'
                 },
                 { 
                   title: 'Mountain Peak', 
-                  image: 'https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   progress: 50,
                   episode: 'S1:E6 "Summit"'
                 },
                 { 
                   title: 'City Lights', 
-                  image: 'https://images.pexels.com/photos/3052361/pexels-photo-3052361.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   progress: 90,
                   episode: 'S3:E2 "Nightfall"'
                 }
@@ -363,32 +363,32 @@ const StreamingPlatform = () => {
               {[
                 { 
                   title: 'The Last Journey', 
-                  image: 'https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   award: 'Best Picture'
                 },
                 { 
                   title: 'Eternal Sunshine', 
-                  image: 'https://images.pexels.com/photos/1738434/pexels-photo-1738434.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   award: 'Best Director'
                 },
                 { 
                   title: 'Midnight Express', 
-                  image: 'https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   award: 'Best Screenplay'
                 },
                 { 
                   title: 'Ocean\'s Depth', 
-                  image: 'https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   award: 'Best Cinematography'
                 },
                 { 
                   title: 'The Forgotten', 
-                  image: 'https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   award: 'Best Actor'
                 },
                 { 
                   title: 'Silent Echo', 
-                  image: 'https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=800',
+                  image: '/logos/logo_teckstack.png',
                   award: 'Best Actress'
                 }
               ].map((item, index) => (

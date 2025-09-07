@@ -99,7 +99,7 @@ const FreeTools = () => {
       description: 'Generate code snippets and functions using AI-powered assistance',
       category: 'ai',
       icon: Code,
-      gradient: 'from-green-500 to-emerald-600',
+      gradient: 'from-blue-500 to-blue-600',
       features: ['Multiple Languages', 'Code Optimization', 'Documentation'],
       rating: 4.9,
       usage: 12340,
@@ -193,7 +193,7 @@ const FreeTools = () => {
       description: 'Reduce image file sizes while maintaining quality',
       category: 'image',
       icon: Image,
-      gradient: 'from-emerald-500 to-green-600',
+      gradient: 'from-blue-500 to-blue-600',
       features: ['Lossless Compression', 'Batch Processing', 'Format Conversion'],
       rating: 4.7,
       usage: 14560,
@@ -285,7 +285,7 @@ const FreeTools = () => {
       description: 'Convert between different units of measurement',
       category: 'converter',
       icon: Calculator,
-      gradient: 'from-green-500 to-teal-600',
+      gradient: 'from-blue-500 to-blue-600',
       features: ['Multiple Categories', 'Precise Calculations', 'History'],
       rating: 4.4,
       usage: 7890,
@@ -347,7 +347,7 @@ const FreeTools = () => {
       description: 'Test and debug regular expressions with live matching',
       category: 'developer',
       icon: Search,
-      gradient: 'from-green-500 to-emerald-600',
+      gradient: 'from-blue-500 to-blue-600',
       features: ['Live Testing', 'Match Highlighting', 'Cheat Sheet'],
       rating: 4.7,
       usage: 10340,
@@ -424,7 +424,7 @@ const FreeTools = () => {
       description: 'Create short URLs with analytics and custom aliases',
       category: 'utility',
       icon: ExternalLink,
-      gradient: 'from-green-500 to-teal-600',
+      gradient: 'from-blue-500 to-blue-600',
       features: ['Custom Aliases', 'Analytics', 'QR Codes'],
       rating: 4.6,
       usage: 18920,
@@ -507,15 +507,15 @@ const FreeTools = () => {
   }, [favorites]);
 
   return (
-    <div className="min-h-screen bg-dark-primary">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-20 bg-white overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-gray-400 rounded-full opacity-15 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-gray-200 opacity-5 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -525,7 +525,7 @@ const FreeTools = () => {
             animate="animate"
             className="space-y-8"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-text-primary leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold text-gray-900 leading-tight">
   Explore{' '}
   <span className="rainbow-text">
     Free Tools
@@ -533,26 +533,26 @@ const FreeTools = () => {
 </h1>
 
             
-            <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Discover our comprehensive suite of digital utilities designed to boost your productivity. 
               From AI-powered tools to everyday converters, everything you need is here.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 text-text-secondary">
+            <div className="flex flex-wrap justify-center gap-4 text-gray-700">
               <div className="flex items-center gap-2">
-                <Brain className="w-5 h-5 text-neon-green" />
+                <Brain className="w-5 h-5 text-blue-600" />
                 <span>AI-Powered</span>
               </div>
               <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-neon-cyan" />
+                <Zap className="w-5 h-5 text-blue-600" />
                 <span>Lightning Fast</span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-neon-pink" />
+                <Shield className="w-5 h-5 text-blue-600" />
                 <span>Privacy First</span>
               </div>
               <div className="flex items-center gap-2">
-                <Heart className="w-5 h-5 text-neon-green" />
+                <Heart className="w-5 h-5 text-blue-600" />
                 <span>Always Free</span>
               </div>
             </div>
@@ -561,23 +561,23 @@ const FreeTools = () => {
       </section>
 
       {/* Search and Filters */}
-<section className="py-12 bg-dark-secondary border-b border-dark relative z-10">
+<section className="py-12 bg-white border-b border-gray-200 relative z-10">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex flex-col gap-6">
             {/* Search Bar */}
             <div className="flex-1 relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search tools by name, description, or tags..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent text-lg placeholder-text-secondary"
+                className="w-full pl-12 pr-4 py-4 bg-gray-100 border border-gray-300 text-gray-900 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg placeholder-gray-500"
               />
               {searchTerm && (
                 <button
                   onClick={() => setSearchTerm('')}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-text-secondary hover:text-neon-pink"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-red-500"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -585,11 +585,11 @@ const FreeTools = () => {
             </div>
 
             {/* View Mode Toggle */}
-            <div className="flex items-center gap-2 bg-dark-tertiary rounded-lg p-1 border border-dark">
+            <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1 border border-gray-300">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-md transition-colors ${
-                  viewMode === 'grid' ? 'bg-dark-primary shadow-sm text-neon-green' : 'text-text-secondary'
+                  viewMode === 'grid' ? 'bg-blue-600 shadow-sm text-white' : 'text-gray-700'
                 }`}
               >
                 <Grid className="w-5 h-5" />
@@ -597,7 +597,7 @@ const FreeTools = () => {
               <button
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-md transition-colors ${
-                  viewMode === 'list' ? 'bg-dark-primary shadow-sm text-neon-green' : 'text-text-secondary'
+                  viewMode === 'list' ? 'bg-blue-600 shadow-sm text-white' : 'text-gray-700'
                 }`}
               >
                 <List className="w-5 h-5" />
@@ -608,7 +608,7 @@ const FreeTools = () => {
       </section>
 
       {/* Categories */}
-      <section className="py-8 bg-dark-secondary border-b border-dark">
+      <section className="py-8 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-4 justify-center">
             {categories.map((category) => (
@@ -620,15 +620,15 @@ const FreeTools = () => {
                 className={`flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category.id
                     ? 'btn-neon shadow-lg'
-                    : 'bg-dark-tertiary text-text-secondary hover:bg-dark-tertiary/80 border border-dark hover:border-neon-green/50'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-300 hover:border-blue-500/50'
                 }`}
               >
-                <category.icon className={`w-5 h-5 ${selectedCategory === category.id ? 'text-dark-primary' : 'text-text-secondary'}`} />
+                <category.icon className={`w-5 h-5 ${selectedCategory === category.id ? 'text-white' : 'text-gray-700'}`} />
                 <span>{category.name}</span>
                 <span className={`px-2 py-1 rounded-full text-xs ${
                   selectedCategory === category.id
-                    ? 'bg-dark-primary/20 text-dark-primary'
-                    : 'bg-dark-primary text-text-secondary'
+                    ? 'bg-blue-100 text-blue-600'
+                    : 'bg-gray-100 text-gray-700'
                 }`}>
                   {category.count}
                 </span>
@@ -644,17 +644,17 @@ const FreeTools = () => {
           {/* Results Header */}
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-2xl font-bold font-orbitron text-text-primary">
+              <h2 className="text-2xl font-bold font-orbitron text-gray-900">
                 {filteredTools.length} Tools Found
               </h2>
-              <p className="text-text-secondary">
+              <p className="text-gray-700">
                 {selectedCategory === 'all' ? 'All categories' : categories.find(c => c.id === selectedCategory)?.name}
                 {searchTerm && ` • Searching for "${searchTerm}"`}
               </p>
             </div>
             
             <div className="flex items-center gap-4">
-              <span className="text-sm text-text-secondary">
+              <span className="text-sm text-gray-700">
                 {favorites.length} favorites
               </span>
             </div>
@@ -716,13 +716,13 @@ const FreeTools = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-20 bg-dark-secondary rounded-xl border border-dark p-8"
+              className="text-center py-20 bg-white rounded-xl border border-gray-200 p-8"
             >
-              <div className="w-24 h-24 bg-dark-tertiary rounded-full flex items-center justify-center mx-auto mb-6 border border-text-secondary">
-                <Search className="w-12 h-12 text-text-secondary" />
+              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 border border-gray-300">
+                <Search className="w-12 h-12 text-gray-500" />
               </div>
-              <h3 className="text-2xl font-bold font-orbitron text-text-primary mb-4">No tools found</h3>
-              <p className="text-text-secondary mb-8">
+              <h3 className="text-2xl font-bold font-orbitron text-gray-900 mb-4">No tools found</h3>
+              <p className="text-gray-700 mb-8">
                 Try adjusting your search terms or selecting a different category.
               </p>
               <button
@@ -740,7 +740,7 @@ const FreeTools = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-dark-secondary border-t border-dark">
+      <section className="py-16 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <motion.div
@@ -749,8 +749,8 @@ const FreeTools = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl font-bold font-orbitron text-neon-green mb-2">24</div>
-              <div className="text-text-secondary">Free Tools</div>
+              <div className="text-4xl font-bold font-orbitron text-blue-600 mb-2">24</div>
+              <div className="text-gray-700">Free Tools</div>
             </motion.div>
             
             <motion.div
@@ -759,8 +759,8 @@ const FreeTools = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl font-bold font-orbitron text-neon-cyan mb-2">250K+</div>
-              <div className="text-text-secondary">Monthly Users</div>
+              <div className="text-4xl font-bold font-orbitron text-blue-600 mb-2">250K+</div>
+              <div className="text-gray-700">Monthly Users</div>
             </motion.div>
             
             <motion.div
@@ -769,8 +769,8 @@ const FreeTools = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl font-bold font-orbitron text-neon-pink mb-2">1M+</div>
-              <div className="text-text-secondary">Tools Used</div>
+              <div className="text-4xl font-bold font-orbitron text-blue-600 mb-2">1M+</div>
+              <div className="text-gray-700">Tools Used</div>
             </motion.div>
             
             <motion.div
@@ -779,8 +779,8 @@ const FreeTools = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl font-bold font-orbitron gradient-neon-text mb-2">4.8★</div>
-              <div className="text-text-secondary">Average Rating</div>
+              <div className="text-4xl font-bold font-orbitron text-blue-600 mb-2">4.8★</div>
+              <div className="text-gray-700">Average Rating</div>
             </motion.div>
           </div>
         </div>
@@ -825,18 +825,18 @@ const ToolCard = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTryNow,
         
         {/* Header */}
         <div className="flex items-start justify-between mb-4 relative z-10">
-          <div className={`w-12 h-12 rounded-xl border border-${tool.neonColor || 'neon-green'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-            <tool.icon className={`w-6 h-6 text-${tool.neonColor || 'neon-green'}`} />
+          <div className="w-12 h-12 rounded-xl border border-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <tool.icon className="w-6 h-6 text-blue-600" />
           </div>
           
           <div className="flex items-center gap-2">
             {tool.trending && (
-              <div className="px-2 py-1 bg-dark-tertiary text-neon-pink border border-neon-pink/50 rounded-full text-xs font-medium">
+              <div className="px-2 py-1 bg-red-100 text-red-600 border border-red-300 rounded-full text-xs font-medium">
                 Trending
               </div>
             )}
             {!tool.functional && (
-              <div className="px-2 py-1 bg-dark-tertiary text-neon-cyan border border-neon-cyan/50 rounded-full text-xs font-medium">
+              <div className="px-2 py-1 bg-blue-100 text-blue-600 border border-blue-300 rounded-full text-xs font-medium">
                 {tool.isAI ? 'Demo' : 'Coming Soon'}
               </div>
             )}
@@ -846,7 +846,7 @@ const ToolCard = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTryNow,
                 onToggleFavorite(tool.id);
               }}
               className={`p-2 rounded-full transition-colors ${
-                isFavorite ? 'text-neon-pink bg-dark-tertiary' : 'text-text-secondary hover:text-neon-pink hover:bg-dark-tertiary'
+                isFavorite ? 'text-blue-600 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
               }`}
             >
               <Heart className={`w-4 h-4 ${isFavorite ? 'fill-current' : ''}`} />
@@ -856,11 +856,11 @@ const ToolCard = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTryNow,
 
         {/* Content */}
         <div className="flex-1 relative z-10">
-          <h3 className="text-lg font-bold font-orbitron text-text-primary mb-2 group-hover:text-neon-green transition-colors">
+          <h3 className="text-lg font-bold font-orbitron text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
             {tool.name}
           </h3>
           
-          <p className="text-text-secondary text-sm mb-4 leading-relaxed">
+          <p className="text-gray-700 text-sm mb-4 leading-relaxed">
             {tool.description}
           </p>
           
@@ -868,22 +868,22 @@ const ToolCard = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTryNow,
           <div className="space-y-1 mb-4">
             {tool.features.slice(0, 2).map((feature, idx) => (
               <div key={idx} className="flex items-center gap-2">
-                <Check className="w-3 h-3 text-neon-green flex-shrink-0" />
-                <span className="text-xs text-text-secondary">{feature}</span>
+                <Check className="w-3 h-3 text-blue-600 flex-shrink-0" />
+                <span className="text-xs text-gray-700">{feature}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Footer */}
-        <div className="space-y-3 pt-4 border-t border-dark relative z-10">
-          <div className="flex items-center justify-between text-xs text-text-secondary">
+        <div className="space-y-3 pt-4 border-t border-gray-200 relative z-10">
+            <div className="flex items-center justify-between text-xs text-gray-700">
             <div className="flex items-center gap-1">
-              <Star className="w-3 h-3 text-neon-green fill-current" />
-              <span className="font-medium text-neon-green">{tool.rating}</span>
+              <Star className="w-3 h-3 text-blue-600 fill-current" />
+              <span className="font-medium text-blue-600">{tool.rating}</span>
             </div>
             <div className="flex items-center gap-1">
-              <Users className="w-3 h-3 text-neon-cyan" />
+              <Users className="w-3 h-3 text-blue-600" />
               <span>{(tool.usage + usage).toLocaleString()}</span>
             </div>
           </div>
@@ -897,7 +897,7 @@ const ToolCard = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTryNow,
               className={`flex-1 py-2 px-3 rounded-lg text-sm font-orbitron font-medium transition-all duration-300 ${
                 tool.functional 
                   ? `btn-neon hover:shadow-lg` 
-                  : 'bg-dark-tertiary text-text-secondary border border-dark cursor-not-allowed'
+                  : 'bg-gray-100 text-gray-500 border border-gray-300 cursor-not-allowed'
               }`}
               disabled={!tool.functional}
             >
@@ -908,9 +908,9 @@ const ToolCard = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTryNow,
                 e.stopPropagation();
                 onCopy(window.location.href + '#' + tool.id, tool.id);
               }}
-              className="p-2 border border-dark rounded-lg text-text-secondary hover:bg-dark-tertiary hover:border-neon-green/50 hover:text-neon-green transition-all"
+              className="p-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 hover:border-blue-500/50 hover:text-blue-600 transition-all"
             >
-              {copied ? <Check className="w-4 h-4 text-neon-green" /> : <Share2 className="w-4 h-4" />}
+              {copied ? <Check className="w-4 h-4 text-blue-600" /> : <Share2 className="w-4 h-4" />}
             </button>
           </div>
         </div>
@@ -943,25 +943,25 @@ const ToolListItem = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTry
         <div className="flex-1 min-w-0 relative z-10">
           <div className="flex items-start justify-between mb-2">
             <div>
-              <h3 className="text-xl font-bold font-orbitron text-text-primary mb-1">{tool.name}</h3>
-              <p className="text-text-secondary">{tool.description}</p>
+              <h3 className="text-xl font-bold font-orbitron text-gray-900 mb-1">{tool.name}</h3>
+              <p className="text-gray-700">{tool.description}</p>
             </div>
             
             <div className="flex items-center gap-2 ml-4">
               {tool.trending && (
-                <div className="px-2 py-1 bg-dark-tertiary text-neon-pink border border-neon-pink/50 rounded-full text-xs font-medium">
+                <div className="px-2 py-1 bg-red-100 text-red-600 border border-red-300 rounded-full text-xs font-medium">
                   Trending
                 </div>
               )}
               {!tool.functional && (
-                <div className="px-2 py-1 bg-dark-tertiary text-neon-cyan border border-neon-cyan/50 rounded-full text-xs font-medium">
+                <div className="px-2 py-1 bg-blue-100 text-blue-600 border border-blue-300 rounded-full text-xs font-medium">
                   {tool.isAI ? 'Demo' : 'Coming Soon'}
                 </div>
               )}
               <button
                 onClick={() => onToggleFavorite(tool.id)}
                 className={`p-2 rounded-full transition-colors ${
-                  isFavorite ? 'text-neon-pink bg-dark-tertiary' : 'text-text-secondary hover:text-neon-pink hover:bg-dark-tertiary'
+                  isFavorite ? 'text-blue-600 bg-blue-100' : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                 }`}
               >
                 <Heart className={`w-5 h-5 ${isFavorite ? 'fill-current' : ''}`} />
@@ -973,19 +973,19 @@ const ToolListItem = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTry
           <div className="flex items-center justify-between">
             <div className="flex flex-wrap gap-2">
               {tool.features.slice(0, 3).map((feature, idx) => (
-                <span key={idx} className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs border border-dark">
+                <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-xs border border-gray-300">
                   {feature}
                 </span>
               ))}
             </div>
             
-            <div className="flex items-center gap-4 text-sm text-text-secondary">
+            <div className="flex items-center gap-4 text-sm text-gray-700">
               <div className="flex items-center gap-1">
-                <Star className="w-4 h-4 text-neon-green fill-current" />
-                <span className="text-neon-green">{tool.rating}</span>
+                <Star className="w-4 h-4 text-blue-600 fill-current" />
+                <span className="text-blue-600">{tool.rating}</span>
               </div>
               <div className="flex items-center gap-1">
-                <Users className="w-4 h-4 text-neon-cyan" />
+                <Users className="w-4 h-4 text-blue-600" />
                 <span>{(tool.usage + usage).toLocaleString()}</span>
               </div>
             </div>
@@ -1007,9 +1007,9 @@ const ToolListItem = ({ tool, index, isFavorite, onToggleFavorite, onCopy, onTry
           </button>
           <button
             onClick={() => onCopy(window.location.href + '#' + tool.id, tool.id)}
-            className="p-2 border border-dark rounded-lg text-text-secondary hover:bg-dark-tertiary hover:border-neon-green/50 hover:text-neon-green transition-all"
+            className="p-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 hover:border-blue-500/50 hover:text-blue-600 transition-all"
           >
-            {copied ? <Check className="w-5 h-5 text-neon-green" /> : <Share2 className="w-5 h-5" />}
+            {copied ? <Check className="w-5 h-5 text-blue-600" /> : <Share2 className="w-5 h-5" />}
           </button>
         </div>
       </div>

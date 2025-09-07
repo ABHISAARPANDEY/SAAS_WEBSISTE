@@ -16,7 +16,7 @@ const PropertyManager = () => {
           className="flex items-center gap-2 bg-teal-700 text-white px-4 py-2 rounded-full hover:bg-teal-800 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       
@@ -156,7 +156,7 @@ const PropertyManager = () => {
                 units: 12, 
                 occupied: 10, 
                 occupancyRate: 83,
-                image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               },
               { 
                 name: 'Riverside Condos', 
@@ -164,7 +164,7 @@ const PropertyManager = () => {
                 units: 8, 
                 occupied: 8, 
                 occupancyRate: 100,
-                image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               },
               { 
                 name: 'Parkview Townhomes', 
@@ -172,7 +172,7 @@ const PropertyManager = () => {
                 units: 6, 
                 occupied: 4, 
                 occupancyRate: 67,
-                image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               },
               { 
                 name: 'Sunset Villas', 
@@ -180,7 +180,7 @@ const PropertyManager = () => {
                 units: 10, 
                 occupied: 9, 
                 occupancyRate: 90,
-                image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               }
             ].map((property, index) => (
               <div key={index} className="p-4 hover:bg-gray-50 transition-colors">

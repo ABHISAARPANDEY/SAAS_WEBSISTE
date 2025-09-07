@@ -20,6 +20,13 @@ export default {
         'success': '#32d583',
         'warning': '#ffc107',
         'error': '#ff4757',
+        // Dark theme colors
+        'dark-primary': '#0a0a0a',
+        'dark-secondary': '#1a1a1a',
+        'dark-tertiary': '#2a2a2a',
+        'neon-green': '#00ff88',
+        'neon-cyan': '#00ffff',
+        'neon-pink': '#ff0080',
       },
       animation: {
         'pulse': 'pulse 2s ease-in-out infinite',

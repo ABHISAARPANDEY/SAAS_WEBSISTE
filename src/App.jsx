@@ -31,9 +31,17 @@ import About from './pages/About';
 import Career from './pages/Career';
 import PartnerProgram from './pages/PartnerProgram';
 import CaseStudies from './pages/CaseStudies';
+import ExcelDash from './pages/ExcelDash';
+import SparkWave from './pages/SparkWave';
+import EcommerceAutoPilot from './pages/EcommerceAutoPilot';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import AiAgents from './pages/AiAgents';
+import ApiKeys from './pages/ApiKeys';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ProtectedRoute from './components/admin/ProtectedRoute';
+import BrowserCompatibility from './components/BrowserCompatibility';
+import ErrorBoundary from './components/ErrorBoundary';
 import { initScrollEffects } from './utils/intersectionObserver';
 
 // Component to handle scroll to top on route change
@@ -63,7 +71,7 @@ function App() {
   const isProductDemo = pathname.includes('/product-demos/');
   
   return (
-    <>
+    <ErrorBoundary>
       <ScrollToTop />
       {isProductDemo ? (
         <Routes>
@@ -101,6 +109,12 @@ function App() {
             <Route path="/career" element={<Career />} />
             <Route path="/partner-program" element={<PartnerProgram />} />
             <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/products/exceldash" element={<ExcelDash />} />
+            <Route path="/products/sparkwave" element={<SparkWave />} />
+            <Route path="/products/ecommerce-auto-pilot" element={<EcommerceAutoPilot />} />
+            <Route path="/ai-agents" element={<AiAgents />} />
+            <Route path="/api-keys" element={<ApiKeys />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/svc-admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={
               <ProtectedRoute>
@@ -110,7 +124,7 @@ function App() {
           </Routes>
         </Layout>
       )}
-    </>
+    </ErrorBoundary>
   );
 }
 

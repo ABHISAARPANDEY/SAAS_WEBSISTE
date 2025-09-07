@@ -41,7 +41,7 @@ const TravelBooking = () => {
           className="flex items-center gap-2 bg-white/80 backdrop-blur-sm text-orange-500 px-4 py-2 rounded-full hover:bg-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       
@@ -280,25 +280,25 @@ const TravelBooking = () => {
             {[
               { 
                 name: 'Bali, Indonesia', 
-                image: 'https://images.pexels.com/photos/1694621/pexels-photo-1694621.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: '$899',
                 rating: 4.8
               },
               { 
                 name: 'Santorini, Greece', 
-                image: 'https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: '$1,299',
                 rating: 4.9
               },
               { 
                 name: 'Tokyo, Japan', 
-                image: 'https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: '$1,099',
                 rating: 4.7
               },
               { 
                 name: 'Paris, France', 
-                image: 'https://images.pexels.com/photos/532826/pexels-photo-532826.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: '$999',
                 rating: 4.8
               }
@@ -348,21 +348,21 @@ const TravelBooking = () => {
               { 
                 title: 'Summer Beach Getaway', 
                 description: 'Enjoy 30% off on beach resorts in the Caribbean',
-                image: 'https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 discount: '30% OFF',
                 expires: '5 days left'
               },
               { 
                 title: 'City Explorer Package', 
                 description: 'Discover major cities with our all-inclusive packages',
-                image: 'https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 discount: '25% OFF',
                 expires: '3 days left'
               },
               { 
                 title: 'Adventure Travel Deal', 
                 description: 'Book adventure tours and activities at discounted rates',
-                image: 'https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 discount: '20% OFF',
                 expires: '7 days left'
               }

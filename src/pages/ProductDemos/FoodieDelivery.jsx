@@ -40,7 +40,7 @@ const FoodieDelivery = () => {
           className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       
@@ -153,21 +153,21 @@ const FoodieDelivery = () => {
                               restaurant: 'Pizza Palace', 
                               price: 12.99, 
                               quantity: 1,
-                              image: 'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=800'
+                              image: '/logos/logo_teckstack.png'
                             },
                             { 
                               name: 'Chicken Burger', 
                               restaurant: 'Burger Joint', 
                               price: 9.99, 
                               quantity: 1,
-                              image: 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=800'
+                              image: '/logos/logo_teckstack.png'
                             },
                             { 
                               name: 'Caesar Salad', 
                               restaurant: 'Green Eats', 
                               price: 8.49, 
                               quantity: 1,
-                              image: 'https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=800'
+                              image: '/logos/logo_teckstack.png'
                             }
                           ].map((item, index) => (
                             <li key={index} className="py-6 flex">
@@ -298,7 +298,7 @@ const FoodieDelivery = () => {
             {[
               { 
                 name: 'Pizza Palace', 
-                image: 'https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 rating: 4.8,
                 reviews: 245,
                 cuisine: 'Italian',
@@ -307,7 +307,7 @@ const FoodieDelivery = () => {
               },
               { 
                 name: 'Burger Joint', 
-                image: 'https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 rating: 4.6,
                 reviews: 189,
                 cuisine: 'American',
@@ -316,7 +316,7 @@ const FoodieDelivery = () => {
               },
               { 
                 name: 'Sushi Express', 
-                image: 'https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 rating: 4.9,
                 reviews: 320,
                 cuisine: 'Japanese',
@@ -389,28 +389,28 @@ const FoodieDelivery = () => {
               { 
                 name: 'Margherita Pizza', 
                 restaurant: 'Pizza Palace',
-                image: 'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: 12.99,
                 rating: 4.8
               },
               { 
                 name: 'Chicken Burger', 
                 restaurant: 'Burger Joint',
-                image: 'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: 9.99,
                 rating: 4.6
               },
               { 
                 name: 'Salmon Sushi Roll', 
                 restaurant: 'Sushi Express',
-                image: 'https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: 14.99,
                 rating: 4.9
               },
               { 
                 name: 'Caesar Salad', 
                 restaurant: 'Green Eats',
-                image: 'https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 price: 8.49,
                 rating: 4.5
               }

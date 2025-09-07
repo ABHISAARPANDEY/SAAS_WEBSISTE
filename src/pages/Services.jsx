@@ -113,15 +113,15 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-primary">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-20 bg-white overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-gray-400 rounded-full opacity-15 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-gray-200 opacity-5 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -139,7 +139,7 @@ const Services = () => {
 </h1>
 
             
-            <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Comprehensive technology solutions designed to transform your business and drive sustainable growth. 
               From mobile apps to AI solutions, we deliver excellence at every step.
             </p>
@@ -164,7 +164,7 @@ const Services = () => {
                     servicesSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="glass-effect text-neon-green px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-green hover:neon-glow transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-blue-600 hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
               >
                 Explore Services
               </motion.button>
@@ -183,10 +183,10 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-gray-900 mb-6">
               Complete <span className="gradient-neon-text neon-text">Technology Solutions</span>
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               From concept to deployment, we provide end-to-end services that drive innovation and business success
             </p>
           </motion.div>
@@ -213,16 +213,16 @@ const Services = () => {
                   </div>
                   
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-xl border border-${service.neonColor || 'neon-green'} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10`}>
-                    <service.icon className={`w-8 h-8 text-${service.neonColor || 'neon-green'}`} />
+                  <div className="w-16 h-16 rounded-xl border border-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                    <service.icon className="w-8 h-8 text-blue-600" />
                   </div>
                   
                   {/* Content */}
                   <div className="flex-1 relative z-10">
-                    <h3 className={`text-xl font-orbitron font-bold text-text-primary mb-4 group-hover:text-${service.neonColor || 'neon-green'} transition-colors`}>
+                    <h3 className="text-xl font-orbitron font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-text-secondary leading-relaxed mb-6">
+                    <p className="text-gray-700 leading-relaxed mb-6">
                       {service.description}
                     </p>
                     
@@ -230,12 +230,12 @@ const Services = () => {
                     <div className="space-y-2 mb-6">
                       {service.features.slice(0, 3).map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center gap-2">
-                          <CheckCircle className={`w-4 h-4 text-${service.neonColor || 'neon-green'} flex-shrink-0`} />
-                          <span className="text-sm text-text-secondary">{feature}</span>
+                          <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                          <span className="text-sm text-gray-700">{feature}</span>
                         </div>
                       ))}
                       {service.features.length > 3 && (
-                        <div className="text-sm text-text-secondary">
+                        <div className="text-sm text-gray-700">
                           +{service.features.length - 3} more features
                         </div>
                       )}
@@ -243,14 +243,14 @@ const Services = () => {
                   </div>
                   
                   {/* Pricing & Timeline */}
-                  <div className="space-y-3 pt-4 border-t border-dark relative z-10">
-                    <div className="flex items-center justify-between text-sm text-text-secondary">
+                  <div className="space-y-3 pt-4 border-t border-gray-200 relative z-10">
+                    <div className="flex items-center justify-between text-sm text-gray-700">
                       <span>Starting from</span>
-                      <span className={`font-bold text-${service.neonColor || 'neon-green'}`}>{service.pricing}</span>
+                      <span className="font-bold text-blue-600">{service.pricing}</span>
                     </div>
-                    <div className="flex items-center justify-between text-sm text-text-secondary">
+                    <div className="flex items-center justify-between text-sm text-gray-700">
                       <span>Timeline</span>
-                      <span className="font-medium text-text-primary">{service.timeline}</span>
+                      <span className="font-medium text-gray-900">{service.timeline}</span>
                     </div>
                   </div>
                   
@@ -266,7 +266,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -275,7 +275,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-gray-900 mb-6">
               Why Choose <span className="gradient-neon-text neon-text">Our Services?</span>
             </h2>
           </motion.div>
@@ -288,11 +288,11 @@ const Services = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="w-16 h-16 border border-neon-green rounded-2xl flex items-center justify-center mx-auto mb-6 pulse-neon">
-                <Star className="w-8 h-8 text-neon-green" />
+              <div className="w-16 h-16 border border-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Star className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-orbitron font-bold text-text-primary mb-4">Proven Excellence</h3>
-              <p className="text-text-secondary leading-relaxed">
+              <h3 className="text-xl font-orbitron font-bold text-gray-900 mb-4">Proven Excellence</h3>
+              <p className="text-gray-700 leading-relaxed">
                 200+ successful projects delivered with 98% client satisfaction rate. Our track record speaks for itself.
               </p>
             </motion.div>
@@ -304,11 +304,11 @@ const Services = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="w-16 h-16 border border-neon-cyan rounded-2xl flex items-center justify-center mx-auto mb-6 pulse-neon">
-                <Zap className="w-8 h-8 text-neon-cyan" />
+              <div className="w-16 h-16 border border-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Zap className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-orbitron font-bold text-text-primary mb-4">Cutting-Edge Technology</h3>
-              <p className="text-text-secondary leading-relaxed">
+              <h3 className="text-xl font-orbitron font-bold text-gray-900 mb-4">Cutting-Edge Technology</h3>
+              <p className="text-gray-700 leading-relaxed">
                 We use the latest technologies and frameworks to ensure your solutions are future-proof and scalable.
               </p>
             </motion.div>
@@ -320,11 +320,11 @@ const Services = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="w-16 h-16 border border-neon-pink rounded-2xl flex items-center justify-center mx-auto mb-6 pulse-neon">
-                <Shield className="w-8 h-8 text-neon-pink" />
+              <div className="w-16 h-16 border border-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-orbitron font-bold text-text-primary mb-4">End-to-End Support</h3>
-              <p className="text-text-secondary leading-relaxed">
+              <h3 className="text-xl font-orbitron font-bold text-gray-900 mb-4">End-to-End Support</h3>
+              <p className="text-gray-700 leading-relaxed">
                 From initial consultation to post-launch support, we're with you every step of the way.
               </p>
             </motion.div>
@@ -333,13 +333,13 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-dark-primary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-blue-300 rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-blue-400 rounded-full opacity-30 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-blue-200 opacity-10 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-blue-300 rounded-full opacity-20 animate-pulse"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -350,10 +350,10 @@ const Services = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-text-primary">
+            <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-gray-900">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Let's discuss your project requirements and create a custom solution that drives results
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -373,9 +373,9 @@ const Services = () => {
                   window.scrollTo(0, 0);
                   navigate('/marketplace');
                 }}
-                className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-blue-600 hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
               >
-                Explore Marketplace
+                Explore Products
               </motion.button>
             </div>
           </motion.div>

@@ -34,8 +34,8 @@ const RetailPOS = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('pos');
   const [cart, setCart] = useState([
-    { id: 1, name: 'T-Shirt - Black', price: 24.99, quantity: 2, image: 'https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=800' },
-    { id: 2, name: 'Jeans - Blue', price: 49.99, quantity: 1, image: 'https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=800' }
+    { id: 1, name: 'T-Shirt - Black', price: 24.99, quantity: 2, image: '/logos/logo_teckstack.png' },
+    { id: 2, name: 'Jeans - Blue', price: 49.99, quantity: 1, image: '/logos/logo_teckstack.png' }
   ]);
   
   const updateQuantity = (id, change) => {
@@ -71,7 +71,7 @@ const RetailPOS = () => {
           className="flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       
@@ -227,14 +227,14 @@ const RetailPOS = () => {
               {/* Products Grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {[
-                  { id: 1, name: 'T-Shirt - Black', price: 24.99, image: 'https://images.pexels.com/photos/1656684/pexels-photo-1656684.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                  { id: 2, name: 'Jeans - Blue', price: 49.99, image: 'https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                  { id: 3, name: 'Sneakers - White', price: 79.99, image: 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                  { id: 4, name: 'Watch - Silver', price: 129.99, image: 'https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                  { id: 5, name: 'Backpack', price: 59.99, image: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                  { id: 6, name: 'Sunglasses', price: 34.99, image: 'https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                  { id: 7, name: 'Hoodie - Gray', price: 44.99, image: 'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800' },
-                  { id: 8, name: 'Beanie - Black', price: 19.99, image: 'https://images.pexels.com/photos/1070058/pexels-photo-1070058.jpeg?auto=compress&cs=tinysrgb&w=800' }
+                  { id: 1, name: 'T-Shirt - Black', price: 24.99, image: '/logos/logo_teckstack.png' },
+                  { id: 2, name: 'Jeans - Blue', price: 49.99, image: '/logos/logo_teckstack.png' },
+                  { id: 3, name: 'Sneakers - White', price: 79.99, image: '/logos/logo_teckstack.png' },
+                  { id: 4, name: 'Watch - Silver', price: 129.99, image: '/logos/logo_teckstack.png' },
+                  { id: 5, name: 'Backpack', price: 59.99, image: '/logos/logo_teckstack.png' },
+                  { id: 6, name: 'Sunglasses', price: 34.99, image: '/logos/logo_teckstack.png' },
+                  { id: 7, name: 'Hoodie - Gray', price: 44.99, image: '/logos/logo_teckstack.png' },
+                  { id: 8, name: 'Beanie - Black', price: 19.99, image: '/logos/logo_teckstack.png' }
                 ].map((product) => (
                   <div 
                     key={product.id} 

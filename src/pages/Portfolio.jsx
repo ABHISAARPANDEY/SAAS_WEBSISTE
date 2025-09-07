@@ -33,7 +33,7 @@ const Portfolio = () => {
       icon: Heart,
       color: 'from-red-500 to-pink-500',
       features: ['Patient Portal', 'Telemedicine', 'Health Analytics', 'HIPAA Compliant'],
-      image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://carepulse-lovat.vercel.app/'
     },
     {
@@ -43,7 +43,7 @@ const Portfolio = () => {
       icon: Building2,
       color: 'from-blue-500 to-purple-500',
       features: ['Digital Banking', 'Payment Processing', 'Loan Management', 'Financial Analytics'],
-      image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://horizonvault.vercel.app/'
     },
     {
@@ -63,7 +63,7 @@ const Portfolio = () => {
       icon: GraduationCap,
       color: 'from-green-500 to-emerald-500',
       features: ['Virtual Classrooms', 'Content Management', 'Progress Tracking', 'Interactive Learning'],
-      image: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/edulearn-platform'
     },
     {
@@ -73,7 +73,7 @@ const Portfolio = () => {
       icon: Utensils,
       color: 'from-yellow-500 to-orange-500',
       features: ['POS System', 'Delivery Integration', 'Menu Management', 'Order Tracking'],
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/foodie-delivery'
     },
     {
@@ -83,7 +83,7 @@ const Portfolio = () => {
       icon: Store,
       color: 'from-gray-600 to-gray-800',
       features: ['Point of Sale', 'Inventory Management', 'Customer Loyalty', 'Sales Analytics'],
-      image: 'https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/retail-pos'
     },
     {
@@ -93,7 +93,7 @@ const Portfolio = () => {
       icon: Building2,
       color: 'from-indigo-500 to-purple-500',
       features: ['Account Management', 'Transaction Processing', 'Regulatory Compliance', 'Risk Management'],
-      image: 'https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://horizonvault.vercel.app/'
     },
     {
@@ -103,7 +103,7 @@ const Portfolio = () => {
       icon: Home,
       color: 'from-green-500 to-emerald-500',
       features: ['Property Listings', 'Tenant Portal', 'Maintenance Requests', 'Financial Tracking'],
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/property-manager'
     },
     {
@@ -123,7 +123,7 @@ const Portfolio = () => {
       icon: Music,
       color: 'from-purple-500 to-pink-500',
       features: ['Content Management', 'User Subscriptions', 'Video Streaming', 'Analytics Dashboard'],
-      image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: '/product-demos/streaming-platform'
     },
     {
@@ -143,7 +143,7 @@ const Portfolio = () => {
       icon: Gamepad2,
       color: 'from-green-500 to-emerald-500',
       features: ['Game Showcases', 'Interactive Elements', 'Community Features', 'Responsive Design'],
-      image: 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/163100/circuit-circuit-board-resistor-computer-163100.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://sweet-stroopwafel-b2b30f.netlify.app'
     },
     {
@@ -153,21 +153,21 @@ const Portfolio = () => {
       icon: MessageSquare,
       color: 'from-blue-500 to-cyan-500',
       features: ['AI Content Creation', 'Social Scheduling', 'Analytics Dashboard', 'Multi-Platform'],
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
       demoLink: 'https://jovial-sawine-126db5.netlify.app'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-dark-primary">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-dark-primary overflow-hidden">
+      <section className="relative py-20 bg-white overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-gray-400 rounded-full opacity-15 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-gray-200 opacity-5 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-gray-300 rounded-full opacity-10 animate-pulse"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -184,7 +184,7 @@ const Portfolio = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Explore our diverse portfolio of successful implementations across various industries. 
               Each project showcases our expertise in creating innovative digital solutions.
             </p>
@@ -211,10 +211,10 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
             className="mb-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-gray-900 mb-4">
               Industry Expertise
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               We've successfully delivered solutions across diverse industries, 
               each with unique challenges and requirements.
             </p>
@@ -249,8 +249,8 @@ const Portfolio = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute top-4 left-4 z-10">
-                      <div className="w-12 h-12 glass-effect rounded-xl flex items-center justify-center border border-neon-cyan group-hover:scale-110 transition-transform duration-300">
-                        <industry.icon className="w-6 h-6 text-neon-cyan" />
+                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center border border-blue-600 group-hover:scale-110 transition-transform duration-300">
+                        <industry.icon className="w-6 h-6 text-blue-600" />
                       </div>
                     </div>
                   </div>
@@ -258,33 +258,33 @@ const Portfolio = () => {
                   {/* Industry Info */}
                   <div className="p-6 flex-1 flex flex-col relative z-10">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="px-3 py-1 bg-dark-tertiary text-text-secondary rounded-full text-sm font-medium border border-dark">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium border border-gray-200">
                         Live Demo
                       </span>
                       <div className="flex items-center gap-2">
-                        <ExternalLink className="w-4 h-4 text-text-secondary group-hover:text-neon-green transition-colors" />
+                        <ExternalLink className="w-4 h-4 text-gray-700 group-hover:text-blue-600 transition-colors" />
                       </div>
                     </div>
                     
-                    <h3 className="text-xl font-orbitron font-bold text-text-primary mb-3 group-hover:text-neon-green transition-colors">
+                    <h3 className="text-xl font-orbitron font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                       {industry.name}
                     </h3>
                     
-                    <p className="text-text-secondary mb-4 leading-relaxed flex-1">
+                    <p className="text-gray-700 mb-4 leading-relaxed flex-1">
                       {industry.description}
                     </p>
                     
                     {/* Features */}
                     <div className="mb-4">
-                      <div className="text-sm text-text-secondary mb-2">Key Features:</div>
+                      <div className="text-sm text-gray-700 mb-2">Key Features:</div>
                       <div className="flex flex-wrap gap-2">
                         {industry.features.slice(0, 2).map((feature, idx) => (
-                          <span key={idx} className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs border border-dark">
+                          <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-800 rounded-md text-xs border border-gray-200">
                             {feature}
                           </span>
                         ))}
                         {industry.features.length > 2 && (
-                          <span className="px-2 py-1 bg-dark-tertiary text-text-secondary rounded-md text-xs border border-dark">
+                          <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded-md text-xs border border-gray-200">
                             +{industry.features.length - 2} more
                           </span>
                         )}
@@ -295,7 +295,7 @@ const Portfolio = () => {
                       <button className="flex-1 btn-neon py-2 px-4 rounded-lg font-orbitron font-semibold hover:shadow-lg transition-all duration-300">
                         Live Demo
                       </button>
-                      <button className="px-4 py-2 border border-dark rounded-lg text-text-secondary hover:bg-dark-tertiary hover:border-neon-green/50 hover:text-neon-green transition-all">
+                      <button className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 hover:border-blue-500/50 hover:text-blue-600 transition-all">
                         <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>
@@ -308,13 +308,13 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-dark-secondary border-t border-dark">
+      <section className="py-20 bg-white border-t border-gray-200">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-20 h-20 border border-neon-green rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 border border-neon-cyan rounded-full opacity-30 animate-bounce"></div>
-          <div className="absolute bottom-20 left-20 w-12 h-12 bg-neon-green opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute bottom-40 right-10 w-24 h-24 border border-neon-pink rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-20 h-20 border border-blue-300 rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 border border-blue-400 rounded-full opacity-30 animate-bounce"></div>
+          <div className="absolute bottom-20 left-20 w-12 h-12 bg-blue-200 opacity-10 rounded-full animate-ping"></div>
+          <div className="absolute bottom-40 right-10 w-24 h-24 border border-blue-300 rounded-full opacity-20 animate-pulse"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -352,7 +352,7 @@ const Portfolio = () => {
                   whileHover="hover"
                   whileTap="tap"
                   onClick={() => navigate('/services')}
-                  className="glass-effect text-neon-cyan px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-neon-cyan hover:neon-glow-cyan transition-all duration-300 flex items-center gap-2"
+                  className="bg-blue-600 text-white px-8 py-4 rounded-full font-orbitron font-semibold text-lg border border-blue-600 hover:bg-blue-700 hover:shadow-lg transition-all duration-300 flex items-center gap-2"
                 >
                   <ArrowRight className="w-5 h-5" />
                   View Services

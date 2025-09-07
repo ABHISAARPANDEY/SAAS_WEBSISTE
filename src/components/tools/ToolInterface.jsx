@@ -1011,43 +1011,43 @@ ${password}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className={`glass-effect px-6 py-4 border-b border-dark`}>
+          <div className="bg-white px-6 py-4 border-b border-gray-200">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className={`w-12 h-12 border border-${tool.neonColor || 'neon-green'} rounded-xl flex items-center justify-center pulse-neon`}>
-                  <tool.icon className={`w-6 h-6 text-${tool.neonColor || 'neon-green'}`} />
+                <div className="w-12 h-12 border border-blue-600 rounded-xl flex items-center justify-center">
+                  <tool.icon className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-orbitron font-bold text-text-primary">{tool.name}</h2>
-                  <p className="text-text-secondary">{tool.description}</p>
+                  <h2 className="text-xl font-orbitron font-bold text-gray-900">{tool.name}</h2>
+                  <p className="text-gray-700">{tool.description}</p>
                 </div>
               </div>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-dark-tertiary rounded-full transition-colors text-text-secondary hover:text-neon-green"
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-700 hover:text-blue-600"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
           </div>
 
-          <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)] bg-dark-primary">
+          <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)] bg-white">
             {/* Usage Limit Info */}
-            <div className="mb-6 p-4 bg-dark-tertiary rounded-xl border border-neon-cyan/30">
+            <div className="mb-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-neon-cyan" />
-                  <span className="font-medium text-neon-cyan">
+                  <Zap className="w-5 h-5 text-blue-600" />
+                  <span className="font-medium text-blue-600">
                     {remainingUses} of {limit} daily uses remaining
                   </span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-text-secondary">
-                  <User className="w-4 h-4 text-neon-cyan" />
-                  <span className="text-text-secondary">{isRegistered ? 'Registered' : 'Free'} User</span>
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <User className="w-4 h-4 text-blue-600" />
+                  <span className="text-gray-700">{isRegistered ? 'Registered' : 'Free'} User</span>
                 </div>
               </div>
               {!isRegistered && (
-                <p className="text-sm text-text-secondary mt-2">
+                <p className="text-sm text-gray-700 mt-2">
                   Register for free to get {registeredLimit} daily uses instead of {dailyLimit}
                 </p>
               )}
@@ -1056,7 +1056,7 @@ ${password}
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-text-primary font-orbitron mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900 font-orbitron mb-4">
                     {isFileHandlingTool ? 'File Upload' : 'Input'}
                   </h3>
                   
@@ -1086,15 +1086,15 @@ ${password}
                     /* Text Input Interface */
                     <div className="space-y-4">
                       {/* Instructions */}
-                      <div className="mb-4 p-3 bg-dark-tertiary rounded-lg border border-dark">
-                        <h4 className="font-medium text-text-primary mb-2 flex items-center gap-2">
-                          <Info className="w-4 h-4 text-neon-green" />
+                      <div className="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                        <h4 className="font-medium text-gray-900 mb-2 flex items-center gap-2">
+                          <Info className="w-4 h-4 text-blue-600" />
                           How to use:
                         </h4>
-                        <ol className="text-sm text-text-secondary space-y-1">
+                        <ol className="text-sm text-gray-700 space-y-1">
                           {getInstructions().map((instruction, idx) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <span className="text-neon-green font-medium">{idx + 1}.</span>
+                              <span className="text-blue-600 font-medium">{idx + 1}.</span>
                               {instruction}
                             </li>
                           ))}
@@ -1104,13 +1104,13 @@ ${password}
                       {/* Sample Inputs */}
                       {getSampleInputs().length > 0 && (
                         <div className="mb-4">
-                          <h4 className="font-medium text-text-primary mb-2">Quick Examples:</h4>
+                          <h4 className="font-medium text-gray-900 mb-2">Quick Examples:</h4>
                           <div className="flex flex-wrap gap-2">
                             {getSampleInputs().map((sample, idx) => (
                               <button
                                 key={idx}
                                 onClick={() => setInput(sample)}
-                                className="px-3 py-1 bg-dark-tertiary hover:bg-dark-tertiary/80 rounded-full text-sm text-text-secondary hover:text-neon-green border border-dark hover:border-neon-green/50 transition-colors"
+                                className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 hover:text-blue-600 border border-gray-300 hover:border-blue-500/50 transition-colors"
                               >
                                 {sample.length > 30 ? sample.substring(0, 30) + '...' : sample}
                               </button>
@@ -1124,15 +1124,15 @@ ${password}
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         placeholder={getPlaceholder()}
-                        className="w-full h-40 p-4 bg-dark-tertiary border border-dark text-text-primary rounded-xl focus:ring-2 focus:ring-neon-green focus:border-transparent resize-none placeholder-text-secondary"
+                        className="w-full h-40 p-4 bg-gray-50 border border-gray-300 text-gray-900 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none placeholder-gray-500"
                         disabled={isProcessing}
                       />
 
                       {/* Character Count */}
-                      <div className="flex items-center justify-between text-sm text-text-secondary">
-                        <span className="text-text-secondary">{input.length} characters</span>
+                      <div className="flex items-center justify-between text-sm text-gray-700">
+                        <span className="text-gray-700">{input.length} characters</span>
                         {tool.id === 'text-summarizer' && input.length > 5000 && (
-                          <span className="text-neon-pink">⚠️ Large text may take longer to process</span>
+                          <span className="text-orange-600">⚠️ Large text may take longer to process</span>
                         )}
                       </div>
 
@@ -1142,7 +1142,7 @@ ${password}
                         disabled={isProcessing || !input.trim() || checkUsageLimit()}
                         className={`w-full py-3 px-6 rounded-xl font-orbitron font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
                           isProcessing || !input.trim() || checkUsageLimit()
-                            ? 'bg-dark-tertiary text-text-secondary cursor-not-allowed'
+                            ? 'bg-gray-100 text-gray-500 cursor-not-allowed'
                             : `btn-neon hover:shadow-lg`
                         }`}
                       >
@@ -1160,7 +1160,7 @@ ${password}
                       </button>
 
                       {checkUsageLimit() && (
-                        <p className="text-neon-pink text-sm text-center">
+                        <p className="text-red-600 text-sm text-center">
                           Daily limit reached. Try again tomorrow or register for more uses.
                         </p>
                       )}
@@ -1172,13 +1172,13 @@ ${password}
                 {!isFileHandlingTool && (
                   <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-text-primary font-orbitron mb-2">Results</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 font-orbitron mb-2">Results</h3>
                     
                     {/* Error Display */}
                     {error && (
-                      <div className="mb-4 p-3 bg-dark-tertiary border border-neon-pink/50 rounded-lg flex items-start gap-2">
-                        <AlertCircle className="w-5 h-5 text-neon-pink flex-shrink-0 mt-0.5" />
-                        <span className="text-neon-pink">{error}</span>
+                      <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2">
+                        <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-red-600">{error}</span>
                       </div>
                     )}
 
@@ -1188,13 +1188,13 @@ ${password}
                         value={output}
                         readOnly
                         placeholder={isProcessing ? "Processing..." : "Results will appear here..."}
-                        className="w-full h-40 p-4 border border-dark rounded-xl bg-dark-tertiary text-text-primary resize-none placeholder-text-secondary"
+                        className="w-full h-40 p-4 border border-gray-300 rounded-xl bg-gray-50 text-gray-900 resize-none placeholder-gray-500"
                       />
                       
                       {isProcessing && (
-                        <div className="absolute inset-0 bg-dark-tertiary/80 flex items-center justify-center rounded-xl">
-                          <div className="flex items-center gap-2 text-text-primary">
-                            <RefreshCw className="w-5 h-5 animate-spin text-neon-green" />
+                        <div className="absolute inset-0 bg-white/80 flex items-center justify-center rounded-xl">
+                          <div className="flex items-center gap-2 text-gray-900">
+                            <RefreshCw className="w-5 h-5 animate-spin text-blue-600" />
                             <span>Processing your request...</span>
                           </div>
                         </div>
@@ -1206,16 +1206,16 @@ ${password}
                       <div className="flex gap-2 mt-4">
                         <button
                           onClick={copyToClipboard}
-                          className="flex-1 py-2 px-4 bg-dark-tertiary text-neon-cyan border border-neon-cyan hover:neon-glow-cyan rounded-lg transition-all flex items-center justify-center gap-2"
+                          className="flex-1 py-2 px-4 bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 hover:shadow-lg rounded-lg transition-all flex items-center justify-center gap-2"
                         >
-                          {copied ? <Check className="w-4 h-4 text-neon-cyan" /> : <Copy className="w-4 h-4 text-neon-cyan" />}
+                          {copied ? <Check className="w-4 h-4 text-white" /> : <Copy className="w-4 h-4 text-white" />}
                           {copied ? 'Copied!' : 'Copy'}
                         </button>
                         <button
                           onClick={downloadResult}
-                          className="flex-1 py-2 px-4 bg-dark-tertiary text-neon-green border border-neon-green hover:neon-glow rounded-lg transition-all flex items-center justify-center gap-2"
+                          className="flex-1 py-2 px-4 bg-green-600 text-white border border-green-600 hover:bg-green-700 hover:shadow-lg rounded-lg transition-all flex items-center justify-center gap-2"
                         >
-                          <Download className="w-4 h-4 text-neon-green" />
+                          <Download className="w-4 h-4 text-white" />
                           Download
                         </button>
                       </div>
@@ -1227,15 +1227,15 @@ ${password}
 
               {/* Feedback Section */}
               {(output || processingResults.length > 0) && (
-                <div className="p-4 bg-dark-tertiary rounded-xl border border-dark">
-                  <h4 className="font-medium text-text-primary mb-3">How was this result?</h4>
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <h4 className="font-medium text-gray-900 mb-3">How was this result?</h4>
                   <div className="flex gap-2">
                     <button
                       onClick={() => submitFeedback('positive')}
                       className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
                         feedback === 'positive' 
-                          ? 'bg-dark-tertiary text-neon-green border border-neon-green' 
-                          : 'bg-dark-tertiary text-text-secondary border border-dark hover:border-neon-green hover:text-neon-green'
+                          ? 'bg-green-100 text-green-600 border border-green-300' 
+                          : 'bg-gray-100 text-gray-700 border border-gray-300 hover:border-green-500 hover:text-green-600'
                       }`}
                     >
                       <ThumbsUp className="w-4 h-4" />
@@ -1245,8 +1245,8 @@ ${password}
                       onClick={() => submitFeedback('negative')}
                       className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
                         feedback === 'negative' 
-                          ? 'bg-dark-tertiary text-neon-pink border border-neon-pink' 
-                          : 'bg-dark-tertiary text-text-secondary border border-dark hover:border-neon-pink hover:text-neon-pink'
+                          ? 'bg-red-100 text-red-600 border border-red-300' 
+                          : 'bg-gray-100 text-gray-700 border border-gray-300 hover:border-red-500 hover:text-red-600'
                       }`}
                     >
                       <ThumbsDown className="w-4 h-4" />
@@ -1258,7 +1258,7 @@ ${password}
                     <motion.p
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-sm text-text-secondary mt-2"
+                      className="text-sm text-gray-700 mt-2"
                     >
                       Thank you for your feedback! It helps us improve our tools.
                     </motion.p>
@@ -1268,32 +1268,32 @@ ${password}
             </div>
 
             {/* Tool Stats */}
-            <div className="mt-6 pt-6 border-t border-dark">
+            <div className="mt-6 pt-6 border-t border-gray-200">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-neon-green">{tool.rating}</div>
-                  <div className="text-sm text-text-secondary flex items-center justify-center gap-1">
-                    <Star className="w-3 h-3 text-neon-green fill-current" />
+                  <div className="text-2xl font-bold text-blue-600">{tool.rating}</div>
+                  <div className="text-sm text-gray-700 flex items-center justify-center gap-1">
+                    <Star className="w-3 h-3 text-blue-600 fill-current" />
                     Rating
                   </div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-neon-cyan">{tool.usage.toLocaleString()}</div>
-                  <div className="text-sm text-text-secondary flex items-center justify-center gap-1">
-                    <Users className="w-3 h-3 text-neon-cyan" />
+                  <div className="text-2xl font-bold text-blue-600">{tool.usage.toLocaleString()}</div>
+                  <div className="text-sm text-gray-700 flex items-center justify-center gap-1">
+                    <Users className="w-3 h-3 text-blue-600" />
                     Uses
                   </div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-neon-pink">{usageCount}</div>
-                  <div className="text-sm text-text-secondary flex items-center justify-center gap-1">
-                    <Clock className="w-3 h-3 text-neon-pink" />
+                  <div className="text-2xl font-bold text-blue-600">{usageCount}</div>
+                  <div className="text-sm text-gray-700 flex items-center justify-center gap-1">
+                    <Clock className="w-3 h-3 text-blue-600" />
                     Your uses today
                   </div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold gradient-neon-text">Free</div>
-                  <div className="text-sm text-text-secondary">
+                  <div className="text-2xl font-bold text-blue-600">Free</div>
+                  <div className="text-sm text-gray-700">
                     Always
                   </div>
                 </div>

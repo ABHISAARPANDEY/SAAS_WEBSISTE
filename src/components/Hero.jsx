@@ -607,7 +607,7 @@ const Hero = () => {
                 onMouseDown={addRipple}
               >
                 <Code className="w-4 h-4 sm:w-5 sm:h-5 text-accent-primary" />
-                <span className="sm:inline">Marketplace</span>
+                <span className="sm:inline">Products</span>
               </motion.button>
               
               <motion.button

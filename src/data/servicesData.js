@@ -28,14 +28,17 @@ export const servicesData = {
 We specialize in both native and cross-platform development, ensuring your app performs flawlessly while reaching the widest possible audience. From concept to deployment, we handle every aspect of mobile app development with precision and creativity.`,
     
     techStack: [
-      { name: 'React Native', icon: Smartphone, category: 'Frontend' },
-      { name: 'Flutter', icon: Smartphone, category: 'Frontend' },
-      { name: 'Swift', icon: Smartphone, category: 'iOS' },
-      { name: 'Kotlin', icon: Smartphone, category: 'Android' },
-      { name: 'Node.js', icon: Server, category: 'Backend' },
-      { name: 'Firebase', icon: Database, category: 'Database' },
-      { name: 'AWS', icon: Cloud, category: 'Cloud' },
-      { name: 'Docker', icon: Container, category: 'Tools' }
+      { name: 'React Native', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg', category: 'Mobile' },
+      { name: 'Flutter', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg', category: 'Mobile' },
+      { name: 'React', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg', category: 'Web' },
+      { name: 'Next.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg', category: 'Web' },
+      { name: 'Vue.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg', category: 'Web' },
+      { name: 'Swift', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg', category: 'iOS' },
+      { name: 'Kotlin', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg', category: 'Android' },
+      { name: 'Node.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg', category: 'Backend' },
+      { name: 'Firebase', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg', category: 'Database' },
+      { name: 'AWS', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Cloud' },
+      { name: 'Docker', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', category: 'Tools' }
     ],
 
     methodology: [
@@ -161,14 +164,14 @@ We specialize in both native and cross-platform development, ensuring your app p
 From simple landing pages to complex enterprise applications, we craft digital experiences that not only look stunning but also convert visitors into customers and streamline your business operations.`,
     
     techStack: [
-      { name: 'React', icon: Globe, category: 'Frontend' },
-      { name: 'Vue.js', icon: Globe, category: 'Frontend' },
-      { name: 'Angular', icon: Globe, category: 'Frontend' },
-      { name: 'JavaScript', icon: Code, category: 'Frontend' },
-      { name: 'Node.js', icon: Server, category: 'Backend' },
-      { name: 'Python', icon: Code, category: 'Backend' },
-      { name: 'PostgreSQL', icon: Database, category: 'Database' },
-      { name: 'AWS', icon: Cloud, category: 'Cloud' }
+      { name: 'React', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg', category: 'Frontend' },
+      { name: 'Vue.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg', category: 'Frontend' },
+      { name: 'Angular', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/angular/angular-original.svg', category: 'Frontend' },
+      { name: 'JavaScript', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg', category: 'Frontend' },
+      { name: 'Node.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg', category: 'Backend' },
+      { name: 'Python', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Backend' },
+      { name: 'PostgreSQL', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg', category: 'Database' },
+      { name: 'AWS', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Cloud' }
     ],
 
     methodology: [
@@ -294,14 +297,14 @@ From simple landing pages to complex enterprise applications, we craft digital e
 Transform repetitive, time-consuming processes into streamlined, automated workflows that free up your team to focus on high-value strategic activities while ensuring consistent, error-free execution of routine operations.`,
     
     techStack: [
-      { name: 'Python', icon: Code, category: 'Automation' },
-      { name: 'Zapier', icon: Zap, category: 'Integration' },
-      { name: 'Power Automate', icon: Zap, category: 'Microsoft' },
-      { name: 'Selenium', icon: Bot, category: 'Testing' },
-      { name: 'Node.js', icon: Server, category: 'Backend' },
-      { name: 'MongoDB', icon: Database, category: 'Database' },
-      { name: 'AWS Lambda', icon: Cloud, category: 'Serverless' },
-      { name: 'Docker', icon: Container, category: 'Containerization' }
+      { name: 'Python', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Automation' },
+      { name: 'Zapier', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/zapier/zapier-original.svg', category: 'Integration' },
+      { name: 'Power Automate', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoft/microsoft-original.svg', category: 'Microsoft' },
+      { name: 'Selenium', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg', category: 'Testing' },
+      { name: 'Node.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg', category: 'Backend' },
+      { name: 'MongoDB', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg', category: 'Database' },
+      { name: 'AWS Lambda', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Serverless' },
+      { name: 'Docker', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', category: 'Containerization' }
     ],
 
     methodology: [
@@ -427,14 +430,14 @@ Transform repetitive, time-consuming processes into streamlined, automated workf
 From enterprise-grade applications to specialized tools, we create software that grows with your business and adapts to changing market demands while maintaining the highest standards of security, performance, and user experience.`,
     
     techStack: [
-      { name: 'React', icon: Globe, category: 'Frontend' },
-      { name: 'Angular', icon: Globe, category: 'Frontend' },
-      { name: 'Vue.js', icon: Globe, category: 'Frontend' },
-      { name: 'Node.js', icon: Server, category: 'Backend' },
-      { name: 'Python', icon: Code, category: 'Backend' },
-      { name: 'Java', icon: Code, category: 'Backend' },
-      { name: '.NET', icon: Code, category: 'Backend' },
-      { name: 'PostgreSQL', icon: Database, category: 'Database' }
+      { name: 'React', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg', category: 'Frontend' },
+      { name: 'Angular', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/angular/angular-original.svg', category: 'Frontend' },
+      { name: 'Vue.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg', category: 'Frontend' },
+      { name: 'Node.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg', category: 'Backend' },
+      { name: 'Python', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Backend' },
+      { name: 'Java', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg', category: 'Backend' },
+      { name: '.NET', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dotnetcore/dotnetcore-original.svg', category: 'Backend' },
+      { name: 'PostgreSQL', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg', category: 'Database' }
     ],
 
     methodology: [
@@ -560,14 +563,14 @@ From enterprise-grade applications to specialized tools, we create software that
 Our product development expertise spans ideation, market validation, MVP development, and full-scale product launch, ensuring your vision becomes a successful, scalable reality in the competitive digital marketplace.`,
     
     techStack: [
-      { name: 'React', icon: Globe, category: 'Frontend' },
-      { name: 'React Native', icon: Smartphone, category: 'Mobile' },
-      { name: 'Node.js', icon: Server, category: 'Backend' },
-      { name: 'Python', icon: Code, category: 'Backend' },
-      { name: 'PostgreSQL', icon: Database, category: 'Database' },
-      { name: 'MongoDB', icon: Database, category: 'Database' },
-      { name: 'AWS', icon: Cloud, category: 'Cloud' },
-      { name: 'Docker', icon: Container, category: 'DevOps' }
+      { name: 'React', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg', category: 'Frontend' },
+      { name: 'React Native', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg', category: 'Mobile' },
+      { name: 'Node.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg', category: 'Backend' },
+      { name: 'Python', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Backend' },
+      { name: 'PostgreSQL', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg', category: 'Database' },
+      { name: 'MongoDB', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg', category: 'Database' },
+      { name: 'AWS', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Cloud' },
+      { name: 'Docker', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', category: 'DevOps' }
     ],
 
     methodology: [
@@ -693,14 +696,14 @@ Our product development expertise spans ideation, market validation, MVP develop
 We help organizations leverage blockchain's immutable ledger technology to enhance security, reduce costs, eliminate intermediaries, and create new business models that weren't possible with traditional centralized systems.`,
     
     techStack: [
-      { name: 'Solidity', icon: Code, category: 'Smart Contracts' },
-      { name: 'Web3.js', icon: Globe, category: 'Frontend' },
-      { name: 'Ethereum', icon: Shield, category: 'Blockchain' },
-      { name: 'Polygon', icon: Shield, category: 'Layer 2' },
-      { name: 'Node.js', icon: Server, category: 'Backend' },
-      { name: 'IPFS', icon: Database, category: 'Storage' },
-      { name: 'MetaMask', icon: Shield, category: 'Wallet' },
-      { name: 'Hardhat', icon: Code, category: 'Development' }
+      { name: 'Solidity', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/solidity/solidity-original.svg', category: 'Smart Contracts' },
+      { name: 'Web3.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/web3js/web3js-original.svg', category: 'Frontend' },
+      { name: 'Ethereum', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/ethereum/ethereum-original.svg', category: 'Blockchain' },
+      { name: 'Polygon', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/polygon/polygon-original.svg', category: 'Layer 2' },
+      { name: 'Node.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg', category: 'Backend' },
+      { name: 'IPFS', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/ipfs/ipfs-original.svg', category: 'Storage' },
+      { name: 'MetaMask', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/metamask/metamask-original.svg', category: 'Wallet' },
+      { name: 'Hardhat', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/hardhat/hardhat-original.svg', category: 'Development' }
     ],
 
     methodology: [
@@ -826,14 +829,14 @@ We help organizations leverage blockchain's immutable ledger technology to enhan
 We help businesses navigate the complex journey from legacy systems to modern, cloud-native architectures while maintaining operational continuity and maximizing return on investment.`,
     
     techStack: [
-      { name: 'Cloud Migration', icon: Cloud, category: 'Infrastructure' },
-      { name: 'Microservices', icon: Layers, category: 'Architecture' },
-      { name: 'API Gateway', icon: Server, category: 'Integration' },
-      { name: 'DevOps', icon: GitBranch, category: 'Operations' },
-      { name: 'Analytics', icon: TrendingUp, category: 'Data' },
-      { name: 'AI/ML', icon: Bot, category: 'Intelligence' },
-      { name: 'Security', icon: Shield, category: 'Protection' },
-      { name: 'Monitoring', icon: Monitor, category: 'Observability' }
+      { name: 'Cloud Migration', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Infrastructure' },
+      { name: 'Microservices', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', category: 'Architecture' },
+      { name: 'API Gateway', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg', category: 'Integration' },
+      { name: 'DevOps', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg', category: 'Operations' },
+      { name: 'Analytics', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Data' },
+      { name: 'AI/ML', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg', category: 'Intelligence' },
+      { name: 'Security', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-original.svg', category: 'Protection' },
+      { name: 'Monitoring', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/prometheus/prometheus-original.svg', category: 'Observability' }
     ],
 
     methodology: [
@@ -959,14 +962,14 @@ We help businesses navigate the complex journey from legacy systems to modern, c
 These AI agents can operate independently or collaborate with human teams, providing 24/7 intelligent assistance that scales with your business needs while maintaining high accuracy and reliability.`,
     
     techStack: [
-      { name: 'LangChain', icon: Bot, category: 'AI Framework' },
-      { name: 'OpenAI GPT', icon: Bot, category: 'LLM' },
-      { name: 'Python', icon: Code, category: 'Backend' },
-      { name: 'TensorFlow', icon: Cpu, category: 'ML' },
-      { name: 'Vector DB', icon: Database, category: 'Storage' },
-      { name: 'FastAPI', icon: Server, category: 'API' },
-      { name: 'Redis', icon: Database, category: 'Cache' },
-      { name: 'Docker', icon: Container, category: 'Deployment' }
+      { name: 'LangChain', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'AI Framework' },
+      { name: 'OpenAI GPT', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/openai/openai-original.svg', category: 'LLM' },
+      { name: 'Python', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Backend' },
+      { name: 'TensorFlow', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg', category: 'ML' },
+      { name: 'Vector DB', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg', category: 'Storage' },
+      { name: 'FastAPI', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg', category: 'API' },
+      { name: 'Redis', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg', category: 'Cache' },
+      { name: 'Docker', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', category: 'Deployment' }
     ],
 
     methodology: [

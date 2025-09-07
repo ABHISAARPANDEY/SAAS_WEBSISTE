@@ -39,7 +39,7 @@ const EducationPlatform = () => {
           className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Marketplace</span>
+          <span>Back to Products</span>
         </button>
       </div>
       
@@ -176,21 +176,21 @@ const EducationPlatform = () => {
                 title: 'Introduction to Machine Learning', 
                 instructor: 'Dr. Sarah Chen', 
                 progress: 75, 
-                image: 'https://images.pexels.com/photos/4144144/pexels-photo-4144144.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 color: 'blue'
               },
               { 
                 title: 'Web Development Bootcamp', 
                 instructor: 'Mark Williams', 
                 progress: 45, 
-                image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 color: 'green'
               },
               { 
                 title: 'Business Analytics Fundamentals', 
                 instructor: 'Jennifer Lopez', 
                 progress: 30, 
-                image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+                image: '/logos/logo_teckstack.png',
                 color: 'purple'
               }
             ].map((course, index) => (
@@ -306,28 +306,28 @@ const EducationPlatform = () => {
                 instructor: 'Michael Brown', 
                 rating: 4.8,
                 students: 12540,
-                image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               },
               { 
                 title: 'UX/UI Design Principles', 
                 instructor: 'Emma Wilson', 
                 rating: 4.9,
                 students: 8920,
-                image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               },
               { 
                 title: 'Digital Marketing Mastery', 
                 instructor: 'Robert Garcia', 
                 rating: 4.7,
                 students: 15300,
-                image: 'https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               },
               { 
                 title: 'Python for Data Analysis', 
                 instructor: 'Lisa Chen', 
                 rating: 4.9,
                 students: 18700,
-                image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800'
+                image: '/logos/logo_teckstack.png'
               }
             ].map((course, index) => (
               <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
