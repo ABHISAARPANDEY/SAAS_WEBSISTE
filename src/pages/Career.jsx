@@ -106,7 +106,7 @@ const Career = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary to-primary-dark">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,23 +116,23 @@ const Career = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
-              Join Our <span className="text-accent-primary">Team</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Join Our <span className="text-blue-600">Team</span>
             </h1>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
               Build the future of technology with us. We're looking for passionate individuals who want to make a difference.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-text-secondary">
+            <div className="flex flex-wrap justify-center gap-6 text-gray-600">
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-accent-primary" />
+                <Users className="w-5 h-5 text-blue-600" />
                 <span>50+ Team Members</span>
               </div>
               <div className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-accent-primary" />
+                <Globe className="w-5 h-5 text-blue-600" />
                 <span>Remote First</span>
               </div>
               <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-accent-primary" />
+                <Zap className="w-5 h-5 text-blue-600" />
                 <span>Fast Growing</span>
               </div>
             </div>
@@ -141,7 +141,7 @@ const Career = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-secondary/50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -150,10 +150,10 @@ const Career = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Work With Us?
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p className="text-gray-700 max-w-2xl mx-auto">
               We believe in creating an environment where you can thrive and grow both personally and professionally.
             </p>
           </motion.div>
@@ -168,11 +168,11 @@ const Career = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-accent-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="w-8 h-8 text-accent-primary" />
+                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-text-primary mb-2">{benefit.title}</h3>
-                <p className="text-text-secondary text-sm">{benefit.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+                <p className="text-gray-700 text-sm">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -189,10 +189,10 @@ const Career = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Open Positions
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p className="text-gray-700 max-w-2xl mx-auto">
               Explore our current openings and find the perfect role for your next career move.
             </p>
           </motion.div>
@@ -205,38 +205,38 @@ const Career = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-xl border border-border-color hover:shadow-2xl transition-all duration-300"
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-text-primary mb-2">{job.title}</h3>
-                    <p className="text-accent-primary font-medium">{job.department}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h3>
+                    <p className="text-blue-600 font-medium">{job.department}</p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-text-secondary" />
+                  <ChevronRight className="w-5 h-5 text-gray-600" />
                 </div>
 
                 <div className="flex flex-wrap gap-4 mb-4">
-                  <div className="flex items-center gap-2 text-sm text-text-secondary">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
                     <MapPin className="w-4 h-4" />
                     <span>{job.location}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-text-secondary">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Briefcase className="w-4 h-4" />
                     <span>{job.type}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-text-secondary">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Clock className="w-4 h-4" />
                     <span>{job.experience}</span>
                   </div>
                 </div>
 
-                <p className="text-text-secondary mb-4">{job.description}</p>
+                <p className="text-gray-700 mb-4">{job.description}</p>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-text-primary mb-2">Requirements:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
                   <div className="flex flex-wrap gap-2">
                     {job.requirements.map((req, i) => (
-                      <span key={i} className="px-3 py-1 bg-accent-primary/10 text-accent-primary rounded-full text-sm">
+                      <span key={i} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
                         {req}
                       </span>
                     ))}
@@ -244,7 +244,7 @@ const Career = () => {
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="font-semibold text-text-primary mb-2">Benefits:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Benefits:</h4>
                   <div className="flex flex-wrap gap-2">
                     {job.benefits.map((benefit, i) => (
                       <span key={i} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
@@ -254,7 +254,7 @@ const Career = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-accent-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-accent-primary/90 transition-colors duration-300">
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-xl font-semibold transition-colors duration-300">
                   Apply Now
                 </button>
               </motion.div>
@@ -264,7 +264,7 @@ const Career = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-accent-primary to-accent-secondary">
+      <section className="py-16 bg-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -278,7 +278,7 @@ const Career = () => {
             <p className="text-white/90 text-lg mb-8">
               We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
             </p>
-            <button className="bg-white text-accent-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
               Send Resume
             </button>
           </motion.div>

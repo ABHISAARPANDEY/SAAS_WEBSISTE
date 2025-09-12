@@ -265,44 +265,44 @@ if (error) {
       animate={{ opacity: 1, scale: 1 }}
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md"
     >
-      <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl border border-border-color">
+      <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl border border-gray-200">
         <div className="text-center">
-          <div className="w-16 h-16 bg-secondary border border-accent-primary rounded-full flex items-center justify-center mx-auto mb-4 pulse">
-            <CheckCircle className="w-8 h-8 text-accent-primary" />
+          <div className="w-16 h-16 bg-blue-50 border border-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 pulse">
+            <CheckCircle className="w-8 h-8 text-blue-600" />
           </div>
           
-          <h3 className="text-2xl font-bold text-text-primary mb-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
             Request Submitted Successfully!
           </h3>
           
-          <p className="text-text-secondary mb-4">
+          <p className="text-gray-700 mb-4">
             Our team will contact you soon, thanks for your patience.
           </p>
           
           {submissionResult && (
-            <div className="bg-secondary rounded-lg p-4 mb-4 border border-border-color">
-              <p className="text-sm text-text-secondary mb-1">Reference Number:</p>
-              <p className="font-mono font-bold text-accent-primary">{submissionResult.trackingNumber}</p>
+            <div className="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+              <p className="text-sm text-gray-700 mb-1">Reference Number:</p>
+              <p className="font-mono font-bold text-blue-600">{submissionResult.trackingNumber}</p>
             </div>
           )}
           
-          <div className="space-y-2 text-sm text-text-secondary">
-            <p><span className="text-accent-primary">✓</span> Confirmation of submission</p>
-            <p><span className="text-accent-primary">✓</span> Reference number: {submissionResult?.trackingNumber}</p>
-            <p><span className="text-accent-primary">✓</span> Expected response time: 2 business days</p>
-            <p><span className="text-accent-primary">✓</span> Our team will contact you via email and phone</p>
+          <div className="space-y-2 text-sm text-gray-700">
+            <p><span className="text-blue-600">✓</span> Confirmation of submission</p>
+            <p><span className="text-blue-600">✓</span> Reference number: {submissionResult?.trackingNumber}</p>
+            <p><span className="text-blue-600">✓</span> Expected response time: 2 business days</p>
+            <p><span className="text-blue-600">✓</span> Our team will contact you via email and phone</p>
           </div>
           
           <div className="mt-6">
-            <div className="w-full bg-secondary rounded-full h-2 mb-2 border border-border-color">
+            <div className="w-full bg-gray-200 rounded-full h-2 mb-2 border border-gray-300">
               <motion.div 
-                className="bg-accent-primary h-2 rounded-full"
+                className="bg-blue-600 h-2 rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
                 transition={{ duration: 5 }}
               />
             </div>
-            <p className="text-xs text-text-secondary">Redirecting in 5 seconds...</p>
+            <p className="text-xs text-gray-600">Redirecting in 5 seconds...</p>
           </div>
         </div>
       </div>
@@ -363,42 +363,42 @@ if (error) {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-text-primary mb-2">
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
                     Full Name *
                   </label>
                   <input
                     type="text"
                     value={formData.fullName}
                     onChange={(e) => handleInputChange('fullName', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300 ${
-                      errors.fullName ? 'border-error bg-white text-text-primary' : 'border-border-color bg-white text-text-primary'
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 ${
+                      errors.fullName ? 'border-red-500 bg-white text-gray-900' : 'border-gray-300 bg-white text-gray-900'
                     }`}
                     placeholder="Enter your full name"
                   />
-                  {errors.fullName && <p className="text-error text-sm mt-1">{errors.fullName}</p>}
+                  {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-text-primary mb-2">
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
                     Email Address *
                   </label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300 ${
-                      errors.email ? 'border-error bg-white text-text-primary' : 'border-border-color bg-white text-text-primary'
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 ${
+                      errors.email ? 'border-red-500 bg-white text-gray-900' : 'border-gray-300 bg-white text-gray-900'
                     }`}
                     placeholder="Enter your email address"
                   />
-                  {errors.email && <p className="text-error text-sm mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-text-primary mb-2">
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
                     Phone Number *
                     {phoneVerification.isVerified && (
-                      <span className="ml-2 text-neon-green text-xs flex items-center">
+                      <span className="ml-2 text-green-600 text-xs flex items-center">
                         <Check className="w-3 h-3 mr-1" /> Verified
                       </span>
                     )}
@@ -408,8 +408,8 @@ if (error) {
                       country={'us'}
                       value={formData.phone}
                       onChange={handlePhoneChange}
-                      inputClass={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300 ${
-                        errors.phone ? 'border-error bg-white text-text-primary' : 'border-border-color bg-white text-text-primary'
+                      inputClass={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 ${
+                        errors.phone ? 'border-red-500 bg-white text-gray-900' : 'border-gray-300 bg-white text-gray-900'
                       }`}
                       containerClass="w-full"
                       disabled={phoneVerification.isVerified || phoneVerification.isVerifying}
@@ -418,22 +418,22 @@ if (error) {
                       <button
                         type="button"
                         onClick={startPhoneVerification}
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-accent-primary text-white rounded-lg text-sm hover:bg-accent-secondary transition-colors"
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors"
                       >
                         Verify
                       </button>
                     )}
                   </div>
-                  {errors.phone && <p className="text-error text-sm mt-1">{errors.phone}</p>}
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                   
                   {/* Phone Verification UI */}
                   {phoneVerification.isVerifying && (
-                    <div className="mt-3 p-3 bg-secondary rounded-lg border border-accent-primary/30">
+                    <div className="mt-3 p-3 bg-gray-50 rounded-lg border border-blue-300">
                       <div className="flex items-center gap-2 mb-2">
-                        <Shield className="w-4 h-4 text-accent-primary" />
-                        <p className="text-sm font-medium">Verification Code</p>
+                        <Shield className="w-4 h-4 text-blue-600" />
+                        <p className="text-sm font-medium text-gray-900">Verification Code</p>
                       </div>
-                      <p className="text-text-secondary text-xs mb-3">
+                      <p className="text-gray-700 text-xs mb-3">
                         We've sent a verification code to {formData.phone}
                       </p>
                       <div className="flex gap-2">
@@ -442,39 +442,39 @@ if (error) {
                           value={phoneVerification.verificationCode}
                           onChange={(e) => setPhoneVerification(prev => ({ ...prev, verificationCode: e.target.value }))}
                           placeholder="Enter code"
-                          className="flex-1 px-3 py-2 border border-border-color rounded-lg text-sm"
+                          className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900"
                         />
                         <button
                           type="button"
                           onClick={verifyPhoneCode}
-                          className="px-3 py-2 bg-accent-primary text-white rounded-lg text-sm hover:bg-accent-secondary transition-colors"
+                          className="px-3 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors"
                         >
                           Verify
                         </button>
                         <button
                           type="button"
                           onClick={cancelVerification}
-                          className="px-3 py-2 bg-tertiary text-text-secondary rounded-lg text-sm hover:bg-tertiary/80 transition-colors"
+                          className="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300 transition-colors"
                         >
                           Cancel
                         </button>
                       </div>
                       {phoneVerification.error && (
-                        <p className="text-error text-xs mt-2">{phoneVerification.error}</p>
+                        <p className="text-red-500 text-xs mt-2">{phoneVerification.error}</p>
                       )}
                     </div>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-text-primary mb-2">
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
                     Company Name
                   </label>
                   <input
                     type="text"
                     value={formData.company}
                     onChange={(e) => handleInputChange('company', e.target.value)}
-                    className="w-full px-4 py-3 border border-border-color bg-white text-text-primary rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your company name (optional)"
                   />
                 </div>
@@ -483,11 +483,11 @@ if (error) {
 
             {/* Industry Selection */}
             <div className="mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl font-bold text-text-primary mb-6 sm:mb-8 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-accent-secondary" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center gap-2">
+                <Zap className="w-6 h-6 text-purple-600" />
                 <span className="relative">
                   Industry *
-                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-accent-secondary/50"></span>
+                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-purple-600/50"></span>
                 </span>
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
@@ -498,17 +498,17 @@ if (error) {
                     whileTap={{ scale: 0.95 }}
                     className={`cursor-pointer p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 ${
                       formData.industry === industry.id
-                        ? 'border-accent-primary bg-secondary'
-                        : 'border-border-color hover:border-accent-primary/50 bg-white'
+                        ? 'border-blue-600 bg-blue-50'
+                        : 'border-gray-300 hover:border-blue-400 bg-white'
                     }`}
                     onClick={() => handleInputChange('industry', industry.id)}
                   >
                     <div className="text-center">
                       <industry.icon className={`w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-1 sm:mb-2 ${
-                        formData.industry === industry.id ? 'text-accent-primary' : 'text-text-secondary'
+                        formData.industry === industry.id ? 'text-blue-600' : 'text-gray-600'
                       }`} />
                       <p className={`text-xs sm:text-sm font-medium ${
-                        formData.industry === industry.id ? 'text-accent-primary' : 'text-text-secondary'
+                        formData.industry === industry.id ? 'text-blue-600' : 'text-gray-600'
                       }`}>
                         {industry.name}
                       </p>
@@ -521,11 +521,11 @@ if (error) {
 
             {/* Services Selection */}
             <div className="mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl font-bold text-text-primary mb-6 sm:mb-8 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-accent-tertiary" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center gap-2">
+                <Zap className="w-6 h-6 text-green-600" />
                 <span className="relative">
                   Services Needed *
-                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-accent-tertiary/50"></span>
+                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-green-600/50"></span>
                 </span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -536,22 +536,22 @@ if (error) {
                     whileTap={{ scale: 0.98 }}
                     className={`cursor-pointer p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 ${
                       formData.services.includes(service.id)
-                        ? 'border-accent-tertiary bg-secondary'
-                        : 'border-border-color hover:border-accent-tertiary/50 bg-white'
+                        ? 'border-green-600 bg-green-50'
+                        : 'border-gray-300 hover:border-green-400 bg-white'
                     }`}
                     onClick={() => handleServiceToggle(service.id)}
                   >
                     <div className="flex items-center">
                       <service.icon className={`w-6 h-6 mr-3 ${
-                        formData.services.includes(service.id) ? 'text-accent-tertiary' : 'text-text-secondary'
+                        formData.services.includes(service.id) ? 'text-green-600' : 'text-gray-600'
                       }`} />
                       <p className={`font-medium ${
-                        formData.services.includes(service.id) ? 'text-accent-tertiary' : 'text-text-secondary'
+                        formData.services.includes(service.id) ? 'text-green-600' : 'text-gray-600'
                       }`}>
                         {service.name}
                       </p>
                       {formData.services.includes(service.id) && (
-                        <CheckCircle className="w-5 h-5 text-accent-tertiary ml-auto" />
+                        <CheckCircle className="w-5 h-5 text-green-600 ml-auto" />
                       )}
                     </div>
                   </motion.div>
@@ -562,39 +562,39 @@ if (error) {
 
             {/* Project Details */}
             <div className="mb-8 sm:mb-12">
-              <h2 className="text-xl sm:text-2xl font-bold text-text-primary mb-6 sm:mb-8 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-accent-primary" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center gap-2">
+                <Zap className="w-6 h-6 text-blue-600" />
                 <span className="relative">
                   Project Details
-                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-accent-primary/50"></span>
+                  <span className="absolute -bottom-1 left-0 w-1/3 h-0.5 bg-blue-600/50"></span>
                 </span>
               </h2>
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-text-primary mb-2">
+                  <label className="block text-sm font-medium text-gray-900 mb-2">
                     Project Description *
                   </label>
                   <textarea
                     value={formData.projectDescription}
                     onChange={(e) => handleInputChange('projectDescription', e.target.value)}
                     rows={4}
-                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300 ${
-                      errors.projectDescription ? 'border-error bg-white text-text-primary' : 'border-border-color bg-white text-text-primary'
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300 ${
+                      errors.projectDescription ? 'border-red-500 bg-white text-gray-900' : 'border-gray-300 bg-white text-gray-900'
                     }`}
                     placeholder="Describe your project requirements, goals, and any specific features you need..."
                   />
-                  {errors.projectDescription && <p className="text-error text-sm mt-1">{errors.projectDescription}</p>}
+                  {errors.projectDescription && <p className="text-red-500 text-sm mt-1">{errors.projectDescription}</p>}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-text-primary mb-2">
+                    <label className="block text-sm font-medium text-gray-900 mb-2">
                       Budget Range
                     </label>
                     <select
                       value={formData.budget}
                       onChange={(e) => handleInputChange('budget', e.target.value)}
-                      className="w-full px-4 py-3 border border-border-color bg-white text-text-primary rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select budget range</option>
                       <option value="under-10k">Under $10,000</option>
@@ -606,13 +606,13 @@ if (error) {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-text-primary mb-2">
+                    <label className="block text-sm font-medium text-gray-900 mb-2">
                       Timeline
                     </label>
                     <select
                       value={formData.timeline}
                       onChange={(e) => handleInputChange('timeline', e.target.value)}
-                      className="w-full px-4 py-3 border border-border-color bg-white text-text-primary rounded-xl focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select timeline</option>
                       <option value="asap">ASAP</option>
@@ -632,12 +632,12 @@ if (error) {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 bg-error/10 border border-error/50 rounded-xl p-4 flex items-center gap-3"
+                  className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4 flex items-center gap-3"
                 >
-                  <div className="w-5 h-5 bg-error rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-xs">!</span>
                   </div>
-                  <span className="text-error text-sm">{errors.submit}</span>
+                  <span className="text-red-600 text-sm">{errors.submit}</span>
                 </motion.div>
               )}
               
@@ -649,13 +649,13 @@ if (error) {
                   whileTap={{ scale: 0.95 }}
                   className={`inline-flex items-center px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ${
                     isSubmitting
-                      ? 'bg-secondary text-text-secondary cursor-not-allowed border border-border-color'
-                      : 'stripe-button'
+                      ? 'bg-gray-200 text-gray-500 cursor-not-allowed border border-gray-300'
+                      : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl'
                   }`}
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-text-secondary" />
+                      <Loader className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-gray-500" />
                       Submitting...
                     </>
                   ) : (

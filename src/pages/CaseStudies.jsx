@@ -129,7 +129,7 @@ const CaseStudies = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary to-primary-dark">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,23 +139,23 @@ const CaseStudies = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
-              Success <span className="text-accent-primary">Stories</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Success <span className="text-blue-600">Stories</span>
             </h1>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
               Discover how we've helped businesses across industries transform their operations and achieve remarkable results.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-text-secondary">
+            <div className="flex flex-wrap justify-center gap-6 text-gray-600">
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-accent-primary" />
+                <TrendingUp className="w-5 h-5 text-blue-600" />
                 <span>200+ Projects</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-accent-primary" />
+                <Users className="w-5 h-5 text-blue-600" />
                 <span>150+ Clients</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-accent-primary" />
+                <Award className="w-5 h-5 text-blue-600" />
                 <span>98% Success Rate</span>
               </div>
             </div>
@@ -164,7 +164,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-secondary/50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -176,11 +176,11 @@ const CaseStudies = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-accent-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-accent-primary" />
+                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <div className="text-3xl font-bold text-text-primary mb-2">{stat.value}</div>
-                <div className="text-text-secondary text-sm">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <div className="text-gray-700 text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -197,10 +197,10 @@ const CaseStudies = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Featured Case Studies
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p className="text-gray-700 max-w-2xl mx-auto">
               Real results from real clients. See how our solutions have transformed businesses across industries.
             </p>
           </motion.div>
@@ -215,50 +215,50 @@ const CaseStudies = () => {
                 viewport={{ once: true }}
                 className="group cursor-pointer"
               >
-                <div className={`bg-gradient-to-br ${study.gradient} rounded-2xl p-8 h-full shadow-2xl border border-white/20 backdrop-blur-sm hover:shadow-3xl transition-all duration-300`}>
+                <div className="bg-white rounded-2xl p-8 h-full shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
-                      <study.icon className="w-8 h-8 text-white" />
+                    <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <study.icon className="w-8 h-8 text-blue-600" />
                     </div>
                     <div className="text-right">
-                      <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium text-white">
+                      <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-700">
                         {study.industry}
                       </span>
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-white mb-2">{study.title}</h3>
-                  <p className="text-white/80 text-sm mb-6">{study.client}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{study.title}</h3>
+                  <p className="text-gray-600 text-sm mb-6">{study.client}</p>
                   
                   <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-2">Challenge:</h4>
-                    <p className="text-white/90 text-sm mb-4">{study.challenge}</p>
+                    <h4 className="text-gray-900 font-semibold mb-2">Challenge:</h4>
+                    <p className="text-gray-700 text-sm mb-4">{study.challenge}</p>
                     
-                    <h4 className="text-white font-semibold mb-2">Solution:</h4>
-                    <p className="text-white/90 text-sm mb-4">{study.solution}</p>
+                    <h4 className="text-gray-900 font-semibold mb-2">Solution:</h4>
+                    <p className="text-gray-700 text-sm mb-4">{study.solution}</p>
                   </div>
                   
                   <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Results:</h4>
+                    <h4 className="text-gray-900 font-semibold mb-3">Results:</h4>
                     <div className="space-y-2">
                       {study.results.map((result, i) => (
                         <div key={i} className="flex items-center justify-between">
-                          <span className="text-white/80 text-sm">{result.metric}:</span>
+                          <span className="text-gray-600 text-sm">{result.metric}:</span>
                           <div className="text-right">
-                            <div className="text-white font-bold">{result.value}</div>
-                            <div className="text-white/60 text-xs">{result.description}</div>
+                            <div className="text-blue-600 font-bold">{result.value}</div>
+                            <div className="text-gray-500 text-xs">{result.description}</div>
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between text-white/80 text-sm mb-6">
+                  <div className="flex items-center justify-between text-gray-600 text-sm mb-6">
                     <span>Duration: {study.duration}</span>
                     <span>Team: {study.team}</span>
                   </div>
                   
-                  <button className="w-full bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 border border-white/30 flex items-center justify-center gap-2">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
                     View Full Case Study
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -270,7 +270,7 @@ const CaseStudies = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-accent-primary to-accent-secondary">
+      <section className="py-16 bg-blue-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -284,7 +284,7 @@ const CaseStudies = () => {
             <p className="text-white/90 text-lg mb-8">
               Let's discuss how we can transform your business with our innovative solutions.
             </p>
-            <button className="bg-white text-accent-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
               Get Started Today
             </button>
           </motion.div>

@@ -59,7 +59,7 @@ const MarketplaceSection = () => {
       buttonText: 'Coming Soon',
       action: () => {
         console.log('Ecommerce card clicked');
-        navigate('/marketplace');
+        navigate('/products/ecommerce-auto-pilot');
       }
     },
     {

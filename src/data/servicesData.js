@@ -14,7 +14,8 @@ import {
   Monitor,
   Layers,
   GitBranch,
-  Container
+  Container,
+  BarChart3
 } from 'lucide-react';
 
 export const servicesData = {
@@ -1081,6 +1082,272 @@ These AI agents can operate independently or collaborate with human teams, provi
         previewImage: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
         description: 'Autonomous threat detection and response system',
         techUsed: ['Anomaly Detection', 'Behavioral Analysis', 'Incident Response', 'SIEM Integration']
+      }
+    ]
+  },
+
+  'data-analytics-visualization': {
+    id: 'data-analytics-visualization',
+    title: 'Data Analytics & Visualization',
+    icon: BarChart3,
+    gradient: 'from-indigo-500 to-purple-500',
+    description: `Transform your data into actionable insights with advanced analytics and stunning visualizations that drive informed business decisions. Our data analytics expertise spans business intelligence, predictive modeling, real-time dashboards, and interactive data exploration tools.
+
+We help organizations unlock the hidden value in their data through sophisticated analysis techniques, machine learning algorithms, and intuitive visualization interfaces that make complex data accessible to stakeholders at all levels.`,
+    
+    techStack: [
+      { name: 'Python', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Analytics' },
+      { name: 'R', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg', category: 'Statistics' },
+      { name: 'Tableau', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tableau/tableau-original.svg', category: 'Visualization' },
+      { name: 'Power BI', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoft/microsoft-original.svg', category: 'BI' },
+      { name: 'D3.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/d3js/d3js-original.svg', category: 'Web Viz' },
+      { name: 'Apache Spark', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/apache/apache-original.svg', category: 'Big Data' },
+      { name: 'PostgreSQL', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg', category: 'Database' },
+      { name: 'AWS', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Cloud' }
+    ],
+
+    methodology: [
+      {
+        phase: 'Data Discovery & Assessment',
+        steps: [
+          'Data source identification and mapping',
+          'Data quality assessment and cleaning',
+          'Business requirements analysis',
+          'Analytics strategy development'
+        ]
+      },
+      {
+        phase: 'Data Preparation & Modeling',
+        steps: [
+          'ETL pipeline development',
+          'Data warehouse design and implementation',
+          'Statistical modeling and machine learning',
+          'Data validation and testing'
+        ]
+      },
+      {
+        phase: 'Visualization & Dashboard Development',
+        steps: [
+          'Interactive dashboard design',
+          'Custom visualization creation',
+          'Real-time data integration',
+          'User experience optimization'
+        ]
+      },
+      {
+        phase: 'Deployment & Training',
+        steps: [
+          'Production deployment and monitoring',
+          'User training and documentation',
+          'Performance optimization',
+          'Continuous improvement and updates'
+        ]
+      }
+    ],
+
+    industrySolutions: [
+      {
+        sector: 'E-commerce',
+        websiteName: 'SalesAnalytics',
+        previewImage: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Customer behavior analysis and sales forecasting platform',
+        techUsed: ['Python', 'Tableau', 'Machine Learning', 'Real-time Analytics']
+      },
+      {
+        sector: 'Healthcare',
+        websiteName: 'HealthInsights',
+        previewImage: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Patient outcome prediction and treatment optimization',
+        techUsed: ['R', 'Power BI', 'Predictive Modeling', 'Clinical Data']
+      },
+      {
+        sector: 'Finance',
+        websiteName: 'RiskAnalytics',
+        previewImage: 'https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Credit risk assessment and fraud detection system',
+        techUsed: ['Python', 'Apache Spark', 'Machine Learning', 'Real-time Processing']
+      },
+      {
+        sector: 'Manufacturing',
+        websiteName: 'QualityControl',
+        previewImage: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Production quality monitoring and predictive maintenance',
+        techUsed: ['IoT Analytics', 'D3.js', 'Time Series', 'Anomaly Detection']
+      },
+      {
+        sector: 'Marketing',
+        websiteName: 'CampaignAnalytics',
+        previewImage: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Multi-channel marketing performance and ROI analysis',
+        techUsed: ['Tableau', 'Python', 'Attribution Modeling', 'Customer Journey']
+      },
+      {
+        sector: 'Education',
+        websiteName: 'LearningAnalytics',
+        previewImage: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Student performance tracking and learning outcome prediction',
+        techUsed: ['R', 'Power BI', 'Educational Data Mining', 'Predictive Analytics']
+      },
+      {
+        sector: 'Retail',
+        websiteName: 'InventoryOptimization',
+        previewImage: 'https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Demand forecasting and inventory management optimization',
+        techUsed: ['Python', 'Time Series', 'Machine Learning', 'Supply Chain Analytics']
+      },
+      {
+        sector: 'Energy',
+        websiteName: 'EnergyEfficiency',
+        previewImage: 'https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Energy consumption analysis and optimization recommendations',
+        techUsed: ['IoT Data', 'D3.js', 'Energy Analytics', 'Sustainability Metrics']
+      },
+      {
+        sector: 'Transportation',
+        websiteName: 'FleetAnalytics',
+        previewImage: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Fleet performance monitoring and route optimization',
+        techUsed: ['GPS Data', 'Tableau', 'Route Optimization', 'Performance Metrics']
+      },
+      {
+        sector: 'Real Estate',
+        websiteName: 'PropertyAnalytics',
+        previewImage: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Property valuation and market trend analysis',
+        techUsed: ['Geospatial Analytics', 'Power BI', 'Market Analysis', 'Property Valuation']
+      }
+    ]
+  },
+
+  'custom-mcp-servers': {
+    id: 'custom-mcp-servers',
+    title: 'Custom MCP Servers',
+    icon: Server,
+    gradient: 'from-green-500 to-emerald-500',
+    description: `Build custom Model Context Protocol (MCP) servers that enable seamless integration between AI models and your existing systems. Our MCP server development expertise allows you to create intelligent, context-aware applications that can interact with your data, APIs, and business logic in real-time.
+
+We design and implement MCP servers that extend AI capabilities beyond standard interactions, enabling sophisticated workflows, data processing, and system integrations that transform how AI models understand and interact with your business environment.`,
+    
+    techStack: [
+      { name: 'Python', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg', category: 'Backend' },
+      { name: 'Node.js', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg', category: 'Runtime' },
+      { name: 'FastAPI', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg', category: 'API Framework' },
+      { name: 'OpenAI', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/openai/openai-original.svg', category: 'AI Integration' },
+      { name: 'PostgreSQL', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg', category: 'Database' },
+      { name: 'Redis', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg', category: 'Cache' },
+      { name: 'Docker', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg', category: 'Containerization' },
+      { name: 'AWS', logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg', category: 'Cloud' }
+    ],
+
+    methodology: [
+      {
+        phase: 'MCP Architecture Design',
+        steps: [
+          'System integration requirements analysis',
+          'MCP server architecture planning',
+          'API endpoint design and specification',
+          'Security and authentication strategy'
+        ]
+      },
+      {
+        phase: 'Server Development',
+        steps: [
+          'MCP protocol implementation',
+          'Custom tool and resource development',
+          'Data processing and transformation logic',
+          'Error handling and logging implementation'
+        ]
+      },
+      {
+        phase: 'Integration & Testing',
+        steps: [
+          'AI model integration and testing',
+          'End-to-end workflow validation',
+          'Performance optimization and scaling',
+          'Security testing and vulnerability assessment'
+        ]
+      },
+      {
+        phase: 'Deployment & Monitoring',
+        steps: [
+          'Production deployment and configuration',
+          'Monitoring and alerting setup',
+          'Documentation and user training',
+          'Ongoing maintenance and updates'
+        ]
+      }
+    ],
+
+    industrySolutions: [
+      {
+        sector: 'CRM Integration',
+        websiteName: 'CRM-MCP',
+        previewImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'AI-powered CRM data analysis and customer insights',
+        techUsed: ['Python', 'Salesforce API', 'OpenAI', 'Data Processing']
+      },
+      {
+        sector: 'E-commerce',
+        websiteName: 'ShopMCP',
+        previewImage: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Product catalog management and inventory optimization',
+        techUsed: ['Node.js', 'Shopify API', 'Machine Learning', 'Inventory Analytics']
+      },
+      {
+        sector: 'Healthcare',
+        websiteName: 'MedMCP',
+        previewImage: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Medical record analysis and patient data processing',
+        techUsed: ['Python', 'FHIR API', 'HIPAA Compliance', 'Medical AI']
+      },
+      {
+        sector: 'Finance',
+        websiteName: 'FinanceMCP',
+        previewImage: 'https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Financial data analysis and risk assessment',
+        techUsed: ['Python', 'Financial APIs', 'Risk Modeling', 'Real-time Processing']
+      },
+      {
+        sector: 'Education',
+        websiteName: 'EduMCP',
+        previewImage: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Learning management system integration and analytics',
+        techUsed: ['Node.js', 'LMS APIs', 'Learning Analytics', 'Student Data']
+      },
+      {
+        sector: 'Manufacturing',
+        websiteName: 'FactoryMCP',
+        previewImage: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Production monitoring and quality control automation',
+        techUsed: ['Python', 'IoT Integration', 'Quality Analytics', 'Predictive Maintenance']
+      },
+      {
+        sector: 'Real Estate',
+        websiteName: 'PropertyMCP',
+        previewImage: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Property listing management and market analysis',
+        techUsed: ['Node.js', 'MLS APIs', 'Market Analysis', 'Property Valuation']
+      },
+      {
+        sector: 'Logistics',
+        websiteName: 'LogisticsMCP',
+        previewImage: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Supply chain optimization and tracking automation',
+        techUsed: ['Python', 'Shipping APIs', 'Route Optimization', 'Supply Chain Analytics']
+      },
+      {
+        sector: 'Marketing',
+        websiteName: 'MarketingMCP',
+        previewImage: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Campaign management and performance analytics',
+        techUsed: ['Node.js', 'Marketing APIs', 'Campaign Analytics', 'ROI Optimization']
+      },
+      {
+        sector: 'Legal',
+        websiteName: 'LegalMCP',
+        previewImage: 'https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Document analysis and legal research automation',
+        techUsed: ['Python', 'Legal APIs', 'Document Processing', 'Legal Research']
       }
     ]
   }
