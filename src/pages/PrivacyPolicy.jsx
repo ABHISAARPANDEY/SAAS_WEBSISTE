@@ -137,16 +137,16 @@ To exercise these rights, please contact us using the information provided in th
       icon: Shield,
       content: `If you have any questions about this Privacy Policy or our data practices, please contact us:
 
-Email: privacy@ourcompany.com
-Phone: +1 (555) 123-4567
-Address: 123 Business Street, City, State 12345
+Email: info@teckstaq.com
+Phone: +91 9119671030
+Address: Innvincible Young Technologies Private Limited Innov8 Okhla 3rd Floor 211, Okhla Indl, Estate Phase - III, Delhi, India 110020
 
 Data Protection Officer:
-Email: dpo@ourcompany.com
+Email: info@teckstaq.com
 
 We will respond to your inquiry within 30 days of receipt.
 
-Last Updated: January 2024`
+Last Updated: September 2025`
     }
   ];
 
@@ -186,7 +186,7 @@ Last Updated: January 2024`
               Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.
             </p>
             <div className="mt-8 text-sm text-gray-600">
-              Last updated: January 2024
+              Last updated: September 2025
             </div>
           </motion.div>
         </div>
