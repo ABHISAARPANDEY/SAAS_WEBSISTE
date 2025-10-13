@@ -64,9 +64,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Building2,
     pricing: {
-      basic: { price: 299, features: ['Up to 100 patients', 'Basic scheduling', 'Email support'] },
-      premium: { price: 599, features: ['Up to 1000 patients', 'Advanced scheduling', 'Telemedicine', 'Priority support'] },
-      superPremium: { price: 999, features: ['Unlimited patients', 'Full customization', 'API access', '24/7 support'] }
+      basic: { price: 24950, features: ['Up to 100 patients', 'Basic scheduling', 'Email support'] },
+      premium: { price: 49950, features: ['Up to 1000 patients', 'Advanced scheduling', 'Telemedicine', 'Priority support'] },
+      superPremium: { price: 83350, features: ['Unlimited patients', 'Full customization', 'API access', '24/7 support'] }
     },
     features: ['Patient Management', 'Appointment Scheduling', 'Medical Records', 'Telemedicine', 'Billing Integration'],
     techSpecs: {
@@ -85,9 +85,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: CreditCard,
     pricing: {
-      basic: { price: 499, features: ['Basic banking features', 'Payment processing', 'Standard support'] },
-      premium: { price: 899, features: ['Advanced analytics', 'Loan management', 'Multi-currency', 'Priority support'] },
-      superPremium: { price: 1499, features: ['Full banking suite', 'Custom integrations', 'Compliance tools', 'Dedicated support'] }
+      basic: { price: 41650, features: ['Basic banking features', 'Payment processing', 'Standard support'] },
+      premium: { price: 75050, features: ['Advanced analytics', 'Loan management', 'Multi-currency', 'Priority support'] },
+      superPremium: { price: 125150, features: ['Full banking suite', 'Custom integrations', 'Compliance tools', 'Dedicated support'] }
     },
     features: ['Digital Banking', 'Payment Processing', 'Loan Management', 'Financial Analytics', 'Compliance Tools'],
     techSpecs: {
@@ -106,9 +106,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: ShoppingCart,
     pricing: {
-      basic: { price: 199, features: ['Up to 100 products', 'Basic payment gateway', 'Email support'] },
-      premium: { price: 399, features: ['Up to 1000 products', 'Advanced analytics', 'Multi-payment options', 'Priority support'] },
-      superPremium: { price: 699, features: ['Unlimited products', 'Custom integrations', 'Advanced SEO', '24/7 support'] }
+      basic: { price: 16615, features: ['Up to 100 products', 'Basic payment gateway', 'Email support'] },
+      premium: { price: 33315, features: ['Up to 1000 products', 'Advanced analytics', 'Multi-payment options', 'Priority support'] },
+      superPremium: { price: 58350, features: ['Unlimited products', 'Custom integrations', 'Advanced SEO', '24/7 support'] }
     },
     features: ['Product Management', 'Payment Gateway', 'Inventory Tracking', 'Analytics Dashboard', 'SEO Optimization'],
     techSpecs: {
@@ -127,9 +127,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: GraduationCap,
     pricing: {
-      basic: { price: 149, features: ['Up to 50 students', 'Basic course tools', 'Email support'] },
-      premium: { price: 299, features: ['Up to 500 students', 'Advanced assessments', 'Video streaming', 'Priority support'] },
-      superPremium: { price: 499, features: ['Unlimited students', 'Custom branding', 'API access', '24/7 support'] }
+      basic: { price: 12440, features: ['Up to 50 students', 'Basic course tools', 'Email support'] },
+      premium: { price: 24950, features: ['Up to 500 students', 'Advanced assessments', 'Video streaming', 'Priority support'] },
+      superPremium: { price: 41650, features: ['Unlimited students', 'Custom branding', 'API access', '24/7 support'] }
     },
     features: ['Course Management', 'Student Tracking', 'Assessment Tools', 'Video Streaming', 'Progress Analytics'],
     techSpecs: {
@@ -148,9 +148,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Utensils,
     pricing: {
-      basic: { price: 249, features: ['Up to 20 restaurants', 'Basic order management', 'Email support'] },
-      premium: { price: 449, features: ['Up to 100 restaurants', 'Real-time tracking', 'Driver app', 'Priority support'] },
-      superPremium: { price: 749, features: ['Unlimited restaurants', 'Advanced analytics', 'Custom integrations', '24/7 support'] }
+      basic: { price: 20790, features: ['Up to 20 restaurants', 'Basic order management', 'Email support'] },
+      premium: { price: 37490, features: ['Up to 100 restaurants', 'Real-time tracking', 'Driver app', 'Priority support'] },
+      superPremium: { price: 62550, features: ['Unlimited restaurants', 'Advanced analytics', 'Custom integrations', '24/7 support'] }
     },
     features: ['Restaurant Management', 'Order Tracking', 'Delivery Optimization', 'Payment Integration', 'Customer App'],
     techSpecs: {
@@ -169,9 +169,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Store,
     pricing: {
-      basic: { price: 99, features: ['Single location', 'Basic POS', 'Email support'] },
-      premium: { price: 199, features: ['Multiple locations', 'Inventory sync', 'Customer loyalty', 'Priority support'] },
-      superPremium: { price: 349, features: ['Unlimited locations', 'Advanced analytics', 'Custom integrations', '24/7 support'] }
+      basic: { price: 8265, features: ['Single location', 'Basic POS', 'Email support'] },
+      premium: { price: 16615, features: ['Multiple locations', 'Inventory sync', 'Customer loyalty', 'Priority support'] },
+      superPremium: { price: 29140, features: ['Unlimited locations', 'Advanced analytics', 'Custom integrations', '24/7 support'] }
     },
     features: ['Point of Sale', 'Inventory Management', 'Customer Loyalty', 'Sales Analytics', 'Multi-location Support'],
     techSpecs: {
@@ -190,9 +190,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Building2,
     pricing: {
-      basic: { price: 999, features: ['Basic banking operations', 'Standard compliance', 'Business hours support'] },
-      premium: { price: 1999, features: ['Advanced features', 'Multi-currency', 'Extended compliance', 'Priority support'] },
-      superPremium: { price: 3999, features: ['Enterprise features', 'Custom workflows', 'Full compliance suite', 'Dedicated support'] }
+      basic: { price: 83350, features: ['Basic banking operations', 'Standard compliance', 'Business hours support'] },
+      premium: { price: 166650, features: ['Advanced features', 'Multi-currency', 'Extended compliance', 'Priority support'] },
+      superPremium: { price: 333300, features: ['Enterprise features', 'Custom workflows', 'Full compliance suite', 'Dedicated support'] }
     },
     features: ['Account Management', 'Transaction Processing', 'Regulatory Compliance', 'Risk Management', 'Audit Trail'],
     techSpecs: {
@@ -211,9 +211,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Home,
     pricing: {
-      basic: { price: 179, features: ['Up to 50 properties', 'Basic tenant management', 'Email support'] },
-      premium: { price: 329, features: ['Up to 200 properties', 'Maintenance tracking', 'Financial reports', 'Priority support'] },
-      superPremium: { price: 549, features: ['Unlimited properties', 'Advanced analytics', 'Custom integrations', '24/7 support'] }
+      basic: { price: 14940, features: ['Up to 50 properties', 'Basic tenant management', 'Email support'] },
+      premium: { price: 27450, features: ['Up to 200 properties', 'Maintenance tracking', 'Financial reports', 'Priority support'] },
+      superPremium: { price: 45840, features: ['Unlimited properties', 'Advanced analytics', 'Custom integrations', '24/7 support'] }
     },
     features: ['Property Listings', 'Tenant Management', 'Maintenance Tracking', 'Financial Reports', 'Document Management'],
     techSpecs: {
@@ -232,9 +232,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Plane,
     pricing: {
-      basic: { price: 399, features: ['Basic booking features', 'Payment processing', 'Email support'] },
-      premium: { price: 699, features: ['Advanced search', 'Multi-provider integration', 'Mobile app', 'Priority support'] },
-      superPremium: { price: 1199, features: ['White-label solution', 'Custom integrations', 'Advanced analytics', '24/7 support'] }
+      basic: { price: 33315, features: ['Basic booking features', 'Payment processing', 'Email support'] },
+      premium: { price: 58350, features: ['Advanced search', 'Multi-provider integration', 'Mobile app', 'Priority support'] },
+      superPremium: { price: 100150, features: ['White-label solution', 'Custom integrations', 'Advanced analytics', '24/7 support'] }
     },
     features: ['Flight Search', 'Hotel Reservations', 'Itinerary Management', 'Payment Processing', 'Mobile App'],
     techSpecs: {
@@ -253,9 +253,9 @@ export const readyMadeSolutions = [
     image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Play,
     pricing: {
-      basic: { price: 599, features: ['Up to 1000 users', 'Basic streaming', 'Email support'] },
-      premium: { price: 1199, features: ['Up to 10000 users', 'HD streaming', 'Analytics dashboard', 'Priority support'] },
-      superPremium: { price: 2199, features: ['Unlimited users', '4K streaming', 'Advanced analytics', '24/7 support'] }
+      basic: { price: 49950, features: ['Up to 1000 users', 'Basic streaming', 'Email support'] },
+      premium: { price: 100150, features: ['Up to 10000 users', 'HD streaming', 'Analytics dashboard', 'Priority support'] },
+      superPremium: { price: 183650, features: ['Unlimited users', '4K streaming', 'Advanced analytics', '24/7 support'] }
     },
     features: ['Content Management', 'User Subscriptions', 'Video Streaming', 'Analytics Dashboard', 'Mobile Apps'],
     techSpecs: {
@@ -292,8 +292,8 @@ export const apiKeys = [
     usageMetrics: '99.9% delivery rate, 50ms avg response time',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic email sending', 'Simple templates'] },
-      basic: { requests: 10000, price: 29, features: ['Advanced templates', 'Analytics', 'Bounce handling'] },
-      premium: { requests: 100000, price: 99, features: ['Priority delivery', 'Custom domains', 'Dedicated IP'] }
+      basic: { requests: 10000, price: 2420, features: ['Advanced templates', 'Analytics', 'Bounce handling'] },
+      premium: { requests: 100000, price: 8265, features: ['Priority delivery', 'Custom domains', 'Dedicated IP'] }
     },
     documentation: {
       overview: 'Send transactional and marketing emails with high deliverability rates.',
@@ -315,8 +315,8 @@ export const apiKeys = [
     usageMetrics: 'PCI DSS compliant, 150+ currencies supported',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic payments', 'Test mode'] },
-      basic: { requests: 10000, price: 49, features: ['Live payments', 'Webhooks', 'Refunds'] },
-      premium: { requests: 100000, price: 149, features: ['Advanced fraud detection', 'Recurring payments', 'Multi-currency'] }
+      basic: { requests: 10000, price: 4090, features: ['Live payments', 'Webhooks', 'Refunds'] },
+      premium: { requests: 100000, price: 12440, features: ['Advanced fraud detection', 'Recurring payments', 'Multi-currency'] }
     },
     documentation: {
       overview: 'Process payments securely with comprehensive fraud protection.',
@@ -338,8 +338,8 @@ export const apiKeys = [
     usageMetrics: 'Global coverage, real-time updates',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic geocoding', 'Static maps'] },
-      basic: { requests: 10000, price: 19, features: ['Dynamic maps', 'Routing', 'Traffic data'] },
-      premium: { requests: 100000, price: 79, features: ['Advanced routing', 'Custom styling', 'Offline maps'] }
+      basic: { requests: 10000, price: 1585, features: ['Dynamic maps', 'Routing', 'Traffic data'] },
+      premium: { requests: 100000, price: 6595, features: ['Advanced routing', 'Custom styling', 'Offline maps'] }
     },
     documentation: {
       overview: 'Comprehensive mapping and location services for web and mobile apps.',
@@ -361,8 +361,8 @@ export const apiKeys = [
     usageMetrics: 'Real-time processing, 99.9% uptime',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic tracking', 'Simple reports'] },
-      basic: { requests: 10000, price: 39, features: ['Custom events', 'Dashboards', 'Exports'] },
-      premium: { requests: 100000, price: 129, features: ['Advanced segmentation', 'Real-time alerts', 'API access'] }
+      basic: { requests: 10000, price: 3255, features: ['Custom events', 'Dashboards', 'Exports'] },
+      premium: { requests: 100000, price: 10770, features: ['Advanced segmentation', 'Real-time alerts', 'API access'] }
     },
     documentation: {
       overview: 'Track user behavior and generate actionable insights for your applications.',
@@ -384,8 +384,8 @@ export const apiKeys = [
     usageMetrics: 'Enterprise-grade security, 99.99% uptime',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic auth', 'Email verification'] },
-      basic: { requests: 10000, price: 25, features: ['OAuth providers', 'Password policies', 'Session management'] },
-      premium: { requests: 100000, price: 89, features: ['SSO integration', 'MFA', 'Advanced security'] }
+      basic: { requests: 10000, price: 2085, features: ['OAuth providers', 'Password policies', 'Session management'] },
+      premium: { requests: 100000, price: 7430, features: ['SSO integration', 'MFA', 'Advanced security'] }
     },
     documentation: {
       overview: 'Comprehensive authentication and authorization services for modern applications.',
@@ -407,8 +407,8 @@ export const apiKeys = [
     usageMetrics: 'Global CDN, 99.9% availability',
     pricing: {
       free: { requests: 100, price: 0, features: ['1GB storage', 'Basic upload'] },
-      basic: { requests: 10000, price: 15, features: ['100GB storage', 'CDN delivery', 'Image processing'] },
-      premium: { requests: 100000, price: 59, features: ['1TB storage', 'Advanced processing', 'Backup solutions'] }
+      basic: { requests: 10000, price: 1250, features: ['100GB storage', 'CDN delivery', 'Image processing'] },
+      premium: { requests: 100000, price: 4925, features: ['1TB storage', 'Advanced processing', 'Backup solutions'] }
     },
     documentation: {
       overview: 'Reliable cloud storage with global content delivery and media processing.',
@@ -430,8 +430,8 @@ export const apiKeys = [
     usageMetrics: '200+ countries, 99% delivery rate',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic SMS', 'Delivery reports'] },
-      basic: { requests: 10000, price: 35, features: ['Two-way messaging', 'Number verification', 'Templates'] },
-      premium: { requests: 100000, price: 119, features: ['Premium routes', 'Advanced analytics', 'Dedicated numbers'] }
+      basic: { requests: 10000, price: 2920, features: ['Two-way messaging', 'Number verification', 'Templates'] },
+      premium: { requests: 100000, price: 9935, features: ['Premium routes', 'Advanced analytics', 'Dedicated numbers'] }
     },
     documentation: {
       overview: 'Reliable SMS delivery service with global reach and advanced features.',
@@ -453,8 +453,8 @@ export const apiKeys = [
     usageMetrics: 'Multi-provider sync, real-time updates',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic events', 'Simple scheduling'] },
-      basic: { requests: 10000, price: 29, features: ['Multi-calendar sync', 'Availability checking', 'Reminders'] },
-      premium: { requests: 100000, price: 99, features: ['Advanced scheduling', 'Team calendars', 'Custom integrations'] }
+      basic: { requests: 10000, price: 2420, features: ['Multi-calendar sync', 'Availability checking', 'Reminders'] },
+      premium: { requests: 100000, price: 8265, features: ['Advanced scheduling', 'Team calendars', 'Custom integrations'] }
     },
     documentation: {
       overview: 'Comprehensive calendar management with multi-provider synchronization.',
@@ -476,8 +476,8 @@ export const apiKeys = [
     usageMetrics: 'GDPR compliant, role-based access',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic user profiles', 'Simple permissions'] },
-      basic: { requests: 10000, price: 33, features: ['Advanced profiles', 'Role management', 'Team features'] },
-      premium: { requests: 100000, price: 109, features: ['Enterprise features', 'Custom fields', 'Advanced permissions'] }
+      basic: { requests: 10000, price: 2755, features: ['Advanced profiles', 'Role management', 'Team features'] },
+      premium: { requests: 100000, price: 9100, features: ['Enterprise features', 'Custom fields', 'Advanced permissions'] }
     },
     documentation: {
       overview: 'Comprehensive user management system with advanced permission controls.',
@@ -499,8 +499,8 @@ export const apiKeys = [
     usageMetrics: 'Multi-channel delivery, smart routing',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic notifications', 'Email only'] },
-      basic: { requests: 10000, price: 27, features: ['Multi-channel', 'Templates', 'Scheduling'] },
-      premium: { requests: 100000, price: 97, features: ['Smart routing', 'A/B testing', 'Advanced analytics'] }
+      basic: { requests: 10000, price: 2255, features: ['Multi-channel', 'Templates', 'Scheduling'] },
+      premium: { requests: 100000, price: 8100, features: ['Smart routing', 'A/B testing', 'Advanced analytics'] }
     },
     documentation: {
       overview: 'Unified notification system supporting multiple delivery channels.',
@@ -522,8 +522,8 @@ export const apiKeys = [
     usageMetrics: 'Sub-second response, 99.9% accuracy',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic search', 'Simple filters'] },
-      basic: { requests: 10000, price: 41, features: ['Full-text search', 'Advanced filters', 'Autocomplete'] },
-      premium: { requests: 100000, price: 139, features: ['AI recommendations', 'Analytics', 'Custom ranking'] }
+      basic: { requests: 10000, price: 3420, features: ['Full-text search', 'Advanced filters', 'Autocomplete'] },
+      premium: { requests: 100000, price: 11605, features: ['AI recommendations', 'Analytics', 'Custom ranking'] }
     },
     documentation: {
       overview: 'Advanced search capabilities with machine learning-powered recommendations.',
@@ -545,8 +545,8 @@ export const apiKeys = [
     usageMetrics: 'AI-powered, 50+ formats supported',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic resizing', 'Format conversion'] },
-      basic: { requests: 10000, price: 37, features: ['Advanced processing', 'Optimization', 'Watermarks'] },
-      premium: { requests: 100000, price: 127, features: ['AI recognition', 'Batch processing', 'Custom filters'] }
+      basic: { requests: 10000, price: 3090, features: ['Advanced processing', 'Optimization', 'Watermarks'] },
+      premium: { requests: 100000, price: 10605, features: ['AI recognition', 'Batch processing', 'Custom filters'] }
     },
     documentation: {
       overview: 'Comprehensive image processing with AI-powered content recognition.',
@@ -568,8 +568,8 @@ export const apiKeys = [
     usageMetrics: '95% transcription accuracy, 40+ languages',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic transcription', '5 minutes/month'] },
-      basic: { requests: 10000, price: 45, features: ['Advanced transcription', 'Translation', '100 hours/month'] },
-      premium: { requests: 100000, price: 155, features: ['Real-time processing', 'Music analysis', 'Unlimited hours'] }
+      basic: { requests: 10000, price: 3755, features: ['Advanced transcription', 'Translation', '100 hours/month'] },
+      premium: { requests: 100000, price: 12940, features: ['Real-time processing', 'Music analysis', 'Unlimited hours'] }
     },
     documentation: {
       overview: 'Advanced audio processing with speech recognition and music analysis.',
@@ -591,8 +591,8 @@ export const apiKeys = [
     usageMetrics: '99% OCR accuracy, 50+ document types',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic OCR', 'Text extraction'] },
-      basic: { requests: 10000, price: 43, features: ['Advanced OCR', 'Data extraction', 'Format conversion'] },
-      premium: { requests: 100000, price: 143, features: ['AI classification', 'Batch processing', 'Custom models'] }
+      basic: { requests: 10000, price: 3590, features: ['Advanced OCR', 'Data extraction', 'Format conversion'] },
+      premium: { requests: 100000, price: 11940, features: ['AI classification', 'Batch processing', 'Custom models'] }
     },
     documentation: {
       overview: 'Intelligent document processing with OCR and data extraction capabilities.',
@@ -614,8 +614,8 @@ export const apiKeys = [
     usageMetrics: 'Military-grade encryption, FIPS 140-2 certified',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic encryption', 'Simple key management'] },
-      basic: { requests: 10000, price: 51, features: ['Advanced encryption', 'Key rotation', 'Audit logs'] },
-      premium: { requests: 100000, price: 171, features: ['HSM integration', 'Compliance tools', 'Custom policies'] }
+      basic: { requests: 10000, price: 4260, features: ['Advanced encryption', 'Key rotation', 'Audit logs'] },
+      premium: { requests: 100000, price: 14280, features: ['HSM integration', 'Compliance tools', 'Custom policies'] }
     },
     documentation: {
       overview: 'Enterprise-grade encryption services with comprehensive key management.',
@@ -637,8 +637,8 @@ export const apiKeys = [
     usageMetrics: '1000+ integrations, visual workflow builder',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic workflows', '5 steps max'] },
-      basic: { requests: 10000, price: 47, features: ['Advanced workflows', 'Integrations', 'Scheduling'] },
-      premium: { requests: 100000, price: 157, features: ['Enterprise workflows', 'Custom connectors', 'Advanced analytics'] }
+      basic: { requests: 10000, price: 3925, features: ['Advanced workflows', 'Integrations', 'Scheduling'] },
+      premium: { requests: 100000, price: 13110, features: ['Enterprise workflows', 'Custom connectors', 'Advanced analytics'] }
     },
     documentation: {
       overview: 'Powerful workflow automation with extensive third-party integrations.',
@@ -660,8 +660,8 @@ export const apiKeys = [
     usageMetrics: '20+ platforms, real-time analytics',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic posting', '3 platforms'] },
-      basic: { requests: 10000, price: 39, features: ['Multi-platform posting', 'Analytics', 'Scheduling'] },
-      premium: { requests: 100000, price: 129, features: ['Advanced analytics', 'Team collaboration', 'Custom reports'] }
+      basic: { requests: 10000, price: 3255, features: ['Multi-platform posting', 'Analytics', 'Scheduling'] },
+      premium: { requests: 100000, price: 10770, features: ['Advanced analytics', 'Team collaboration', 'Custom reports'] }
     },
     documentation: {
       overview: 'Comprehensive social media management across multiple platforms.',
@@ -683,8 +683,8 @@ export const apiKeys = [
     usageMetrics: 'Global coverage, hourly updates',
     pricing: {
       free: { requests: 100, price: 0, features: ['Current weather', 'Basic forecasts'] },
-      basic: { requests: 10000, price: 21, features: ['Extended forecasts', 'Historical data', 'Weather maps'] },
-      premium: { requests: 100000, price: 71, features: ['Severe weather alerts', 'Marine data', 'Agricultural data'] }
+      basic: { requests: 10000, price: 1755, features: ['Extended forecasts', 'Historical data', 'Weather maps'] },
+      premium: { requests: 100000, price: 5930, features: ['Severe weather alerts', 'Marine data', 'Agricultural data'] }
     },
     documentation: {
       overview: 'Comprehensive weather data service with global coverage and detailed forecasts.',
@@ -706,8 +706,8 @@ export const apiKeys = [
     usageMetrics: 'Multi-currency, global shipping',
     pricing: {
       free: { requests: 100, price: 0, features: ['Basic product management', 'Simple orders'] },
-      basic: { requests: 10000, price: 55, features: ['Advanced inventory', 'Payment processing', 'Shipping integration'] },
-      premium: { requests: 100000, price: 185, features: ['Multi-store management', 'Advanced analytics', 'Custom integrations'] }
+      basic: { requests: 10000, price: 4590, features: ['Advanced inventory', 'Payment processing', 'Shipping integration'] },
+      premium: { requests: 100000, price: 15450, features: ['Multi-store management', 'Advanced analytics', 'Custom integrations'] }
     },
     documentation: {
       overview: 'Full-featured e-commerce API with comprehensive business management tools.',

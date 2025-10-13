@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCurrency } from '../../contexts/CurrencyContext';
 import { Home, User, Bell, Search, Menu, X, Building, MapPin, DollarSign, Calendar, Users, Settings, LogOut, ChevronRight, Plus, Clock, CheckCircle, AlertCircle, FileText, PenTool as Tool, MessageSquare, ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 const PropertyManager = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { formatPrice } = useCurrency();
   const [activeTab, setActiveTab] = useState('dashboard');
   
   return (
@@ -123,7 +125,7 @@ const PropertyManager = () => {
               </div>
               <span className="text-sm text-gray-500">Monthly</span>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">$48,350</h3>
+            <h3 className="text-2xl font-bold text-gray-900">{formatPrice(4035000)}</h3>
             <p className="text-gray-600 text-sm">Rental income</p>
           </div>
           
@@ -391,7 +393,7 @@ const PropertyManager = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                 <h3 className="text-sm text-gray-500 mb-1">Monthly Income</h3>
-                <p className="text-2xl font-bold text-gray-900">$48,350</p>
+                <p className="text-2xl font-bold text-gray-900">{formatPrice(4035000)}</p>
                 <div className="flex items-center gap-1 text-green-600 text-sm mt-1">
                   <ArrowUpRight className="w-4 h-4" />
                   <span>+2.5% from last month</span>
@@ -400,7 +402,7 @@ const PropertyManager = () => {
               
               <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                 <h3 className="text-sm text-gray-500 mb-1">Monthly Expenses</h3>
-                <p className="text-2xl font-bold text-gray-900">$12,840</p>
+                <p className="text-2xl font-bold text-gray-900">{formatPrice(1072000)}</p>
                 <div className="flex items-center gap-1 text-red-600 text-sm mt-1">
                   <ArrowUpRight className="w-4 h-4" />
                   <span>+1.8% from last month</span>
@@ -409,7 +411,7 @@ const PropertyManager = () => {
               
               <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                 <h3 className="text-sm text-gray-500 mb-1">Net Cash Flow</h3>
-                <p className="text-2xl font-bold text-gray-900">$35,510</p>
+                <p className="text-2xl font-bold text-gray-900">{formatPrice(2963000)}</p>
                 <div className="flex items-center gap-1 text-green-600 text-sm mt-1">
                   <ArrowUpRight className="w-4 h-4" />
                   <span>+2.8% from last month</span>

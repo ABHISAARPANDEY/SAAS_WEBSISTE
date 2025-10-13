@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCurrency } from '../../contexts/CurrencyContext';
 import { 
   Store, 
   ArrowLeft,
@@ -32,10 +33,11 @@ import {
 const RetailPOS = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { formatPrice } = useCurrency();
   const [activeTab, setActiveTab] = useState('pos');
   const [cart, setCart] = useState([
-    { id: 1, name: 'T-Shirt - Black', price: 24.99, quantity: 2, image: '/logos/logo_teckstack.png' },
-    { id: 2, name: 'Jeans - Blue', price: 49.99, quantity: 1, image: '/logos/logo_teckstack.png' }
+    { id: 1, name: 'T-Shirt - Black', price: 2085, quantity: 2, image: '/logos/logo_teckstack.png' },
+    { id: 2, name: 'Jeans - Blue', price: 4175, quantity: 1, image: '/logos/logo_teckstack.png' }
   ]);
   
   const updateQuantity = (id, change) => {
@@ -227,14 +229,14 @@ const RetailPOS = () => {
               {/* Products Grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {[
-                  { id: 1, name: 'T-Shirt - Black', price: 24.99, image: '/logos/logo_teckstack.png' },
-                  { id: 2, name: 'Jeans - Blue', price: 49.99, image: '/logos/logo_teckstack.png' },
-                  { id: 3, name: 'Sneakers - White', price: 79.99, image: '/logos/logo_teckstack.png' },
-                  { id: 4, name: 'Watch - Silver', price: 129.99, image: '/logos/logo_teckstack.png' },
-                  { id: 5, name: 'Backpack', price: 59.99, image: '/logos/logo_teckstack.png' },
-                  { id: 6, name: 'Sunglasses', price: 34.99, image: '/logos/logo_teckstack.png' },
-                  { id: 7, name: 'Hoodie - Gray', price: 44.99, image: '/logos/logo_teckstack.png' },
-                  { id: 8, name: 'Beanie - Black', price: 19.99, image: '/logos/logo_teckstack.png' }
+                  { id: 1, name: 'T-Shirt - Black', price: 2085, image: '/logos/logo_teckstack.png' },
+                  { id: 2, name: 'Jeans - Blue', price: 4175, image: '/logos/logo_teckstack.png' },
+                  { id: 3, name: 'Sneakers - White', price: 6675, image: '/logos/logo_teckstack.png' },
+                  { id: 4, name: 'Watch - Silver', price: 10850, image: '/logos/logo_teckstack.png' },
+                  { id: 5, name: 'Backpack', price: 5010, image: '/logos/logo_teckstack.png' },
+                  { id: 6, name: 'Sunglasses', price: 2920, image: '/logos/logo_teckstack.png' },
+                  { id: 7, name: 'Hoodie - Gray', price: 3755, image: '/logos/logo_teckstack.png' },
+                  { id: 8, name: 'Beanie - Black', price: 1670, image: '/logos/logo_teckstack.png' }
                 ].map((product) => (
                   <div 
                     key={product.id} 
@@ -257,7 +259,7 @@ const RetailPOS = () => {
                     </div>
                     <div className="p-3">
                       <h3 className="font-medium text-gray-900 text-sm">{product.name}</h3>
-                      <p className="font-bold text-purple-600">${product.price.toFixed(2)}</p>
+                      <p className="font-bold text-purple-600">{formatPrice(product.price)}</p>
                     </div>
                   </div>
                 ))}
@@ -287,7 +289,7 @@ const RetailPOS = () => {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-medium text-gray-900 truncate">{item.name}</h3>
-                        <p className="text-purple-600 font-bold">${item.price.toFixed(2)}</p>
+                        <p className="text-purple-600 font-bold">{formatPrice(item.price)}</p>
                       </div>
                       <div className="flex items-center border border-gray-300 rounded-lg">
                         <button 
@@ -332,15 +334,15 @@ const RetailPOS = () => {
                 <div className="space-y-2 mb-6">
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
-                    <span>${calculateSubtotal().toFixed(2)}</span>
+                    <span>{formatPrice(calculateSubtotal())}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Tax (8%)</span>
-                    <span>${calculateTax().toFixed(2)}</span>
+                    <span>{formatPrice(calculateTax())}</span>
                   </div>
                   <div className="flex justify-between text-lg font-bold text-gray-900 pt-2 border-t border-gray-200">
                     <span>Total</span>
-                    <span>${calculateTotal().toFixed(2)}</span>
+                    <span>{formatPrice(calculateTotal())}</span>
                   </div>
                 </div>
               )}

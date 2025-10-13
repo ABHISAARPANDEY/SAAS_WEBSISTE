@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCurrency } from '../../contexts/CurrencyContext';
 import { 
   Building2, 
   ArrowLeft,
@@ -32,6 +33,7 @@ import {
 const BankingCore = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { formatPrice } = useCurrency();
   const [activeTab, setActiveTab] = useState('dashboard');
   
   return (
@@ -132,7 +134,7 @@ const BankingCore = () => {
               </div>
             </div>
             <h3 className="text-sm text-gray-500 mb-1">Checking Account</h3>
-            <p className="text-2xl font-bold text-gray-900">$12,456.78</p>
+            <p className="text-2xl font-bold text-gray-900">{formatPrice(1040000)}</p>
             <p className="text-gray-500 text-sm mt-2">**** **** **** 4567</p>
           </div>
           
@@ -147,7 +149,7 @@ const BankingCore = () => {
               </div>
             </div>
             <h3 className="text-sm text-gray-500 mb-1">Savings Account</h3>
-            <p className="text-2xl font-bold text-gray-900">$45,890.21</p>
+            <p className="text-2xl font-bold text-gray-900">{formatPrice(3832000)}</p>
             <p className="text-gray-500 text-sm mt-2">**** **** **** 8901</p>
           </div>
           
@@ -162,7 +164,7 @@ const BankingCore = () => {
               </div>
             </div>
             <h3 className="text-sm text-gray-500 mb-1">Credit Card</h3>
-            <p className="text-2xl font-bold text-gray-900">$2,345.50</p>
+            <p className="text-2xl font-bold text-gray-900">{formatPrice(195900)}</p>
             <p className="text-gray-500 text-sm mt-2">**** **** **** 1234</p>
           </div>
         </div>
@@ -201,11 +203,11 @@ const BankingCore = () => {
           
           <div className="divide-y divide-gray-100">
             {[
-              { icon: Landmark, color: 'green', name: 'Salary Deposit', category: 'Income', amount: '+$3,500.00', date: 'Today, 9:15 AM' },
-              { icon: CreditCard, color: 'red', name: 'Amazon Purchase', category: 'Shopping', amount: '-$129.99', date: 'Yesterday, 2:34 PM' },
-              { icon: Send, color: 'blue', name: 'Transfer to Savings', category: 'Transfer', amount: '-$500.00', date: 'Yesterday, 10:45 AM' },
-              { icon: CreditCard, color: 'red', name: 'Grocery Store', category: 'Food', amount: '-$85.75', date: 'Mar 15, 6:30 PM' },
-              { icon: CreditCard, color: 'red', name: 'Netflix Subscription', category: 'Entertainment', amount: '-$14.99', date: 'Mar 14, 12:00 AM' }
+              { icon: Landmark, color: 'green', name: 'Salary Deposit', category: 'Income', amount: 292250, date: 'Today, 9:15 AM' },
+              { icon: CreditCard, color: 'red', name: 'Amazon Purchase', category: 'Shopping', amount: -10850, date: 'Yesterday, 2:34 PM' },
+              { icon: Send, color: 'blue', name: 'Transfer to Savings', category: 'Transfer', amount: -41750, date: 'Yesterday, 10:45 AM' },
+              { icon: CreditCard, color: 'red', name: 'Grocery Store', category: 'Food', amount: -7160, date: 'Mar 15, 6:30 PM' },
+              { icon: CreditCard, color: 'red', name: 'Netflix Subscription', category: 'Entertainment', amount: -1250, date: 'Mar 14, 12:00 AM' }
             ].map((transaction, index) => (
               <div key={index} className="p-4 hover:bg-gray-50 transition-colors">
                 <div className="flex items-center justify-between">
@@ -220,8 +222,8 @@ const BankingCore = () => {
                   </div>
                   
                   <div className="text-right">
-                    <p className={`font-medium ${transaction.amount.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
-                      {transaction.amount}
+                    <p className={`font-medium ${transaction.amount > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                      {transaction.amount > 0 ? '+' : ''}{formatPrice(Math.abs(transaction.amount))}
                     </p>
                     <p className="text-gray-500 text-sm">{transaction.date}</p>
                   </div>
@@ -274,10 +276,10 @@ const BankingCore = () => {
             
             <div className="divide-y divide-gray-100">
               {[
-                { name: 'Rent Payment', amount: '$1,200.00', date: 'Mar 31, 2025', status: 'Upcoming' },
-                { name: 'Electricity Bill', amount: '$85.50', date: 'Apr 05, 2025', status: 'Upcoming' },
-                { name: 'Internet Service', amount: '$59.99', date: 'Apr 10, 2025', status: 'Upcoming' },
-                { name: 'Car Insurance', amount: '$120.75', date: 'Apr 15, 2025', status: 'Upcoming' }
+                { name: 'Rent Payment', amount: 100200, date: 'Mar 31, 2025', status: 'Upcoming' },
+                { name: 'Electricity Bill', amount: 7140, date: 'Apr 05, 2025', status: 'Upcoming' },
+                { name: 'Internet Service', amount: 5010, date: 'Apr 10, 2025', status: 'Upcoming' },
+                { name: 'Car Insurance', amount: 10080, date: 'Apr 15, 2025', status: 'Upcoming' }
               ].map((bill, index) => (
                 <div key={index} className="p-4 hover:bg-gray-50 transition-colors">
                   <div className="flex items-center justify-between">
@@ -287,7 +289,7 @@ const BankingCore = () => {
                     </div>
                     
                     <div className="text-right">
-                      <p className="font-medium text-gray-900">{bill.amount}</p>
+                      <p className="font-medium text-gray-900">{formatPrice(bill.amount)}</p>
                       <p className="text-blue-600 text-sm">{bill.status}</p>
                     </div>
                   </div>

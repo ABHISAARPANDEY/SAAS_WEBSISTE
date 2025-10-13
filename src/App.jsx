@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
+import { CurrencyProvider } from './contexts/CurrencyContext';
 import Home from './pages/Home';
 import ServiceDetail from './pages/ServiceDetail';
 import Services from './pages/Services';
@@ -35,6 +36,7 @@ import ExcelDash from './pages/ExcelDash';
 import SparkWave from './pages/SparkWave';
 import EcommerceAutoPilot from './pages/EcommerceAutoPilot';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundCancellationPolicy from './pages/RefundCancellationPolicy';
 import AiAgents from './pages/AiAgents';
 import ApiKeys from './pages/ApiKeys';
 import AdminLogin from './pages/admin/AdminLogin';
@@ -72,8 +74,9 @@ function App() {
   
   return (
     <ErrorBoundary>
-      <ScrollToTop />
-      {isProductDemo ? (
+      <CurrencyProvider>
+        <ScrollToTop />
+        {isProductDemo ? (
         <Routes>
           <Route path="/product-demos/healthtrack-pro" element={<HealthTrackPro />} />
           <Route path="/product-demos/fintech-suite" element={<FinTechSuite />} />
@@ -115,6 +118,7 @@ function App() {
             <Route path="/ai-agents" element={<AiAgents />} />
             <Route path="/api-keys" element={<ApiKeys />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/refund-cancellation-policy" element={<RefundCancellationPolicy />} />
             <Route path="/svc-admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={
               <ProtectedRoute>
@@ -123,7 +127,8 @@ function App() {
             } />
           </Routes>
         </Layout>
-      )}
+        )}
+      </CurrencyProvider>
     </ErrorBoundary>
   );
 }

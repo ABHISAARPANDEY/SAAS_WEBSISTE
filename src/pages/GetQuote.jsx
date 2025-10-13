@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useCurrency } from '../contexts/CurrencyContext';
 import { Send, CheckCircle, Loader, AlertCircle, Zap, Shield, Check, MessageCircle } from 'lucide-react';
 import { industries, services } from '../data/quoteFormData';
 import { submitQuoteRequest } from '../utils/supabaseClient';
@@ -9,6 +10,7 @@ import 'react-phone-input-2/lib/style.css';
 
 const GetQuote = () => {
   const navigate = useNavigate();
+  const { formatPrice, getCurrencySymbol } = useCurrency();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -597,11 +599,11 @@ if (error) {
                       className="w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select budget range</option>
-                      <option value="under-10k">Under $10,000</option>
-                      <option value="10k-25k">$10,000 - $25,000</option>
-                      <option value="25k-50k">$25,000 - $50,000</option>
-                      <option value="50k-100k">$50,000 - $100,000</option>
-                      <option value="over-100k">Over $100,000</option>
+                      <option value="under-10k">Under {formatPrice(835000)}</option>
+                      <option value="10k-25k">{formatPrice(835000)} - {formatPrice(2087500)}</option>
+                      <option value="25k-50k">{formatPrice(2087500)} - {formatPrice(4175000)}</option>
+                      <option value="50k-100k">{formatPrice(4175000)} - {formatPrice(8350000)}</option>
+                      <option value="over-100k">Over {formatPrice(8350000)}</option>
                     </select>
                   </div>
 

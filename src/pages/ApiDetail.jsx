@@ -15,11 +15,13 @@ import {
   Calculator
 } from 'lucide-react';
 import { getApiById } from '../data/marketplaceData';
+import { useCurrency } from '../contexts/CurrencyContext';
 
 const ApiDetail = () => {
   const { apiId } = useParams();
   const navigate = useNavigate();
   const api = getApiById(apiId);
+  const { formatPrice } = useCurrency();
   const [selectedPlan, setSelectedPlan] = useState('basic');
   const [showApiKey, setShowApiKey] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -329,7 +331,7 @@ const ApiDetail = () => {
                 <div className="bg-dark-tertiary rounded-xl p-6 border border-neon-green/30">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-neon-green mb-2">
-                      ${calculatePrice()}<span className="text-lg text-text-secondary">/month</span>
+                      {formatPrice(calculatePrice())}<span className="text-lg text-text-secondary">/month</span>
                     </div>
                     <div className="text-sm text-text-secondary">
                       {monthlyRequests <= api.pricing.free.requests ? 'Free Plan' :
@@ -361,7 +363,7 @@ const ApiDetail = () => {
                         {plan} Plan
                       </h4>
                       <div className="text-2xl font-bold text-neon-green">
-                        ${details.price}<span className="text-sm text-text-secondary">/month</span>
+                        {formatPrice(details.price)}<span className="text-sm text-text-secondary">/month</span>
                       </div>
                     </div>
                     <div className="text-right">

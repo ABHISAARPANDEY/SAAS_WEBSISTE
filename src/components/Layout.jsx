@@ -4,6 +4,7 @@ import { Menu, X, Zap, ArrowUp } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import ScrollToTopButton from './ScrollToTopButton';
 import StickyWhatsAppButton from './StickyWhatsAppButton';
+import CountrySelector from './CountrySelector';
 
 
 const Layout = ({ children }) => {
@@ -234,6 +235,9 @@ const Layout = ({ children }) => {
               </a>
             </div>
             <div className="flex items-center space-x-3">
+              {/* Country Selector */}
+              <CountrySelector />
+              
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -517,6 +521,18 @@ const Layout = ({ children }) => {
                     className="hover:text-accent-primary transition-colors"
                   >
                     Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/refund-cancellation-policy" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = '/refund-cancellation-policy';
+                    }}
+                    className="hover:text-accent-primary transition-colors"
+                  >
+                    Refund & Cancellation Policy
                   </a>
                 </li>
               </ul>

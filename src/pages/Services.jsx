@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useCurrency } from '../contexts/CurrencyContext';
 import { pageEntryVariants, scrollAnimationVariants, childVariants, staggerContainerVariants, buttonHoverVariants } from '../utils/animationUtils';
 import { 
   Smartphone, 
@@ -24,7 +25,7 @@ const services = [
     icon: Smartphone,
     gradient: 'from-pink-500 to-rose-500',
     features: ['iOS & Android Development', 'Cross-platform Solutions', 'App Store Optimization', 'Push Notifications'],
-    pricing: 'Starting from $1200',
+    pricing: 100200, // INR price
     timeline: '3-6 months'
   },
   {
@@ -34,7 +35,7 @@ const services = [
     icon: Globe,
     gradient: 'from-blue-500 to-cyan-500',
     features: ['Responsive Design', 'Modern Frameworks', 'SEO Optimization', 'Performance Tuning'],
-    pricing: 'Starting from $500',
+    pricing: 41750, // INR price
     timeline: '2-4 months'
   },
   {
@@ -44,7 +45,7 @@ const services = [
     icon: Zap,
     gradient: 'from-yellow-500 to-orange-500',
     features: ['Workflow Automation', 'API Integration', 'Data Processing', 'Custom Dashboards'],
-    pricing: 'Starting from $1500',
+    pricing: 125250, // INR price
     timeline: '1-3 months'
   },
   {
@@ -54,7 +55,7 @@ const services = [
     icon: Code,
     gradient: 'from-purple-500 to-indigo-500',
     features: ['Custom Development', 'Legacy System Integration', 'Database Design', 'API Development'],
-    pricing: 'Starting from $2000',
+    pricing: 167000, // INR price
     timeline: '3-8 months'
   },
   {
@@ -64,7 +65,7 @@ const services = [
     icon: Lightbulb,
     gradient: 'from-green-500 to-emerald-500',
     features: ['MVP Development', 'Market Research', 'User Testing', 'Product Strategy'],
-    pricing: 'Starting from $3000',
+    pricing: 250500, // INR price
     timeline: '4-12 months'
   },
   {
@@ -74,7 +75,7 @@ const services = [
     icon: Shield,
     gradient: 'from-teal-500 to-blue-500',
     features: ['Smart Contracts', 'DeFi Solutions', 'NFT Platforms', 'Cryptocurrency Integration'],
-    pricing: 'Starting from $3000',
+    pricing: 250500, // INR price
     timeline: '4-10 months'
   },
   {
@@ -84,7 +85,7 @@ const services = [
     icon: TrendingUp,
     gradient: 'from-violet-500 to-purple-500',
     features: ['Strategy Consulting', 'Technology Migration', 'Process Optimization', 'Change Management'],
-    pricing: 'Starting from $3000',
+    pricing: 250500, // INR price
     timeline: '6-18 months'
   },
   {
@@ -94,13 +95,14 @@ const services = [
     icon: Bot,
     gradient: 'from-cyan-500 to-blue-500',
     features: ['AI Chatbots', 'Machine Learning', 'Natural Language Processing', 'Predictive Analytics'],
-    pricing: 'Starting from $5000',
+    pricing: 417500, // INR price
     timeline: '3-8 months'
   }
 ];
 
 const Services = () => {
   const navigate = useNavigate();
+  const { formatPrice } = useCurrency();
 
   const handleServiceClick = (serviceId) => {
     window.scrollTo(0, 0);
@@ -246,7 +248,7 @@ const Services = () => {
                   <div className="space-y-3 pt-4 border-t border-gray-200 relative z-10">
                     <div className="flex items-center justify-between text-sm text-gray-700">
                       <span>Starting from</span>
-                      <span className="font-bold text-blue-600">{service.pricing}</span>
+                      <span className="font-bold text-blue-600">{formatPrice(service.pricing)}</span>
                     </div>
                     <div className="flex items-center justify-between text-sm text-gray-700">
                       <span>Timeline</span>

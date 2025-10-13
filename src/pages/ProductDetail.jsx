@@ -14,11 +14,13 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { getProductById } from '../data/marketplaceData';
+import { useCurrency } from '../contexts/CurrencyContext';
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const product = getProductById(productId);
+  const { formatPrice } = useCurrency();
   const [selectedPlan, setSelectedPlan] = useState('premium');
   const [showConsultationForm, setShowConsultationForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -343,7 +345,7 @@ const ProductDetail = () => {
                   </h3>
                   
                   <div className="mb-6">
-                    <span className="text-5xl font-bold text-blue-600">${details.price}</span>
+                    <span className="text-5xl font-bold text-blue-600">{formatPrice(details.price)}</span>
                     <span className="text-gray-600">/month</span>
                   </div>
 
